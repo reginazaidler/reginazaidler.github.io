@@ -62,7 +62,7 @@
         <a href="/ru/navesti-poryadok-v-strahovkah.html">Как навести порядок в страховках и пенсии</a>
         <a href="/ru/proverka-strahovogo-portfelya.html">Проверка страхового портфеля</a>
         <a href="/ru/proverka-pensionnyh-nakopleniy-v-izraile.html">Проверка пенсионных накоплений</a>
-        <a href="/accessibility.html">Доступность сайта</a>
+        <a href="/ru/zayavleniye-o-dostupnosti.html">Доступность сайта</a>
       </nav>
 
       <div class="site-footer__social">
