@@ -178,11 +178,28 @@
     }
   }
 
+
+  function injectSkipLink() {
+    if (document.querySelector('.skip-link')) return;
+    var isRuPage = window.location.pathname.indexOf('/ru/') === 0;
+    var skip = document.createElement('a');
+    skip.href = '#main-content';
+    skip.className = 'skip-link';
+    skip.textContent = isRuPage ? 'Перейти к основному содержанию' : 'דלג לתוכן הראשי';
+    document.body.insertBefore(skip, document.body.firstChild);
+
+    var main = document.querySelector('main');
+    if (main && !main.id) {
+      main.id = 'main-content';
+    }
+  }
+
   function init() {
     initMobileMenu();
     initDesktopKnowledgeMenu();
     ensureMobileContactActions();
     initLanguageSwitcher();
+    injectSkipLink();
   }
 
   if (document.readyState === 'loading') {

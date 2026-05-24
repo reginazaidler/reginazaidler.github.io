@@ -62,6 +62,7 @@
         <a href="/ru/navesti-poryadok-v-strahovkah.html">Как навести порядок в страховках и пенсии</a>
         <a href="/ru/proverka-strahovogo-portfelya.html">Проверка страхового портфеля</a>
         <a href="/ru/proverka-pensionnyh-nakopleniy-v-izraile.html">Проверка пенсионных накоплений</a>
+        <a href="/accessibility.html">Доступность сайта</a>
       </nav>
 
       <div class="site-footer__social">
@@ -97,6 +98,7 @@
         <a href="/articles.html">מאמרים מקצועיים על פנסיה וביטוחים</a>
         <a href="/calculator.html">מחשבון חיסכון</a>
         <a href="/media.html">וידאו</a>
+        <a href="/accessibility.html">הצהרת נגישות</a>
         <a href="/reviews.html">לקוחות ממליצים</a>
         <div class="site-footer__city-links" data-city-links>
           <a href="/sochen-bituach-herzliya.html">סוכן ביטוח בהרצליה</a>
