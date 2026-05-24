@@ -9188,3 +9188,30 @@ html[lang="ru"] .art-cta {
     border-left: 4px solid var(--gold-brand);
   }
 }
+
+
+.skip-link {
+    position: absolute;
+    right: 12px;
+    top: -48px;
+    z-index: 5000;
+    background: #111827;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.skip-link:focus {
+    top: 12px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid #f59e0b;
+    outline-offset: 2px;
+}
