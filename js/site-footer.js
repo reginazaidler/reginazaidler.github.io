@@ -99,6 +99,8 @@
         <a href="/calculator.html">מחשבון חיסכון</a>
         <a href="/media.html">וידאו</a>
         <a href="/accessibility.html">הצהרת נגישות</a>
+        <a href="/privacy.html">מדיניות פרטיות</a>
+        <a href="/takanon.html">תקנון האתר</a>
         <a href="/reviews.html">לקוחות ממליצים</a>
         <div class="site-footer__city-links" data-city-links>
           <a href="/sochen-bituach-herzliya.html">סוכן ביטוח בהרצליה</a>

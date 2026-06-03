@@ -4,34 +4,76 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>הצהרת נגישות | יובל ויינזוף</title>
-  <meta name="description" content="הצהרת נגישות בסיסית לאתר יובל ויינזוף בהתאם להנגשה ברמת AA ככל הניתן.">
+  <meta name="description" content="הצהרת נגישות לאתר vainzof.co.il בהתאם לתקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), תשע&quot;ג-2013.">
+  <link rel="canonical" href="https://vainzof.co.il/accessibility.html">
+  <meta name="robots" content="noindex">
   <link rel="stylesheet" href="/style.css">
+  <style>
+    .acc-page { max-width: 860px; margin: 0 auto; padding: 48px 24px 80px; }
+    .acc-page h1 { font-size: 2rem; font-weight: 900; color: #0f172a; margin-bottom: 8px; }
+    .acc-page .acc-subtitle { color: #64748b; margin-bottom: 40px; font-size: 0.95rem; }
+    .acc-page h2 { font-size: 1.2rem; font-weight: 800; color: #1e3a5f; margin: 36px 0 12px; border-right: 4px solid #2563eb; padding-right: 12px; }
+    .acc-page p, .acc-page li { color: #334155; line-height: 1.8; font-size: 0.97rem; }
+    .acc-page ul { padding-right: 20px; margin: 8px 0 16px; }
+    .acc-page ul li { margin-bottom: 6px; }
+    .acc-page a { color: #2563eb; text-decoration: underline; }
+    .acc-page .contact-block { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px 24px; margin-top: 12px; }
+    .acc-page .contact-block p { margin: 4px 0; }
+    .acc-page .updated { color: #94a3b8; font-size: 0.85rem; margin-top: 40px; }
+    .acc-page .badge { display: inline-block; background: #dbeafe; color: #1e40af; border-radius: 6px; padding: 3px 10px; font-size: 0.82rem; font-weight: 700; margin-bottom: 4px; }
+  </style>
 </head>
 <body>
-  <main id="main-content" class="container-clean" style="padding:40px 0;max-width:860px;">
-    <h1>הצהרת נגישות</h1>
-    <p>אתר זה עושה מאמץ לאפשר גלישה נגישה לכלל הציבור, כולל אנשים עם מוגבלות, ובהתאם לתקן הישראלי ת&quot;י 5568 (מבוסס WCAG 2.0 ברמת AA) ככל הניתן.</p>
+  <a href="#main-content" class="sr-focusable">דלג לתוכן המרכזי</a>
+  <main id="main-content" class="acc-page">
 
-    <h2>התאמות נגישות בסיסיות שבוצעו באתר</h2>
+    <h1>הצהרת נגישות</h1>
+    <p class="acc-subtitle">אתר <strong>vainzof.co.il</strong> - יובל ויינזוף, סוכן ביטוח ופנסיה</p>
+
+    <p>אתר זה פועל לאפשר גלישה נגישה לכלל הציבור, כולל אנשים עם מוגבלויות, בהתאם ל<strong>תקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), תשע"ג-2013</strong> ובהתאם לתקן הישראלי <strong>ת"י 5568</strong> (מבוסס WCAG 2.0 ברמת AA).</p>
+
+    <h2>פרטי הגוף האחראי</h2>
+    <p>שם: יובל ויינזוף<br>
+    עיסוק: סוכן ביטוח ופנסיה מורשה<br>
+    כתובת: הרצליה, ישראל</p>
+
+    <h2>רמת הנגישות</h2>
+    <p><span class="badge">WCAG 2.0 AA - חלקית</span></p>
+    <p>האתר עומד בחלק מדרישות תקן WCAG 2.0 ברמת AA. אנו פועלים באופן מתמיד לשיפור הנגישות.</p>
+
+    <h2>התאמות שבוצעו באתר</h2>
     <ul>
-      <li>ניווט באמצעות מקלדת וקישור "דלג לתוכן הראשי".</li>
-      <li>שיפור נראות פוקוס בעת מעבר בין קישורים וכפתורים.</li>
-      <li>שימוש בתוויות ARIA באזורים מרכזיים (תפריטים, כפתורים ואזורים אינטראקטיביים).</li>
-      <li>התאמות כיוון שפה (עברית/רוסית) בעמודים הרלוונטיים.</li>
+      <li>ניווט מלא באמצעות מקלדת בכל עמודי האתר.</li>
+      <li>קישור "דלג לתוכן המרכזי" בראש כל עמוד.</li>
+      <li>שיפור נראות פוקוס בעת מעבר בין קישורים, כפתורים ושדות טפסים.</li>
+      <li>שימוש בתוויות ARIA באזורים מרכזיים: תפריטי ניווט, כפתורי פעולה, ודיאלוגים.</li>
+      <li>הגדרת שפה ב-HTML לכל דף (עברית RTL / רוסית LTR).</li>
+      <li>טקסט חלופי (alt) לתמונות ואייקונים.</li>
+      <li>כותרות מדורגות (H1, H2, H3) לניווט קורא מסך.</li>
+      <li>יחסי ניגודיות עומדים בסף WCAG AA בטקסטים ראשיים.</li>
+      <li>טפסי יצירת קשר עם תוויות ברורות וטיפול בשגיאות.</li>
     </ul>
 
-    <h2>סייגים</h2>
-    <p>ייתכן שחלקים מסוימים עדיין אינם נגישים באופן מלא. אנחנו ממשיכים לשפר את האתר באופן שוטף.</p>
+    <h2>תחומים שטרם הונגשו במלואם</h2>
+    <ul>
+      <li>חלק מהמסמכים המוטמעים (PDF חיצוניים, אם קיימים) עשויים שלא להיות נגישים במלואם.</li>
+      <li>סרטוני וידאו מוטמעים (YouTube) - כתוביות וניגודיות כפופים למדיניות YouTube.</li>
+      <li>ויג'ט WhatsApp צף - ממשק חיצוני שאינו בשליטת האתר המלאה.</li>
+    </ul>
 
-    <h2>יצירת קשר בנושא נגישות</h2>
-    <p>אם נתקלתם בקושי נגישות באתר, נשמח שתעדכנו אותנו ונפעל לתיקון בהקדם:</p>
-    <p>
-      יובל ויינזוף<br>
-      טלפון: <a href="tel:0524520222">052-4520222</a><br>
-      אימייל: <a href="mailto:yuval@vainzof.co.il">yuval@vainzof.co.il</a>
-    </p>
+    <h2>פנייה בנושא נגישות</h2>
+    <p>אם נתקלתם בקושי נגישות, מצאתם תוכן שאינו נגיש, או זקוקים לתוכן בפורמט חלופי - נשמח שתפנו אלינו ונפעל לתיקון בהקדם האפשרי:</p>
+    <div class="contact-block">
+      <p><strong>יובל ויינזוף</strong> - רכז נגישות השירות</p>
+      <p>טלפון: <a href="tel:0524520222">052-4520222</a></p>
+      <p>אימייל: <a href="mailto:yuval@vainzof.co.il">yuval@vainzof.co.il</a></p>
+      <p>שעות מענה: ימים א-ה, 9:00-18:00</p>
+    </div>
 
-    <p><small>עודכן לאחרונה: 24 במאי 2026</small></p>
+    <h2>נוהל טיפול בפניות</h2>
+    <p>פניות בנושא נגישות יטופלו תוך 14 ימי עסקים. אם לא קיבלתם מענה מספק, ניתן לפנות גם לנציב שוויון זכויות לאנשים עם מוגבלות במשרד המשפטים.</p>
+
+    <p class="updated">הצהרה זו עודכנה לאחרונה: 24 במאי 2026</p>
   </main>
   <script src="/js/site-header.js" defer></script>
   <script src="/js/site-footer.js" defer></script>
