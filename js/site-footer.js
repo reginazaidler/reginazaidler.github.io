@@ -63,6 +63,8 @@
         <a href="/ru/proverka-strahovogo-portfelya.html">Проверка страхового портфеля</a>
         <a href="/ru/proverka-pensionnyh-nakopleniy-v-izraile.html">Проверка пенсионных накоплений</a>
         <a href="/ru/zayavleniye-o-dostupnosti.html">Доступность сайта</a>
+        <a href="/ru/politika-konfidentsialnosti.html">Политика конфиденциальности</a>
+        <a href="/ru/pravila-sayta.html">Правила сайта</a>
       </nav>
 
       <div class="site-footer__social">
