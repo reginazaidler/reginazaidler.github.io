@@ -24,17 +24,32 @@ jobs:
 
       - name: Validate required secrets
         run: |
+          mkdir -p seo-gap-agent/reports
+          report=seo-gap-agent/reports/secret-validation.md
+          {
+            echo "# SEO Gap Agent secret validation"
+            echo
+            echo "Run timestamp (UTC): $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+            echo
+          } > "$report"
+
           missing=0
           for key in OPENAI_API_KEY GSC_CLIENT_ID GSC_CLIENT_SECRET GSC_REFRESH_TOKEN GSC_SITE_URL; do
             if [ -z "${!key}" ]; then
               echo "::error::Missing required secret: ${key}"
+              echo "- Missing required secret: ${key}" >> "$report"
               missing=1
             fi
           done
+
           if [ "$missing" -ne 0 ]; then
+            echo >> "$report"
+            echo "Add/update the missing repository secrets, then re-run this workflow." >> "$report"
             echo "One or more required secrets are missing. Add/update repository secrets and re-run."
             exit 1
           fi
+
+          echo "All required secrets are present." >> "$report"
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           GSC_CLIENT_ID: ${{ secrets.GSC_CLIENT_ID }}
@@ -61,6 +76,7 @@ jobs:
           python -m app.main
 
       - name: Upload reports artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: seo-gap-agent-reports
@@ -68,3 +84,4 @@ jobs:
             seo-gap-agent/reports/*.csv
             seo-gap-agent/reports/*.md
             seo-gap-agent/reports/*.json
+          if-no-files-found: warn
