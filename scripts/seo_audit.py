@@ -30,6 +30,7 @@ class PageAudit:
     has_og_image: bool
     has_ld_json: bool
     h1_count: int
+    noindex: bool
 
 
 class SEOParser(HTMLParser):
@@ -86,6 +87,7 @@ def audit_page(path: Path) -> PageAudit:
         has_og_image=parser.has_og_image,
         has_ld_json=parser.has_ld_json,
         h1_count=parser.h1_count,
+        noindex=page_has_noindex(path),
     )
 
 
@@ -170,11 +172,14 @@ def bool_count(items: list[PageAudit], field: str) -> int:
 
 
 def build_results(audits: list[PageAudit]) -> dict[str, Any]:
-    missing_description = [a.page for a in audits if not a.has_description]
-    missing_canonical = [a.page for a in audits if not a.has_canonical]
-    missing_og_image = [a.page for a in audits if not a.has_og_image]
-    missing_ld_json = [a.page for a in audits if not a.has_ld_json]
-    invalid_h1 = [{"page": a.page, "h1_count": a.h1_count} for a in audits if a.h1_count != 1]
+    indexable_audits = [a for a in audits if not a.noindex]
+    noindex_pages = [a.page for a in audits if a.noindex]
+
+    missing_description = [a.page for a in indexable_audits if not a.has_description]
+    missing_canonical = [a.page for a in indexable_audits if not a.has_canonical]
+    missing_og_image = [a.page for a in indexable_audits if not a.has_og_image]
+    missing_ld_json = [a.page for a in indexable_audits if not a.has_ld_json]
+    invalid_h1 = [{"page": a.page, "h1_count": a.h1_count} for a in indexable_audits if a.h1_count != 1]
 
     issues_total = (
         len(missing_description)
@@ -189,14 +194,16 @@ def build_results(audits: list[PageAudit]) -> dict[str, Any]:
     return {
         "scan_date": date.today().isoformat(),
         "pages_scanned": len(audits),
+        "indexable_pages_scanned": len(indexable_audits),
+        "noindex_pages_scanned": len(noindex_pages),
         "sitemap_urls": sitemap_urls,
         "totals": {
-            "title_ok": bool_count(audits, "has_title"),
-            "description_ok": bool_count(audits, "has_description"),
-            "canonical_ok": bool_count(audits, "has_canonical"),
-            "og_image_ok": bool_count(audits, "has_og_image"),
-            "ld_json_ok": bool_count(audits, "has_ld_json"),
-            "h1_ok": len(audits) - len(invalid_h1),
+            "title_ok": bool_count(indexable_audits, "has_title"),
+            "description_ok": bool_count(indexable_audits, "has_description"),
+            "canonical_ok": bool_count(indexable_audits, "has_canonical"),
+            "og_image_ok": bool_count(indexable_audits, "has_og_image"),
+            "ld_json_ok": bool_count(indexable_audits, "has_ld_json"),
+            "h1_ok": len(indexable_audits) - len(invalid_h1),
         },
         "issues": {
             "missing_description": missing_description,
@@ -206,6 +213,7 @@ def build_results(audits: list[PageAudit]) -> dict[str, Any]:
             "invalid_h1": invalid_h1,
         },
         "issues_total": issues_total,
+        "noindex_pages": noindex_pages,
         "pages": [asdict(a) for a in audits],
     }
 
@@ -214,8 +222,9 @@ def generate_markdown_report(results: dict[str, Any]) -> str:
     lines = [
         "# סריקת SEO – vainzof.co.il",
         "",
-        f"תאריך סריקה: {results['scan_date']}  ",
+        f"תאריך סריקה: {results['scan_date']}",
         "היקף: בדיקת SEO טכנית על קבצי HTML סטטיים בריפו (`*.html`) + בדיקת `robots.txt` ו-`sitemap.xml`.",
+        "הבדיקה מתמקדת בעמודים אינדקסביליים; עמודים עם `noindex` נספרים בנפרד ולא מסומנים כתקלה.",
         "",
         "## מתודולוגיה",
         "",
@@ -229,13 +238,14 @@ def generate_markdown_report(results: dict[str, Any]) -> str:
         "",
         "## סיכום תוצאות",
         "",
-        f"- נסרקו **{results['pages_scanned']} עמודי HTML**.",
-        f"- `title`: תקין ב-{results['totals']['title_ok']} עמודים.",
-        f"- `meta description`: תקין ב-{results['totals']['description_ok']} עמודים.",
-        f"- `canonical`: תקין ב-{results['totals']['canonical_ok']} עמודים.",
-        f"- `og:image`: תקין ב-{results['totals']['og_image_ok']} עמודים.",
-        f"- Schema (`ld+json`): תקין ב-{results['totals']['ld_json_ok']} עמודים.",
-        f"- `h1`: תקין ב-{results['totals']['h1_ok']} עמודים.",
+        f"- נסרקו **{results['pages_scanned']} עמודי HTML** בסך הכול.",
+        f"- מתוכם **{results['indexable_pages_scanned']} עמודים אינדקסביליים** ו-{results['noindex_pages_scanned']} עמודי `noindex`/הפניה.",
+        f"- `title`: תקין ב-{results['totals']['title_ok']} עמודים אינדקסביליים.",
+        f"- `meta description`: תקין ב-{results['totals']['description_ok']} עמודים אינדקסביליים.",
+        f"- `canonical`: תקין ב-{results['totals']['canonical_ok']} עמודים אינדקסביליים.",
+        f"- `og:image`: תקין ב-{results['totals']['og_image_ok']} עמודים אינדקסביליים.",
+        f"- Schema (`ld+json`): תקין ב-{results['totals']['ld_json_ok']} עמודים אינדקסביליים.",
+        f"- `h1`: תקין ב-{results['totals']['h1_ok']} עמודים אינדקסביליים.",
         f"- `sitemap.xml`: כולל {results['sitemap_urls']} כתובות URL.",
         "- `robots.txt`: קיים בריפו.",
         "",
@@ -270,6 +280,7 @@ def generate_markdown_report(results: dict[str, Any]) -> str:
             "",
             "## הערות",
             "",
+            "- עמודי `noindex` והפניות לא נדרשים לכלול את כל תגיות ה-SEO ולכן אינם נספרים כממצאים לתיקון.",
             "- זוהי בדיקת SEO טכנית בסיסית בלבד, ללא בדיקת ביצועים/Core Web Vitals.",
             "- כברירת מחדל הסקריפט לא מתקן אוטומטית קבצים; הוא רק מדווח כדי למנוע שינויים לא בטוחים בתוכן.",
             "- כדי לנתח אינדוקס בפועל והופעה בתוצאות חיפוש, יש להשלים בדיקה ב-Google Search Console.",
