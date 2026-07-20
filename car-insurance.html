@@ -51,9 +51,51 @@ gtag('config', 'G-EM8SYH542C');
       "areaServed": [{"@type": "Country", "name": "Israel"}, {"@type": "City", "name": "Herzliya"}],
       "url": "https://vainzof.co.il/car-insurance.html"
     }
-  ]
-}
-</script>
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "מה ההבדל בין ביטוח חובה, צד ג' ומקיף?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ביטוח חובה מכסה נזקי גוף לפי החוק. צד ג' מכסה נזקים שגרמתם לרכוש של אחרים. ביטוח מקיף כולל בדרך כלל גם נזקים לרכב שלכם, גניבה, אש ואירועים נוספים לפי תנאי הפוליסה."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "מה משפיע על מחיר ביטוח רכב?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "גיל הנהגים, ותק רישיון, היסטוריית תביעות, סוג הרכב, שווי הרכב, מקום מגורים, היקף נסועה ותנאי ההשתתפות העצמית בפוליסה."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "איך משווים נכון בין הצעות ביטוח?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "משווים הצעות זהות בתנאים, לא רק במחיר: אותם נהגים, אותו שימוש ברכב, אותה השתתפות עצמית ואותן הרחבות. בנוסף בודקים את איכות השירות בתביעה."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .quick-lead-card { background:#fff; border:1px solid #dbe5f2; border-radius:1.5rem; box-shadow:0 16px 40px rgba(15,23,42,.06); padding:clamp(1.25rem,3vw,2rem); }
+    .quick-lead-grid { display:grid; gap:.9rem; }
+    .quick-lead-field label { display:block; font-weight:800; color:#0f172a; margin-bottom:.35rem; }
+    .quick-lead-field input, .quick-lead-field select { width:100%; box-sizing:border-box; padding:.9rem 1rem; border:1px solid #cbd5e1; border-radius:1rem; background:#f8fafc; color:#0f172a; font-weight:700; text-align:right; }
+    .quick-lead-note { color:#64748b; font-size:.95rem; margin:.35rem 0 0; }
+    .quick-whatsapp { display:inline-flex; justify-content:center; align-items:center; min-height:50px; padding:12px 24px; border-radius:12px; background:linear-gradient(135deg,#19a866 0%,#128c7e 100%); color:#fff; font-weight:900; text-decoration:none; box-shadow:0 10px 22px rgba(22,163,74,.28); }
+    @media (min-width:768px){ .quick-lead-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.quick-lead-field--full{grid-column:1/-1;} }
+  </style>
 </head>
 <body class="about-page">
 <a class="sr-focusable" href="#main">דלג לתוכן המרכזי</a>
@@ -81,10 +123,41 @@ gtag('config', 'G-EM8SYH542C');
         <h1 class="art-h1">השוואת ביטוח רכב שיכולה לחסוך לכם כסף</h1>
         <p class="art-lead">אני מביא את ההצעות הכי משתלמות לביטוח רכב ממספר חברות, כדי שתוכלו לבחור נכון בין ביטוח חובה, ביטוח מקיף לרכב וביטוח צד ג'.</p>
       </div>
-      <div class="art-meta">
-        <span>יובל ויינזוף</span>
-        <span class="art-meta-dot">·</span>
-        <time datetime="2026-07">יולי 2026</time>
+    </section>
+
+
+
+    <section class="py-12 bg-slate-50 text-right">
+      <div class="container-clean max-w-5xl">
+        <div class="quick-lead-card">
+          <h2 class="text-3xl md:text-4xl font-black text-blue-950 mb-3">בדיקה קצרה להצעת חידוש ביטוח רכב</h2>
+          <p class="text-lg text-slate-700 mb-6">מלאו את הפרטים, צרפו את הצעת החידוש שקיבלתם ושלחו ליובל ב-WhatsApp להשוואה לפני אישור.</p>
+          <form id="carQuickLead" class="quick-lead-grid">
+            <div class="quick-lead-field"><label for="carName">שם</label><input id="carName" name="name" autocomplete="name" required></div>
+            <div class="quick-lead-field"><label for="carPhone">טלפון</label><input id="carPhone" name="phone" type="tel" autocomplete="tel" required></div>
+            <div class="quick-lead-field"><label for="carType">סוג רכב</label><input id="carType" name="carType" required></div>
+            <div class="quick-lead-field"><label for="carYear">שנת רכב</label><input id="carYear" name="carYear" inputmode="numeric" required></div>
+            <div class="quick-lead-field"><label for="youngestDriverAge">גיל הנהג הצעיר ביותר</label><input id="youngestDriverAge" name="youngestDriverAge" inputmode="numeric" required></div>
+            <div class="quick-lead-field"><label for="carInsuranceEnd">תאריך סיום הביטוח</label><input id="carInsuranceEnd" name="insuranceEnd" type="date" required></div>
+            <div class="quick-lead-field quick-lead-field--full"><label for="carRenewalFile">העלאת הצעת החידוש</label><input id="carRenewalFile" name="renewalFile" type="file" accept="image/*,.pdf"><p class="quick-lead-note">אחרי הלחיצה על WhatsApp אפשר לצרף את הקובץ בשיחה.</p></div>
+            <div class="quick-lead-field--full"><a id="carWhatsappLead" class="quick-whatsapp" href="https://wa.me/972524520222?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%99%D7%95%D7%91%D7%9C%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%91%D7%93%D7%95%D7%A7%20%D7%94%D7%A6%D7%A2%D7%94%20%D7%9C%D7%91%D7%99%D7%98%D7%95%D7%97%20%D7%A8%D7%9B%D7%91.%20%D7%9E%D7%A6%D7%95%D7%A8%D7%A4%D7%AA%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%94%D7%97%D7%99%D7%93%D7%95%D7%A9%20%D7%A9%D7%A7%D7%99%D7%91%D7%9C%D7%AA%D7%99." target="_blank" rel="noopener">שליחה ב-WhatsApp</a></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-white text-right">
+      <div class="container-clean max-w-5xl">
+        <h2 class="text-3xl md:text-4xl font-black text-blue-950 mb-6">הסבר בסיסי על הכיסויים</h2>
+        <p class="text-lg text-slate-700 leading-relaxed mb-4">
+          ביטוח רכב בנוי משלוש שכבות עיקריות. <strong>ביטוח חובה</strong> הוא כיסוי חובה לפי חוק ומתייחס לנזקי גוף.
+          <strong>ביטוח צד ג'</strong> נועד לכסות נזק שגרמתם לרכב או לרכוש של אדם אחר. <strong>ביטוח מקיף</strong> מוסיף בדרך כלל
+          כיסוי לנזקים לרכב שלכם, גניבה, אש ואירועי טבע בכפוף לתנאי הפוליסה.
+        </p>
+        <p class="text-lg text-slate-700 leading-relaxed">
+          כשבוחרים ביטוח, חשוב להבין לא רק "מה כתוב בכותרת", אלא גם מה גבולות הכיסוי, אילו חריגים קיימים,
+          ומה מקבלים בפועל בשעת תביעה.
+        </p>
       </div>
       <div class="art-body">
         <div class="art-highlight"><strong>מחפשים הצעת מחיר לביטוח רכב?</strong> במקום לפנות חברה-חברה, אפשר לבצע השוואת ביטוח רכב מסודרת ולקבל כמה הצעות על בסיס אותם נתונים: סוג רכב, נהגים, עבר ביטוחי וסוג הכיסוי המבוקש.</div>
@@ -106,33 +179,39 @@ gtag('config', 'G-EM8SYH542C');
         <p>בחידוש ביטוח רכב רבים מאשרים את ההצעה הקיימת מתוך הרגל. זו בדיוק הנקודה שבה כדאי לבקש הצעות ממספר חברות, לבדוק אם השתנה עבר התביעות, אם נוספו נהגים, ואם שווי הרכב מצדיק מקיף מלא או שאולי ביטוח צד ג' מספיק.</p>
         <p>גם אם קיבלתם הצעת חידוש שנראית סבירה, השוואה מקצועית יכולה לחשוף פערים בפרמיה או בתנאים. לפעמים החיסכון מגיע מהמחיר, ולפעמים מהתאמת כיסוי שמונעת תשלום על הרחבות שלא רלוונטיות לכם.</p>
 
-        <h2>סוכן ביטוח רכב בהרצליה ובכל הארץ</h2>
-        <p>כסוכן ביטוח רכב בהרצליה, אני מלווה לקוחות מהרצליה ומכל הארץ בבדיקת הצעות, השוואת תנאים ובחירת פוליסה שמתאימה לרכב, לנהגים ולתקציב. המטרה היא לא רק למצוא ביטוח זול, אלא למצוא ביטוח נכון במחיר משתלם.</p>
-
-        <h2>איזה מידע צריך כדי לקבל הצעה?</h2>
-        <ol>
-          <li>מספר רכב או פרטי הדגם והשנה.</li>
-          <li>גילאי הנהגים, ותק נהיגה והאם יש נהג צעיר או נהג חדש.</li>
-          <li>עבר ביטוחי ותביעות בשלוש השנים האחרונות.</li>
-          <li>סוג הכיסוי הרצוי: חובה בלבד, חובה וצד ג', או חובה ומקיף.</li>
-          <li>העדפות חשובות: השתתפות עצמית נמוכה, מוסך הסדר, רכב חלופי, גרירה ושמשות.</li>
-        </ol>
-
-        <div class="art-cta">
-          <h2>רוצים לקבל הצעת מחיר לביטוח רכב?</h2>
-          <p>שלחו לי את פרטי הרכב והנהגים, ואבדוק עבורכם הצעות ממספר חברות כדי למצוא כיסוי משתלם ומתאים.</p>
-          <div class="art-cta-btns">
-            <a class="btn-wa" href="https://wa.me/972524520222?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%91%D7%99%D7%98%D7%95%D7%97%20%D7%A8%D7%9B%D7%91" rel="noopener noreferrer" target="_blank">קבלת הצעה בוואטסאפ</a>
-            <a class="btn-call" href="tel:+972524520222">שיחה: 052-452-0222</a>
-          </div>
-        </div>
+    <section class="py-16 bg-white text-right">
+      <div class="container-clean max-w-5xl">
+        <h2 class="text-3xl font-black text-blue-950 mb-4">רוצים לבדוק את הכיסוי הקיים ולשלם פחות?</h2>
+        <p class="text-lg text-slate-700 mb-6">
+          אפשר להשאיר פרטים ולקבל בדיקה מסודרת של הפוליסה הקיימת, כולל התאמת כיסוי והרשימת סעיפים שכדאי להשוות לפני חידוש.
+        </p>
+        <a class="quick-whatsapp" href="#carQuickLead">למילוי טופס קצר ושליחה ב-WhatsApp</a>
       </div>
-    </article>
-  </div>
-</main>
-<script src="js/site-header.js"></script>
-<script src="js/site-footer.js"></script>
-<script src="js/whatsapp-float.js"></script>
-<script src="js/contact-wa.js"></script>
+    </section>
+  </main>
+
+  <script src="js/site-header.js"></script>
+  <script src="js/site-footer.js"></script>
+  <script>
+    const carForm = document.getElementById('carQuickLead');
+    const carWhatsapp = document.getElementById('carWhatsappLead');
+    const buildCarMessage = () => {
+      const data = new FormData(carForm);
+      const lines = [
+        'שלום יובל, אני רוצה לבדוק הצעה לביטוח רכב. מצורפת הצעת החידוש שקיבלתי.',
+        '',
+        `שם: ${data.get('name') || ''}`,
+        `טלפון: ${data.get('phone') || ''}`,
+        `סוג רכב: ${data.get('carType') || ''}`,
+        `שנת רכב: ${data.get('carYear') || ''}`,
+        `גיל הנהג הצעיר ביותר: ${data.get('youngestDriverAge') || ''}`,
+        `תאריך סיום הביטוח: ${data.get('insuranceEnd') || ''}`
+      ];
+      carWhatsapp.href = `https://wa.me/972524520222?text=${encodeURIComponent(lines.join('\n'))}`;
+    };
+    carForm.addEventListener('input', buildCarMessage);
+    carForm.addEventListener('change', buildCarMessage);
+    buildCarMessage();
+  </script>
 </body>
 </html>
