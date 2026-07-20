@@ -94,6 +94,16 @@ gtag('config', 'G-EM8SYH542C');
     .quick-lead-field input, .quick-lead-field select { width:100%; box-sizing:border-box; padding:.9rem 1rem; border:1px solid #cbd5e1; border-radius:1rem; background:#f8fafc; color:#0f172a; font-weight:700; text-align:right; }
     .quick-lead-note { color:#64748b; font-size:.95rem; margin:.35rem 0 0; }
     .quick-whatsapp { display:inline-flex; justify-content:center; align-items:center; min-height:50px; padding:12px 24px; border-radius:12px; background:linear-gradient(135deg,#19a866 0%,#128c7e 100%); color:#fff; font-weight:900; text-decoration:none; box-shadow:0 10px 22px rgba(22,163,74,.28); }
+    .quick-secondary { display:inline-flex; justify-content:center; align-items:center; min-height:50px; padding:12px 24px; border-radius:12px; border:1px solid #bfdbfe; background:#eff6ff; color:#1e3a8a; font-weight:900; text-decoration:none; }
+    .car-hero-actions { display:flex; flex-wrap:wrap; gap:.75rem; margin:1.25rem 0; }
+    .car-step-list { counter-reset:car-step; list-style:none; padding:0; margin:0; display:grid; gap:.75rem; }
+    .car-step-list li { counter-increment:car-step; display:flex; gap:.75rem; align-items:flex-start; padding:1rem; border:1px solid #e2e8f0; border-radius:1rem; background:#f8fafc; }
+    .car-step-list li::before { content:counter(car-step); flex:0 0 2rem; width:2rem; height:2rem; display:inline-flex; align-items:center; justify-content:center; border-radius:999px; background:#1d4ed8; color:#fff; font-weight:900; }
+    .car-factor-grid { display:grid; gap:.75rem; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); padding:0; margin:0; list-style:none; }
+    .car-factor-grid li { padding:.85rem 1rem; border-radius:1rem; background:#eff6ff; color:#0f172a; font-weight:800; }
+    .car-cover-grid { display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); }
+    .car-cover-card { padding:1.1rem; border:1px solid #dbe5f2; border-radius:1.25rem; background:#fff; box-shadow:0 12px 30px rgba(15,23,42,.05); }
+    .car-cover-card h3 { margin:.1rem 0 .6rem; color:#172554; font-size:1.35rem; }
     @media (min-width:768px){ .quick-lead-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.quick-lead-field--full{grid-column:1/-1;} }
   </style>
 </head>
@@ -121,6 +131,12 @@ gtag('config', 'G-EM8SYH542C');
       <div class="art-hero">
         <div class="art-eyebrow">ביטוח רכב • השוואת מחירים</div>
         <h1 class="art-h1">השוואת ביטוח רכב שיכולה לחסוך לכם כסף</h1>
+        <p class="art-lead">קיבלתם הצעה לחידוש ביטוח הרכב? שלחו אותה בוואטסאפ וקבלו בדיקה ללא התחייבות.</p>
+        <div class="car-hero-actions" aria-label="פעולות מהירות לביטוח רכב">
+          <a class="quick-whatsapp" href="https://wa.me/972524520222?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%99%D7%95%D7%91%D7%9C%2C%20%D7%A7%D7%99%D7%91%D7%9C%D7%AA%D7%99%20%D7%94%D7%A6%D7%A2%D7%94%20%D7%9C%D7%97%D7%99%D7%93%D7%95%D7%A9%20%D7%91%D7%99%D7%98%D7%95%D7%97%20%D7%A8%D7%9B%D7%91%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%99%D7%A7%D7%94%20%D7%9C%D7%9C%D7%90%20%D7%94%D7%AA%D7%97%D7%99%D7%99%D7%91%D7%95%D7%AA." target="_blank" rel="noopener">שליחת ההצעה בוואטסאפ</a>
+          <a class="quick-secondary" href="#carQuickLead">בקשת הצעת מחיר</a>
+          <a class="quick-secondary" href="tel:0524520222">שיחה עם יובל</a>
+        </div>
         <p class="art-lead">אני מביא את ההצעות הכי משתלמות לביטוח רכב ממספר חברות, כדי שתוכלו לבחור נכון בין ביטוח חובה, ביטוח מקיף לרכב וביטוח צד ג'.</p>
       </div>
     </section>
@@ -146,17 +162,39 @@ gtag('config', 'G-EM8SYH542C');
       </div>
     </section>
 
+
+    <section class="py-16 bg-white text-right">
+      <div class="container-clean max-w-5xl">
+        <h2 class="text-3xl md:text-4xl font-black text-blue-950 mb-6">איך הבדיקה עובדת?</h2>
+        <ol class="car-step-list">
+          <li>שולחים את הצעת החידוש שקיבלתם מחברת הביטוח או מהסוכן הנוכחי.</li>
+          <li>מעבירים פרטי רכב ונהגים כדי שההשוואה תהיה על בסיס נתונים נכונים.</li>
+          <li>יובל בודק אפשרויות מול החברות שאיתן הוא עובד.</li>
+          <li>מקבלים הצעה מסודרת ומשווים מחיר, השתתפות עצמית וכיסויים.</li>
+          <li>מחליטים אם לעבור או להישאר, בלי התחייבות רק בגלל שבוצעה בדיקה.</li>
+        </ol>
+      </div>
+    </section>
+
     <section class="py-16 md:py-20 bg-white text-right">
       <div class="container-clean max-w-5xl">
-        <h2 class="text-3xl md:text-4xl font-black text-blue-950 mb-6">הסבר בסיסי על הכיסויים</h2>
-        <p class="text-lg text-slate-700 leading-relaxed mb-4">
-          ביטוח רכב בנוי משלוש שכבות עיקריות. <strong>ביטוח חובה</strong> הוא כיסוי חובה לפי חוק ומתייחס לנזקי גוף.
-          <strong>ביטוח צד ג'</strong> נועד לכסות נזק שגרמתם לרכב או לרכוש של אדם אחר. <strong>ביטוח מקיף</strong> מוסיף בדרך כלל
-          כיסוי לנזקים לרכב שלכם, גניבה, אש ואירועי טבע בכפוף לתנאי הפוליסה.
-        </p>
-        <p class="text-lg text-slate-700 leading-relaxed">
-          כשבוחרים ביטוח, חשוב להבין לא רק "מה כתוב בכותרת", אלא גם מה גבולות הכיסוי, אילו חריגים קיימים,
-          ומה מקבלים בפועל בשעת תביעה.
+        <h2 class="text-3xl md:text-4xl font-black text-blue-950 mb-6">ביטוח חובה, מקיף וצד ג' - מה ההבדל?</h2>
+        <div class="car-cover-grid">
+          <div class="car-cover-card">
+            <h3>ביטוח חובה</h3>
+            <p class="text-lg text-slate-700 leading-relaxed">כיסוי שחייב להיות בתוקף לכל רכב לפי החוק. הוא מיועד לנזקי גוף לנהג, לנוסעים ולהולכי רגל, ולא מחליף כיסוי לנזקי רכוש.</p>
+          </div>
+          <div class="car-cover-card">
+            <h3>ביטוח צד ג'</h3>
+            <p class="text-lg text-slate-700 leading-relaxed">כיסוי לנזקי רכוש שגרמתם לאחרים, למשל לרכב אחר, גדר או תשתית. הוא לא נועד לכסות את הנזק לרכב שלכם עצמו.</p>
+          </div>
+          <div class="car-cover-card">
+            <h3>ביטוח מקיף</h3>
+            <p class="text-lg text-slate-700 leading-relaxed">כיסוי רחב יותר הכולל בדרך כלל גם נזק לרכב שלכם, גניבה, אש ואירועים נוספים, בהתאם לתנאי הפוליסה וההרחבות שנבחרו.</p>
+          </div>
+        </div>
+        <p class="text-lg text-slate-700 leading-relaxed mt-6">
+          ביטוח חובה, מקיף וצד ג' הם מוצרים שונים, ולכן חשוב להשוות כל אחד מהם בנפרד ולהבין מה בדיוק כלול ומה לא.
         </p>
       </div>
       <div class="art-body">
@@ -175,6 +213,21 @@ gtag('config', 'G-EM8SYH542C');
           <li>שירותי דרך וגרירה, שמשות, רכב חלופי, הגנה משפטית ותנאים לנהג צעיר או נהג חדש.</li>
         </ul>
 
+
+        <h2>אילו נתונים משפיעים על מחיר ביטוח הרכב?</h2>
+        <ul class="car-factor-grid">
+          <li>גיל הנהגים</li>
+          <li>נהג צעיר או חדש</li>
+          <li>עבר תביעות</li>
+          <li>סוג ושנת הרכב</li>
+          <li>אזור מגורים</li>
+          <li>מספר הנהגים</li>
+          <li>מערכות בטיחות</li>
+          <li>סוג הכיסוי</li>
+        </ul>
+
+        <h2>המחיר הוא לא הדבר היחיד</h2>
+        <p>ביטוח רכב זול יכול להיות החלטה טובה רק אם התנאים מתאימים לצורך שלכם. לצד המחיר צריך להשוות גם רכב חלופי, שירותי גרירה, כיסוי שמשות, מוסכי הסדר, גובה ההשתתפות העצמית וגבולות האחריות בפוליסה.</p>
         <h2>חידוש ביטוח רכב: הזמן הכי טוב לבדוק מחדש</h2>
         <p>בחידוש ביטוח רכב רבים מאשרים את ההצעה הקיימת מתוך הרגל. זו בדיוק הנקודה שבה כדאי לבקש הצעות ממספר חברות, לבדוק אם השתנה עבר התביעות, אם נוספו נהגים, ואם שווי הרכב מצדיק מקיף מלא או שאולי ביטוח צד ג' מספיק.</p>
         <p>גם אם קיבלתם הצעת חידוש שנראית סבירה, השוואה מקצועית יכולה לחשוף פערים בפרמיה או בתנאים. לפעמים החיסכון מגיע מהמחיר, ולפעמים מהתאמת כיסוי שמונעת תשלום על הרחבות שלא רלוונטיות לכם.</p>
