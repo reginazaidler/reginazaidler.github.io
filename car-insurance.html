@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="he" dir="rtl">
 <head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EM8SYH542C"></script>
@@ -86,6 +86,16 @@ gtag('config', 'G-EM8SYH542C');
     ]
   }
   </script>
+
+  <style>
+    .quick-lead-card { background:#fff; border:1px solid #dbe5f2; border-radius:1.5rem; box-shadow:0 16px 40px rgba(15,23,42,.06); padding:clamp(1.25rem,3vw,2rem); }
+    .quick-lead-grid { display:grid; gap:.9rem; }
+    .quick-lead-field label { display:block; font-weight:800; color:#0f172a; margin-bottom:.35rem; }
+    .quick-lead-field input, .quick-lead-field select { width:100%; box-sizing:border-box; padding:.9rem 1rem; border:1px solid #cbd5e1; border-radius:1rem; background:#f8fafc; color:#0f172a; font-weight:700; text-align:right; }
+    .quick-lead-note { color:#64748b; font-size:.95rem; margin:.35rem 0 0; }
+    .quick-whatsapp { display:inline-flex; justify-content:center; align-items:center; min-height:50px; padding:12px 24px; border-radius:12px; background:linear-gradient(135deg,#19a866 0%,#128c7e 100%); color:#fff; font-weight:900; text-decoration:none; box-shadow:0 10px 22px rgba(22,163,74,.28); }
+    @media (min-width:768px){ .quick-lead-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.quick-lead-field--full{grid-column:1/-1;} }
+  </style>
 </head>
 <body>
   <a href="#main" class="sr-focusable">דלג לתוכן המרכזי</a>
@@ -122,6 +132,27 @@ gtag('config', 'G-EM8SYH542C');
             ביטוח רכב נועד להגן עליכם מפני הוצאה כלכלית גבוהה במקרה של תאונה, גניבה או נזק לרכוש של אחרים.
             כדי לבחור נכון, צריך להבין מה באמת כולל כל סוג כיסוי, מה גובה ההשתתפות העצמית ואיך להשוות בין הצעות על אותם תנאים.
           </p>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="py-12 bg-slate-50 text-right">
+      <div class="container-clean max-w-5xl">
+        <div class="quick-lead-card">
+          <h2 class="text-3xl md:text-4xl font-black text-blue-950 mb-3">בדיקה קצרה להצעת חידוש ביטוח רכב</h2>
+          <p class="text-lg text-slate-700 mb-6">מלאו את הפרטים, צרפו את הצעת החידוש שקיבלתם ושלחו ליובל ב-WhatsApp להשוואה לפני אישור.</p>
+          <form id="carQuickLead" class="quick-lead-grid">
+            <div class="quick-lead-field"><label for="carName">שם</label><input id="carName" name="name" autocomplete="name" required></div>
+            <div class="quick-lead-field"><label for="carPhone">טלפון</label><input id="carPhone" name="phone" type="tel" autocomplete="tel" required></div>
+            <div class="quick-lead-field"><label for="carType">סוג רכב</label><input id="carType" name="carType" required></div>
+            <div class="quick-lead-field"><label for="carYear">שנת רכב</label><input id="carYear" name="carYear" inputmode="numeric" required></div>
+            <div class="quick-lead-field"><label for="youngestDriverAge">גיל הנהג הצעיר ביותר</label><input id="youngestDriverAge" name="youngestDriverAge" inputmode="numeric" required></div>
+            <div class="quick-lead-field"><label for="carInsuranceEnd">תאריך סיום הביטוח</label><input id="carInsuranceEnd" name="insuranceEnd" type="date" required></div>
+            <div class="quick-lead-field quick-lead-field--full"><label for="carRenewalFile">העלאת הצעת החידוש</label><input id="carRenewalFile" name="renewalFile" type="file" accept="image/*,.pdf"><p class="quick-lead-note">אחרי הלחיצה על WhatsApp אפשר לצרף את הקובץ בשיחה.</p></div>
+            <div class="quick-lead-field--full"><a id="carWhatsappLead" class="quick-whatsapp" href="https://wa.me/972524520222?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%99%D7%95%D7%91%D7%9C%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%91%D7%93%D7%95%D7%A7%20%D7%94%D7%A6%D7%A2%D7%94%20%D7%9C%D7%91%D7%99%D7%98%D7%95%D7%97%20%D7%A8%D7%9B%D7%91.%20%D7%9E%D7%A6%D7%95%D7%A8%D7%A4%D7%AA%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%94%D7%97%D7%99%D7%93%D7%95%D7%A9%20%D7%A9%D7%A7%D7%99%D7%91%D7%9C%D7%AA%D7%99." target="_blank" rel="noopener">שליחה ב-WhatsApp</a></div>
+          </form>
         </div>
       </div>
     </section>
@@ -189,12 +220,33 @@ gtag('config', 'G-EM8SYH542C');
         <p class="text-lg text-slate-700 mb-6">
           אפשר להשאיר פרטים ולקבל בדיקה מסודרת של הפוליסה הקיימת, כולל התאמת כיסוי והרשימת סעיפים שכדאי להשוות לפני חידוש.
         </p>
-        <button id="openContactBottom" class="site-cta">לתיאום בדיקה</button>
+        <a class="quick-whatsapp" href="#carQuickLead">למילוי טופס קצר ושליחה ב-WhatsApp</a>
       </div>
     </section>
   </main>
 
   <script src="js/site-header.js"></script>
   <script src="js/site-footer.js"></script>
+  <script>
+    const carForm = document.getElementById('carQuickLead');
+    const carWhatsapp = document.getElementById('carWhatsappLead');
+    const buildCarMessage = () => {
+      const data = new FormData(carForm);
+      const lines = [
+        'שלום יובל, אני רוצה לבדוק הצעה לביטוח רכב. מצורפת הצעת החידוש שקיבלתי.',
+        '',
+        `שם: ${data.get('name') || ''}`,
+        `טלפון: ${data.get('phone') || ''}`,
+        `סוג רכב: ${data.get('carType') || ''}`,
+        `שנת רכב: ${data.get('carYear') || ''}`,
+        `גיל הנהג הצעיר ביותר: ${data.get('youngestDriverAge') || ''}`,
+        `תאריך סיום הביטוח: ${data.get('insuranceEnd') || ''}`
+      ];
+      carWhatsapp.href = `https://wa.me/972524520222?text=${encodeURIComponent(lines.join('\n'))}`;
+    };
+    carForm.addEventListener('input', buildCarMessage);
+    carForm.addEventListener('change', buildCarMessage);
+    buildCarMessage();
+  </script>
 </body>
 </html>
