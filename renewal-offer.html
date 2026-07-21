@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>בדיקת הצעת חידוש ביטוח רכב או דירה | יובל ויינזוף</title>
+    <meta name="description" content="דף שיתוף ללקוחות: קיבלתם הצעה לחידוש ביטוח רכב או דירה? שלחו לי את ההצעה ואבדוק אם אפשר להשיג מחיר טוב יותר בלי להתפשר על הכיסוי.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://vainzof.co.il/renewal-offer.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="קיבלתם הצעה לחידוש ביטוח רכב או דירה?">
+    <meta property="og:description" content="שלחו לי את ההצעה ואבדוק אם אפשר להשיג לכם מחיר טוב יותר, בלי להתפשר על הכיסוי.">
+    <meta property="og:url" content="https://vainzof.co.il/renewal-offer.html">
+    <meta property="og:image" content="https://vainzof.co.il/assets/yuval.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700;800;900&display=swap">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="client-offer-page">
+    <main class="client-offer-shell" aria-labelledby="client-offer-title">
+        <section class="client-offer-preview" aria-label="עיצוב מוכן לשליחה ללקוחות או להעלאה לאינסטגרם">
+            <div class="client-offer-card" id="clientOfferCard">
+                <div class="client-offer-card__brand">
+                    <img src="assets/logo.png" alt="יובל ויינזוף - לוגו" width="260" height="80">
+                    <span>בדיקת הצעת חידוש</span>
+                </div>
+
+                <div class="client-offer-card__body">
+                    <p class="client-offer-card__kicker">ביטוח רכב או דירה</p>
+                    <h1 id="client-offer-title">קיבלתם הצעה לחידוש?</h1>
+                    <p class="client-offer-card__warning">אל תמהרו לאשר אותה.</p>
+                    <p class="client-offer-card__text">שלחו לי את ההצעה ואני אבדוק אם אפשר להשיג לכם מחיר טוב יותר, בלי להתפשר על הכיסוי.</p>
+                    <p class="client-offer-card__honest">לא מבטיח סיסמאות. בודק, משווה ומביא את האפשרות המשתלמת ביותר שאמצא.</p>
+                </div>
+
+                <div class="client-offer-card__footer">
+                    <div>
+                        <strong>יובל ויינזוף</strong>
+                        <span>סוכן ביטוח ופנסיה</span>
+                    </div>
+                    <a href="https://wa.me/972524520222?text=%D7%94%D7%99%D7%99%20%D7%99%D7%95%D7%91%D7%9C%2C%20%D7%A7%D7%99%D7%91%D7%9C%D7%AA%D7%99%20%D7%94%D7%A6%D7%A2%D7%94%20%D7%9C%D7%97%D7%99%D7%93%D7%95%D7%A9%20%D7%91%D7%99%D7%98%D7%95%D7%97%20%D7%A8%D7%9B%D7%91%20%D7%90%D7%95%20%D7%93%D7%99%D7%A8%D7%94%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%99%D7%A7%D7%94" target="_blank" rel="noopener noreferrer">052-4520222</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="client-offer-actions" aria-label="פעולות לדף השיווקי">
+            <p>דף נפרד לשיתוף עם לקוחות. להעלאה לאינסטגרם: לחצו על הורדת תמונה ותקבלו קובץ PNG ביחס 4:5.</p>
+            <div class="client-offer-actions__buttons">
+                <button type="button" class="client-offer-button" id="downloadClientOffer">הורדת תמונה לאינסטגרם</button>
+                <button type="button" class="client-offer-button client-offer-button--secondary" onclick="window.print()">הדפסה / שמירה כ-PDF</button>
+                <a class="client-offer-button client-offer-button--whatsapp" href="https://wa.me/972524520222" target="_blank" rel="noopener noreferrer">פתיחה בוואטסאפ</a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+    (function () {
+        var downloadButton = document.getElementById('downloadClientOffer');
+        if (!downloadButton) return;
+
+        function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+            var words = text.split(' ');
+            var line = '';
+            var lines = [];
+
+            words.forEach(function (word) {
+                var testLine = line ? line + ' ' + word : word;
+                if (ctx.measureText(testLine).width > maxWidth && line) {
+                    lines.push(line);
+                    line = word;
+                } else {
+                    line = testLine;
+                }
+            });
+            if (line) lines.push(line);
+            lines.forEach(function (textLine, index) {
+                ctx.fillText(textLine, x, y + index * lineHeight);
+            });
+            return y + lines.length * lineHeight;
+        }
+
+        downloadButton.addEventListener('click', function () {
+            var canvas = document.createElement('canvas');
+            canvas.width = 1080;
+            canvas.height = 1350;
+            var ctx = canvas.getContext('2d');
+            ctx.direction = 'rtl';
+            ctx.textAlign = 'right';
+
+            var gradient = ctx.createLinearGradient(0, 0, 1080, 1350);
+            gradient.addColorStop(0, '#07152E');
+            gradient.addColorStop(0.62, '#0B1B3B');
+            gradient.addColorStop(1, '#153A7A');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 1080, 1350);
+
+            ctx.fillStyle = 'rgba(184, 145, 63, 0.22)';
+            ctx.beginPath();
+            ctx.arc(105, 120, 240, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.07)';
+            ctx.beginPath();
+            ctx.arc(1010, 1120, 360, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.fillStyle = '#B8913F';
+            ctx.fillRect(120, 120, 840, 10);
+
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = '900 54px Assistant, Arial, sans-serif';
+            ctx.fillText('יובל ויינזוף', 900, 210);
+            ctx.font = '800 32px Assistant, Arial, sans-serif';
+            ctx.fillStyle = 'rgba(255,255,255,0.78)';
+            ctx.fillText('סוכן ביטוח ופנסיה', 900, 260);
+
+            ctx.fillStyle = '#F8F2E6';
+            ctx.font = '900 42px Assistant, Arial, sans-serif';
+            ctx.fillText('ביטוח רכב או דירה', 900, 380);
+
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = '900 94px Assistant, Arial, sans-serif';
+            wrapText(ctx, 'קיבלתם הצעה לחידוש?', 900, 510, 780, 108);
+
+            ctx.fillStyle = '#B8913F';
+            ctx.font = '900 66px Assistant, Arial, sans-serif';
+            ctx.fillText('אל תמהרו לאשר אותה.', 900, 735);
+
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = '800 45px Assistant, Arial, sans-serif';
+            var nextY = wrapText(ctx, 'שלחו לי את ההצעה ואני אבדוק אם אפשר להשיג לכם מחיר טוב יותר, בלי להתפשר על הכיסוי.', 900, 850, 780, 62);
+
+            ctx.fillStyle = 'rgba(255,255,255,0.82)';
+            ctx.font = '700 34px Assistant, Arial, sans-serif';
+            wrapText(ctx, 'לא מבטיח סיסמאות. בודק, משווה ומביא את האפשרות המשתלמת ביותר שאמצא.', 900, nextY + 50, 780, 48);
+
+            ctx.fillStyle = '#B8913F';
+            ctx.roundRect(120, 1165, 840, 96, 26);
+            ctx.fill();
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = '900 42px Assistant, Arial, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('052-4520222  |  vainzof.co.il', 540, 1225);
+
+            var link = document.createElement('a');
+            link.download = 'vainzof-renewal-offer.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        });
+    }());
+    </script>
+</body>
+</html>
