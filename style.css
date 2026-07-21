@@ -1781,6 +1781,35 @@ html[lang="ru"] .home-hero__badge {
     font-weight: 800;
 }
 
+.hero-service-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 18px;
+}
+
+.hero-service-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 10px 14px;
+    border: 1px solid rgba(212, 175, 55, 0.55);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-service-links a:hover,
+.hero-service-links a:focus-visible {
+    transform: translateY(-2px);
+    background: rgba(212, 175, 55, 0.18);
+    border-color: var(--gold-brand);
+}
+
 .hero-actions {
     display: flex;
     flex-direction: column;
