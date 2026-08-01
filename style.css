@@ -9467,3 +9467,39 @@ select:focus-visible {
         box-shadow: none;
     }
 }
+
+/* Editorial depth added to short knowledge-base articles. */
+.editorial-expansion {
+  max-width: 52rem;
+  margin: 2.5rem auto 0;
+  padding: 2rem;
+  border: 1px solid #dbe4ee;
+  border-radius: 1.25rem;
+  background: #fff;
+  color: #334155;
+  line-height: 1.85;
+}
+.editorial-expansion h2 {
+  margin: 0 0 1.25rem;
+  color: var(--navy-main);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  line-height: 1.25;
+}
+.editorial-expansion h3 {
+  margin: 1.75rem 0 .5rem;
+  color: #172554;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+.editorial-expansion p { margin: 0; }
+.editorial-expansion .editorial-note {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+  color: #64748b;
+  font-size: .95rem;
+}
+@media (max-width: 640px) {
+  .editorial-expansion { padding: 1.25rem; }
+}
