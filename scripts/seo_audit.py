@@ -31,6 +31,7 @@ class PageAudit:
     has_ld_json: bool
     h1_count: int
     noindex: bool
+    url: str
 
 
 class SEOParser(HTMLParser):
@@ -39,6 +40,7 @@ class SEOParser(HTMLParser):
         self.has_title = False
         self.has_description = False
         self.has_canonical = False
+        self.canonical_url = ""
         self.has_og_image = False
         self.has_ld_json = False
         self.h1_count = 0
@@ -57,6 +59,7 @@ class SEOParser(HTMLParser):
             rel_values = rel_attr if isinstance(rel_attr, list) else str(rel_attr).split()
             if "canonical" in rel_values:
                 self.has_canonical = True
+                self.canonical_url = str(attrs_dict.get("href", "")).strip()
 
         if tag == "meta" and attrs_dict.get("property") == "og:image":
             self.has_og_image = True
@@ -76,7 +79,7 @@ class SEOParser(HTMLParser):
             self.has_title = True
 
 
-def audit_page(path: Path) -> PageAudit:
+def audit_page(path: Path, root: Path) -> PageAudit:
     parser = SEOParser()
     parser.feed(path.read_text(encoding="utf-8", errors="ignore"))
     return PageAudit(
@@ -88,6 +91,7 @@ def audit_page(path: Path) -> PageAudit:
         has_ld_json=parser.has_ld_json,
         h1_count=parser.h1_count,
         noindex=page_has_noindex(path),
+        url=parser.canonical_url or page_to_url(path, root),
     )
 
 
@@ -109,10 +113,12 @@ def extract_page_title(path: Path) -> str:
 def page_to_url(path: Path, root: Path) -> str:
     rel = path.relative_to(root)
     parts = rel.parts
+    if parts == ("index.html",):
+        return "https://vainzof.co.il/"
     if len(parts) == 1:
         return f"https://vainzof.co.il/{parts[0]}"
     elif len(parts) == 2 and parts[1] == "index.html":
-        return f"https://vainzof.co.il/{parts[0]}"
+        return f"https://vainzof.co.il/{parts[0]}/"
     return f"https://vainzof.co.il/{'/'.join(parts)}"
 
 
@@ -167,6 +173,13 @@ def count_sitemap_urls(path: Path) -> int:
     return len(re.findall(r"<loc>", xml))
 
 
+def extract_sitemap_urls(path: Path) -> set[str]:
+    if not path.exists():
+        return set()
+    xml = path.read_text(encoding="utf-8", errors="ignore")
+    return set(re.findall(r"<loc>\s*(.*?)\s*</loc>", xml))
+
+
 def bool_count(items: list[PageAudit], field: str) -> int:
     return sum(1 for item in items if getattr(item, field))
 
@@ -175,18 +188,29 @@ def build_results(audits: list[PageAudit]) -> dict[str, Any]:
     indexable_audits = [a for a in audits if not a.noindex]
     noindex_pages = [a.page for a in audits if a.noindex]
 
+    missing_title = [a.page for a in indexable_audits if not a.has_title]
     missing_description = [a.page for a in indexable_audits if not a.has_description]
     missing_canonical = [a.page for a in indexable_audits if not a.has_canonical]
     missing_og_image = [a.page for a in indexable_audits if not a.has_og_image]
     missing_ld_json = [a.page for a in indexable_audits if not a.has_ld_json]
     invalid_h1 = [{"page": a.page, "h1_count": a.h1_count} for a in indexable_audits if a.h1_count != 1]
+    sitemap_entries = extract_sitemap_urls(Path("sitemap.xml"))
+    indexable_urls = {a.url for a in indexable_audits if Path(a.page).name not in SKIP_PAGES}
+    noindex_urls = {a.url for a in audits if a.noindex}
+    missing_from_sitemap = sorted(indexable_urls - sitemap_entries)
+    # A noindex redirect/alias may point at the canonical URL of a separate,
+    # indexable page. Only flag sitemap entries that have no indexable owner.
+    nonindex_in_sitemap = sorted((sitemap_entries & noindex_urls) - indexable_urls)
 
     issues_total = (
-        len(missing_description)
+        len(missing_title)
+        + len(missing_description)
         + len(missing_canonical)
         + len(missing_og_image)
         + len(missing_ld_json)
         + len(invalid_h1)
+        + len(missing_from_sitemap)
+        + len(nonindex_in_sitemap)
     )
 
     sitemap_urls = count_sitemap_urls(Path("sitemap.xml")) if Path("sitemap.xml").exists() else 0
@@ -206,11 +230,14 @@ def build_results(audits: list[PageAudit]) -> dict[str, Any]:
             "h1_ok": len(indexable_audits) - len(invalid_h1),
         },
         "issues": {
+            "missing_title": missing_title,
             "missing_description": missing_description,
             "missing_canonical": missing_canonical,
             "missing_og_image": missing_og_image,
             "missing_ld_json": missing_ld_json,
             "invalid_h1": invalid_h1,
+            "missing_from_sitemap": missing_from_sitemap,
+            "nonindex_in_sitemap": nonindex_in_sitemap,
         },
         "issues_total": issues_total,
         "noindex_pages": noindex_pages,
@@ -263,6 +290,7 @@ def generate_markdown_report(results: dict[str, Any]) -> str:
         lines.append("")
 
     issues = results["issues"]
+    add_missing_block("עמודים ללא `title`", issues["missing_title"])
     add_missing_block("עמודים ללא `meta description`", issues["missing_description"])
     add_missing_block("עמודים ללא `canonical`", issues["missing_canonical"])
     add_missing_block("עמודים ללא `og:image`", issues["missing_og_image"])
@@ -274,6 +302,10 @@ def generate_markdown_report(results: dict[str, Any]) -> str:
             lines.append(f"- `{item['page']}` - נמצאו `{item['h1_count']}` תגיות `h1`.")
     else:
         lines.append("אין ממצאים.")
+
+    lines.append("")
+    add_missing_block("עמודים אינדקסביליים שחסרים ב-`sitemap.xml`", issues["missing_from_sitemap"])
+    add_missing_block("עמודי `noindex` שמופיעים ב-`sitemap.xml`", issues["nonindex_in_sitemap"])
 
     lines.extend(
         [
@@ -316,11 +348,14 @@ def email_summary_body(results: dict[str, Any], report_path: str) -> str:
             f"Report file: {report_path}",
             "",
             "Issues:",
+            f"- missing_title: {len(issues['missing_title'])}",
             f"- missing_description: {len(issues['missing_description'])}",
             f"- missing_canonical: {len(issues['missing_canonical'])}",
             f"- missing_og_image: {len(issues['missing_og_image'])}",
             f"- missing_ld_json: {len(issues['missing_ld_json'])}",
             f"- invalid_h1: {len(issues['invalid_h1'])}",
+            f"- missing_from_sitemap: {len(issues['missing_from_sitemap'])}",
+            f"- nonindex_in_sitemap: {len(issues['nonindex_in_sitemap'])}",
         ]
     )
 
@@ -430,7 +465,7 @@ def main() -> int:
     added_urls = sync_sitemap(Path("sitemap.xml"), pages, root, today)
     sync_llms_txt(Path("llms.txt"), added_urls, root)
 
-    audits = [audit_page(page) for page in pages]
+    audits = [audit_page(page, root) for page in pages]
     results = build_results(audits)
 
     markdown_report = generate_markdown_report(results)
