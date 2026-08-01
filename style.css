@@ -2849,10 +2849,12 @@ main section.bg-white .text-white h3 {
     justify-content: center;
     min-height: 50px;
     padding: 12px 20px;
+    background: transparent;
     border: 2px solid rgba(255, 255, 255, 0.24);
     color: #ffffff;
     border-radius: 999px;
     font-weight: 800;
+    cursor: pointer;
     text-decoration: none;
     transition: background-color 0.2s ease, border-color 0.2s ease;
 }
