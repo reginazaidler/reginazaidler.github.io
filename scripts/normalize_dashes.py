@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Normalize em dashes to simple hyphens (-) in tracked text files."""
+"""Normalize long dashes to simple hyphens (-) in tracked text files."""
 
 from __future__ import annotations
 
 import subprocess
 from pathlib import Path
 
-EM_DASH = "\u2014"
+LONG_DASHES = ("\u2013", "\u2014")
 HYPHEN = "-"
 
 # Keep this list small and explicit to avoid touching binary/generated artifacts.
@@ -43,11 +43,13 @@ def tracked_files() -> list[Path]:
 
 def normalize_file(path: Path) -> int:
     content = path.read_text(encoding="utf-8")
-    count = content.count(EM_DASH)
+    count = sum(content.count(dash) for dash in LONG_DASHES)
     if count == 0:
         return 0
 
-    updated = content.replace(EM_DASH, HYPHEN)
+    updated = content
+    for dash in LONG_DASHES:
+        updated = updated.replace(dash, HYPHEN)
     path.write_text(updated, encoding="utf-8")
     return count
 
@@ -67,7 +69,7 @@ def main() -> int:
         for file_path, replacements in touched_files:
             print(f"- {file_path} ({replacements} replacements)")
     else:
-        print("No em dashes found.")
+        print("No long dashes found.")
 
     print(f"Total replacements: {total_replacements}")
     return 0

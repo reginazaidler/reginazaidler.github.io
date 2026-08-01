@@ -220,7 +220,7 @@ def build_results(audits: list[PageAudit]) -> dict[str, Any]:
 
 def generate_markdown_report(results: dict[str, Any]) -> str:
     lines = [
-        "# סריקת SEO – vainzof.co.il",
+        "# סריקת SEO - vainzof.co.il",
         "",
         f"תאריך סריקה: {results['scan_date']}",
         "היקף: בדיקת SEO טכנית על קבצי HTML סטטיים בריפו (`*.html`) + בדיקת `robots.txt` ו-`sitemap.xml`.",
@@ -271,7 +271,7 @@ def generate_markdown_report(results: dict[str, Any]) -> str:
     lines.append("### עמודים עם חריגה בכמות `h1`")
     if issues["invalid_h1"]:
         for item in issues["invalid_h1"]:
-            lines.append(f"- `{item['page']}` – נמצאו `{item['h1_count']}` תגיות `h1`.")
+            lines.append(f"- `{item['page']}` - נמצאו `{item['h1_count']}` תגיות `h1`.")
     else:
         lines.append("אין ממצאים.")
 

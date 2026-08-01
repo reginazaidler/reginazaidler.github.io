@@ -1,4 +1,4 @@
-# SEO Automation – איך זה עובד
+# SEO Automation - איך זה עובד
 
 הקובץ `scripts/seo_audit.py` הוא **כלי בקרה** (Audit), לא כלי תיקון אוטומטי.
 
