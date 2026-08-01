@@ -194,12 +194,59 @@
     }
   }
 
+  function trackConversion(eventName, parameters) {
+    if (typeof window.gtag !== 'function') return;
+    window.gtag('event', eventName, Object.assign({
+      page_location: window.location.href,
+      page_title: document.title
+    }, parameters || {}));
+  }
+
+  function initConversionTracking() {
+    document.addEventListener('click', function (event) {
+      var link = event.target.closest('a[href]');
+      if (link) {
+        var href = link.getAttribute('href') || '';
+        if (href.indexOf('https://wa.me/') === 0 || href.indexOf('https://api.whatsapp.com/') === 0) {
+          trackConversion('whatsapp_click', {
+            link_url: link.href,
+            link_text: (link.textContent || '').trim(),
+            contact_method: 'whatsapp'
+          });
+        } else if (href.indexOf('tel:') === 0) {
+          trackConversion('phone_click', {
+            link_url: href,
+            link_text: (link.textContent || '').trim(),
+            contact_method: 'phone'
+          });
+        }
+      }
+
+      var contactButton = event.target.closest('[id^="openContact"], .mobile-contact-cta');
+      if (contactButton) {
+        trackConversion('contact_form_open', {
+          button_id: contactButton.id || 'mobile-contact-cta',
+          button_text: (contactButton.textContent || '').trim()
+        });
+      }
+    });
+
+    document.addEventListener('submit', function (event) {
+      var form = event.target;
+      if (!form || form.tagName !== 'FORM') return;
+      trackConversion('contact_form_submit', {
+        form_id: form.id || 'unnamed-form'
+      });
+    });
+  }
+
   function init() {
     initMobileMenu();
     initDesktopKnowledgeMenu();
     ensureMobileContactActions();
     initLanguageSwitcher();
     injectSkipLink();
+    initConversionTracking();
   }
 
   if (document.readyState === 'loading') {
