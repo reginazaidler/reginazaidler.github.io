@@ -1,5 +1,5 @@
 ﻿/* =========================================================
-   VAINZOF SITE - CLEANED STYLESHEET
+   VAINZOF SITE STYLESHEET
    ---------------------------------------------------------
    מטרת הקובץ:
    1. לשמור על עיצוב אחיד בין כל העמודים
@@ -8679,8 +8679,8 @@ body.pension-fees-page main {
 }
 
 /* =========================================================
-   BUG FIX: pension-hero dark section text visibility
-   In auto-generated articles, .pension-rich-text p { color: #334155 }
+   Pension hero dark section text visibility
+   Some article-level .pension-rich-text rules set p { color: #334155 }
    overrides .pension-hero p (same specificity, later source order),
    resulting in dark text on dark navy background.
    The !important here wins over the non-!important inline <style>.
