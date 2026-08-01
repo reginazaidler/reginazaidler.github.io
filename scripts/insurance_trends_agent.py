@@ -390,7 +390,7 @@ def build_report_markdown(payload: dict[str, Any]) -> str:
         [
             "## הערות",
             "- מקור הנתונים: Google Trends RSS (חינמי, ללא API בתשלום).",
-            "- מומלץ להריץ כל 3–6 שעות דרך cron.",
+            "- מומלץ להריץ כל 3-6 שעות דרך cron.",
         ]
     )
     return "\n".join(lines).strip() + "\n"

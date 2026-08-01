@@ -1,4 +1,4 @@
-# סריקת SEO – vainzof.co.il
+# סריקת SEO - vainzof.co.il
 
 תאריך סריקה: 2026-07-20
 היקף: בדיקת SEO טכנית על קבצי HTML סטטיים בריפו (`*.html`) + בדיקת `robots.txt` ו-`sitemap.xml`.
