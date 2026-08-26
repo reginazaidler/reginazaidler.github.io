@@ -62,7 +62,7 @@ def build_reports(
                 (
                     ""
                     if rate_limited
-                    else f"  - Recommended action: {analysis['recommended_action']}"
+                    else f"  - Recommended action: {analysis.get('recommended_action', 'improve_existing_page')}"
                 ),
                 (
                     ""
