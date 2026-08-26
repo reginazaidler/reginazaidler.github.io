@@ -1,5 +1,6 @@
 name: Run Insurance Trends Agent
 
+
 on:
   workflow_dispatch:
     inputs:
@@ -16,12 +17,15 @@ on:
         required: false
         default: 'false'
 
+
   schedule:
     # 3 times per week: Sun/Tue/Thu at 08:00 UTC (11:00 Israel time)
     - cron: '0 8 * * 0,2,4'
 
+
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 
 jobs:
   run-insurance-trends-agent:
@@ -29,16 +33,19 @@ jobs:
     permissions:
       contents: write
 
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+
 
       - name: Run insurance trends agent
         env:
@@ -77,6 +84,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
 
+
       - name: Generate SEO article with Claude
         if: >
           steps.check_trends.outputs.has_content == 'true' &&
@@ -84,9 +92,22 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          python3 scripts/generate_article.py \
+          set +e
+          output=$(python3 scripts/generate_article.py \
             --json-path reports/insurance-trends-report.json \
-            --output-dir .
+            --output-dir . 2>&1)
+          status=$?
+          set -e
+
+          echo "$output"
+
+          if [ "$status" -ne 0 ]; then
+            if echo "$output" | grep -Fq "No suitable trend found - skipping article generation."; then
+              echo "No suitable trend found. Continuing without an article."
+            else
+              exit "$status"
+            fi
+          fi
 
       - name: Commit and push new files
         run: |
@@ -122,6 +143,7 @@ jobs:
 
       - name: Sync sitemap and llms.txt
         run: python3 scripts/sync_indexes.py
+
 
       - name: Send email summary
         if: env.ARTICLE_SLUG != ''
