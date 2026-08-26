@@ -30,4 +30,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: 'chore: normalize em dashes in site content'
-          file_pattern: '*.html *.htm *.md *.txt *.xml *.csv *.json *.js *.css *.py *.yml *.yaml'
+          file_pattern: '.'
