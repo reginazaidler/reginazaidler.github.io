@@ -27,6 +27,23 @@ Run the local SEO audit script (optional):
 python scripts/seo_audit.py
 ```
 
+Validate that every page has an HTTPS canonical, the sitemap and robots sitemap
+reference contain only the HTTPS origin, and no page uses an insecure absolute
+internal link:
+
+```bash
+python3 scripts/check_https_seo.py
+```
+
+The deployment workflow runs this validation before publishing. The HTTP to
+HTTPS redirect itself is controlled by GitHub Pages rather than repository
+files: **Settings → Pages → Enforce HTTPS** must remain enabled. It can be
+verified from a network-enabled environment with:
+
+```bash
+python3 scripts/check_https_seo.py --check-live-redirect
+```
+
 
 ## Insurance Trends agent (free)
 
