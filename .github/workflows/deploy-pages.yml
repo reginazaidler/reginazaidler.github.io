@@ -29,6 +29,15 @@ jobs:
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
+      - name: Enforce HTTPS on GitHub Pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api \
+            --method PUT \
+            "repos/${GITHUB_REPOSITORY}/pages" \
+            -F https_enforced=true
+
       - name: Validate HTTPS SEO signals
         run: python3 scripts/check_https_seo.py
 
