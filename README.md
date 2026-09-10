@@ -35,10 +35,11 @@ internal link:
 python3 scripts/check_https_seo.py
 ```
 
-The deployment workflow runs this validation before publishing. The HTTP to
-HTTPS redirect itself is controlled by GitHub Pages rather than repository
-files: **Settings → Pages → Enforce HTTPS** must remain enabled. It can be
-verified from a network-enabled environment with:
+The deployment workflow both enables GitHub Pages' `https_enforced` setting via
+the GitHub API and runs this validation before publishing. This setting makes
+GitHub Pages perform the HTTP-to-HTTPS redirect at the hosting layer; an HTML
+canonical tag is not used as a substitute for that redirect. The live response
+can be verified from a network-enabled environment with:
 
 ```bash
 python3 scripts/check_https_seo.py --check-live-redirect
