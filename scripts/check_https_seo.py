@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import re
 import sys
+import time
 import urllib.error
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -82,29 +83,71 @@ def robots_errors(root: Path) -> list[str]:
     ]
 
 
-def live_redirect_errors() -> list[str]:
+def sitemap_urls(root: Path) -> list[str]:
+    """Return the canonical URLs advertised in the sitemap."""
+    document = ET.parse(root / "sitemap.xml")
+    namespace = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+    return [
+        (location.text or "").strip()
+        for location in document.findall("sm:url/sm:loc", namespace)
+        if (location.text or "").strip()
+    ]
+
+
+def live_redirect_errors(root: Path) -> list[str]:
+    """Verify hosting-layer redirects without allowing urllib to follow them."""
     class NoRedirect(urllib.request.HTTPRedirectHandler):
         def redirect_request(self, req, fp, code, msg, headers, newurl):  # type: ignore[no-untyped-def]
             return None
 
     errors: list[str] = []
     opener = urllib.request.build_opener(NoRedirect)
+    canonical_urls = sitemap_urls(root)
+    paths = sorted({urlparse(url).path or "/" for url in canonical_urls})
+
+    # Check every published path, not only the home page. This prevents a
+    # server/CDN rule that redirects `/` while still serving HTTP 200 elsewhere.
     for source in HTTP_ORIGINS:
-        request = urllib.request.Request(f"{source}/", method="HEAD")
-        try:
-            response = opener.open(request, timeout=15)
-            status = response.status
-            location = response.headers.get("Location", "")
-        except urllib.error.HTTPError as exc:
-            status = exc.code
-            location = exc.headers.get("Location", "")
-        except urllib.error.URLError as exc:
-            errors.append(f"{source}/: live check failed: {exc.reason}")
-            continue
+        for path in paths:
+            source_url = f"{source}{path}"
+            expected = f"{ORIGIN}{path}"
+            request = urllib.request.Request(source_url, method="GET")
+            try:
+                response = opener.open(request, timeout=15)
+                status = response.status
+                location = response.headers.get("Location", "")
+            except urllib.error.HTTPError as exc:
+                status = exc.code
+                location = exc.headers.get("Location", "")
+            except urllib.error.URLError as exc:
+                errors.append(f"{source_url}: live check failed: {exc.reason}")
+                continue
+            if status not in (301, 308):
+                errors.append(f"{source_url}: expected permanent redirect (301/308), got {status}")
+            elif location != expected:
+                errors.append(f"{source_url}: expected direct redirect to {expected}, got {location}")
+
+    # GitHub Pages' directory routing should permanently consolidate the
+    # extensionless spelling to the canonical trailing-slash URL in one hop.
+    pension_alias = f"{ORIGIN}/find-all-pension-funds"
+    pension_canonical = f"{pension_alias}/"
+    request = urllib.request.Request(pension_alias, method="GET")
+    try:
+        response = opener.open(request, timeout=15)
+        status = response.status
+        location = response.headers.get("Location", "")
+    except urllib.error.HTTPError as exc:
+        status = exc.code
+        location = exc.headers.get("Location", "")
+    except urllib.error.URLError as exc:
+        errors.append(f"{pension_alias}: live check failed: {exc.reason}")
+    else:
         if status not in (301, 308):
-            errors.append(f"{source}/: expected permanent redirect (301/308), got {status}")
-        elif urlparse(location).scheme != "https":
-            errors.append(f"{source}/: redirect is not HTTPS: {location}")
+            errors.append(f"{pension_alias}: expected permanent redirect (301/308), got {status}")
+        elif location != pension_canonical:
+            errors.append(
+                f"{pension_alias}: expected direct redirect to {pension_canonical}, got {location}"
+            )
     return errors
 
 
@@ -112,11 +155,21 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parent.parent)
     parser.add_argument("--check-live-redirect", action="store_true")
+    parser.add_argument("--live-attempts", type=int, default=1)
+    parser.add_argument("--live-retry-delay", type=float, default=10)
     args = parser.parse_args()
 
     errors = page_errors(args.root) + sitemap_errors(args.root) + robots_errors(args.root)
     if args.check_live_redirect:
-        errors += live_redirect_errors()
+        live_errors: list[str] = []
+        for attempt in range(1, max(args.live_attempts, 1) + 1):
+            live_errors = live_redirect_errors(args.root)
+            if not live_errors:
+                break
+            if attempt < args.live_attempts:
+                print(f"Live redirect check failed (attempt {attempt}); retrying...")
+                time.sleep(max(args.live_retry_delay, 0))
+        errors += live_errors
 
     if errors:
         print("HTTPS SEO validation failed:", file=sys.stderr)

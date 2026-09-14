@@ -35,11 +35,14 @@ internal link:
 python3 scripts/check_https_seo.py
 ```
 
-The deployment workflow both enables GitHub Pages' `https_enforced` setting via
-the GitHub API and runs this validation before publishing. This setting makes
-GitHub Pages perform the HTTP-to-HTTPS redirect at the hosting layer; an HTML
-canonical tag is not used as a substitute for that redirect. The live response
-can be verified from a network-enabled environment with:
+The deployment workflow enables GitHub Pages' `https_enforced` setting via the
+GitHub API, validates the source before publishing, and then checks the deployed
+site. The post-deployment check verifies every sitemap path returns one direct
+permanent HTTP-to-HTTPS redirect. It also verifies that
+`/find-all-pension-funds` permanently redirects in one hop to the canonical
+`/find-all-pension-funds/` URL. An HTML canonical tag is not used as a substitute
+for either hosting-layer redirect. The live responses can also be verified from
+a network-enabled environment with:
 
 ```bash
 python3 scripts/check_https_seo.py --check-live-redirect
