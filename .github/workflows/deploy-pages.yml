@@ -29,14 +29,15 @@ jobs:
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Enforce HTTPS on GitHub Pages
+      - name: Enable and confirm HTTPS enforcement
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh api \
+          response="$(gh api \
             --method PUT \
             "repos/${GITHUB_REPOSITORY}/pages" \
-            -F https_enforced=true
+            -F https_enforced=true)"
+          test "$(jq -r '.https_enforced' <<< "$response")" = "true"
 
       - name: Validate HTTPS SEO signals
         run: python3 scripts/check_https_seo.py
@@ -49,3 +50,10 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Verify deployed permanent redirects
+        run: >-
+          python3 scripts/check_https_seo.py
+          --check-live-redirect
+          --live-attempts 6
+          --live-retry-delay 10
