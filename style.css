@@ -974,6 +974,12 @@ html[lang="ru"] .text-right {
     transform: translateY(-1px);
 }
 
+/* Keep contact actions in page context instead of repeating them in every header. */
+.site-nav > .site-cta,
+.mobile-contact-cta {
+    display: none !important;
+}
+
 .article-contact-cta {
     margin: 0 0 2.5rem;
     padding: 1.75rem 1.5rem;
