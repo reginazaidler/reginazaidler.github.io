@@ -5223,6 +5223,26 @@ main section.bg-white .text-white h3 {
 }
 
 /* Reviews page mobile polish */
+.reviews-page .home-hero {
+    min-height: auto;
+    padding: 3.5rem 0;
+    background: linear-gradient(135deg, #17356a 0%, #081b3f 100%);
+}
+
+.reviews-page .home-hero__inner {
+    display: block;
+}
+
+.reviews-page .home-hero__content {
+    width: min(100%, 820px);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.reviews-page .home-hero__badge {
+    justify-content: center;
+}
+
 .reviews-page .reviews-grid-section {
     padding-block: 5.5rem;
 }
@@ -5668,7 +5688,7 @@ main section.bg-white .text-white h3 {
 @media (max-width: 767px) {
     .reviews-page .home-hero {
         min-height: auto;
-        padding-top: 4.5rem;
+        padding: 2.5rem 0;
     }
 
     .reviews-page .home-hero__inner {
