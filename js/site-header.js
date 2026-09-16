@@ -246,7 +246,7 @@
     initDesktopKnowledgeMenu();
     ensureMobileContactActions();
     initLanguageSwitcher();
-    injectSkipLink();
+    
     initConversionTracking();
   }
 
