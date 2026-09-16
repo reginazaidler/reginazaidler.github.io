@@ -1,4 +1,5 @@
 (function () {
+    document.querySelectorAll('.sr-focusable').forEach(function (link) { link.remove(); });
   function isDrawerMenu(menu) {
     return !!menu && menu.classList.contains('mobile-drawer');
   }
