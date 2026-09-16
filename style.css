@@ -9186,3 +9186,42 @@ select:focus-visible {
 @media (max-width: 640px) {
   .editorial-expansion { padding: 1.25rem; }
 }
+/* Critical design-token fallback.
+   Kept at the end so browsers always resolve the palette even if an earlier
+   token block is skipped while parsing the large stylesheet. */
+:root {
+    --navy-main: #0B1B3B;
+    --navy-deep: #07152E;
+    --gold-brand: #B8913F;
+    --gold-hover: #C9A24E;
+    --gold-soft: #F8F2E6;
+    --gold-glow: rgba(184, 145, 63, 0.22);
+    --navy-tint: #0F2B59;
+    --navy-accent: #153A7A;
+    --bg-light: #F9F8F5;
+    --surface: #FFFFFF;
+    --text-body: #475569;
+    --text-strong: #0F172A;
+    --text-soft: #64748B;
+    --border-light: #E2E8F0;
+    --success-soft: #ECFDF3;
+    --success-border: #BBF7D0;
+    --success-text: #166534;
+    --danger-soft: #FFF7ED;
+    --danger-border: #FED7AA;
+    --danger-text: #9A3412;
+    --whatsapp: #128C7E;
+    --whatsapp-hover: #1EBE5D;
+    --radius-sm: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-2xl: 2rem;
+    --radius-pill: 999px;
+    --shadow-sm: 0 8px 24px rgba(15, 23, 42, 0.09);
+    --shadow-md: 0 14px 36px rgba(15, 23, 42, 0.12);
+    --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.16);
+    --shadow-xl: 0 30px 80px rgba(7, 21, 46, 0.18);
+    --ease-default: 0.25s ease;
+    --site-font: 'Assistant', sans-serif;
+}
