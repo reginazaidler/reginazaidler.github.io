@@ -847,9 +847,34 @@ document.addEventListener('DOMContentLoaded', function () {
             fetch('https://formspree.io/f/mdawkwwn', {
                 method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' }
             }).then(res => {
-                if (res.ok) window.location.href = 'thanks.html';
-                else throw new Error();
+                if (!res.ok) throw new Error();
+
+                let redirected = false;
+                const goToThanks = () => {
+                    if (redirected) return;
+                    redirected = true;
+                    window.location.href = '/thanks.html';
+                };
+
+                if (typeof window.gtag === 'function') {
+                    window.gtag('event', 'generate_lead', {
+                        method: 'contact_form',
+                        form_id: 'modal-contact-form',
+                        page_language: 'ru',
+                        event_callback: goToThanks,
+                        event_timeout: 800
+                    });
+                    window.setTimeout(goToThanks, 900);
+                } else {
+                    goToThanks();
+                }
             }).catch(() => {
+                if (typeof window.gtag === 'function') {
+                    window.gtag('event', 'contact_form_error', {
+                        form_id: 'modal-contact-form',
+                        page_language: 'ru'
+                    });
+                }
                 alert('Ошибка отправки. Попробуйте снова или напишите в WhatsApp.');
                 btn.disabled = false;
                 btn.classList.remove('opacity-70', 'cursor-not-allowed');
