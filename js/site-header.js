@@ -1,27 +1,5 @@
 (function () {
     document.querySelectorAll('.sr-focusable').forEach(function (link) { link.remove(); });
-  if (window.location.pathname === '/car-insurance.html') {
-    var header = document.querySelector('.site-header');
-    if (header && !document.querySelector('.site-topbar')) {
-      var topbar = document.createElement('div');
-      topbar.id = 'top-anchor';
-      topbar.className = 'site-topbar';
-      header.parentNode.insertBefore(topbar, header);
-    }
-
-    var nav = document.querySelector('.site-nav');
-    var knowledge = nav && nav.querySelector('a[href="articles.html"]');
-    if (nav && knowledge && !nav.querySelector('a[href="about.html"]')) {
-      var about = document.createElement('a');
-      about.href = 'about.html';
-      about.className = 'nav-link';
-      about.textContent = 'אודות';
-      nav.insertBefore(about, knowledge);
-    }
-
-    var cta = nav && nav.querySelector('.site-cta');
-    if (cta) cta.textContent = 'צור קשר';
-  }
   function isDrawerMenu(menu) {
     return !!menu && menu.classList.contains('mobile-drawer');
   }
