@@ -4657,7 +4657,14 @@ main section.bg-white .text-white h3 {
 .phone-frame {
     position: relative;
     width: min(100%, 300px);
-
+    aspect-ratio: 9 / 16;
+    min-height: 420px;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    isolation: isolate;
+    z-index: 1;
+    background: #0f172a;
+}
 
 /* Fallback brand tokens - keep hero sections readable if earlier tokens are unavailable */
 :root {
@@ -4674,14 +4681,6 @@ main section.bg-white .text-white h3 {
 .home-hero {
   background: linear-gradient(135deg, #07152E 0%, #0B1B3B 100%);
   color: #FFFFFF;
-}
-    aspect-ratio: 9 / 16;
-    min-height: 420px;
-    border-radius: 1.5rem;
-    overflow: hidden;
-    isolation: isolate;
-    z-index: 1;
-    background: #0f172a;
 }
 
 .video-filter {
