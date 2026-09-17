@@ -31,7 +31,7 @@ gtag('config', 'G-EM8SYH542C');
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700;800;900&display=swap">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
 <meta name="google-site-verification" content="oprCzaewYYYCQapSZdDg7s64hh7T-4HreXvsvp6Xcgg">
@@ -160,14 +160,72 @@ gtag('config', 'G-EM8SYH542C');
 }
 </script>
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="theme-tokens.css?v=20260916-1">
+<link rel="stylesheet" href="style.css?v=20260916-2">
+<style>
+  .about-page,.about-page *{box-sizing:border-box}
+  .about-page{margin:0;background:#f6f8fb;color:#334155}
+  .about-page main{font-family:"Assistant",Arial,sans-serif;font-size:16px;line-height:1.65;background:#f6f8fb}
+  .about-page-shell{width:min(100% - 32px,980px);margin:auto;padding:34px 0 64px}
+  .about-page-back{display:inline-flex;margin:0 0 18px;color:#64748b;font-size:14px;font-weight:700;text-decoration:none}
+  .about-content-card{overflow:hidden;background:#fff;border:1px solid #e2e8f0;border-radius:24px;box-shadow:0 18px 48px rgba(15,23,42,.08)}
+  .about-page .about-content-card>.home-hero{min-height:0;padding:48px clamp(24px,6vw,64px);background:linear-gradient(135deg,#07152e,#0b1b3b 65%,#153a7a);border:0}
+  .about-page .about-content-card>.home-hero .container-clean,.about-page .about-content-card>section>.container-clean{width:100%;max-width:none;margin:0;padding:0}
+  .about-page .about-content-card .home-hero__inner{display:block;min-height:0}
+  .about-page .about-content-card .home-hero__content{max-width:780px;padding:0}
+  .about-page .about-content-card .home-hero__badge{display:inline-flex;margin:0 0 18px;padding:5px 12px;border:1px solid rgba(201,162,78,.38);border-radius:999px;background:rgba(184,145,63,.16);color:#e0bd70;font-size:13px;font-weight:800}
+  .about-page .about-content-card .home-hero__dot{display:none}
+  .about-page .about-content-card .home-hero__title{max-width:760px;margin:0 0 18px;color:#fff;font-size:clamp(32px,5vw,48px);line-height:1.12;font-weight:800}
+  .about-page .about-content-card .home-hero__subtitle{max-width:760px;margin:0 0 12px;color:#dbe5f2;font-size:18px;line-height:1.65;font-weight:400}
+  .about-page .about-content-card .home-hero__highlight{margin:0 0 16px;color:#e0bd70;font-size:20px;font-weight:800}
+  .about-page .about-content-card .hero-checklist{margin:0;padding:0;display:grid;gap:8px;list-style:none}
+  .about-page .about-content-card .hero-checklist li{display:flex;gap:10px;color:#e2e8f0;font-size:16px;font-weight:400}
+  .about-page .about-content-card .hero-checklist__icon{color:#e0bd70;font-weight:900}
+  .about-page .about-content-card .hero-actions{margin-top:24px}
+  .about-page .about-content-card>section:not(.home-hero){padding:42px clamp(24px,6vw,64px);background:#fff}
+  .about-page .about-content-card>section+section{border-top:1px solid #edf1f6}
+  .about-page .about-content-card .container-clean>.max-w-4xl{max-width:none;margin:0}
+  .about-page .about-proof-card{max-width:none;margin:0;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none}
+  .about-page .about-proof-card+.about-proof-card{margin-top:42px;padding-top:42px;border-top:1px solid #edf1f6}
+  .about-page .about-proof-title,.about-page .about-content-card h2{margin:0 0 16px;color:#0b1b3b;font-size:clamp(25px,3vw,32px);line-height:1.25;font-weight:800;text-align:right}
+  .about-page .about-proof-text,.about-page .about-content-card p{max-width:none;color:#475569;font-size:17px;line-height:1.7;font-weight:400}
+  .about-page .about-fit-card{padding:24px;border:1px solid #e2e8f0;border-radius:16px;background:#f8fafc;box-shadow:none}
+  .about-page .about-fit-card h3{margin:0 0 10px;color:#0b1b3b;font-size:21px;font-weight:800}
+  .about-page .about-content-card>.about-section-tight{padding-top:42px;padding-bottom:42px;background:#fff}
+  .about-page .about-content-card .text-center{text-align:right}
+  .about-page .about-content-card .accent-line{display:none}
+  .about-page .about-content-card .grid{display:grid;gap:16px}
+  .about-page .about-content-card .md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .about-page .about-content-card .md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .about-page .about-compact-card{min-height:0;padding:24px;border:1px solid #e2e8f0;border-radius:16px;background:#f8fafc;box-shadow:none;text-align:right}
+  .about-page .about-compact-card .process-step-number{display:inline-flex;width:32px;height:32px;margin:0 0 12px;align-items:center;justify-content:center;border-radius:50%;background:#0b1b3b;color:#fff;font-weight:800}
+  .about-page .about-compact-card svg{display:none}
+  .about-page .about-compact-card h3{margin:0 0 8px;color:#0b1b3b;font-size:20px;font-weight:800}
+  .about-page .about-compact-card p,.about-page .about-fit-card p{margin:0;color:#475569;font-size:16px;line-height:1.65;font-weight:400}
+  .about-page .bottom-cta--about-mini{padding:0 16px 72px;background:#f6f8fb}
+  .about-page .bottom-cta--about-mini .container-clean{width:min(100%,980px);max-width:none;margin:auto;padding:0}
+  .about-page .bottom-cta__inner{padding:clamp(24px,5vw,44px);border:1px solid #dbe5f2;border-radius:20px;background:#fff;box-shadow:0 18px 48px rgba(15,23,42,.08)}
+  .about-page .bottom-cta__title{margin:0 0 10px;color:#0b1b3b;font-size:clamp(25px,3vw,32px);line-height:1.3;font-weight:800}
+  .about-page .bottom-cta__text{margin:0 0 22px;color:#475569;font-size:17px;line-height:1.7}
+  @media(max-width:700px){
+    .about-page-shell{width:min(100% - 20px,980px);padding:20px 0 42px}
+    .about-content-card{border-radius:18px}
+    .about-page .about-content-card>.home-hero{padding:32px 22px}
+    .about-page .about-content-card .home-hero__title{font-size:31px}
+    .about-page .about-content-card .home-hero__subtitle{font-size:16px}
+    .about-page .about-content-card>section:not(.home-hero){padding:34px 22px}
+    .about-page .about-content-card .md\:grid-cols-3,.about-page .about-content-card .md\:grid-cols-2{grid-template-columns:1fr}
+    .about-page .about-proof-text,.about-page .about-content-card p{font-size:16px}
+    .about-page .bottom-cta--about-mini{padding:0 10px 54px}
+  }
+</style>
 </head>
 
 <body class="about-page">
     <a href="#main" class="sr-focusable">דלג לתוכן המרכזי</a>
     <div id="top-anchor" class="site-topbar">
         <div class="container-clean site-topbar__inner">
-            בדיקה של ביטוחים, פנסיה והתחייבויות לפני קבלת החלטות
+            השוואת ביטוח רכב, דירה, בריאות, פנסיה לפני קבלת החלטות
         </div>
     </div>
     <header class="site-header">
@@ -177,8 +235,11 @@ gtag('config', 'G-EM8SYH542C');
             </a>
             <nav class="site-nav" aria-label="ניווט ראשי">
                 <a href="index.html" class="nav-link">דף הבית</a>
-                <a href="about.html" class="nav-link nav-link-active">קצת עלי</a>
-                <a href="insurance-types.html" class="nav-link">סוגי ביטוחים</a>
+                <a href="car-insurance.html" class="nav-link">ביטוח רכב</a>
+                <a href="home-insurance.html" class="nav-link">ביטוח דירה</a>
+                <a href="services.html" class="nav-link">פנסיה וביטוחים</a>
+                <a href="about.html" class="nav-link nav-link-active">אודות</a>
+                <a href="/ru/index.html" class="language-switch" lang="ru" hreflang="ru" aria-label="עברו לאתר ברוסית">RU</a>
                 <div class="nav-dropdown">
                     <button class="nav-dropdown__trigger" type="button">מרכז ידע<span aria-hidden="true">▾</span></button>
                     <div id="desktopKnowledgeMenu" class="nav-dropdown__menu" role="menu" aria-label="מרכז ידע">
@@ -192,7 +253,7 @@ gtag('config', 'G-EM8SYH542C');
                     <span>052-4520222</span>
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.1 15.1 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27 11.72 11.72 0 003.7.59 1 1 0 011 1V20a1 1 0 01-1 1A18 18 0 013 4a1 1 0 011-1h3.43a1 1 0 011 1 11.72 11.72 0 00.59 3.7 1 1 0 01-.27 1.1l-2.12 2.1z"/></svg>
                 </a>
-                <button id="openContactDesktop" class="site-cta">לתיאום בדיקה אישית</button>
+                <button id="openContactDesktop" class="site-cta">צור קשר</button>
             </nav>
             <button id="menuBtn" class="lg:hidden p-2 text-blue-900" aria-label="פתח תפריט" aria-expanded="false" aria-controls="mobileMenu">
                 <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
@@ -200,17 +261,24 @@ gtag('config', 'G-EM8SYH542C');
         </div>
         <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-slate-100 py-4 px-6 space-y-4 shadow-xl absolute w-full top-full right-0 z-50" aria-label="תפריט מובייל">
             <a href="index.html" class="block font-bold text-slate-600 border-b pb-2">דף הבית</a>
-            <a href="about.html" class="block font-bold text-blue-900 border-b pb-2">קצת עלי</a>
-            <a href="insurance-types.html" class="block font-bold text-slate-600 border-b pb-2">סוגי ביטוחים</a>
+            <a href="car-insurance.html" class="block font-bold text-slate-600 border-b pb-2">ביטוח רכב</a>
+            <a href="home-insurance.html" class="block font-bold text-slate-600 border-b pb-2">ביטוח דירה</a>
+            <a href="services.html" class="block font-bold text-slate-600 border-b pb-2">פנסיה וביטוחים</a>
+            <a href="about.html" class="block font-bold text-blue-900 border-b pb-2">אודות</a>
+            <a href="/ru/index.html" class="block font-bold text-slate-600 border-b pb-2 mobile-language-switch" lang="ru" hreflang="ru" aria-label="עברו לאתר ברוסית">RU · Русский</a>
             <a href="articles.html" class="block font-bold text-slate-600 border-b pb-2">מאמרים מקצועיים על פנסיה וביטוחים</a>
             <a href="faq.html" class="block font-bold text-slate-600 border-b pb-2">שאלות ותשובות</a>
             <a href="calculator.html" class="block font-bold text-slate-600 border-b pb-2">מחשבון חיסכון</a>
             <a href="media.html" class="block font-bold text-slate-600 border-b pb-2">וידאו ומדיה</a>
-            <button id="openContactMobile" class="mobile-contact-cta">לתיאום בדיקה אישית</button>
+            <a href="tel:0524520222" class="block font-bold text-slate-600 border-b pb-2">התקשר עכשיו</a>
+            <button id="openContactMobile" class="mobile-contact-cta">צור קשר</button>
         </div>
     </header>
 
     <main id="main">
+    <div class="about-page-shell">
+        <a class="about-page-back" href="index.html">← חזרה לדף הבית</a>
+        <article class="about-content-card">
 
 <!-- HERO - נוסף שם יובל ויינזוף ב-H1 לאות E-E-A-T -->
 <section class="home-hero">
@@ -339,6 +407,9 @@ gtag('config', 'G-EM8SYH542C');
         </div>
     </div>
 </section>
+
+        </article>
+    </div>
 
 <section class="py-8 bottom-cta bottom-cta--about-mini text-center">
     <div class="container-clean">
