@@ -98,7 +98,6 @@
         <a href="/pension-guide.html">איך עושים סדר בפנסיה ובביטוחים</a>
         <a href="/faq.html">FAQ</a>
         <a href="/articles.html">מאמרים מקצועיים על פנסיה וביטוחים</a>
-        <a href="/calculator.html">מחשבון חיסכון</a>
         <a href="/media.html">וידאו</a>
         <a href="/accessibility.html">הצהרת נגישות</a>
         <a href="/privacy.html">מדיניות פרטיות</a>
