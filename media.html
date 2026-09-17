@@ -133,15 +133,10 @@ gtag('config', 'G-EM8SYH542C');
             cursor: pointer;
         }
         .media-page .video-filter__btn.active { border-color: #0b1b3b; background: #0b1b3b; color: #fff; }
-        .media-page .topic-nav { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .9rem; max-width: 1040px; margin: 0 auto 3rem; }
-        .media-page .topic-nav__link { display: flex; align-items: center; justify-content: space-between; min-height: 74px; padding: 1rem 1.1rem; border: 1px solid #dbe4ef; border-radius: 1rem; background: #fff; color: #0b1b3b; font-weight: 800; text-decoration: none; box-shadow: 0 10px 28px rgba(15,23,42,.06); }
-        .media-page .topic-nav__link:hover { border-color: #b8913f; transform: translateY(-1px); }
-        .media-page .topic-nav__arrow { color: #b8913f; font-size: 1.2rem; }
-        .media-page .topic-section { max-width: 1040px; margin: 0 auto 4rem; scroll-margin-top: 7rem; }
-        .media-page .topic-section__header { margin: 0 0 1.2rem; padding: 0 .15rem .9rem; border-bottom: 2px solid #e2e8f0; }
-        .media-page .topic-section__title { margin: 0 0 .25rem; color: #0b1b3b; font-size: clamp(1.6rem,3vw,2.25rem); font-weight: 800; }
-        .media-page .topic-section__description { margin: 0; color: #64748b; }
-        .media-page .topic-section__grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.5rem; }
+        .media-page .topic-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: .65rem; max-width: 1040px; margin: 0 auto 2.25rem; }
+        .media-page .topic-nav__button { min-height: 44px; padding: .65rem 1rem; border: 1px solid #cbd5e1; border-radius: 999px; background: #fff; color: #334155; font: inherit; font-weight: 800; cursor: pointer; transition: background-color .2s ease, border-color .2s ease, color .2s ease; }
+        .media-page .topic-nav__button:hover { border-color: #b8913f; }
+        .media-page .topic-nav__button.is-active { border-color: #0b1b3b; background: #0b1b3b; color: #fff; }
         .media-page .video-guide-link { display: inline-flex; margin-top: 1rem; color: #1d4ed8; font-weight: 800; text-decoration: none; }
         .media-page .video-guide-link:hover { text-decoration: underline; }
         .media-page #videoGrid {
@@ -223,8 +218,7 @@ gtag('config', 'G-EM8SYH542C');
             .media-page .media-hero__actions a { width: min(100%, 320px); }
             .media-page .media-whatsapp-float { right: 14px; bottom: 14px; width: 48px; height: 48px; }
             .media-page #videoGrid { grid-template-columns: 1fr; }
-            .media-page .topic-nav { grid-template-columns: 1fr; }
-            .media-page .topic-section__grid { grid-template-columns: 1fr; }
+            .media-page .topic-nav { justify-content: flex-start; margin-bottom: 1.75rem; }
             .media-page .video-card { padding: 1rem; border-radius: 1.15rem; }
             .media-page .phone-frame { height: 430px; }
         }
@@ -506,18 +500,17 @@ gtag('config', 'G-EM8SYH542C');
                     </p>
                 </div>
 
-                <nav class="topic-nav" aria-label="נושאים מרכזיים בווידאו">
-                    <a class="topic-nav__link" href="#topic-pension">פנסיה ופרישה <span class="topic-nav__arrow">←</span></a>
-                    <a class="topic-nav__link" href="#topic-health">ביטוחי בריאות וחיים <span class="topic-nav__arrow">←</span></a>
-                    <a class="topic-nav__link" href="#topic-family">חיסכון לילדים ולמשפחה <span class="topic-nav__arrow">←</span></a>
-                    <a class="topic-nav__link" href="#topic-mortgage">משכנתא וביטוח <span class="topic-nav__arrow">←</span></a>
-                    <a class="topic-nav__link" href="#topic-investments">השקעות ושוק ההון <span class="topic-nav__arrow">←</span></a>
-                    <a class="topic-nav__link" href="#topic-travel">ביטוח נסיעות לחו"ל <span class="topic-nav__arrow">←</span></a>
-                </nav>
+                <div class="topic-nav" role="group" aria-label="סינון סרטונים לפי נושא">
+                    <button class="topic-nav__button is-active" type="button" data-filter="all" aria-pressed="true">כל הסרטונים</button>
+                    <button class="topic-nav__button" type="button" data-filter="pension" aria-pressed="false">פנסיה ופרישה</button>
+                    <button class="topic-nav__button" type="button" data-filter="health" aria-pressed="false">ביטוחי בריאות וחיים</button>
+                    <button class="topic-nav__button" type="button" data-filter="family" aria-pressed="false">חיסכון לילדים ולמשפחה</button>
+                    <button class="topic-nav__button" type="button" data-filter="mortgage" aria-pressed="false">משכנתא וביטוח</button>
+                    <button class="topic-nav__button" type="button" data-filter="investments" aria-pressed="false">השקעות ושוק ההון</button>
+                    <button class="topic-nav__button" type="button" data-filter="travel" aria-pressed="false">ביטוח נסיעות לחו"ל</button>
+                </div>
 
-                <div id="topicSections"></div>
-
-                <div id="videoGrid" hidden>
+                <div id="videoGrid">
                     <article class="video-card p-6 flex flex-col items-center relative" data-category="family">
                         <span class="video-tag">חיסכון לילדים</span>
                         <div class="phone-frame mb-6 video-embed" data-video-title="יש לכם ילד עד גיל 18? אל תתנו לכסף הזה לשבת סתם" data-video-src="https://www.youtube.com/embed/f4IKHd7gUKU?rel=0&cc_load_policy=1" data-video-url="https://www.youtube.com/shorts/f4IKHd7gUKU" data-video-keywords="חיסכון לילדים, חיסכון לכל ילד, חיסכון לילד, השקעה לילדים, תכנון פיננסי למשפחה">
@@ -788,34 +781,24 @@ gtag('config', 'G-EM8SYH542C');
             const videoCards = document.querySelectorAll('#videoGrid .video-card');
             const videoEmbeds = document.querySelectorAll('.video-embed');
 
-            const topicDefinitions = [
-                { key: 'pension', title: 'פנסיה ופרישה', description: 'פנסיה, גמל וחיסכון לטווח ארוך.' },
-                { key: 'health', title: 'ביטוחי בריאות וחיים', description: 'כיסויים רפואיים, תרופות ובדיקה של התיק הביטוחי.' },
-                { key: 'family', title: 'חיסכון לילדים ולמשפחה', description: 'החלטות חיסכון שמשפיעות על העתיד הכלכלי של המשפחה.' },
-                { key: 'mortgage', title: 'משכנתא וביטוח', description: 'ביטוח חיים ומבנה כחלק מעלות המשכנתא.' },
-                { key: 'investments', title: 'השקעות ושוק ההון', description: 'מדדים, אינפלציה ושמירה על ערך הכסף לאורך זמן.' },
-                { key: 'travel', title: 'ביטוח נסיעות לחו"ל', description: 'מה לבדוק לפני הטיסה וכאשר התוכניות משתנות.' }
-            ];
+            const filterButtons = document.querySelectorAll('.topic-nav__button');
 
-            function buildTopicSections() {
-                const source = document.getElementById('videoGrid');
-                const target = document.getElementById('topicSections');
-                if (!source || !target) return;
-                topicDefinitions.forEach(topic => {
-                    const cards = Array.from(source.querySelectorAll(`[data-category="${topic.key}"]`));
-                    if (!cards.length) return;
-                    const section = document.createElement('section');
-                    section.className = 'topic-section';
-                    section.id = `topic-${topic.key}`;
-                    section.innerHTML = `<div class="topic-section__header"><h2 class="topic-section__title">${topic.title}</h2><p class="topic-section__description">${topic.description}</p></div><div class="topic-section__grid"></div>`;
-                    const grid = section.querySelector('.topic-section__grid');
-                    cards.forEach(card => grid.appendChild(card));
-                    target.appendChild(section);
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const selectedCategory = button.dataset.filter;
+
+                    filterButtons.forEach(item => {
+                        const isSelected = item === button;
+                        item.classList.toggle('is-active', isSelected);
+                        item.setAttribute('aria-pressed', String(isSelected));
+                    });
+
+                    videoCards.forEach(card => {
+                        const shouldShow = selectedCategory === 'all' || card.dataset.category === selectedCategory;
+                        card.classList.toggle('is-hidden', !shouldShow);
+                    });
                 });
-                source.remove();
-            }
-
-            buildTopicSections();
+            });
 
             function revealOnScroll() {
                 revealElements.forEach(el => {
