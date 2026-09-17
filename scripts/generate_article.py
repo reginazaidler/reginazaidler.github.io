@@ -172,7 +172,6 @@ INTERNAL_LINKS = {
     "financial-checklist-family": ("financial-checklist-family.html", "צ׳קליסט פיננסי שנתי למשפחה"),
     "insurance-types": ("insurance-types.html", "סוגי ביטוחים בישראל"),
     "check-insurance-policies": ("check-insurance-policies.html", "איך בודקים תיק ביטוח"),
-    "calculator": ("calculator.html", "מחשבון חיסכון"),
     "articles": ("articles.html", "כל המאמרים על ביטוח ופנסיה"),
     "pension-guide": ("pension-guide.html", "מדריך פנסיה"),
     "life-insurance": ("life-insurance.html", "ביטוח חיים"),
