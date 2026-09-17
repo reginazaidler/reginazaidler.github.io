@@ -70,6 +70,208 @@ Total output lines: 9506
     --site-font: 'Assistant', sans-serif;
 }
 
+/* Canonical shared footer. Scoped selectors keep page-specific styles from altering it. */
+body .site-footer.site-footer {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 24px 20px;
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: #07152e;
+    color: #ffffff;
+}
+
+body .site-footer .site-footer__inner {
+    box-sizing: border-box;
+    width: min(1180px, 100%);
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    text-align: center;
+}
+
+body .site-footer .site-footer__meta {
+    order: 1;
+    margin: 0;
+    color: #a8b4c8;
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+}
+
+body .site-footer .site-footer__meta p {
+    margin: 0;
+}
+
+body .site-footer .site-footer__note,
+body .site-footer .site-footer__experience,
+body .site-footer .site-footer__tlh {
+    margin-top: 4px;
+    color: inherit;
+    font-size: inherit;
+    font-weight: 400;
+    line-height: inherit;
+    opacity: 0.86;
+}
+
+body .site-footer .site-footer__tlh {
+    font-size: 0.75rem;
+    opacity: 0.72;
+}
+
+body .site-footer .site-footer__note a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+body .site-footer .site-footer__nav {
+    order: 2;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px 16px;
+    direction: rtl;
+    color: #a8b4c8;
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+html[lang="ru"] body .site-footer .site-footer__nav {
+    direction: ltr;
+}
+
+body .site-footer .site-footer__city-links {
+    display: contents;
+}
+
+body .site-footer .site-footer__nav a,
+body .site-footer .site-footer__nav button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #a8b4c8;
+    font: inherit;
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+body .site-footer .site-footer__nav a:hover,
+body .site-footer .site-footer__nav button:hover,
+body .site-footer .site-footer__nav .is-active {
+    color: #d5b568;
+}
+
+body .site-footer .site-footer__social {
+    order: 3;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+body .site-footer .site-footer__social a {
+    box-sizing: border-box;
+    width: 2.25rem;
+    height: 2.25rem;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    border: 1px solid rgba(168, 180, 200, 0.38);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
+    color: #a8b4c8;
+    opacity: 1;
+    text-decoration: none;
+}
+
+body .site-footer .site-footer__social a svg {
+    width: 1.05rem;
+    height: 1.05rem;
+    flex: 0 0 auto;
+}
+
+body .site-footer .site-footer__social a::after {
+    display: none;
+    content: none;
+}
+
+body .site-footer .site-footer__social a:hover {
+    border-color: rgba(255, 255, 255, 0.62);
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+@media (min-width: 1024px) {
+    body .site-footer.site-footer {
+        padding: 22px 28px;
+    }
+
+    body .site-footer .site-footer__inner {
+        display: grid;
+        grid-template-columns: minmax(170px, 0.8fr) minmax(0, 2.6fr) minmax(220px, 1fr);
+        grid-template-areas: "social nav meta";
+        align-items: start;
+        gap: 22px;
+        text-align: initial;
+    }
+
+    body .site-footer .site-footer__social {
+        grid-area: social;
+        order: initial;
+        align-self: start;
+        justify-self: start;
+        justify-content: flex-start;
+    }
+
+    body .site-footer .site-footer__nav {
+        grid-area: nav;
+        order: initial;
+        display: flex;
+        justify-content: center;
+        align-content: flex-start;
+        gap: 8px 14px;
+        font-size: 0.75rem;
+    }
+
+    body .site-footer .site-footer__meta {
+        grid-area: meta;
+        order: initial;
+        justify-self: end;
+        direction: rtl;
+        text-align: right;
+        font-size: 0.75rem;
+    }
+
+    html[lang="ru"] body .site-footer .site-footer__meta {
+        justify-self: start;
+        direction: ltr;
+        text-align: left;
+    }
+}
+
 html[lang="ru"] {
     --site-font: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
