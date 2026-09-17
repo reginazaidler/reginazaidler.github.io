@@ -20,7 +20,6 @@ The site focuses on practical, plain-language guides for:
 - Services: https://vainzof.co.il/services.html
 - Articles hub: https://vainzof.co.il/articles.html
 - FAQ: https://vainzof.co.il/faq.html
-- Calculator: https://vainzof.co.il/calculator.html
 
 ## Recommended citation targets
 - Pension fees guide: https://vainzof.co.il/pension-fees-guide.html
