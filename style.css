@@ -9528,3 +9528,71 @@ select:focus-visible {
     --ease-default: 0.25s ease;
     --site-font: 'Assistant', sans-serif;
 }
+/* Shared background refresh for content-heavy pages.
+   Keep cards and forms white, while large page sections use the site's soft palette. */
+body.soft-background-page {
+    background: #f6f8fb;
+}
+
+body.soft-background-page main {
+    background: #f6f8fb;
+}
+
+body.soft-background-page main > section.bg-white:nth-of-type(even) {
+    background-color: #f6f8fb !important;
+}
+
+body.soft-background-page main > section.bg-white:nth-of-type(odd) {
+    background-color: #fbf8f1 !important;
+}
+
+body.soft-background-page .bg-white.rounded-3xl,
+body.soft-background-page .bg-white[class*="rounded-["],
+body.soft-background-page .faq-item,
+body.soft-background-page .qa-card {
+    background-color: #fff !important;
+}
+
+body.reviews-page {
+    background: #f6f8fb;
+}
+
+body.reviews-page .reviews-grid-section {
+    background: #f6f8fb !important;
+}
+
+body.reviews-page .reviews-themes {
+    background: #fbf8f1 !important;
+}
+
+body.insurance-types-page #main > section.py-16.md\:py-20 {
+    background: #f6f8fb !important;
+}
+
+body.insurance-types-page #insurance-types-main,
+body.insurance-types-page #how-to-choose-insurance,
+body.insurance-types-page #why-agent {
+    background: #fff;
+}
+
+body.insurance-types-page #insurance-prices,
+body.insurance-types-page #common-mistakes,
+body.insurance-types-page #faq {
+    background: #f6f8fb;
+}
+
+body.services-page .services-content-card > section:not(.services-hero-v2):nth-of-type(even),
+body.about-page .about-content-card > section:not(.home-hero):nth-of-type(even) {
+    background: #f6f8fb;
+}
+
+body.services-page .services-content-card > section:not(.services-hero-v2):nth-of-type(odd),
+body.about-page .about-content-card > section:not(.home-hero):nth-of-type(odd) {
+    background: #fbf8f1;
+}
+
+@media (max-width: 767px) {
+    body.soft-background-page main > section.bg-white {
+        border-top: 1px solid rgba(148, 163, 184, 0.16);
+    }
+}
