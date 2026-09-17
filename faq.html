@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="he" dir="rtl">
 
 <head>
@@ -202,8 +202,60 @@ gtag('config', 'G-EM8SYH542C');
     <meta name="google-site-verification" content="oprCzaewYYYCQapSZdDg7s64hh7T-4HreXvsvp6Xcgg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700;800;900&display=swap">
+    <link rel="stylesheet" href="theme-tokens.css?v=20260916-1">
+    <link rel="stylesheet" href="style.css?v=20260916-2">
+    <style>
+      .faq-page,.faq-page *{box-sizing:border-box}
+      .faq-page{margin:0;background:#f6f8fb;color:#334155}
+      .faq-page main{font-family:"Assistant",Arial,sans-serif;background:#f6f8fb}
+      .faq-page-shell{width:min(100% - 32px,1040px);margin:auto;padding:34px 0 72px}
+      .faq-page-back{display:inline-flex;margin:0 0 18px;color:#64748b;font-size:14px;font-weight:700;text-decoration:none}
+      .faq-content-card{overflow:hidden;background:#fff;border:1px solid #e2e8f0;border-radius:24px;box-shadow:0 18px 48px rgba(15,23,42,.08)}
+      .faq-page .faq-content-card>.home-hero{min-height:0;padding:48px clamp(24px,6vw,64px);background:linear-gradient(135deg,#07152e,#0b1b3b 65%,#153a7a);border:0}
+      .faq-page .faq-content-card .home-hero__inner{display:block;min-height:0;width:100%;max-width:none;margin:0;padding:0}
+      .faq-page .faq-content-card .home-hero__content{max-width:780px;padding:0}
+      .faq-page .faq-content-card .home-hero__badge{display:inline-flex;margin:0 0 18px;padding:5px 12px;border:1px solid rgba(201,162,78,.38);border-radius:999px;background:rgba(184,145,63,.16);color:#e0bd70;font-size:13px;font-weight:800}
+      .faq-page .faq-content-card .home-hero__dot{display:none}
+      .faq-page .faq-content-card .home-hero__title{max-width:780px;margin:0 0 18px;color:#fff;font-size:clamp(32px,5vw,48px);line-height:1.12;font-weight:800}
+      .faq-page .faq-content-card .home-hero__subtitle{max-width:760px;margin:0;color:#dbe5f2;font-size:18px;line-height:1.65;font-weight:400}
+      .faq-page .faq-content-card .hero-actions{margin-top:24px}
+      .faq-page .faq-content-card>.faq-layout{padding:42px clamp(24px,5vw,54px);background:#fff}
+      .faq-page .faq-shell{width:100%;max-width:none;margin:0;padding:0}
+      .faq-page .faq-overview,.faq-page .faq-section-block{padding:0;border:0;border-radius:0;background:transparent;box-shadow:none}
+      .faq-page .faq-overview{margin-bottom:42px}
+      .faq-page .faq-overview__eyebrow,.faq-page .faq-section-heading__eyebrow{margin:0 0 8px;color:#b8913f;font-size:13px;font-weight:800}
+      .faq-page .faq-overview__header h2,.faq-page .faq-section-heading h2{margin:0 0 12px;color:#0b1b3b;font-size:clamp(25px,3vw,32px);line-height:1.25;font-weight:800}
+      .faq-page .faq-overview__text,.faq-page .faq-section-heading p{max-width:760px;margin:0;color:#475569;font-size:16px;line-height:1.7}
+      .faq-page .faq-quick-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:24px}
+      .faq-page .faq-quick-nav a{padding:16px 18px;border:1px solid #e2e8f0;border-radius:12px;background:#f8fafc;text-decoration:none;box-shadow:none}
+      .faq-page .faq-quick-nav a strong{display:block;margin-bottom:3px;color:#0b1b3b;font-size:16px;font-weight:800}
+      .faq-page .faq-quick-nav a span{color:#64748b;font-size:13px;line-height:1.5}
+      .faq-page .faq-sections-grid{display:grid;gap:44px}
+      .faq-page .faq-section-block{padding-top:42px;border-top:1px solid #edf1f6}
+      .faq-page .faq-section-heading{margin-bottom:18px}
+      .faq-page .faq-list{display:grid;gap:10px}
+      .faq-page .faq-card{margin:0;border:1px solid #e2e8f0;border-radius:12px;background:#f8fafc;box-shadow:none;overflow:hidden}
+      .faq-page .faq-card summary{position:relative;padding:17px 52px 17px 18px;color:#0b1b3b;font-size:17px;line-height:1.45;font-weight:800;cursor:pointer;list-style:none}
+      .faq-page .faq-card summary svg{display:none}
+      .faq-page .faq-card summary::before{content:"+";position:absolute;right:18px;top:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;transform:translateY(-50%);color:#b8913f;font-size:22px;font-weight:400}
+      .faq-page .faq-card[open] summary::before{content:"−"}
+      .faq-page .faq-content{padding:0 18px 18px;border-top:1px solid #edf1f6;background:#fff}
+      .faq-page .faq-content p{margin:14px 0 0;color:#475569;font-size:16px;line-height:1.7}
+      .faq-page .faq-content a{color:#0b1b3b;font-weight:700}
+      @media(max-width:600px){
+        .faq-page-shell{width:min(100% - 20px,1040px);padding:20px 0 52px}
+        .faq-content-card{border-radius:18px}
+        .faq-page .faq-content-card>.home-hero{padding:32px 22px}
+        .faq-page .faq-content-card .home-hero__title{font-size:31px}
+        .faq-page .faq-content-card .home-hero__subtitle{font-size:16px}
+        .faq-page .faq-content-card>.faq-layout{padding:30px 18px}
+        .faq-page .faq-quick-nav{grid-template-columns:1fr}
+        .faq-page .faq-section-block{padding-top:34px}
+        .faq-page .faq-card summary{padding:16px 46px 16px 14px;font-size:16px}
+        .faq-page .faq-content{padding:0 14px 16px}
+      }
+    </style>
 </head>
 
 <!-- שאר קובץ ה-faq.html נשאר זהה לחלוטין - רק ה-HEAD השתנה -->
@@ -212,7 +264,7 @@ gtag('config', 'G-EM8SYH542C');
 
     <div id="top-anchor" class="site-topbar">
         <div class="container-clean site-topbar__inner">
-            בדיקה של ביטוחים, פנסיה והתחייבויות לפני קבלת החלטות
+            השוואת ביטוח רכב, דירה, בריאות, פנסיה לפני קבלת החלטות
         </div>
     </div>
 
@@ -224,10 +276,13 @@ gtag('config', 'G-EM8SYH542C');
 
             <nav class="site-nav" aria-label="ניווט ראשי">
                 <a href="index.html" class="nav-link">דף הבית</a>
-                <a href="about.html" class="nav-link">קצת עלי</a>
-                <a href="insurance-types.html" class="nav-link">סוגי ביטוחים</a>
+                <a href="car-insurance.html" class="nav-link">ביטוח רכב</a>
+                <a href="home-insurance.html" class="nav-link">ביטוח דירה</a>
+                <a href="services.html" class="nav-link">פנסיה וביטוחים</a>
+                <a href="about.html" class="nav-link">אודות</a>
+                <a href="/ru/index.html" class="language-switch" lang="ru" hreflang="ru" aria-label="עברו לאתר ברוסית">RU</a>
                 <div class="nav-dropdown">
-                    <button class="nav-dropdown__trigger" type="button">
+                    <button class="nav-dropdown__trigger nav-link-active" type="button">
                         מרכז ידע
                         <span aria-hidden="true">▾</span>
                     </button>
@@ -242,7 +297,7 @@ gtag('config', 'G-EM8SYH542C');
                     <span>052-4520222</span>
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.1 15.1 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27 11.72 11.72 0 003.7.59 1 1 0 011 1V20a1 1 0 01-1 1A18 18 0 013 4a1 1 0 011-1h3.43a1 1 0 011 1 11.72 11.72 0 00.59 3.7 1 1 0 01-.27 1.1l-2.12 2.1z"/></svg>
                 </a>
-                <button id="openContactDesktop" class="site-cta">לתיאום בדיקה אישית</button>
+                <button id="openContactDesktop" class="site-cta">צור קשר</button>
             </nav>
 
             <button id="menuBtn" class="lg:hidden p-2 text-blue-900" aria-label="פתח תפריט" aria-expanded="false" aria-controls="mobileMenu">
@@ -251,19 +306,25 @@ gtag('config', 'G-EM8SYH542C');
         </div>
 
         <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-slate-100 py-4 px-6 space-y-4 shadow-xl absolute w-full top-full right-0 z-50" aria-label="תפריט מובייל">
-            <a href="index.html" class="block font-bold text-blue-900 border-b pb-2">דף הבית</a>
-            <a href="about.html" class="block font-bold text-slate-600 border-b pb-2">קצת עלי</a>
-            <a href="insurance-types.html" class="block font-bold text-slate-600 border-b pb-2">סוגי ביטוחים</a>
+            <a href="index.html" class="block font-bold text-slate-600 border-b pb-2">דף הבית</a>
+            <a href="car-insurance.html" class="block font-bold text-slate-600 border-b pb-2">ביטוח רכב</a>
+            <a href="home-insurance.html" class="block font-bold text-slate-600 border-b pb-2">ביטוח דירה</a>
+            <a href="services.html" class="block font-bold text-slate-600 border-b pb-2">פנסיה וביטוחים</a>
+            <a href="about.html" class="block font-bold text-slate-600 border-b pb-2">אודות</a>
+            <a href="/ru/index.html" class="block font-bold text-slate-600 border-b pb-2 mobile-language-switch" lang="ru" hreflang="ru" aria-label="עברו לאתר ברוסית">RU · Русский</a>
             <a href="articles.html" class="block font-bold text-slate-600 border-b pb-2">מאמרים מקצועיים על פנסיה וביטוחים</a>
-            <a href="faq.html" class="block font-bold text-slate-600 border-b pb-2">שאלות ותשובות</a>
+            <a href="faq.html" class="block font-bold text-blue-900 border-b pb-2">שאלות ותשובות</a>
             <a href="calculator.html" class="block font-bold text-slate-600 border-b pb-2">מחשבון חיסכון</a>
             <a href="media.html" class="block font-bold text-slate-600 border-b pb-2">וידאו ומדיה</a>
             <a href="tel:0524520222" class="block font-bold text-slate-600 border-b pb-2">התקשר עכשיו</a>
-            <button id="openContactMobile" class="mobile-contact-cta">לתיאום בדיקה אישית</button>
+            <button id="openContactMobile" class="mobile-contact-cta">צור קשר</button>
         </div>
     </header>
 
     <main id="main">
+    <div class="faq-page-shell">
+        <a class="faq-page-back" href="index.html">← חזרה לדף הבית</a>
+        <article class="faq-content-card">
 
 <section id="top" class="home-hero">
     <div class="container-clean home-hero__inner">
@@ -570,6 +631,8 @@ gtag('config', 'G-EM8SYH542C');
             </div>
         </div>
     </section>
+        </article>
+    </div>
 
 </main>
 
