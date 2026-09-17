@@ -13,7 +13,7 @@
   }
 
   function removeFloatingContactButtons() {
-    var selectors = ['.mobile-sticky-cta', '.whatsapp-float.fixed-whatsapp', '.whatsapp-float'];
+    var selectors = ['.mobile-sticky-cta', '.desktop-sticky-cta', '.media-whatsapp-float'];
 
     selectors.forEach(function (selector) {
       var nodes = document.querySelectorAll(selector);

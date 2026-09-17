@@ -224,6 +224,50 @@ body .site-footer .site-footer__social a:hover {
     transform: translateY(-2px);
 }
 
+/* Hebrew site: keep contact access clear without repeating large sales prompts. */
+html[lang="he"] .bottom-cta,
+html[lang="he"] .services-bottom-cta-v2,
+html[lang="he"] .emergency-bottom-cta,
+html[lang="he"] .faq-page-contact-strip,
+html[lang="he"] .article-contact-cta,
+html[lang="he"] .seo-cta,
+html[lang="he"] .cta-strip,
+html[lang="he"] .cta-box,
+html[lang="he"] .pension-cta-inline,
+html[lang="he"] .section-inline-cta-wrap,
+html[lang="he"] .why-choose-me-cta-wrap,
+html[lang="he"] .emergency-inline-cta,
+html[lang="he"] .inline-cta,
+html[lang="he"] .mid-cta,
+html[lang="he"] .cta-inline,
+html[lang="he"] .quick-whatsapp,
+html[lang="he"] .pension-form-section,
+html[lang="he"] .pension-lead-box,
+html[lang="he"] #lead-form.contact-card,
+html[lang="he"] .media-whatsapp-float,
+html[lang="he"] .mobile-sticky-cta,
+html[lang="he"] .desktop-sticky-cta {
+    display: none !important;
+}
+
+html[lang="he"] header a[href^="tel:"] {
+    display: none !important;
+}
+
+html[lang="he"] .home-hero .hero-actions > :not(:first-child) {
+    display: none !important;
+}
+
+html[lang="he"] .home-hero .hero-actions .site-cta {
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    background: transparent;
+    box-shadow: none;
+}
+
+html[lang="he"] .home-hero .hero-actions .site-cta:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
 @media (min-width: 1024px) {
     body .site-footer.site-footer {
         padding: 22px 28px;
