@@ -19,6 +19,10 @@ from pathlib import Path
 
 SITE_BASE = "https://vainzof.co.il"
 SKIP_PAGES = {"choose-insurance-agent.html", "thanks.html"}
+REMOVED_PAGE_LINK_RE = re.compile(
+    r'<a\b[^>]*href=["\'][^"\']*calculator\.html(?:[?#][^"\']*)?["\'][^>]*>.*?</a>',
+    re.IGNORECASE | re.DOTALL,
+)
 
 
 def parse_args() -> argparse.Namespace:
@@ -33,6 +37,21 @@ def collect_pages(root: Path) -> list[Path]:
         if ".git" not in p.parts
         and p.name not in SKIP_PAGES
     )
+
+
+def remove_retired_page_links(root: Path, dry_run: bool) -> list[Path]:
+    """Remove links to pages that were permanently retired from the site."""
+    changed: list[Path] = []
+    for path in sorted(p for p in root.rglob("*.html") if ".git" not in p.parts):
+        content = path.read_text(encoding="utf-8", errors="ignore")
+        cleaned = REMOVED_PAGE_LINK_RE.sub("", content)
+        if cleaned == content:
+            continue
+        changed.append(path)
+        print(f"[cleanup] {'[DRY] ' if dry_run else ''}Removed calculator link: {path}")
+        if not dry_run:
+            path.write_text(cleaned, encoding="utf-8")
+    return changed
 
 
 def has_noindex(path: Path) -> bool:
@@ -133,6 +152,7 @@ def main() -> None:
     root = Path(".")
     today = date.today().isoformat()
 
+    removed_links = remove_retired_page_links(root, args.dry_run)
     pages = collect_pages(root)
     added_urls = sync_sitemap(Path("sitemap.xml"), pages, root, today, args.dry_run)
     sync_llms(Path("llms.txt"), added_urls, root, args.dry_run)
@@ -140,7 +160,7 @@ def main() -> None:
     if added_urls and not args.dry_run:
         print(f"[sync] Added {len(added_urls)} new page(s) - committing...")
         git_commit_and_push(root)
-    elif not added_urls:
+    elif not added_urls and not removed_links:
         print("[sync] All pages already in sitemap, nothing to do")
 
 
