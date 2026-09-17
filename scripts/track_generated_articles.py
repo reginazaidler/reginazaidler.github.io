@@ -141,7 +141,7 @@ def main() -> None:
                 continue
             skip = {"index.html", "choose-insurance-agent.html", "thanks.html",
                     "about.html", "services.html", "faq.html", "articles.html",
-                    "media.html", "reviews.html", "calculator.html", "insurance-types.html"}
+                    "media.html", "reviews.html", "insurance-types.html"}
             if filepath in skip:
                 continue
             slug = filepath.replace(".html", "")
