@@ -152,6 +152,17 @@ gtag('config', 'G-EM8SYH542C');
             cursor: pointer;
         }
         .media-page .video-filter__btn.active { border-color: #0b1b3b; background: #0b1b3b; color: #fff; }
+        .media-page .topic-nav { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .9rem; max-width: 1040px; margin: 0 auto 3rem; }
+        .media-page .topic-nav__link { display: flex; align-items: center; justify-content: space-between; min-height: 74px; padding: 1rem 1.1rem; border: 1px solid #dbe4ef; border-radius: 1rem; background: #fff; color: #0b1b3b; font-weight: 800; text-decoration: none; box-shadow: 0 10px 28px rgba(15,23,42,.06); }
+        .media-page .topic-nav__link:hover { border-color: #b8913f; transform: translateY(-1px); }
+        .media-page .topic-nav__arrow { color: #b8913f; font-size: 1.2rem; }
+        .media-page .topic-section { max-width: 1040px; margin: 0 auto 4rem; scroll-margin-top: 7rem; }
+        .media-page .topic-section__header { margin: 0 0 1.2rem; padding: 0 .15rem .9rem; border-bottom: 2px solid #e2e8f0; }
+        .media-page .topic-section__title { margin: 0 0 .25rem; color: #0b1b3b; font-size: clamp(1.6rem,3vw,2.25rem); font-weight: 800; }
+        .media-page .topic-section__description { margin: 0; color: #64748b; }
+        .media-page .topic-section__grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.5rem; }
+        .media-page .video-guide-link { display: inline-flex; margin-top: 1rem; color: #1d4ed8; font-weight: 800; text-decoration: none; }
+        .media-page .video-guide-link:hover { text-decoration: underline; }
         .media-page #videoGrid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -233,6 +244,8 @@ gtag('config', 'G-EM8SYH542C');
             .media-page .media-hero__actions { display: grid; }
             .media-page .media-hero__actions a { width: 100%; }
             .media-page #videoGrid { grid-template-columns: 1fr; }
+            .media-page .topic-nav { grid-template-columns: 1fr; }
+            .media-page .topic-section__grid { grid-template-columns: 1fr; }
             .media-page .video-card { padding: 1rem; border-radius: 1.15rem; }
             .media-page .phone-frame { height: 430px; }
         }
@@ -326,6 +339,42 @@ gtag('config', 'G-EM8SYH542C');
               "uploadDate": "2024-01-01T00:00:00+02:00",
               "duration": "PT45S",
               "keywords": ["S&P 500", "סנופי 500", "השקעה במדד", "מדדי מניות", "חיסכון לטווח ארוך", "תכנון פיננסי"]
+            },
+            {
+              "@type": "VideoObject",
+              "position": 7,
+              "name": "תרופות מחוץ לסל - מה חשוב לבדוק בביטוח הבריאות",
+              "description": "מה עושים כשנדרשת תרופה שאינה כלולה בסל הבריאות ומה חשוב לבדוק בכיסוי הפרטי.",
+              "embedUrl": "https://www.youtube.com/embed/DQdhtZ9JrS0",
+              "contentUrl": "https://www.youtube.com/shorts/DQdhtZ9JrS0",
+              "thumbnailUrl": "https://i.ytimg.com/vi/DQdhtZ9JrS0/hqdefault.jpg",
+              "uploadDate": "2026-09-07T04:59:50-07:00",
+              "duration": "PT42S",
+              "keywords": ["תרופות מחוץ לסל", "ביטוח בריאות", "כיסוי לתרופות", "סל הבריאות"]
+            },
+            {
+              "@type": "VideoObject",
+              "position": 8,
+              "name": "לוקחים משכנתא? בדקו את עלות ביטוח החיים",
+              "description": "למה כדאי להשוות את ביטוח החיים למשכנתא ולא לאשר אוטומטית את ההצעה הראשונה.",
+              "embedUrl": "https://www.youtube.com/embed/8-Y6Q1rOOrs",
+              "contentUrl": "https://www.youtube.com/shorts/8-Y6Q1rOOrs",
+              "thumbnailUrl": "https://i.ytimg.com/vi/8-Y6Q1rOOrs/hqdefault.jpg",
+              "uploadDate": "2026-04-19T04:14:41-07:00",
+              "duration": "PT55S",
+              "keywords": ["ביטוח משכנתא", "ביטוח חיים למשכנתא", "השוואת ביטוח משכנתא"]
+            },
+            {
+              "@type": "VideoObject",
+              "position": 9,
+              "name": "שינוי תאריכי טיסה בביטוח נסיעות לחו״ל",
+              "description": "מה חשוב לעדכן בביטוח הנסיעות כאשר תאריכי הטיסה משתנים.",
+              "embedUrl": "https://www.youtube.com/embed/hfpV0JTY1GM",
+              "contentUrl": "https://www.youtube.com/shorts/hfpV0JTY1GM",
+              "thumbnailUrl": "https://i.ytimg.com/vi/hfpV0JTY1GM/hqdefault.jpg",
+              "uploadDate": "2026-05-03T07:11:57-07:00",
+              "duration": "PT34S",
+              "keywords": ["ביטוח נסיעות לחו״ל", "שינוי תאריך טיסה", "הארכת ביטוח נסיעות"]
             }
           ]
         }
@@ -489,14 +538,19 @@ gtag('config', 'G-EM8SYH542C');
                     </p>
                 </div>
 
-                <div class="video-filter" role="tablist" aria-label="סינון סרטונים לפי נושא">
-                    <button class="video-filter__btn active" type="button" data-filter="all" role="tab" aria-selected="true">הכל</button>
-                    <button class="video-filter__btn" type="button" data-filter="pension" role="tab" aria-selected="false">פנסיה וחיסכון</button>
-                    <button class="video-filter__btn" type="button" data-filter="insurance" role="tab" aria-selected="false">תיק ביטוחי</button>
-                </div>
+                <nav class="topic-nav" aria-label="נושאים מרכזיים בווידאו">
+                    <a class="topic-nav__link" href="#topic-pension">פנסיה ופרישה <span class="topic-nav__arrow">←</span></a>
+                    <a class="topic-nav__link" href="#topic-health">ביטוחי בריאות וחיים <span class="topic-nav__arrow">←</span></a>
+                    <a class="topic-nav__link" href="#topic-family">חיסכון לילדים ולמשפחה <span class="topic-nav__arrow">←</span></a>
+                    <a class="topic-nav__link" href="#topic-mortgage">משכנתא וביטוח <span class="topic-nav__arrow">←</span></a>
+                    <a class="topic-nav__link" href="#topic-investments">השקעות ושוק ההון <span class="topic-nav__arrow">←</span></a>
+                    <a class="topic-nav__link" href="#topic-travel">ביטוח נסיעות לחו"ל <span class="topic-nav__arrow">←</span></a>
+                </nav>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto" id="videoGrid">
-                    <article class="video-card p-6 flex flex-col items-center relative" data-category="pension">
+                <div id="topicSections"></div>
+
+                <div id="videoGrid" hidden>
+                    <article class="video-card p-6 flex flex-col items-center relative" data-category="family">
                         <span class="video-tag">חיסכון לילדים</span>
                         <div class="phone-frame mb-6 video-embed" data-video-title="יש לכם ילד עד גיל 18? אל תתנו לכסף הזה לשבת סתם" data-video-src="https://www.youtube.com/embed/f4IKHd7gUKU?rel=0" data-video-url="https://www.youtube.com/shorts/f4IKHd7gUKU" data-video-keywords="חיסכון לילדים, חיסכון לכל ילד, חיסכון לילד, השקעה לילדים, תכנון פיננסי למשפחה">
                             <img class="video-poster" src="https://i.ytimg.com/vi/f4IKHd7gUKU/hqdefault.jpg" alt="תמונה מקדימה לסרטון על חיסכון לילדים עד גיל 18" loading="lazy" decoding="async">
@@ -537,11 +591,12 @@ gtag('config', 'G-EM8SYH542C');
                                 <li>מתאים ל: משפחות שחוסכות לטווח בינוני</li>
                                 <li>תכל'ס: איך לבדוק אם המסלול מתאים לכם</li>
                             </ul>
+                            <a href="services.html" class="video-guide-link">למדריך המלא על חיסכון ופנסיה ←</a>
                             <p class="text-xs text-slate-400 mt-3" aria-label="תגיות חיפוש בנושא גמל להשקעה">תגיות: גמל להשקעה, חיסכון, תכנון פיננסי, השקעה לטווח ארוך, קופת גמל</p>
                         </div>
                     </article>
 
-                    <article class="video-card p-6 flex flex-col items-center relative" data-category="insurance">
+                    <article class="video-card p-6 flex flex-col items-center relative" data-category="health">
                         <span class="video-tag">תיק ביטוחי</span>
                         <div class="phone-frame mb-6 video-embed" data-video-title="סדר בתיק הביטוחי" data-video-src="https://www.tiktok.com/player/v1/7588956938734472456?controls=1&description=0&music_info=0" data-video-url="https://www.tiktok.com/@vainzof/video/7588956938734472456" data-video-keywords="תיק ביטוחי, כפילויות ביטוח, בדיקת ביטוחים, כיסויים ביטוחיים, סדר פיננסי">
                             <img class="video-poster" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="תמונה מקדימה לסרטון סדר בתיק הביטוחי" loading="lazy" decoding="async">
@@ -559,11 +614,12 @@ gtag('config', 'G-EM8SYH542C');
                                 <li>מתאים ל: בעלי 2 פוליסות ומעלה</li>
                                 <li>תכל'ס: איך לזהות כפל ביטוחים</li>
                             </ul>
+                            <a href="check-insurance-policies.html" class="video-guide-link">למדריך המלא לבדיקת ביטוחים ←</a>
                             <p class="text-xs text-slate-400 mt-3" aria-label="תגיות חיפוש בנושא תיק ביטוחי">תגיות: תיק ביטוחי, כפילויות ביטוח, בדיקת ביטוחים, כיסויים ביטוחיים, סדר פיננסי</p>
                         </div>
                     </article>
 
-                    <article class="video-card p-6 flex flex-col items-center relative" data-category="pension">
+                    <article class="video-card p-6 flex flex-col items-center relative" data-category="investments">
                         <span class="video-tag">חיסכון</span>
                         <div class="phone-frame mb-6 video-embed" data-video-title="כסף בבנק נשחק עם הזמן" data-video-src="https://www.tiktok.com/player/v1/7604930490667224337?controls=1&description=0&music_info=0" data-video-url="https://www.tiktok.com/@vainzof/video/7604930490667224337" data-video-keywords="אינפלציה, שחיקת כסף, חיסכון בבנק, שמירה על ערך הכסף, תכנון פיננסי">
                             <img class="video-poster" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="תמונה מקדימה לסרטון כסף בבנק נשחק עם הזמן" loading="lazy" decoding="async">
@@ -581,11 +637,12 @@ gtag('config', 'G-EM8SYH542C');
                                 <li>מתאים ל: מי שמחזיק חסכונות בעו"ש</li>
                                 <li>תכל'ס: מה לבדוק לפני שנשארים במסלול סולידי מדי</li>
                             </ul>
+                            <a href="bank-savings-paying-too-much.html" class="video-guide-link">למדריך המלא על שחיקת חיסכון בבנק ←</a>
                             <p class="text-xs text-slate-400 mt-3" aria-label="תגיות חיפוש בנושא שחיקת כסף בבנק">תגיות: אינפלציה, שחיקת כסף, חיסכון בבנק, שמירה על ערך הכסף, תכנון פיננסי</p>
                         </div>
                     </article>
 
-                    <article class="video-card p-6 flex flex-col items-center relative" data-category="insurance">
+                    <article class="video-card p-6 flex flex-col items-center relative" data-category="health">
                         <span class="video-tag">תיק ביטוחי</span>
                         <div class="phone-frame mb-6 video-embed" data-video-title="כמה ביטוחים באמת יש לכם" data-video-src="https://www.tiktok.com/player/v1/7583388728714874120?controls=1&description=0&music_info=0" data-video-url="https://www.tiktok.com/@vainzof/video/7583388728714874120" data-video-keywords="כמה ביטוחים יש לי, כפילויות ביטוח, כיסויים חסרים, בדיקת תיק ביטוח, ביטוח ופנסיה">
                             <img class="video-poster" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="תמונה מקדימה לסרטון כמה ביטוחים באמת יש לכם" loading="lazy" decoding="async">
@@ -603,12 +660,13 @@ gtag('config', 'G-EM8SYH542C');
                                 <li>מתאים ל: משפחות עם ביטוחי בריאות/חיים פעילים</li>
                                 <li>תכל'ס: נקודת פתיחה לסדר בביטוחים</li>
                             </ul>
+                            <a href="check-insurance-policies.html" class="video-guide-link">למדריך המלא לבדיקת התיק הביטוחי ←</a>
                             <p class="text-xs text-slate-400 mt-3" aria-label="תגיות חיפוש בנושא בדיקת ביטוחים">תגיות: כמה ביטוחים יש לי, כפילויות ביטוח, כיסויים חסרים, בדיקת תיק ביטוח, ביטוח ופנסיה</p>
                         </div>
                     </article>
 
 
-                    <article class="video-card p-6 flex flex-col items-center relative" data-category="pension">
+                    <article class="video-card p-6 flex flex-col items-center relative" data-category="investments">
                         <span class="video-tag">S&P 500 והשקעות</span>
                         <div class="phone-frame mb-6 video-embed" data-video-title="מה זה S&P 500 ולמי זה יכול להתאים" data-video-src="https://www.tiktok.com/player/v1/7603094034374020368?controls=1&description=0&music_info=0" data-video-url="https://www.tiktok.com/@vainzof/video/7603094034374020368" data-video-keywords="S&P 500, סנופי 500, השקעה במדד, מדד מניות אמריקאי, חיסכון לטווח ארוך">
                             <img class="video-poster" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="תמונה מקדימה לסרטון מה זה S&P 500 ולמי זה יכול להתאים" loading="lazy" decoding="async">
@@ -626,8 +684,36 @@ gtag('config', 'G-EM8SYH542C');
                                 <li>מתאים ל: מי שמתעניין בהשקעה במדדים וחיסכון ארוך טווח</li>
                                 <li>תכל'ס: מה לבדוק לפני שמכניסים S&amp;P 500 לתוכנית הפיננסית</li>
                             </ul>
+                            <a href="sp500-guide.html" class="video-guide-link">למדריך המלא על S&amp;P 500 ←</a>
                             <p class="text-xs text-slate-400 mt-3" aria-label="תגיות חיפוש בנושא S&P 500">תגיות: S&amp;P 500, סנופי 500, השקעה במדד, מדד מניות אמריקאי, חיסכון לטווח ארוך</p>
                         </div>
+                    </article>
+
+                    <article class="video-card p-6 flex flex-col items-center relative" data-category="health">
+                        <span class="video-tag">ביטוחי בריאות וחיים</span>
+                        <div class="phone-frame mb-6 video-embed" data-video-title="תרופות מחוץ לסל - מה חשוב לבדוק" data-video-src="https://www.youtube.com/embed/DQdhtZ9JrS0?rel=0" data-video-url="https://www.youtube.com/shorts/DQdhtZ9JrS0">
+                            <img class="video-poster" src="https://i.ytimg.com/vi/DQdhtZ9JrS0/hqdefault.jpg" alt="סרטון על כיסוי לתרופות מחוץ לסל" loading="lazy" decoding="async">
+                            <button class="video-launch" type="button" aria-label="נגן סרטון על תרופות מחוץ לסל"><span class="video-launch__icon">▶</span><span class="video-launch__text">לחצו להפעלת הסרטון</span></button>
+                        </div>
+                        <div class="text-center"><h3>תרופה שאינה בסל - מה עושים?</h3><p>מה חשוב לבדוק בכיסוי הפרטי לתרופות מחוץ לסל ובאילו מגבלות צריך להתמקד.</p><ul class="video-meta-list"><li>משך צפייה: 00:42</li><li>מתאים ל: מי שבודק ביטוח בריאות פרטי</li><li>תכל'ס: לבדוק תקרות ותנאי כיסוי</li></ul><a href="health-basket-2026-guide.html" class="video-guide-link">למדריך המלא על סל הבריאות והכיסוי הפרטי ←</a></div>
+                    </article>
+
+                    <article class="video-card p-6 flex flex-col items-center relative" data-category="mortgage">
+                        <span class="video-tag">משכנתא וביטוח</span>
+                        <div class="phone-frame mb-6 video-embed" data-video-title="לוקחים משכנתא? בדקו את עלות הביטוח" data-video-src="https://www.youtube.com/embed/8-Y6Q1rOOrs?rel=0" data-video-url="https://www.youtube.com/shorts/8-Y6Q1rOOrs">
+                            <img class="video-poster" src="https://i.ytimg.com/vi/8-Y6Q1rOOrs/hqdefault.jpg" alt="סרטון על חיסכון בעלויות ביטוח משכנתא" loading="lazy" decoding="async">
+                            <button class="video-launch" type="button" aria-label="נגן סרטון על ביטוח משכנתא"><span class="video-launch__icon">▶</span><span class="video-launch__text">לחצו להפעלת הסרטון</span></button>
+                        </div>
+                        <div class="text-center"><h3>לוקחים משכנתא? בדקו את עלות הביטוח</h3><p>ביטוח החיים למשכנתא הוא הוצאה ארוכת טווח. לפני שמאשרים, כדאי להשוות מחיר ותנאים.</p><ul class="video-meta-list"><li>משך צפייה: 00:55</li><li>מתאים ל: רוכשי דירה ובעלי משכנתא</li><li>תכל'ס: לא לאשר אוטומטית את ההצעה הראשונה</li></ul><a href="mortgage-insurance.html" class="video-guide-link">למדריך המלא על ביטוח משכנתא ←</a></div>
+                    </article>
+
+                    <article class="video-card p-6 flex flex-col items-center relative" data-category="travel">
+                        <span class="video-tag">ביטוח נסיעות לחו"ל</span>
+                        <div class="phone-frame mb-6 video-embed" data-video-title="שינוי תאריכי טיסה בביטוח נסיעות" data-video-src="https://www.youtube.com/embed/hfpV0JTY1GM?rel=0" data-video-url="https://www.youtube.com/shorts/hfpV0JTY1GM">
+                            <img class="video-poster" src="https://i.ytimg.com/vi/hfpV0JTY1GM/hqdefault.jpg" alt="סרטון על שינוי תאריכי טיסה בביטוח נסיעות" loading="lazy" decoding="async">
+                            <button class="video-launch" type="button" aria-label="נגן סרטון על שינוי תאריכי טיסה"><span class="video-launch__icon">▶</span><span class="video-launch__text">לחצו להפעלת הסרטון</span></button>
+                        </div>
+                        <div class="text-center"><h3>תאריכי הטיסה השתנו? עדכנו את הביטוח</h3><p>שינוי בטיסה לא תמיד מעדכן אוטומטית את תקופת הביטוח. צריך לבדוק שהכיסוי מתאים לתאריכים החדשים.</p><ul class="video-meta-list"><li>משך צפייה: 00:34</li><li>מתאים ל: נוסעים שטיסתם השתנתה</li><li>תכל'ס: לוודא שאין יום ללא כיסוי</li></ul><a href="travel-insurance-before-flight.html" class="video-guide-link">למדריך המלא לבדיקת ביטוח לפני הטיסה ←</a></div>
                     </article>
                 </div>
 
@@ -782,9 +868,37 @@ gtag('config', 'G-EM8SYH542C');
             const revealElements = document.querySelectorAll('.reveal');
             const contactModal = document.getElementById('contactModal');
             const form = document.getElementById('modal-contact-form');
-            const filterButtons = document.querySelectorAll('.video-filter__btn');
             const videoCards = document.querySelectorAll('#videoGrid .video-card');
             const videoEmbeds = document.querySelectorAll('.video-embed');
+
+            const topicDefinitions = [
+                { key: 'pension', title: 'פנסיה ופרישה', description: 'פנסיה, גמל וחיסכון לטווח ארוך.' },
+                { key: 'health', title: 'ביטוחי בריאות וחיים', description: 'כיסויים רפואיים, תרופות ובדיקה של התיק הביטוחי.' },
+                { key: 'family', title: 'חיסכון לילדים ולמשפחה', description: 'החלטות חיסכון שמשפיעות על העתיד הכלכלי של המשפחה.' },
+                { key: 'mortgage', title: 'משכנתא וביטוח', description: 'ביטוח חיים ומבנה כחלק מעלות המשכנתא.' },
+                { key: 'investments', title: 'השקעות ושוק ההון', description: 'מדדים, אינפלציה ושמירה על ערך הכסף לאורך זמן.' },
+                { key: 'travel', title: 'ביטוח נסיעות לחו"ל', description: 'מה לבדוק לפני הטיסה וכאשר התוכניות משתנות.' }
+            ];
+
+            function buildTopicSections() {
+                const source = document.getElementById('videoGrid');
+                const target = document.getElementById('topicSections');
+                if (!source || !target) return;
+                topicDefinitions.forEach(topic => {
+                    const cards = Array.from(source.querySelectorAll(`[data-category="${topic.key}"]`));
+                    if (!cards.length) return;
+                    const section = document.createElement('section');
+                    section.className = 'topic-section';
+                    section.id = `topic-${topic.key}`;
+                    section.innerHTML = `<div class="topic-section__header"><h2 class="topic-section__title">${topic.title}</h2><p class="topic-section__description">${topic.description}</p></div><div class="topic-section__grid"></div>`;
+                    const grid = section.querySelector('.topic-section__grid');
+                    cards.forEach(card => grid.appendChild(card));
+                    target.appendChild(section);
+                });
+                source.remove();
+            }
+
+            buildTopicSections();
 
             function revealOnScroll() {
                 revealElements.forEach(el => {
@@ -798,25 +912,6 @@ gtag('config', 'G-EM8SYH542C');
 
             window.addEventListener('scroll', revealOnScroll);
             setTimeout(revealOnScroll, 100);
-
-            function setActiveFilter(filter) {
-                filterButtons.forEach(btn => {
-                    const isActive = btn.dataset.filter === filter;
-                    btn.classList.toggle('active', isActive);
-                    btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
-                });
-
-                videoCards.forEach(card => {
-                    const matches = filter === 'all' || card.dataset.category === filter;
-                    card.classList.toggle('is-hidden', !matches);
-                });
-            }
-
-            filterButtons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    setActiveFilter(btn.dataset.filter || 'all');
-                });
-            });
 
             async function loadVideoPoster(embed) {
                 const poster = embed.querySelector('.video-poster');
