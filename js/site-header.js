@@ -268,6 +268,31 @@
     init();
   }
 })();
+
+(function () {
+  if (window.__mobileContactActionBound) return;
+  window.__mobileContactActionBound = true;
+
+  document.addEventListener('click', function (event) {
+    var contactButton = event.target.closest('button.mobile-contact-cta');
+    if (!contactButton) return;
+
+    event.preventDefault();
+    event.stopImmediatePropagation();
+
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'whatsapp_click', {
+        link_url: 'https://wa.me/972524520222',
+        link_text: (contactButton.textContent || '').trim(),
+        contact_method: 'whatsapp',
+        page_location: window.location.href,
+        page_title: document.title
+      });
+    }
+
+    window.location.assign('https://wa.me/972524520222');
+  }, true);
+})();
 (function () {
     document.querySelectorAll('.sr-focusable').forEach(function (link) { link.remove(); });
   function isDrawerMenu(menu) {
