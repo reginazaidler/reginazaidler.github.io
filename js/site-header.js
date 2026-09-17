@@ -110,6 +110,17 @@
     });
   }
 
+  function removeSavingsCalculatorLinks() {
+    document.querySelectorAll('a[href*="calculator.html"]').forEach(function (link) {
+      var parentItem = link.closest('li');
+      if (parentItem && parentItem.textContent.trim() === link.textContent.trim()) {
+        parentItem.remove();
+      } else {
+        link.remove();
+      }
+    });
+  }
+
 
 
   function ensureMobileContactActions() {
@@ -242,6 +253,7 @@
   }
 
   function init() {
+    removeSavingsCalculatorLinks();
     initMobileMenu();
     initDesktopKnowledgeMenu();
     ensureMobileContactActions();
