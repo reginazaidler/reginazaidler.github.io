@@ -6281,31 +6281,6 @@ main section.bg-white .text-white h3 {
     margin-top: 1.35rem;
 }
 
-.faq-page .site-footer {
-    border-top: 0;
-}
-
-.faq-page .site-footer__inner {
-    gap: 18px;
-}
-
-.faq-page .site-footer__nav {
-    max-width: 920px;
-    gap: 8px 16px;
-}
-
-.faq-page .site-footer__social a::after {
-    display: none;
-}
-
-.faq-page .site-footer__social a {
-    width: 2rem;
-    height: 2rem;
-    justify-content: center;
-    border-radius: 999px;
-    border: 1px solid rgba(148, 163, 184, 0.35);
-}
-
 @media (max-width: 1023px) {
     .faq-page .faq-top-tools {
         grid-template-columns: 1fr;
@@ -6392,24 +6367,6 @@ main section.bg-white .text-white h3 {
         margin-top: 1.3rem;
     }
 
-    .faq-page .site-footer__social a {
-        width: auto;
-        height: auto;
-        border: 0;
-    }
-
-    .faq-page .site-footer__social a::after {
-        display: inline;
-    }
-
-    .faq-page .site-footer {
-        border-top: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .faq-page .site-footer__nav {
-        max-width: none;
-        gap: 10px;
-    }
 }
 /* ===================================================== */
 /* FINAL DESKTOP OVERRIDES - bottom CTA + footer layout */
@@ -6616,8 +6573,7 @@ main section.bg-white .text-white h3 {
         font-size: 0.92rem;
     }
 
-    .site-footer__nav,
-    .faq-page .site-footer__nav {
+    .site-footer__nav {
         grid-template-columns: 1fr;
         gap: 8px;
     }

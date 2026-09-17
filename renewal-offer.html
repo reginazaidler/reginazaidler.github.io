@@ -16,13 +16,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700;800;900&display=swap">
+    <link rel="stylesheet" href="style.css?v=20260917-1">
     <link rel="icon" type="image/png" href="favicon.png">
     <style>
         * { box-sizing: border-box; }
         body {
             min-height: 100vh;
             margin: 0;
-            padding: 28px 14px;
+            padding: 28px 0 0;
             display: grid;
             place-items: center;
             gap: 18px;
@@ -30,7 +31,7 @@
             color: #fff;
             font-family: Assistant, Arial, sans-serif;
         }
-        main { width: min(100%, 760px); display: grid; justify-items: center; gap: 18px; }
+        main { width: min(100%, 788px); padding: 0 14px; display: grid; justify-items: center; gap: 18px; }
         .poster-frame {
             width: min(100%, 540px);
             border-radius: 34px;
@@ -45,7 +46,7 @@
         .button { min-height: 48px; padding: 11px 18px; border: 0; border-radius: 15px; color: #fff; background: #b8913f; font: 900 1rem Assistant, Arial, sans-serif; text-decoration: none; cursor: pointer; }
         .button--secondary { background: rgba(255,255,255,.17); }
         .button--whatsapp { background: #128c7e; }
-        @media print { body { padding: 0; display: block; background: #fff; } .poster-frame { width: 100vw; padding: 0; border-radius: 0; box-shadow: none; } svg { border-radius: 0; } .actions { display: none; } }
+        @media print { body { padding: 0; display: block; background: #fff; } main { width: 100%; padding: 0; } .poster-frame { width: 100vw; padding: 0; border-radius: 0; box-shadow: none; } svg { border-radius: 0; } .actions, .site-footer { display: none !important; } }
     </style>
 </head>
 <body>
@@ -159,5 +160,6 @@
         });
     }());
     </script>
+    <script src="js/site-footer.js"></script>
 </body>
 </html>
