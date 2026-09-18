@@ -849,17 +849,20 @@ gtag('config', 'G-EM8SYH542C');
                     const title = embed.dataset.videoTitle || 'סרטון';
                     if (!src) return;
 
+                    const videoSrc = new URL(src);
+                    videoSrc.searchParams.set('autoplay', '1');
+                    videoSrc.searchParams.set('playsinline', '1');
+
                     const iframe = document.createElement('iframe');
-                    iframe.src = src;
-                    iframe.loading = 'lazy';
+                    iframe.src = videoSrc.toString();
                     iframe.title = `סרטון: ${title}`;
+                    iframe.allow = 'autoplay; encrypted-media; picture-in-picture';
                     iframe.allowFullscreen = true;
                     iframe.style.width = '100%';
                     iframe.style.height = '100%';
                     iframe.style.border = 'none';
 
-                    launchButton.remove();
-                    embed.appendChild(iframe);
+                    embed.replaceChildren(iframe);
                 }, { once: true });
             });
 
