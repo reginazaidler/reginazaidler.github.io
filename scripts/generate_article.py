@@ -799,9 +799,12 @@ def update_all_indexes(slug: str, h1: str, meta_desc: str, today: str) -> None:
     else:
         print("[sitemap] sitemap.xml not found, skipping")
 
-    # articles.html intentionally skipped - agent articles are indexed via
-    # sitemap + llms.txt only, not linked from the site navigation.
-    print("[articles] Skipping articles.html (orphan-by-design)")
+    # A page worth indexing should also be discoverable through the site's
+    # article hub. Add it to the relevant category instead of leaving it orphaned.
+    if articles.exists():
+        update_articles_html(articles, slug, h1, meta_desc, category)
+    else:
+        print("[articles] articles.html not found, skipping")
 
     if llms.exists():
         update_llms_txt(llms, slug, h1)
