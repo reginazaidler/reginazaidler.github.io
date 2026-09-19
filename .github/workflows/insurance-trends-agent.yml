@@ -16,6 +16,10 @@ on:
         description: 'Skip article generation (trends report only)'
         required: false
         default: 'false'
+      selection_only:
+        description: 'Test relevance gate only; never publish an article'
+        required: false
+        default: 'false'
 
 
   schedule:
@@ -90,9 +94,13 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           set +e
+          EXTRA_ARGS=""
+          if [ "${{ inputs.selection_only }}" = "true" ]; then
+            EXTRA_ARGS="--selection-only"
+          fi
           output=$(python3 scripts/generate_article.py \
             --json-path reports/insurance-trends-report.json \
-            --output-dir . 2>&1)
+            --output-dir . $EXTRA_ARGS 2>&1)
           status=$?
           set -e
 
