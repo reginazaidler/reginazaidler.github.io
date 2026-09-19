@@ -50,6 +50,8 @@ def parse_args() -> argparse.Namespace:
                    help="How many trends to send OpenAI for evaluation")
     p.add_argument("--dry-run", action="store_true",
                    help="Print generated content without writing files")
+    p.add_argument("--selection-only", action="store_true",
+                   help="Run relevance selection only; do not write an article")
     return p.parse_args()
 
 
@@ -835,6 +837,10 @@ def main() -> int:
     print(f"[generate_article] Chosen: {meta['chosen_trend']}")
     print(f"[generate_article] Reason: {meta['reason']}")
     print(f"[generate_article] Slug: {meta['slug']}")
+
+    if args.selection_only:
+        print("[generate_article] Selection-only mode; relevance gate passed.")
+        return 0
 
     print("[generate_article] Writing full article...")
     article = write_article(meta)
