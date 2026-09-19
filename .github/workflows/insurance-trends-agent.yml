@@ -73,24 +73,24 @@ jobs:
               f.write(f"new_count={new_count}\n")
           EOF
 
-      - name: Debug API key
+      - name: Debug OpenAI API key
         run: |
-          echo "Key starts with: ${ANTHROPIC_API_KEY:0:10}..."
-          if [ -z "$ANTHROPIC_API_KEY" ]; then
-            echo "ERROR: ANTHROPIC_API_KEY is empty!"
+          echo "Key starts with: ${OPENAI_API_KEY:0:10}..."
+          if [ -z "$OPENAI_API_KEY" ]; then
+            echo "ERROR: OPENAI_API_KEY is empty!"
           else
-            echo "Key length: ${#ANTHROPIC_API_KEY}"
+            echo "Key length: ${#OPENAI_API_KEY}"
           fi
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
 
-      - name: Generate SEO article with Claude
+      - name: Generate SEO article with OpenAI
         if: >
           steps.check_trends.outputs.has_content == 'true' &&
           inputs.skip_article != 'true'
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           set +e
           output=$(python3 scripts/generate_article.py \
