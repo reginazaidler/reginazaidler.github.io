@@ -40,7 +40,14 @@
 - מדריך לפנסיה: https://vainzof.co.il/pension-guide.html
 - ביטוח חיים: https://vainzof.co.il/life-insurance.html
 - ביטוח בריאות: https://vainzof.co.il/health-insurance.html
+- אובדן כושר עבודה: https://vainzof.co.il/loss-of-income-guide.html
+- טעויות נפוצות של עצמאים בפנסיה: https://vainzof.co.il/freelancers-pension-mistakes.html
+- קרן חירום משפחתית: https://vainzof.co.il/family-emergency-fund.html
+- דולר-שקל עולה - מה זה אומר על הפנסיה והביטוחים שלכם: https://vainzof.co.il/dollar-shekel-pension-insurance.html
+- ביטוח נסיעות לחו"ל - מה חשוב לבדוק לפני הטיסה עם ארקיע: https://vainzof.co.il/travel-insurance-before-flight.html
 - כך תבדקו אם ביטוח הנסיעות שלכם מכסה טיסות ארקיע: https://vainzof.co.il/travel-insurance-check-before-flight.html
+- מבצע חושך נצחי: מה כדאי לבדוק בביטוח ובפנסיה שלכם עכשיו: https://vainzof.co.il/mivtza-hoshech-nitzchi-bituach.html
+- נוסעים לאירוויזיון? 5 דברים שצריך לבדוק בביטוח הנסיעות לפני שעולים לטיסה: https://vainzof.co.il/travel-insurance-eurovision-checklist.html
 - ביטוח נסיעות לחו"ל עם מצב רפואי - האם אפשר וכמה זה עולה: https://vainzof.co.il/travel-insurance-medical.html
 
 ## מידע לכלים AI
@@ -54,21 +61,41 @@
 - מה לבדוק אחרי מעבר עבודה?
 - כמה עולה ביטוח חיים?
 - האם ביטוח בריאות פרטי שווה?
+- מה ביל אקמן מלמד אותנו על ניהול הכסף שלנו - ולמה הפנסיה שלך מחכה לבדיקה: https://vainzof.co.il/bill-ackman-pension-portfolio-review.html
 - ביטקוין עולה - אבל האם תיק הפנסיה שלכם מוגן?: https://vainzof.co.il/bitcoin-pension-insurance-check.html
+- ביטוח לאומי וביטוח פרטי: מה מכסה המדינה ומה אתם צריכים לדאוג לבד: https://vainzof.co.il/bituah-leumi-vs-private-insurance.html
+- מה קורה לביטוח ולפנסיה שלכם כשהמפרנס לא יכול לעבוד - המדריך המלא למשפחה הישראלית: https://vainzof.co.il/disability-insurance-family-guide.html
+- גל הירש ושירות המדינה: מה זה אומר על הביטוח הפנסיוני שלכם כשכירים?: https://vainzof.co.il/gal-hirsch-pension-insurance-employees.html
 - בדיקת תיק ביטוח ופנסיה | יובל ויינזוף: https://vainzof.co.il/index.html
+- חנינה ושחרור ממאסר: מה קורה לביטוח ולפנסיה שלכם ואיך לא להישאר ללא כיסוי: https://vainzof.co.il/insurance-after-pardon-israel.html
+- אזעקות ומצב חירום: מה הביטוח שלכם באמת מכסה - ומה חסר?: https://vainzof.co.il/insurance-coverage-emergency-sirens.html
+- פיקוד העורף והביטוח שלכם: מה הפוליסה מכסה בשעת חירום ומה נשאר בחוץ?: https://vainzof.co.il/insurance-coverage-home-front-command-emergency.html
+- מצב חירום ביטחוני: מה הביטוח שלכם מכסה ומה הוא לא מכסה?: https://vainzof.co.il/insurance-coverage-security-emergency.html
+- אירועי חיים שמשנים את הביטוח שלכם - ומתי חובה לעדכן את הפוליסה: https://vainzof.co.il/life-events-insurance-policy-update.html
 - מדד תל אביב 35 עולה או יורד - מה זה עושה לפנסיה ולביטוחים שלכם?: https://vainzof.co.il/tel-aviv-35-index-effect-on-pension.html
+- ביטוח לטסלה: מה חשוב לבדוק לפני שאתם חותמים - ואיך זה משפיע על כל תיק הביטוח שלכם: https://vainzof.co.il/tesla-insurance-israel.html
 - קנית טסלה מודל Y? זה הזמן לבדוק שהביטוח שלך מכסה אותך באמת: https://vainzof.co.il/tesla-model-y-insurance-check.html
+- Warriors vs Lakers: מה חשוב לדעת עכשיו לפני שקונים או מעדכנים ביטוח: https://vainzof.co.il/warriors-vs-lakers-insurance-tips.html
 - סוכן ביטוח פנסיוני | יובל ויינזוף - ייעוץ פנסיוני אישי: https://vainzof.co.il/sochen-bituach-pensioni.html
 - בית ספר מתחיל - האם הביטוח המשפחתי שלכם מוכן?: https://vainzof.co.il/kids-school-insurance-checklist.html
 - בית ספר וביטוח ילדים: מה ההורים צריכים לבדוק לפני תחילת שנת הלימודים: https://vainzof.co.il/school-year-kids-insurance-checklist.html
+- מדד תל אביב 35 יורד - מה זה אומר על הפנסיה והביטוח שלך?: https://vainzof.co.il/tel-aviv-35-index-pension-insurance.html
 - קניתם הונדה חדשה? זה הזמן לבדוק שכל הביטוחים שלכם עובדים בשבילכם: https://vainzof.co.il/new-car-insurance-review.html
+- יום השואה 2025: מה מגיע לכם מהביטוח - וכמעט אף אחד לא בדק: https://vainzof.co.il/holocaust-remembrance-day-insurance-rights.html
+- פינוי בינוי וביטוח: מה חייבים לבדוק לפני שעוזבים את הדירה: https://vainzof.co.il/insurance-pinui-binui.html
+- מרתון ירושלים 2025: האם הביטוח שלך מכסה אותך בזמן ריצה?: https://vainzof.co.il/jerusalem-marathon-insurance-coverage.html
+- מרתון ירושלים: איזה ביטוח אתם צריכים לפני שיוצאים לרוץ?: https://vainzof.co.il/jerusalem-marathon-insurance-guide.html
+- פינוי בינוי וביטוח: מה צריך לבדוק לפני שעוזבים את הדירה: https://vainzof.co.il/pinuy-binuy-insurance-checklist.html
+- תל אביב 35: מה צריך לבדוק בביטוח הדירה והרכוש שלכם עכשיו: https://vainzof.co.il/tel-aviv-35-home-insurance-check.html
 - מלון רויאל ים המלח עלה באש - מה זה אומר על ביטוח הדירה שלכם?: https://vainzof.co.il/royal-dead-sea-hotel-fire-home-insurance.html
 - Главная (RU) | Проверка страхового и пенсионного портфеля: https://vainzof.co.il/ru/index.html
 - О Ювале Вайнзофе | Страховой и пенсионный агент: https://vainzof.co.il/ru/about.html
 - Дубли страховок: как выявить лишние ежемесячные платежи | Юваль Вайнзоф: https://vainzof.co.il/ru/duplicate-insurance-payments.html
+- הונאות ביטוח בישראל: איך תדעו שאתם לא משלמים על פוליסה שלא קיבלתם?: https://vainzof.co.il/insurance-fraud-israel.html
 - ביטוח רכב: מה חשוב לבדוק לפני שבוחרים: https://vainzof.co.il/car-insurance.html
 - ביטוח דירה: מה כולל הכיסוי ולמי הוא מתאים: https://vainzof.co.il/home-insurance.html
 - ביטוח נסיעות לחו"ל: מה חשוב לבדוק לפני טיסה: https://vainzof.co.il/travel-insurance-abroad.html
+- אירוע מטוס בחדשות - האם ביטוח הנסיעות שלכם מכסה חירום אמיתי בחו"ל?: https://vainzof.co.il/travel-insurance-flight-emergency-coverage.html
 - Финансовый чек-лист для семьи: что проверять раз в год | Юваль Вайнзоф: https://vainzof.co.il/ru/family-financial-checklist.html
 - Как проверить страховой портфель: пошагово | Юваль Вайнзоф: https://vainzof.co.il/ru/kak-proverit-strahovoy-portfel.html
 - Как навести порядок в страховках | Юваль Вайнзоф: https://vainzof.co.il/ru/navesti-poryadok-v-strahovkah.html
@@ -76,11 +103,19 @@
 - Медстрахование в Израиле для русскоязычных: купат холим и частные полисы: https://vainzof.co.il/ru/medstrahovanie-v-izraile-dlya-russkoyazychnyh.html
 - Пенсионные права работников в Израиле: чек-лист для русскоязычных: https://vainzof.co.il/ru/pensionnye-prava-rabotnikov-v-izraile.html
 - Ипотека и страхование для семей в Израиле: гид на русском: https://vainzof.co.il/ru/ipoteka-strahovanie-dlya-semey-v-izraile.html
+- פוטרתם? 5 דברים שחייבים לבדוק בביטוח ובפנסיה שלכם עכשיו: https://vainzof.co.il/fired-insurance-pension-checklist.html
+- אנבידיה קורסת או מזנקת - ואתם לא יודעים כמה מהפנסיה שלכם שם: https://vainzof.co.il/nvidia-pension-fund-exposure.html
+- לג בעומר 2025: האש כבר דולקת - האם הביטוח שלכם מכסה תאונות ושריפות?: https://vainzof.co.il/lag-baomer-insurance-fire-accidents.html
 - Рост заболеваемости корью: что проверить в страховках | Юваль Вайнзоф: https://vainzof.co.il/ru/kor-insurance-checklist.html
 - Корзина лекарств 2026: что это значит для вашей страховки | Юваль Вайнзоф: https://vainzof.co.il/ru/korzina-zdorovya-2026-chto-proveryat.html
 - Частная медстраховка: 5 вопросов перед продлением | Юваль Вайнзоф: https://vainzof.co.il/ru/voprosy-pered-prodleniem-medstrahovki.html
+- רעידת אדמה בישראל: האם ביטוח הדירה שלך מכסה את הנזקים?: https://vainzof.co.il/home-insurance-earthquake-coverage-israel.html
+- התפרצות חצבת בישראל: האם ביטוח הבריאות שלכם יכסה את הטיפול?: https://vainzof.co.il/measles-health-insurance-coverage-israel.html
 - שיא ניודים לפנסיה מנייתית: מה זה אומר לחוסכים ב-2026?: https://vainzof.co.il/pension-stock-track-israel-2026.html
+- פינוי בינוי וביטוח דירה: מה קורה לכיסוי שלכם בזמן הפינוי?: https://vainzof.co.il/pinuy-binuy-home-insurance.html
+- אי-ודאות כלכלית? זה הזמן לבדוק כמה אתם משלמים על ביטוח ופנסיה: https://vainzof.co.il/economic-uncertainty-insurance-pension-review.html
 - Медицинская страховка для длительного пребывания в Израиле | Юваль Вайнзоф: https://vainzof.co.il/ru/medstrahovka-dlya-dlitelnogo-prebyvaniya-v-izraile.html
+- ביטוח רכב 2025: איך לבדוק שאתם לא משלמים כפל ביטוחים בלי לדעת: https://vainzof.co.il/car-insurance-double-coverage-check.html
 - Страховой агент в Ашдоде | Юваль Вайнзоф: https://vainzof.co.il/ru/insurance-agent-ashdod.html
 - Страховой агент в Ашкелоне | Юваль Вайнзоф: https://vainzof.co.il/ru/insurance-agent-ashkelon.html
 - Страховой агент в Ган-Явне для русскоязычных | Юваль Вайнзоф: https://vainzof.co.il/ru/insurance-agent-gan-yavne.html
@@ -95,13 +130,44 @@
 - Страховой агент в Ришон-ле-Ционе для русскоязычных | Юваль Вайнзоф: https://vainzof.co.il/ru/insurance-agent-rishon-lezion.html
 - Страховой агент в Гуш-Дане для русскоязычных | Юваль Вайнзоф: https://vainzof.co.il/ru/insurance-agent-gush-dan.html
 - Страховой агент в районе Шарон для русскоязычных | Юваль Вайнзоф: https://vainzof.co.il/ru/insurance-agent-sharon.html
+- תשואה בפנסיה: כמה כסף אתם מפסידים כי לא בדקתם את המסלול שלכם: https://vainzof.co.il/pension-yield-check.html
+- רשות המיסים ופנסיה: איך לחסוך אלפי שקלים בשנה בלי לדעת שאפשר: https://vainzof.co.il/tax-authority-pension-insurance-tax-refund.html
 - הצהרת נגישות | יובל ויינזוף: https://vainzof.co.il/accessibility.html
+- ירין לוי ושינויי הביטוח: מה זה אומר על הפוליסות שלך עכשיו: https://vainzof.co.il/yarin-levi-insurance-update.html
 - Заявление о доступности | Юваль Вайнзоф: https://vainzof.co.il/ru/zayavleniye-o-dostupnosti.html
+- תשואה בפנסיה: למה דמי הניהול שלך אוכלים לך את הרווח בלי שתרגיש: https://vainzof.co.il/pension-yield-management-fees.html
+- מחיר הדלק שוב עולה - האם ביטוח הרכב שלכם לפחות מתומחר נכון?: https://vainzof.co.il/car-insurance-check-fuel-prices.html
+- קונים דירה בישראל ב-2025? זה הזמן לבדוק מה ביטוח המשכנתא שלכם באמת מכסה: https://vainzof.co.il/mortgage-insurance-home-buyers-israel-2025.html
 - מלחמה וביטוח: מה כיסוי הפוליסה שלך כשיש אירועי איבה - ומה לא: https://vainzof.co.il/insurance-during-war-israel.html
 - תשואות הפנסיה עלו - אבל כמה מהן באמת מגיעות אליכם?: https://vainzof.co.il/pension-fund-returns-check.html
+- רעידת האדמה בוונצואלה: האם הדירה שלך מבוטחת נגד רעידת אדמה?: https://vainzof.co.il/venezuela-earthquake-home-insurance-israel.html
+- שינויים באגד: מה עובדי חברות גדולות צריכים לבדוק עכשיו בפנסיה ובביטוח שלהם: https://vainzof.co.il/egged-workers-pension-insurance-check.html
 - קנית דירה? כך תדעו אם ביטוח הדירה שלכם באמת מכסה אתכם: https://vainzof.co.il/home-insurance-check-apartment.html
+- מחיר הדלק עולה שוב - האם אתם גם משלמים יותר מדי על ביטוח הרכב?: https://vainzof.co.il/car-insurance-review-fuel-price-rise.html
+- טסים לחו"ל? זה הזמן לבדוק אם ביטוח הנסיעות שלכם באמת מכסה אתכם: https://vainzof.co.il/travel-insurance-what-is-covered.html
+- הארי ומייגן ואיבדו את הביטוח הממלכתי - מתי בדקת לאחרונה שהכיסוי שלך עדיין מתאים לחיים שלך?: https://vainzof.co.il/harry-meghan-insurance-life-changes.html
+- פוטרת? 5 דברים שחייבים לבדוק בביטוח ובפנסיה שלך לפני שיהיה מאוחר מדי: https://vainzof.co.il/insurance-pension-after-layoff.html
+- בנק לאומי ורכישת ביטוחים דרך הבנק - למה כדאי לבדוק פעמיים לפני שאתם משלמים: https://vainzof.co.il/insurance-through-bank-leumi.html
+- חתונה ממבט ראשון: אילו ביטוחים חייבים לעדכן כשנכנסים לחיים משותפים: https://vainzof.co.il/insurance-update-new-couple.html
+- חברת תעופה קרסה? כך תדעו אם ביטוח הנסיעות שלכם מכסה אתכם: https://vainzof.co.il/travel-insurance-airline-collapse.html
+- פיטורים באינטל ישראל: מה קורה לביטוח ולפנסיה שלכם ביום שאחרי?: https://vainzof.co.il/intel-israel-layoffs-insurance-pension.html
 - טסים לתאילנד? מה ביטוח הנסיעות שלכם לא מכסה - ואיך לא להיתקע שם בלי הגנה: https://vainzof.co.il/travel-insurance-thailand.html
+- יש לכם יותר מנכס אחד? למה בעלי נדל"ן משלמים כפל ביטוח בלי לדעת: https://vainzof.co.il/real-estate-owners-double-insurance.html
 - סרטוני ביטוח ופנסיה | יובל ויינזוף: https://vainzof.co.il/media.html
+- זכית במחיר למשתכן? אלה הביטוחים שתצטרך לקנות - ואיך לא לשלם יותר מדי: https://vainzof.co.il/mehir-lemishtaken-insurance-guide.html
+- קיבלתם דוח ממצלמת מהירות? זה הזמן לבדוק מה הביטוח שלכם באמת מכסה: https://vainzof.co.il/speed-camera-ticket-car-insurance.html
+- דני אבדיה מבוטח על הגוף שלו - ומה עם אובדן כושר העבודה שלך?: https://vainzof.co.il/dani-avdiya-disability-insurance.html
+- קרן כספית מול קרן השתלמות: מה עדיף לכם ומה אנשים מפספסים בדרך: https://vainzof.co.il/keren-kaspit-vs-keren-hishtalmut.html
+- ריבית בנק ישראל ירדה - מה זה אומר על ביטוח החיים והמשכנתא שלך?: https://vainzof.co.il/bank-of-israel-interest-rate-insurance.html
+- קנית טסלה? זה הרגע לבדוק שהביטוח שלך באמת מכסה רכב חשמלי: https://vainzof.co.il/tesla-electric-car-insurance-israel.html
 - אסותא רמת החייל: האם ביטוח הבריאות שלכם באמת מכסה טיפול שם?: https://vainzof.co.il/assuta-ramat-hachayal-health-insurance-coverage.html
 - מדיניות פרטיות | יובל ויינזוף: https://vainzof.co.il/privacy-policy.html
 - טסים לחו"ל? כך תדעו אם ביטוח הנסיעות שלכם באמת מכסה אתכם: https://vainzof.co.il/travel-insurance-what-does-it-cover.html
+- פיצוץ בבניין: מה הביטוח שלכם מכסה - ומה הוא בטוח לא מכסה: https://vainzof.co.il/explosion-home-insurance-coverage.html
+- דמי הבראה 2025: מה הם כוללים ואיך הם משפיעים על הפנסיה שלכם: https://vainzof.co.il/dmei-havraa-pensiya-zkuyot.html
+- אזהרת מסע פורסמה - האם ביטוח הנסיעות שלכם בכלל תקף שם?: https://vainzof.co.il/travel-warning-travel-insurance-coverage.html
+- מילואים וביטוח: מה קורה לכיסוי הביטוחי שלך כשאתה בשירות?: https://vainzof.co.il/insurance-during-reserve-duty.html
+- ירין לוי, ביטוח בריאות ומה שחשוב לבדוק עכשיו בתיק שלכם: https://vainzof.co.il/yarint-levy-health-insurance-update.html
+- פוטרתם? אלה הביטוחים והפנסיה שצריך לבדוק מיד לפני שיהיה מאוחר: https://vainzof.co.il/layoff-insurance-pension-checklist.html
+- אלטשולר שחם, הפנסיה שלכם ושאלה אחת שכדאי לשאול עכשיו: https://vainzof.co.il/altshuler-shaham-pension-check.html
+- המדד עלה - ואתם שילמתם יותר על הביטוח בלי לשים לב: https://vainzof.co.il/madad-insurance-premiums-rise.html

@@ -2,7 +2,7 @@
 """
 generate_article.py
 ───────────────────
-Reads the latest insurance-trends JSON report, asks OpenAI to pick the
+Reads the latest insurance-trends JSON report, asks Claude to pick the
 best opportunity and write a full SEO article, then outputs a styled
 HTML file that matches vainzof.co.il.
 
@@ -24,15 +24,15 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
-OPENAI_API_URL = "https://api.openai.com/v1/responses"
-MODEL = os.environ.get("OPENAI_ARTICLE_MODEL", "gpt-5.6-luna")
+ANTHROPIC_API_URL = "https://api.anthropic.com/v1/messages"
+MODEL = "claude-sonnet-4-6"
 
 GA_ID = "G-EM8SYH542C"
 FORMSPREE_ID = "mdawkwwn"
 WHATSAPP_NUMBER = "972524520222"
 
 SITE_CONTEXT = """
-האתר הוא vainzof.co.il של יובל ויינזוף - סוכן ביטוח ופנסיה עם 18 שנות ניסיון.
+האתר הוא vainzof.co.il של יובל ויינזוף - יועץ ביטוח ופנסיה עם 18 שנות ניסיון.
 שירות מרכזי: בדיקת תיק ביטוח ופנסיה - זיהוי כפל ביטוחים, עלויות מיותרות, חוסרים.
 קהל יעד: משפחות ישראליות בגיל 30-55 שמשלמות על ביטוחים ופנסיה אבל לא בדקו לאחרונה.
 טון: מקצועי אבל נגיש, ישיר, מעשי. לא מכירתי.
@@ -47,55 +47,47 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--json-path", default="reports/insurance-trends-report.json")
     p.add_argument("--output-dir", default=".")
     p.add_argument("--max-trends", type=int, default=15,
-                   help="How many trends to send OpenAI for evaluation")
+                   help="How many trends to send Claude for evaluation")
     p.add_argument("--dry-run", action="store_true",
                    help="Print generated content without writing files")
-    p.add_argument("--selection-only", action="store_true",
-                   help="Run relevance selection only; do not write an article")
     return p.parse_args()
 
 
 def api_key() -> str:
-    key = os.environ.get("OPENAI_API_KEY", "")
+    key = os.environ.get("ANTHROPIC_API_KEY", "")
     if not key:
-        sys.exit("ERROR: OPENAI_API_KEY environment variable is not set.")
+        sys.exit("ERROR: ANTHROPIC_API_KEY environment variable is not set.")
     return key
 
 
-def call_openai(prompt: str, system: str, max_tokens: int = 4096, retries: int = 5) -> str:
+def call_claude(prompt: str, system: str, max_tokens: int = 4096, retries: int = 5) -> str:
     payload = json.dumps({
         "model": MODEL,
-        "instructions": system,
-        "input": prompt,
-        "max_output_tokens": max_tokens,
+        "max_tokens": max_tokens,
+        "system": system,
+        "messages": [{"role": "user", "content": prompt}],
     }).encode()
 
     for attempt in range(retries):
         req = urllib.request.Request(
-            OPENAI_API_URL,
+            ANTHROPIC_API_URL,
             data=payload,
             headers={
-                "Authorization": f"Bearer {api_key()}",
-                "Content-Type": "application/json",
+                "x-api-key": api_key(),
+                "anthropic-version": "2023-06-01",
+                "content-type": "application/json",
             },
         )
         try:
             with urllib.request.urlopen(req, timeout=120) as resp:
                 data = json.loads(resp.read())
-            if data.get("output_text"):
-                return data["output_text"]
-            parts = []
-            for item in data.get("output", []):
-                for block in item.get("content", []):
-                    if block.get("type") == "output_text":
-                        parts.append(block.get("text", ""))
-            return "".join(parts)
+            return "".join(block.get("text", "") for block in data.get("content", []))
         except urllib.error.HTTPError as e:
             body = e.read().decode("utf-8", errors="replace")
-            print(f"[call_openai] HTTP {e.code} error (attempt {attempt + 1}/{retries}): {body}", flush=True)
+            print(f"[call_claude] HTTP {e.code} error (attempt {attempt + 1}/{retries}): {body}", flush=True)
             if e.code in (529, 503, 500) and attempt < retries - 1:
                 wait = 30 * (2 ** attempt)
-                print(f"[call_openai] Retrying in {wait}s...", flush=True)
+                print(f"[call_claude] Retrying in {wait}s...", flush=True)
                 time.sleep(wait)
             else:
                 raise
@@ -109,7 +101,7 @@ def load_report(json_path: str) -> dict:
 
 
 def pick_best_trend(report: dict, max_trends: int) -> dict:
-    """Ask OpenAI to evaluate all trends and pick + plan the best article."""
+    """Ask Claude to evaluate all trends and pick + plan the best article."""
 
     # Collect candidates: new direct + fallback ideas
     candidates = []
@@ -138,17 +130,8 @@ def pick_best_trend(report: dict, max_trends: int) -> dict:
 
 בחר **רק** טרנד שעומד בכל התנאים הבאים:
 1. **אירוע ספציפי ואמיתי** - שם מקום, אירוע, חברה, אדם, תאריך - לא נושא גנרי.
-2. **קשר מקצועי אמיתי לביטוח, פנסיה, חיסכון, משכנתא, סיכון למשפחה או פיננסים** - לא מספיק שאפשר להדביק את המילה ביטוח לכותרת.
-3. **שאלת לקוח אמיתית** - חייבת להיות שאלה מעשית שהאירוע גורם ללקוח סביר לשאול ושאפשר לענות עליה בצורה מועילה.
-4. **כותרת שמחברת בין האירוע לנושא המקצועי בלי clickbait**.
-
-לפני הבחירה שאל את עצמך:
-- מה בדיוק הקשר המקצועי בין האירוע לבין תחום העיסוק של יובל?
-- איזו שאלה אמיתית של לקוח הכתבה פותרת?
-- האם הכתבה עדיין הייתה מועילה אילו הסרנו את שם הטרנד מהכותרת?
-
-אם אין תשובה קונקרטית לשתי השאלות הראשונות - החזר null.
-אירוע ספורט, סלבריטאי או בידור ללא השלכה ביטוחית/פיננסית ממשית חייב להידחות.
+2. **קשר ישיר לביטוח או פנסיה** - הקורא צריך להבין מיד למה זה רלוונטי אליו.
+3. **כותרת שמחברת בין האירוע לביטוח** - לפי הדוגמה: "האש ביוון 2026 - למה ביטוח דירה חשוב יותר מאי פעם".
 
 ## כותרות לדחות
 - "מה זה ביטוח - כל מה שצריך לדעת"
@@ -174,7 +157,7 @@ def pick_best_trend(report: dict, max_trends: int) -> dict:
   "page_class": "kebab-case-page-class"
 }}"""
 
-    raw = call_openai(prompt, system="אתה מומחה SEO לאתרים בעברית. ענה אך ורק ב-JSON תקין.")
+    raw = call_claude(prompt, system="אתה מומחה SEO לאתרים בעברית. ענה אך ורק ב-JSON תקין.")
     raw = raw.strip().lstrip("```json").lstrip("```").rstrip("```").strip()
     result = json.loads(raw)
     if not result.get("chosen_trend"):
@@ -200,14 +183,14 @@ INTERNAL_LINKS = {
 
 
 def write_article(meta: dict) -> dict:
-    """Ask OpenAI to write the full article body (sections as JSON)."""
+    """Ask Claude to write the full article body (sections as JSON)."""
 
     links_list = "\n".join(
         f'  - "{slug}": href="{href}" טקסט="{label}"'
         for slug, (href, label) in INTERNAL_LINKS.items()
     )
 
-    prompt = f"""אתה כותב כתבת SEO מלאה לאתר vainzof.co.il של יובל ויינזוף, סוכן ביטוח ופנסיה.
+    prompt = f"""אתה כותב כתבת SEO מלאה לאתר vainzof.co.il של יובל ויינזוף, יועץ ביטוח ופנסיה.
 
 נושא: {meta['chosen_trend']}
 כותרת H1: {meta['h1']}
@@ -233,12 +216,6 @@ def write_article(meta: dict) -> dict:
 8. הימנע מניסוחים תבניתיים כמו "בעידן של היום", "חשוב לציין", "לסיכום", "כל מה שצריך לדעת" ו"המדריך המקיף".
 9. אל תחזור על אותה מסקנה בפתיחה, בגוף ובסיכום. העדף דוגמאות קונקרטיות ושאלות שקורא אמיתי היה שואל.
 10. לפני החזרת ה-JSON, קרא את הטקסט כעורך: הסר סופרלטיבים, רצפים סימטריים מדי ומילות מילוי.
-11. אל תכתוב טענה עובדתית ספציפית על תנאי פוליסה, חריגים, זכאות, מס, חוק, רגולציה, טיפול רפואי, תשואה, דמי ניהול, אחוזים, סכומים או התנהגות של חברת ביטוח אם היא לא ניתנת לאימות ממקור סמכותי ועדכני.
-12. אין לך בשלב הכתיבה גישה למקורות חיצוניים מאומתים. לכן כאשר פרט כזה אינו ודאי, אל תנחש ואל תציג אותו כעובדה. כתוב שהכיסוי או הזכאות תלויים בפוליסה/נסיבות והפנה לבדיקה במסמך הרשמי או מול הגוף הרלוונטי.
-13. אל תמציא מספרים, טווחי אחוזים, מגבלות, מועדים, שמות סעיפים או כללים משפטיים. אם הם אינם חלק מפורש מהמידע שסופק לך - השמט אותם.
-14. אל תשתמש בניסוחים גורפים כגון "תמיד", "כמעט תמיד", "כל הפוליסות", "רוב החברות" או "חייב" בנושאי ביטוח, מס, בריאות או זכויות, אלא אם הדבר נדרש רק כדי לתאר פעולה בטוחה כמו "חייבים לבדוק את הפוליסה".
-15. העדף שאלות בדיקה מעשיות על פני קביעות: מה לבדוק בפוליסה, למי לפנות, איזה מסמך לבקש ואיזה פרט לאמת לפני החלטה.
-16. אל תציג את יובל כ"יועץ ביטוח" אם אין צורך. השתמש בתיאור "סוכן ביטוח ופנסיה".
 
 חשוב: ב-JSON אסור HTML ואסור מרכאות כפולות בתוך ערכים.
 כתוב טקסט רגיל בלבד.
@@ -260,7 +237,7 @@ def write_article(meta: dict) -> dict:
   "summary": "משפט סיכום אחד"
 }}"""
 
-    raw = call_openai(
+    raw = call_claude(
         prompt,
         system="אתה עורך תוכן SEO מקצועי לאתרים בעברית. כתוב תוכן מעמיק ומועיל. ענה אך ורק ב-JSON תקין ללא HTML.",
         max_tokens=8000,
@@ -308,7 +285,7 @@ def sections_html(sections: list[dict]) -> str:
         if s.get("bullets"):
             items = "".join(f"<li>{linkify(b)}</li>" for b in s["bullets"])
             bullets = f"<ul>{items}</ul>"
-        # Handle "links" field if OpenAI returns it
+        # Handle "links" field if Claude returns it
         links_html = ""
         if s.get("links"):
             link_items = ""
@@ -616,7 +593,7 @@ body.{page_class} main {{ padding-top: 2.5rem; padding-bottom: 2.5rem; }}
       </section>
       <section class="pension-lead-box">
         <h2 class="text-2xl font-black text-blue-950 mb-3">יש שאלה?</h2>
-        <p class="text-slate-700">יובל ויינזוף - סוכן ביטוח ופנסיה. אפשר לפנות ישירות.</p>
+        <p class="text-slate-700">יובל ויינזוף - יועץ ביטוח ופנסיה. אפשר לפנות ישירות.</p>
         <div class="pension-btn-row" style="margin-top:1rem">
           <a href="https://wa.me/{WHATSAPP_NUMBER}" target="_blank" rel="noopener noreferrer" class="pension-btn pension-btn--whatsapp">WhatsApp</a>
         </div>
@@ -813,12 +790,9 @@ def update_all_indexes(slug: str, h1: str, meta_desc: str, today: str) -> None:
     else:
         print("[sitemap] sitemap.xml not found, skipping")
 
-    # A page worth indexing should also be discoverable through the site's
-    # article hub. Add it to the relevant category instead of leaving it orphaned.
-    if articles.exists():
-        update_articles_html(articles, slug, h1, meta_desc, category)
-    else:
-        print("[articles] articles.html not found, skipping")
+    # articles.html intentionally skipped - agent articles are indexed via
+    # sitemap + llms.txt only, not linked from the site navigation.
+    print("[articles] Skipping articles.html (orphan-by-design)")
 
     if llms.exists():
         update_llms_txt(llms, slug, h1)
@@ -832,15 +806,11 @@ def main() -> int:
     now = datetime.now(timezone.utc)
     now_str = now.strftime("%Y-%m-%d")
 
-    print("[generate_article] Asking OpenAI to pick best trend & plan article...")
+    print("[generate_article] Asking Claude to pick best trend & plan article...")
     meta = pick_best_trend(report, args.max_trends)
     print(f"[generate_article] Chosen: {meta['chosen_trend']}")
     print(f"[generate_article] Reason: {meta['reason']}")
     print(f"[generate_article] Slug: {meta['slug']}")
-
-    if args.selection_only:
-        print("[generate_article] Selection-only mode; relevance gate passed.")
-        return 0
 
     print("[generate_article] Writing full article...")
     article = write_article(meta)
