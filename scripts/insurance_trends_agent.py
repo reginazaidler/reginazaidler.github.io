@@ -434,6 +434,9 @@ def main() -> int:
 
     article_ideas = [generate_article_idea(curr_map[title]["title"]) for title in new_titles[: args.max_ideas]]
 
+    # Fallbacks are allowed only when Google Trends itself contains a concrete
+    # finance/life/risk/pain signal. Never force an insurance article from an
+    # unrelated general trend just because it is popular.
     fallback_article_ideas: list[dict[str, str]] = []
     if not article_ideas:
         categorized_candidates: list[dict[str, str]] = []
@@ -441,8 +444,6 @@ def main() -> int:
             matched = match_categories(item, keywords_sets)
             if any(category in matched for category in ("finance", "life", "risk", "pain")):
                 categorized_candidates.append(generate_combo_idea_from_general_trend(item, matched))
-            else:
-                categorized_candidates.append(generate_fallback_idea_from_general_trend(item))
             if len(categorized_candidates) >= args.max_ideas:
                 break
         fallback_article_ideas = categorized_candidates
