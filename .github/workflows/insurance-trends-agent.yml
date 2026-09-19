@@ -73,17 +73,14 @@ jobs:
               f.write(f"new_count={new_count}\n")
           EOF
 
-      - name: Debug OpenAI API key
-        run: |
-          echo "Key starts with: ${OPENAI_API_KEY:0:10}..."
-          if [ -z "$OPENAI_API_KEY" ]; then
-            echo "ERROR: OPENAI_API_KEY is empty!"
-          else
-            echo "Key length: ${#OPENAI_API_KEY}"
-          fi
+      - name: Validate OpenAI API key
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-
+        run: |
+          if [ -z "$OPENAI_API_KEY" ]; then
+            echo "::error::OPENAI_API_KEY is missing"
+            exit 1
+          fi
 
       - name: Generate SEO article with OpenAI
         if: >
