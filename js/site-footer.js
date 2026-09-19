@@ -104,7 +104,7 @@
         <a href="/accessibility.html">הצהרת נגישות</a>
         <a href="/privacy.html">מדיניות פרטיות</a>
         <a href="/takanon.html">תנאי שימוש</a>\n        <a href="/cookies.html">מדיניות עוגיות</a>\n        <a href="/refund-policy.html">ביטולים והחזרים</a>
-        <a href="/reviews.html">לקוחות ממליצים</a>
+        <a href="/reviews.html">חוות דעת</a>
         <div class="site-footer__city-links" data-city-links>
           <a href="/sochen-bituach-herzliya.html">סוכן ביטוח בהרצליה</a>
           <a href="/sochen-bituach-petah-tikva.html">סוכן ביטוח בפתח תקווה</a>
