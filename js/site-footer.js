@@ -158,7 +158,7 @@
           <textarea name="message" rows="2" placeholder="Что вы хотите проверить?" class="mobile-optional-field w-full p-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-600 font-bold text-sm resize-none"></textarea>
           <p class="mobile-form-note">Для мобильной версии достаточно имени и телефона - остальное уточним в разговоре.</p>
           <div class="flex items-center gap-2 py-1">
-            <input type="checkbox" id="modal_marketing" name="marketing" checked class="w-4 h-4 rounded border-slate-300 text-blue-600 cursor-pointer">
+            <input type="checkbox" id="modal_marketing" name="marketing" class="w-4 h-4 rounded border-slate-300 text-blue-600 cursor-pointer">
             <label for="modal_marketing" class="text-[11px] text-slate-500 font-medium cursor-pointer">Согласен(на) получать профессиональные обновления</label>
           </div>
           <button type="submit" id="modal-submit-btn" class="w-full bg-blue-900 text-white py-3.5 rounded-xl font-bold text-md shadow-lg hover:bg-blue-800 transition-all">Записаться на персональную проверку</button>
@@ -253,6 +253,16 @@
     }
   });
 
+
+  document.querySelectorAll('input, textarea, select').forEach(function(field){
+    if (!field.getAttribute('aria-label') && !field.labels?.length) {
+      var label = field.getAttribute('placeholder') || field.getAttribute('name');
+      if (label) field.setAttribute('aria-label', label);
+    }
+  });
+  document.querySelectorAll('button').forEach(function(button){
+    if (!button.textContent.trim() && !button.getAttribute('aria-label')) button.setAttribute('aria-label','כפתור פעולה');
+  });
 
   document.querySelectorAll('form').forEach(function(form){
     if(form.querySelector('[data-privacy-consent]')) return;
