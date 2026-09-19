@@ -11,6 +11,20 @@
   window.dataLayer = window.dataLayer || [];
   window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
 
+  function analyticsAllowed() {
+    try {
+      var consent = JSON.parse(localStorage.getItem('vainzof_cookie_consent_v1') || 'null');
+      return !!(consent && consent.analytics === true);
+    } catch (e) { return false; }
+  }
+
+  if (!analyticsAllowed()) {
+    window.addEventListener('vainzof:consent', function (event) {
+      if (event.detail && event.detail.analytics) location.reload();
+    }, { once: true });
+    return;
+  }
+
   function hasGaConfig() {
     return window.dataLayer.some(function (item) {
       return item && item[0] === 'config' && item[1] === GA_ID;
