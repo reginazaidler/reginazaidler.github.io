@@ -1,6 +1,6 @@
 # Insurance Trends Automation (Free)
 
-המסמך מסביר איך להריץ סוכן חינמי שבודק כל כמה שעות טרנדים מגוגל טרנדס, מזהה שינויים בתחום הביטוח ומייצר רעיונות לכתבות.
+המסמך מסביר איך להריץ סוכן שבודק טרנדים מ-Google Trends בישראל, מזהה נושאים עם קשר אמיתי לביטוח, פנסיה ופיננסים, ובמידת הצורך מייצר כתבה באמצעות Claude.
 
 ## מה נוסף בריפו
 
@@ -38,10 +38,9 @@ CRON_TZ=Asia/Jerusalem
 
 ## עלות
 
-הפתרון כולו חינמי:
-- מקור נתונים: Google Trends RSS.
-- ללא OpenAI / ללא API בתשלום.
-- רץ על Cron מקומי/שרת.
+- מקור הטרנדים: Google Trends RSS ללא API בתשלום.
+- יצירת הכתבה משתמשת ב-Anthropic API ולכן עשויה להיות כרוכה בעלות API.
+- הריצה האוטומטית מתבצעת ב-GitHub Actions.
 
 ## הערות חשובות
 
@@ -57,11 +56,11 @@ CRON_TZ=Asia/Jerusalem
 - Workflow: `.github/workflows/insurance-trends-agent.yml`
 - הרצה ידנית: לשונית **Actions** → **Run Insurance Trends Agent** → **Run workflow**
 - אפשר לבחור שם `geo` ו-`lookback_hours` לפני ההרצה הידנית
-- הרצה אוטומטית: כל 4 שעות (לפי UTC)
+- הרצה אוטומטית: 3 פעמים בשבוע - ראשון, שלישי וחמישי ב-08:00 UTC
 - תוצאות: קובץ Artifact בשם `insurance-trends-agent-reports` שמכיל:
   - `reports/insurance-trends-report.md`
   - `reports/insurance-trends-report.json`
   - `data/trends-agent/snapshot_*.json`
 
 > שים לב: ב-GitHub Actions כל ריצה היא סביבה חדשה, לכן השוואה היסטורית מלאה תלויה בקבצי snapshot שמורידים מה-Artifacts של ריצות קודמות.
-> אם אין טרנדים ביטוחיים ישירים בריצה מסוימת, הדוח יכלול גם **רעיונות גיבוי** על בסיס הטרנדים הכלליים החמים בזווית ביטוחית.
+> אם אין טרנד ביטוחי ישיר, רעיון גיבוי נוצר רק כאשר יש בטרנד אות ממשי של פיננסים, אירוע חיים, סיכון או לחץ כלכלי. טרנד כללי ללא קשר מקצועי לא ייצור כתבה.
