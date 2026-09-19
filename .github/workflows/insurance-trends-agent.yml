@@ -109,12 +109,15 @@ jobs:
             fi
           fi
 
+      - name: Sync sitemap and llms.txt
+        run: python3 scripts/sync_indexes.py
+
       - name: Commit and push new files
         run: |
           git config user.name  "Trends Agent"
           git config user.email "trends-agent@vainzof.co.il"
 
-          git add reports/ data/trends-agent/ || true
+          git add reports/ data/trends-agent/ sitemap.xml llms.txt articles.html || true
 
           if [ -f reports/last-generated-article.json ]; then
             SLUG=$(python3 -c "
@@ -140,10 +143,6 @@ jobs:
             fi
             git push
           fi
-
-      - name: Sync sitemap and llms.txt
-        run: python3 scripts/sync_indexes.py
-
 
       - name: Send email summary
         if: env.ARTICLE_SLUG != ''
