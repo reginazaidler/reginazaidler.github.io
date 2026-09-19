@@ -2,7 +2,7 @@
 """
 generate_article.py
 ───────────────────
-Reads the latest insurance-trends JSON report, asks Claude to pick the
+Reads the latest insurance-trends JSON report, asks OpenAI to pick the
 best opportunity and write a full SEO article, then outputs a styled
 HTML file that matches vainzof.co.il.
 
@@ -47,47 +47,53 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--json-path", default="reports/insurance-trends-report.json")
     p.add_argument("--output-dir", default=".")
     p.add_argument("--max-trends", type=int, default=15,
-                   help="How many trends to send Claude for evaluation")
+                   help="How many trends to send OpenAI for evaluation")
     p.add_argument("--dry-run", action="store_true",
                    help="Print generated content without writing files")
     return p.parse_args()
 
 
 def api_key() -> str:
-    key = os.environ.get("ANTHROPIC_API_KEY", "")
+    key = os.environ.get("OPENAI_API_KEY", "")
     if not key:
-        sys.exit("ERROR: ANTHROPIC_API_KEY environment variable is not set.")
+        sys.exit("ERROR: OPENAI_API_KEY environment variable is not set.")
     return key
 
 
-def call_claude(prompt: str, system: str, max_tokens: int = 4096, retries: int = 5) -> str:
+def call_openai(prompt: str, system: str, max_tokens: int = 4096, retries: int = 5) -> str:
     payload = json.dumps({
         "model": MODEL,
-        "max_tokens": max_tokens,
-        "system": system,
-        "messages": [{"role": "user", "content": prompt}],
+        "instructions": system,
+        "input": prompt,
+        "max_output_tokens": max_tokens,
     }).encode()
 
     for attempt in range(retries):
         req = urllib.request.Request(
-            ANTHROPIC_API_URL,
+            OPENAI_API_URL,
             data=payload,
             headers={
-                "x-api-key": api_key(),
-                "anthropic-version": "2023-06-01",
-                "content-type": "application/json",
+                "Authorization": f"Bearer {api_key()}",
+                "Content-Type": "application/json",
             },
         )
         try:
             with urllib.request.urlopen(req, timeout=120) as resp:
                 data = json.loads(resp.read())
-            return "".join(block.get("text", "") for block in data.get("content", []))
+            if data.get("output_text"):
+                return data["output_text"]
+            parts = []
+            for item in data.get("output", []):
+                for block in item.get("content", []):
+                    if block.get("type") == "output_text":
+                        parts.append(block.get("text", ""))
+            return "".join(parts)
         except urllib.error.HTTPError as e:
             body = e.read().decode("utf-8", errors="replace")
-            print(f"[call_claude] HTTP {e.code} error (attempt {attempt + 1}/{retries}): {body}", flush=True)
+            print(f"[call_openai] HTTP {e.code} error (attempt {attempt + 1}/{retries}): {body}", flush=True)
             if e.code in (529, 503, 500) and attempt < retries - 1:
                 wait = 30 * (2 ** attempt)
-                print(f"[call_claude] Retrying in {wait}s...", flush=True)
+                print(f"[call_openai] Retrying in {wait}s...", flush=True)
                 time.sleep(wait)
             else:
                 raise
@@ -101,7 +107,7 @@ def load_report(json_path: str) -> dict:
 
 
 def pick_best_trend(report: dict, max_trends: int) -> dict:
-    """Ask Claude to evaluate all trends and pick + plan the best article."""
+    """Ask OpenAI to evaluate all trends and pick + plan the best article."""
 
     # Collect candidates: new direct + fallback ideas
     candidates = []
@@ -166,7 +172,7 @@ def pick_best_trend(report: dict, max_trends: int) -> dict:
   "page_class": "kebab-case-page-class"
 }}"""
 
-    raw = call_claude(prompt, system="אתה מומחה SEO לאתרים בעברית. ענה אך ורק ב-JSON תקין.")
+    raw = call_openai(prompt, system="אתה מומחה SEO לאתרים בעברית. ענה אך ורק ב-JSON תקין.")
     raw = raw.strip().lstrip("```json").lstrip("```").rstrip("```").strip()
     result = json.loads(raw)
     if not result.get("chosen_trend"):
@@ -192,7 +198,7 @@ INTERNAL_LINKS = {
 
 
 def write_article(meta: dict) -> dict:
-    """Ask Claude to write the full article body (sections as JSON)."""
+    """Ask OpenAI to write the full article body (sections as JSON)."""
 
     links_list = "\n".join(
         f'  - "{slug}": href="{href}" טקסט="{label}"'
@@ -252,7 +258,7 @@ def write_article(meta: dict) -> dict:
   "summary": "משפט סיכום אחד"
 }}"""
 
-    raw = call_claude(
+    raw = call_openai(
         prompt,
         system="אתה עורך תוכן SEO מקצועי לאתרים בעברית. כתוב תוכן מעמיק ומועיל. ענה אך ורק ב-JSON תקין ללא HTML.",
         max_tokens=8000,
@@ -300,7 +306,7 @@ def sections_html(sections: list[dict]) -> str:
         if s.get("bullets"):
             items = "".join(f"<li>{linkify(b)}</li>" for b in s["bullets"])
             bullets = f"<ul>{items}</ul>"
-        # Handle "links" field if Claude returns it
+        # Handle "links" field if OpenAI returns it
         links_html = ""
         if s.get("links"):
             link_items = ""
@@ -824,7 +830,7 @@ def main() -> int:
     now = datetime.now(timezone.utc)
     now_str = now.strftime("%Y-%m-%d")
 
-    print("[generate_article] Asking Claude to pick best trend & plan article...")
+    print("[generate_article] Asking OpenAI to pick best trend & plan article...")
     meta = pick_best_trend(report, args.max_trends)
     print(f"[generate_article] Chosen: {meta['chosen_trend']}")
     print(f"[generate_article] Reason: {meta['reason']}")
