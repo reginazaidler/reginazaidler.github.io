@@ -2,6 +2,8 @@
   const currentScript = document.currentScript;
   if (!currentScript) return;
 
+  if (!document.querySelector('script[src="/js/cookie-consent.js"]')) { const s=document.createElement('script'); s.src='/js/cookie-consent.js'; s.defer=true; document.head.appendChild(s); }
+
   const isRuPage = window.location.pathname.indexOf('/ru/') === 0;
   const isRuCityPage = isRuPage && /insurance-agent-/.test(window.location.pathname);
 
@@ -101,8 +103,8 @@
         <a href="/media.html">וידאו</a>
         <a href="/accessibility.html">הצהרת נגישות</a>
         <a href="/privacy.html">מדיניות פרטיות</a>
-        <a href="/takanon.html">תקנון האתר</a>
-        <a href="/reviews.html">לקוחות ממליצים</a>
+        <a href="/takanon.html">תנאי שימוש</a>\n        <a href="/cookies.html">מדיניות עוגיות</a>\n        <a href="/refund-policy.html">ביטולים והחזרים</a>
+        <a href="/reviews.html">חוות דעת</a>
         <div class="site-footer__city-links" data-city-links>
           <a href="/sochen-bituach-herzliya.html">סוכן ביטוח בהרצליה</a>
           <a href="/sochen-bituach-petah-tikva.html">סוכן ביטוח בפתח תקווה</a>
@@ -156,7 +158,7 @@
           <textarea name="message" rows="2" placeholder="Что вы хотите проверить?" class="mobile-optional-field w-full p-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-600 font-bold text-sm resize-none"></textarea>
           <p class="mobile-form-note">Для мобильной версии достаточно имени и телефона - остальное уточним в разговоре.</p>
           <div class="flex items-center gap-2 py-1">
-            <input type="checkbox" id="modal_marketing" name="marketing" checked class="w-4 h-4 rounded border-slate-300 text-blue-600 cursor-pointer">
+            <input type="checkbox" id="modal_marketing" name="marketing" class="w-4 h-4 rounded border-slate-300 text-blue-600 cursor-pointer">
             <label for="modal_marketing" class="text-[11px] text-slate-500 font-medium cursor-pointer">Согласен(на) получать профессиональные обновления</label>
           </div>
           <button type="submit" id="modal-submit-btn" class="w-full bg-blue-900 text-white py-3.5 rounded-xl font-bold text-md shadow-lg hover:bg-blue-800 transition-all">Записаться на персональную проверку</button>
@@ -251,6 +253,30 @@
     }
   });
 
+
+  document.querySelectorAll('input, textarea, select').forEach(function(field){
+    if (!field.getAttribute('aria-label') && !field.labels?.length) {
+      var label = field.getAttribute('placeholder') || field.getAttribute('name');
+      if (label) field.setAttribute('aria-label', label);
+    }
+  });
+  document.querySelectorAll('button').forEach(function(button){
+    if (!button.textContent.trim() && !button.getAttribute('aria-label')) button.setAttribute('aria-label','כפתור פעולה');
+  });
+
+  document.querySelectorAll('form').forEach(function(form){
+    if(form.querySelector('[data-privacy-consent]')) return;
+    var submit=form.querySelector('button[type="submit"],input[type="submit"]');
+    if(!submit) return;
+    var wrap=document.createElement('div');
+    wrap.setAttribute('data-privacy-consent','');
+    wrap.style.cssText='margin:10px 0;font-size:13px;line-height:1.5';
+    var id='privacy-consent-'+Math.random().toString(36).slice(2);
+    wrap.innerHTML=isRuPage
+      ? '<label><input id="'+id+'" type="checkbox" required> Я согласен(на) на использование моих данных для ответа на обращение в соответствии с <a href="/ru/politika-konfidentsialnosti.html" target="_blank">политикой конфиденциальности</a>.</label>'
+      : '<label><input id="'+id+'" type="checkbox" required> אני מאשר/ת שימוש בפרטים שמסרתי לצורך טיפול בפנייה ויצירת קשר, בהתאם ל<a href="/privacy.html" target="_blank">מדיניות הפרטיות</a>.</label>';
+    submit.parentNode.insertBefore(wrap,submit);
+  });
 
   currentScript.replaceWith(footer);
 })();
