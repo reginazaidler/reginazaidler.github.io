@@ -24,8 +24,8 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
-ANTHROPIC_API_URL = "https://api.anthropic.com/v1/messages"
-MODEL = "claude-sonnet-4-6"
+OPENAI_API_URL = "https://api.openai.com/v1/responses"
+MODEL = os.environ.get("OPENAI_ARTICLE_MODEL", "gpt-5.6-luna")
 
 GA_ID = "G-EM8SYH542C"
 FORMSPREE_ID = "mdawkwwn"
