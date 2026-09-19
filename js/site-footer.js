@@ -2,6 +2,8 @@
   const currentScript = document.currentScript;
   if (!currentScript) return;
 
+  if (!document.querySelector('script[src="/js/cookie-consent.js"]')) { const s=document.createElement('script'); s.src='/js/cookie-consent.js'; s.defer=true; document.head.appendChild(s); }
+
   const isRuPage = window.location.pathname.indexOf('/ru/') === 0;
   const isRuCityPage = isRuPage && /insurance-agent-/.test(window.location.pathname);
 
@@ -101,7 +103,7 @@
         <a href="/media.html">וידאו</a>
         <a href="/accessibility.html">הצהרת נגישות</a>
         <a href="/privacy.html">מדיניות פרטיות</a>
-        <a href="/takanon.html">תקנון האתר</a>
+        <a href="/takanon.html">תנאי שימוש</a>\n        <a href="/cookies.html">מדיניות עוגיות</a>\n        <a href="/refund-policy.html">ביטולים והחזרים</a>
         <a href="/reviews.html">לקוחות ממליצים</a>
         <div class="site-footer__city-links" data-city-links>
           <a href="/sochen-bituach-herzliya.html">סוכן ביטוח בהרצליה</a>
@@ -251,6 +253,20 @@
     }
   });
 
+
+  document.querySelectorAll('form').forEach(function(form){
+    if(form.querySelector('[data-privacy-consent]')) return;
+    var submit=form.querySelector('button[type="submit"],input[type="submit"]');
+    if(!submit) return;
+    var wrap=document.createElement('div');
+    wrap.setAttribute('data-privacy-consent','');
+    wrap.style.cssText='margin:10px 0;font-size:13px;line-height:1.5';
+    var id='privacy-consent-'+Math.random().toString(36).slice(2);
+    wrap.innerHTML=isRuPage
+      ? '<label><input id="'+id+'" type="checkbox" required> Я согласен(на) на использование моих данных для ответа на обращение в соответствии с <a href="/ru/politika-konfidentsialnosti.html" target="_blank">политикой конфиденциальности</a>.</label>'
+      : '<label><input id="'+id+'" type="checkbox" required> אני מאשר/ת שימוש בפרטים שמסרתי לצורך טיפול בפנייה ויצירת קשר, בהתאם ל<a href="/privacy.html" target="_blank">מדיניות הפרטיות</a>.</label>';
+    submit.parentNode.insertBefore(wrap,submit);
+  });
 
   currentScript.replaceWith(footer);
 })();
