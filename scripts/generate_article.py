@@ -27,7 +27,6 @@ from pathlib import Path
 OPENAI_API_URL = "https://api.openai.com/v1/responses"
 MODEL = os.environ.get("OPENAI_ARTICLE_MODEL", "gpt-5.6-luna")
 
-GA_ID = "G-EM8SYH542C"
 FORMSPREE_ID = "mdawkwwn"
 WHATSAPP_NUMBER = "972524520222"
 
@@ -366,13 +365,6 @@ def build_html(meta: dict, article: dict, now_str: str) -> str:
     return f"""<!doctype html>
 <html lang="he" dir="rtl">
 <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){{dataLayer.push(arguments);}}
-gtag('js', new Date());
-gtag('config', '{GA_ID}');
-</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{h1}</title>
