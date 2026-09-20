@@ -1,10 +1,7 @@
 (function () {
   const currentScript = document.currentScript;
   if (!currentScript) return;
-
-  if (!document.querySelector('script[src="/js/cookie-consent.js"]')) { const s=document.createElement('script'); s.src='/js/cookie-consent.js'; s.defer=true; document.head.appendChild(s); }
-
-  const isRuPage = window.location.pathname.indexOf('/ru/') === 0;
+const isRuPage = window.location.pathname.indexOf('/ru/') === 0;
   const isRuCityPage = isRuPage && /insurance-agent-/.test(window.location.pathname);
 
   // Inject WhatsApp + phone CTA buttons into the art-hero on Russian city pages
