@@ -9596,3 +9596,22 @@ body.about-page .about-content-card > section:not(.home-hero):nth-of-type(odd) {
         border-top: 1px solid rgba(148, 163, 184, 0.16);
     }
 }
+
+
+/* Global keyboard focus indicator */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid #0b1b3b;
+    outline-offset: 3px;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    box-shadow: 0 0 0 3px rgba(11, 27, 59, 0.16);
+}
