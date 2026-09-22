@@ -18,7 +18,7 @@ Total output lines: 9506
    1. DESIGN TOKENS - צבעים, ריווחים וצללים שחוזרים בכל האתר
    ========================================================= */
 :root {
-    /* צבעי המותג הראשיים */
+/* צבעי המותג הראשיים */
     --navy-main: #0B1B3B;
     --navy-deep: #07152E;
     --gold-brand: #B8913F;
@@ -67,8 +67,7 @@ Total output lines: 9506
     --ease-default: 0.25s ease;
 
     /* פונט בסיסי - מוחלף ב-Inter לדפים רוסיים */
-    --site-font: 'Assistant', sans-serif;
-}
+    }
 
 /* Canonical shared footer. Scoped selectors keep page-specific styles from altering it. */
 body .site-footer.site-footer {
@@ -340,6 +339,7 @@ html {
     color-scheme: light;
 }
 
+button,
 button,
 input,
 select,
@@ -9027,7 +9027,7 @@ html[lang="ru"] button,
 html[lang="ru"] input,
 html[lang="ru"] select,
 html[lang="ru"] textarea {
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--site-font);
 }
 
 /* text-right was copied from Hebrew RTL templates - wrong for LTR Russian */
@@ -9145,7 +9145,7 @@ html[lang="ru"] .art-cta {
   border-radius: 999px;
   font-size: 0.95rem;
   font-weight: 700;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: var(--site-font);
   text-decoration: none;
   transition: all 0.2s;
   white-space: nowrap;
