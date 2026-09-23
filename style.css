@@ -9308,6 +9308,25 @@ html[lang="ru"] .art-cta {
     top: 12px;
 }
 
+/* Keep keyboard skip links completely out of the visual layout until focused. */
+.skip-link:not(:focus),
+.sr-focusable:not(:focus) {
+    position: fixed;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.skip-link:focus,
+.sr-focusable:focus {
+    width: auto;
+    height: auto;
+    clip-path: none;
+}
+
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
