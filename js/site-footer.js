@@ -85,28 +85,20 @@ const isRuPage = window.location.pathname.indexOf('/ru/') === 0;
     <div class="container-clean site-footer__inner">
       <div class="site-footer__meta">
         <p>יובל ויינזוף © 2026</p>
-        <p class="site-footer__note">סוכן ביטוח פנסיוני מורשה · <a href="tel:0524520222">052-4520222</a></p>
+        <p class="site-footer__note">סוכן ביטוח פנסיוני מורשה · <a href="tel:0524520222">052-4520222</a> · <a href="https://wa.me/972524520222" target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
         <p class="site-footer__experience">מעל 18 שנות נסיון מעשי בחברות ביטוח מובילות</p>
-        <p class="site-footer__tlh">ט,ל,ח</p>
+        <p class="site-footer__tlh">ט.ל.ח</p>
       </div>
 
-      <nav class="site-footer__nav" aria-label="ניווט תחתון">
-        <a href="/index.html">דף הבית</a>
-        <a href="/about.html">קצת עלי</a>
-        <a href="/insurance-types.html">סוגי ביטוחים</a>
-        <a href="/pension-guide.html">איך עושים סדר בפנסיה ובביטוחים</a>
-        <a href="/faq.html">FAQ</a>
-        <a href="/articles.html">מאמרים מקצועיים על פנסיה וביטוחים</a>
-        <a href="/media.html">וידאו</a>
+      <nav class="site-footer__nav" aria-label="קישורים שימושיים">
+        <a href="/about.html">אודות</a>
+        <a href="/services.html">פנסיה וביטוחים</a>
+        <a href="/articles.html">מאמרים</a>
+        <a href="/faq.html">שאלות ותשובות</a>
+        <a href="/media.html">וידאו ומדיה</a>
         <a href="/accessibility.html">הצהרת נגישות</a>
         <a href="/privacy.html">מדיניות פרטיות</a>
-        <a href="/takanon.html">תנאי שימוש</a>\n        <a href="/cookies.html">מדיניות עוגיות</a>\n        <a href="/refund-policy.html">ביטולים והחזרים</a>
-        <a href="/reviews.html">חוות דעת</a>
-        <div class="site-footer__city-links" data-city-links>
-          <a href="/sochen-bituach-herzliya.html">סוכן ביטוח בהרצליה</a>
-          <a href="/sochen-bituach-petah-tikva.html">סוכן ביטוח בפתח תקווה</a>
-          <a href="/sochen-bituach-ashdod.html">סוכן ביטוח באשדוד</a>
-        </div>
+        <a href="/takanon.html">תנאי שימוש</a>
       </nav>
 
       <div class="site-footer__social">
@@ -120,7 +112,7 @@ const isRuPage = window.location.pathname.indexOf('/ru/') === 0;
           <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.81.33-.85.51-1.44 1.42-1.58 2.41-.18 1.15.15 2.37.91 3.25.75.92 1.98 1.45 3.16 1.45 1.11.03 2.21-.39 3.01-1.14.71-.62 1.15-1.5 1.25-2.43.05-1.56.02-3.13.02-4.69.01-4.71-.01-9.42-.01-14.13z"/></svg>
         </a>
         <a href="mailto:yuval@vainzof.co.il" aria-label="Email">
-          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M1.5 6.75A2.25 2.25 0 0 1 3.75 4.5h16.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25H3.75A2.25 2.25 0 0 1 1.5 17.25V6.75Zm2.682-.75 7.818 5.863L19.818 6H4.182Zm15.318 1.875-7.049 5.287a.75.75 0 0 1-.9 0L4.5 7.875V17.25a.75.75 0 0 0 .75.75h14.25a.75.75 0 0 0 .75-.75V7.875Z"/></svg>
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M1.5 6.75A2.25 2.25 0 0 1 3.75 4.5h16.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25H3.75a2.25 2.25 0 0 1-2.25-2.25V6.75Zm2.682-.75 7.818 5.863L19.818 6H4.182Zm15.318 1.875-7.049 5.287a.75.75 0 0 1-.9 0L4.5 7.875V17.25a.75.75 0 0 0 .75.75h14.25a.75.75 0 0 0 .75-.75V7.875Z"/></svg>
         </a>
       </div>
     </div>
