@@ -503,8 +503,6 @@ window.location.assign('https://wa.me/972524520222');
     initDesktopKnowledgeMenu();
     ensureMobileContactActions();
     initLanguageSwitcher();
-    
-    initConversionTracking();
   }
 
   if (document.readyState === 'loading') {
