@@ -134,7 +134,7 @@
                     <span>052-4520222</span>
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.1 15.1 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27 11.72 11.72 0 003.7.59 1 1 0 011 1V20a1 1 0 01-1 1A18 18 0 013 4a1 1 0 011-1h3.43a1 1 0 011 1 11.72 11.72 0 00.59 3.7 1 1 0 01-.27 1.1l-2.12 2.1z"/></svg>
                 </a>
-                <button id="openContactDesktop" class="site-cta">לתיאום בדיקה אישית</button>
+                <button id="openContactDesktop" class="site-cta">צור קשר</button>
             </nav>
 
             <button id="menuBtn" class="lg:hidden p-2 text-blue-900" aria-label="פתח תפריט" aria-expanded="false" aria-controls="mobileMenu">
@@ -151,7 +151,7 @@
             
             <a href="media.html" class="block font-bold text-slate-600 border-b pb-2">וידאו ומדיה</a>
             <a href="tel:0524520222" class="block font-bold text-slate-600 border-b pb-2">התקשר עכשיו</a>
-            <button id="openContactMobile" class="mobile-contact-cta">לתיאום בדיקה אישית</button>
+            <button id="openContactMobile" class="mobile-contact-cta">צור קשר</button>
         </div>
     </header>
 
@@ -188,7 +188,7 @@
             </ul>
 
             <div class="hero-actions">
-                <button id="openContactHero" class="site-cta">לתיאום בדיקה אישית</button>
+                <button id="openContactHero" class="site-cta">צור קשר</button>
                 <a href="https://wa.me/972524520222"
                    target="_blank"
                    rel="noopener noreferrer"
@@ -536,7 +536,7 @@
     <div class="bg-white rounded-[1.5rem] p-5 pt-12 md:p-8 md:pt-12 max-w-lg w-[92%] max-h-[90vh] overflow-y-auto relative shadow-2xl border-t-4 border-blue-600">
         <button id="closeContact" class="absolute top-3 right-3 text-slate-500 hover:text-blue-900 text-2xl w-9 h-9 flex items-center justify-center rounded-full bg-white/95 border border-slate-200 hover:bg-slate-100 transition-all z-50" aria-label="סגירת טופס יצירת קשר">×</button>
         <div class="mb-4 text-right">
-            <h2 id="contactModalTitle" class="text-2xl md:text-3xl font-black text-blue-950">השאירו פרטים</h2>
+            <h2 id="contactModalTitle" class="text-2xl md:text-3xl font-black text-blue-950">רוצים לדבר עם יובל?</h2>
             <p class="text-slate-600 text-sm font-bold">בדיקת קרן פנסיה ללא עלות</p>
         </div>
         <form id="modal-contact-form" class="space-y-3">
@@ -556,7 +556,7 @@
                 <input type="checkbox" id="modal_marketing" name="marketing" class="w-4 h-4 rounded border-slate-300 text-blue-600 cursor-pointer">
                 <label for="modal_marketing" class="text-[11px] text-slate-500 font-medium cursor-pointer">מאשר קבלת עדכונים מקצועיים</label>
             </div>
-            <button type="submit" id="modal-submit-btn" class="w-full bg-blue-900 text-white py-3.5 rounded-xl font-bold text-md shadow-lg hover:bg-blue-800 transition-all">לתיאום בדיקה אישית</button>
+            <button type="submit" id="modal-submit-btn" class="w-full bg-blue-900 text-white py-3.5 rounded-xl font-bold text-md shadow-lg hover:bg-blue-800 transition-all">צור קשר</button>
         </form>
         <div class="mt-4 flex items-center justify-center gap-2">
             <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
@@ -641,7 +641,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 alert('שגיאה בשליחה. נסה שוב או שלח וואטסאפ.');
                 btn.disabled = false;
                 btn.classList.remove('opacity-70', 'cursor-not-allowed');
-                btn.innerText = 'לתיאום בדיקה אישית';
+                btn.innerText = 'צור קשר';
             });
         });
     }
