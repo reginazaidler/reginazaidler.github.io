@@ -1,5 +1,4 @@
 (function () {
-    document.querySelectorAll('.sr-focusable').forEach(function (link) { link.remove(); });
   function isDrawerMenu(menu) {
     return !!menu && menu.classList.contains('mobile-drawer');
   }
@@ -192,18 +191,22 @@
 
 
   function injectSkipLink() {
-    if (document.querySelector('.skip-link')) return;
+    var main = document.querySelector('main');
+    if (!main) return;
+    if (!main.id) main.id = 'main-content';
+    if (!main.hasAttribute('tabindex')) main.setAttribute('tabindex', '-1');
+    var existing = document.querySelector('.skip-link, .sr-focusable');
+    if (existing) {
+      existing.href = '#' + main.id;
+      return;
+    }
     var isRuPage = window.location.pathname.indexOf('/ru/') === 0;
     var skip = document.createElement('a');
-    skip.href = '#main-content';
+    skip.href = '#' + main.id;
     skip.className = 'skip-link';
     skip.textContent = isRuPage ? 'Перейти к основному содержанию' : 'דלג לתוכן הראשי';
     document.body.insertBefore(skip, document.body.firstChild);
 
-    var main = document.querySelector('main');
-    if (main && !main.id) {
-      main.id = 'main-content';
-    }
   }
 
   function init() {
@@ -302,7 +305,6 @@ window.location.assign('https://wa.me/972524520222');
   }, true);
 })();
 (function () {
-    document.querySelectorAll('.sr-focusable').forEach(function (link) { link.remove(); });
   function isDrawerMenu(menu) {
     return !!menu && menu.classList.contains('mobile-drawer');
   }
