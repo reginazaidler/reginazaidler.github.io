@@ -9085,6 +9085,19 @@ body.pension-fees-page main {
   .btn-wa, .btn-call { justify-content: center; }
 }
 
+/* Global typography normalization.
+   Hebrew pages use Assistant consistently across native controls and injected UI.
+   Russian pages override this below with Inter. */
+html:not([lang="ru"]),
+html:not([lang="ru"]) body,
+html:not([lang="ru"]) button,
+html:not([lang="ru"]) input,
+html:not([lang="ru"]) select,
+html:not([lang="ru"]) textarea,
+html:not([lang="ru"]) a {
+  font-family: var(--site-font);
+}
+
 /* =========================================================
    RUSSIAN / CYRILLIC OVERRIDES
    Applied to all pages with lang="ru".
@@ -9216,7 +9229,7 @@ html[lang="ru"] .art-cta {
   border-radius: 999px;
   font-size: 0.95rem;
   font-weight: 700;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: inherit;
   text-decoration: none;
   transition: all 0.2s;
   white-space: nowrap;
