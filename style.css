@@ -8816,7 +8816,7 @@ body.pension-fees-page main {
   font-weight: 800;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: #b8913f;
+  color: #7c5f1a;
   margin: 0 0 10px;
 }
 .art-toc ol {
@@ -8831,7 +8831,7 @@ body.pension-fees-page main {
   text-decoration: none;
   font-weight: 600;
 }
-.art-toc a:hover { color: #b8913f; }
+.art-toc a:hover { color: #7c5f1a; }
 
 .art-body h2 {
   color: #0b1b3b;
