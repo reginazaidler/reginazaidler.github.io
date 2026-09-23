@@ -333,15 +333,13 @@ html[lang="ru"] {
             </a>
 
             <nav class="site-nav" aria-label="Главная навигация">
-                <a href="/ru/index.html" class="nav-link nav-link-active">Главная</a>
-                <a href="/ru/strahovanie-avtomobilya-v-izraile.html" class="nav-link">Авто</a>
-                <a href="/ru/strahovanie-kvartiry-v-izraile.html" class="nav-link">Квартира</a>
-                <a href="/ru/medstrahovanie-v-izraile-dlya-russkoyazychnyh.html" class="nav-link">Здоровье</a>
-                <a href="/ru/proverka-pensionnyh-nakopleniy-v-izraile.html" class="nav-link">Пенсия</a>
                 <a href="/ru/about.html" class="nav-link">Обо мне</a>
                 <a href="/ru/articles.html" class="nav-link">Статьи</a>
                 <a href="/index.html" class="language-switch" lang="he" hreflang="he" aria-label="Переключиться на иврит">עברית</a>
-                <a href="tel:0524520222" class="header-phone" aria-label="Позвонить 052-4520222"><span>052-4520222</span></a>
+                <a href="tel:0524520222" class="header-phone" aria-label="Позвонить 052-4520222">
+                    <span>052-4520222</span>
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.1 15.1 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27 11.72 11.72 0 003.7.59 1 1 0 011 1V20a1 1 0 01-1 1A18 18 0 013 4a1 1 0 011-1h3.43a1 1 0 011 1 11.72 11.72 0 00.59 3.7 1 1 0 01-.27 1.1l-2.12 2.1z"/></svg>
+                </a>
             </nav>
 
             <button id="menuBtn" class="lg:hidden p-2 text-blue-900" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
@@ -350,16 +348,10 @@ html[lang="ru"] {
         </div>
 
         <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-slate-100 py-4 px-6 space-y-4 shadow-xl absolute w-full top-full right-0 z-50" aria-label="Мобильное меню">
-            <a href="/ru/index.html" class="block font-bold text-blue-900 border-b pb-2">Главная</a>
-            <a href="/ru/strahovanie-avtomobilya-v-izraile.html" class="block font-bold text-slate-600 border-b pb-2">Страхование автомобиля</a>
-            <a href="/ru/strahovanie-kvartiry-v-izraile.html" class="block font-bold text-slate-600 border-b pb-2">Страхование квартиры</a>
-            <a href="/ru/medstrahovanie-v-izraile-dlya-russkoyazychnyh.html" class="block font-bold text-slate-600 border-b pb-2">Медицинское страхование</a>
-            <a href="/ru/proverka-pensionnyh-nakopleniy-v-izraile.html" class="block font-bold text-slate-600 border-b pb-2">Пенсия и накопления</a>
             <a href="/ru/about.html" class="block font-bold text-slate-600 border-b pb-2">Обо мне</a>
             <a href="/ru/articles.html" class="block font-bold text-slate-600 border-b pb-2">Статьи</a>
-            <a href="/index.html" class="block font-bold text-slate-600 border-b pb-2 mobile-language-switch" lang="he" hreflang="he" aria-label="Перейти на версию на иврите">עברית</a>
             <a href="tel:0524520222" class="block font-bold text-slate-600 border-b pb-2">Позвонить: 052-4520222</a>
-            <button id="openContactMobile" class="mobile-contact-cta" type="button">Связаться</button>
+            <a href="/index.html" class="block font-bold text-slate-600 border-b pb-2 mobile-language-switch" lang="he" hreflang="he" aria-label="Перейти на версию на иврите">עברית</a>
         </div>
     </header>
 
@@ -367,89 +359,282 @@ html[lang="ru"] {
 <!-- MAIN CONTENT -->
 <!-- ======================================================= -->
 <main id="main">
-<section id="top" class="home-hero"><div class="container-clean home-hero__inner">
-<div class="home-hero__content">
-<p class="home-hero__badge"><span class="home-hero__dot"></span>Юваль Вайнзоф | страховой и пенсионный агент | 18+ лет опыта</p>
-<h1 class="home-hero__title">Проверка страхового и пенсионного портфеля в Израиле</h1>
-<p class="home-hero__subtitle">Моя задача не просто подобрать страховку. Сначала я помогаю понять, что у вас уже есть, что действительно нужно и как действовать, когда страхование или пенсионное покрытие действительно понадобится.</p>
-<div class="hero-actions"><a href="tel:0524520222" class="btn-primary">Позвонить Ювалю</a><a href="/ru/about.html" class="btn-outline-light">Обо мне</a></div>
-<ul class="hero-trust-points" aria-label="Почему обратиться к Ювалю Вайнзофу"><li>Консультация на русском языке</li><li>Более 18 лет опыта</li><li>Лицензированный страховой и пенсионный агент</li></ul>
-</div>
-<div class="home-hero__media"><img src="/assets/yuval.webp" alt="Юваль Вайнзоф - страховой и пенсионный агент с 18-летним опытом" class="hero-photo yuval-photo" loading="eager" fetchpriority="high" width="900" height="1200"></div>
-</div></section>
+<section id="top" class="home-hero">
+    <div class="container-clean home-hero__inner">
+        <div class="home-hero__content">
+            <p class="home-hero__badge">
+                <span class="home-hero__dot"></span>
+                Консультация и проверка на русском языке
+            </p>
 
-<section class="py-12 md:py-16 bg-white reveal"><div class="container-clean"><div class="max-w-4xl"><div class="accent-line"></div>
-<h2 class="section-title">Сначала не то, что можно продать. Сначала то, что вам действительно нужно.</h2>
-<p class="text-xl text-slate-700 leading-relaxed mb-4">Прежде чем предлагать что-то новое, я проверяю, что у вас уже есть. Иногда выясняется, что покрытия не хватает. Иногда - что за что-то вы платите зря. А иногда менять вообще ничего не нужно.</p>
-<p class="text-xl text-slate-700 leading-relaxed">Важно, чтобы вы понимали свои страховки и пенсионные продукты и знали, к кому обратиться, когда они действительно понадобятся.</p>
-</div></div></section>
+            <h1 class="home-hero__title">
+                Проверка страхового и пенсионного портфеля в Израиле
+            </h1>
 
-<section class="py-12 md:py-16 bg-slate-50 reveal"><div class="container-clean"><div class="max-w-4xl"><div class="accent-line"></div>
-<p class="font-extrabold text-blue-900 mb-2">Реальный случай</p>
-<h2 class="section-title">Два года дома, не зная, что можно обратиться за выплатой из пенсионного фонда</h2>
-<p class="text-lg md:text-xl text-slate-700 leading-relaxed mb-4">Клиентка пришла ко мне по рекомендации. Из-за состояния здоровья она около двух лет не работала.</p>
-<p class="text-lg md:text-xl text-slate-700 leading-relaxed mb-4">При проверке выяснилось, что за весь этот период в пенсионный фонд не подавалось заявление по потере трудоспособности. Мы подали заявление.</p>
-<p class="text-xl md:text-2xl leading-relaxed font-black text-blue-950 mb-3">Заявление было одобрено ретроактивно.</p>
-<p class="text-2xl md:text-3xl leading-relaxed font-black text-blue-950 mb-5">Клиентка получила единовременную выплату более 100 000 ₪.</p>
-<p class="text-lg text-slate-700 leading-relaxed mb-4">Именно поэтому при проверке я смотрю не только на то, какую страховку можно оформить, но и на уже существующие права и покрытия.</p>
-<p class="text-sm text-slate-500 leading-relaxed">Случай описан анонимно. Право на выплату и её размер зависят от обстоятельств конкретного случая и условий пенсионного фонда.</p>
-</div></div></section>
+            <p class="home-hero__subtitle">
+                Проверяю действующие полисы, пенсионные отчёты, комиссии и ежемесячные платежи. После проверки вы знаете, что у вас уже есть, какие пункты требуют уточнения и где возможна двойная оплата.
+            </p>
 
-<section class="py-12 md:py-16 bg-white reveal"><div class="container-clean">
-<div class="text-center mb-10"><h2 class="section-title">Что говорят клиенты</h2><div class="accent-line mb-4"></div></div>
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 text-left">
-<figure class="card-clean"><blockquote class="text-slate-700 leading-relaxed mb-5">«Хочу отдельно отметить Юваля: с первого момента сервис был исключительным. Профессиональный, надёжный, быстрый, всегда на связи и готов помочь... Он терпеливо ответил на все мои вопросы, и мне стало ясно, что именно он будет вести мои страховые дела».</blockquote><figcaption class="font-black text-blue-950">Hila Solomon · отзыв Google</figcaption></figure>
-<figure class="card-clean"><blockquote class="text-slate-700 leading-relaxed mb-5">«Агент, который выкладывается полностью, чтобы добиться максимально подходящего результата в сложном медицинском случае».</blockquote><figcaption class="font-black text-blue-950">Daniel Komisar · отзыв Google</figcaption></figure>
-<figure class="card-clean"><blockquote class="text-slate-700 leading-relaxed mb-5">«Самый профессиональный и приятный агент, которого мне доводилось встречать. Помогал на каждом этапе и продолжает сопровождать меня терпеливо и всегда остаётся на связи».</blockquote><figcaption class="font-black text-blue-950">Алина Фалкин · отзыв Google</figcaption></figure>
-</div>
-<div class="text-center mt-8"><p class="font-extrabold text-blue-950 mb-3">5.0 в Google · 22 отзыва</p><a href="https://maps.app.goo.gl/2zjrnDiTC3CrBY2h7" class="btn-outline" target="_blank" rel="noopener">Все отзывы в Google</a></div>
-</div></section>
+            <ul class="hero-checklist">
+                <li><span class="hero-checklist__icon">✓</span><span>Страховки, пенсия и комиссии</span></li>
+                <li><span class="hero-checklist__icon">✓</span><span>Сравнение условий и ежемесячных расходов</span></li>
+                <li><span class="hero-checklist__icon">✓</span><span>Поиск пересечений и недостающих покрытий</span></li>
+            </ul>
 
-<section id="popular-queries-ru" class="py-12 md:py-16 bg-slate-50 reveal text-left"><div class="container-clean">
-<div class="text-center mb-10"><h2 class="section-title">С чем я работаю</h2><div class="accent-line mb-4"></div></div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-<a href="/ru/strahovanie-avtomobilya-v-izraile.html" class="card-clean"><h3 class="text-xl font-black text-blue-950 mb-3">Страхование автомобиля</h3><p class="text-slate-600">Обязательная страховка, каско и ответственность перед третьими лицами.</p></a>
-<a href="/ru/strahovanie-kvartiry-v-izraile.html" class="card-clean"><h3 class="text-xl font-black text-blue-950 mb-3">Страхование квартиры</h3><p class="text-slate-600">Строение, имущество и ответственность перед третьими лицами.</p></a>
-<a href="/ru/medstrahovanie-v-izraile-dlya-russkoyazychnyh.html" class="card-clean"><h3 class="text-xl font-black text-blue-950 mb-3">Здоровье и жизнь</h3><p class="text-slate-600">Разбираемся в существующих покрытиях и проверяем, что действительно нужно.</p></a>
-<a href="/ru/proverka-pensionnyh-nakopleniy-v-izraile.html" class="card-clean"><h3 class="text-xl font-black text-blue-950 mb-3">Пенсия и накопления</h3><p class="text-slate-600">Комиссии, инвестиционные маршруты, страховые компоненты и непрерывность взносов.</p></a>
-</div></div></section>
+            <div class="hero-actions">
+                <button id="openContactHero" class="site-cta">Проверить страховой и пенсионный портфель</button>
+                <a href="#services" class="btn-outline-light">Как проходит проверка</a>
+            </div>
 
-<section id="about-teaser" class="py-12 bg-white reveal about-teaser-section"><div class="container-clean"><div class="about-teaser-layout">
-<div class="about-teaser-media reveal"><div class="about-teaser-frame"><img src="/assets/YuvalPodcast.jpg" alt="Юваль Вайнзоф - страховой и пенсионный агент" class="about-teaser-photo" loading="lazy" width="960" height="1200"></div><div class="about-teaser-experience-badge"><div class="text-xs font-bold opacity-80 uppercase tracking-widest">18+ лет опыта</div></div></div>
-<div class="about-teaser-content"><h2 class="text-3xl font-black text-blue-950 leading-tight about-teaser-title">Приятно познакомиться, я Юваль</h2><p class="mt-3 text-xl md:text-2xl text-amber-600 font-bold leading-relaxed max-w-2xl mr-auto">Страховой и пенсионный агент в Израиле</p><div class="accent-line !mr-0 mb-4 w-20"></div>
-<div class="about-teaser-text"><p>Более 18 лет я работаю со страховыми компаниями, пенсионными фондами и семейными страховыми портфелями.</p><p class="text-slate-900 font-semibold">Я люблю объяснять сложные вещи простыми словами. Если считаю, что менять ничего не нужно - так и говорю. Если есть вопрос, которым нужно заняться - занимаемся.</p><p><a href="/ru/about.html" class="font-extrabold text-[var(--navy-main)]">Подробнее обо мне →</a></p></div>
-</div></div></div></section>
+            <ul class="hero-trust-points" aria-label="Почему обратиться к Ювалю Вайнзофу">
+                <li>Консультация на русском языке</li>
+                <li>Более 18 лет опыта</li>
+                <li>Лицензированный страховой и пенсионный агент</li>
+            </ul>
 
-<section class="py-10 bg-white reveal home-companies-section"><div class="container-clean companies-showcase"><div class="companies-section-card">
-<h2 class="companies-section-title">Работаю со страховыми компаниями и ведущими финансовыми организациями</h2>
-<div class="companies-logos-grid" aria-label="Страховые компании, с которыми работает Юваль Вайнзоф">
-<div class="company-logo-tile"><img src="/assets/clal-logo.png" alt="Clal Insurance" loading="lazy" class="company-logo-image"></div>
-<div class="company-logo-tile"><img src="/assets/migdal-logo.png" alt="Migdal Insurance" loading="lazy" class="company-logo-image"></div>
-<div class="company-logo-tile"><img src="/assets/menora-logo.png" alt="Menora Mivtachim" loading="lazy" class="company-logo-image"></div>
-<div class="company-logo-tile"><img src="/assets/altshuler-logo.png" alt="Altshuler Shaham" loading="lazy" class="company-logo-image"></div>
-<div class="company-logo-tile"><img src="/assets/phoenix-logo.png" alt="Phoenix Insurance" loading="lazy" class="company-logo-image"></div>
-<div class="company-logo-tile"><img src="/assets/harel-logo.png" alt="Harel Insurance" loading="lazy" class="company-logo-image"></div>
-</div></div></div></section>
+        </div>
 
-<section class="py-12 md:py-16 bg-slate-50 reveal text-left"><div class="container-clean">
-<div class="text-center mb-8"><h2 class="section-title">Юваль объясняет</h2><div class="accent-line mb-4"></div><p class="text-slate-600 text-lg">Страхование и пенсия простыми словами: ответы и практические материалы.</p></div>
-<div class="max-w-4xl mx-auto mb-10">
-<details class="faq-item"><summary>Что проверяется при анализе страхового и пенсионного портфеля?</summary><div>Проверка включает страховые полисы, пенсионные и накопительные продукты, комиссии и обязательства. Цель - выявить возможные пересечения, пробелы и лишние расходы.</div></details>
-<details class="faq-item"><summary>Сколько стоит проверка страхового и пенсионного портфеля?</summary><div>Первая встреча проводится бесплатно. На ней определяется, какие документы нужны и с чего начать проверку.</div></details>
-<details class="faq-item"><summary>Можно ли проверить портфель, если у меня уже есть агент?</summary><div>Да. Можно получить дополнительное объяснение по действующим продуктам и условиям, не принимая решение об изменениях заранее.</div></details>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-<article class="bg-white border border-slate-200 rounded-2xl p-6"><h3 class="text-xl font-black text-blue-950 mb-3">Как проверить пенсионные комиссии</h3><p class="text-slate-700 mb-5">Что сравнивать в пенсионных и накопительных продуктах.</p><a href="/ru/how-to-check-pension-fees.html" class="font-extrabold text-[var(--navy-main)]">Читать →</a></article>
-<article class="bg-white border border-slate-200 rounded-2xl p-6"><h3 class="text-xl font-black text-blue-950 mb-3">Дубли страховок</h3><p class="text-slate-700 mb-5">Как найти лишние платежи, не потеряв нужное покрытие.</p><a href="/ru/duplicate-insurance-payments.html" class="font-extrabold text-[var(--navy-main)]">Читать →</a></article>
-</div>
-<p class="text-center mt-8"><a href="/ru/articles.html" class="btn-outline">Все статьи</a></p>
-</div></section>
+        <div class="home-hero__media">
+            <img src="/assets/yuval.webp" alt="Юваль Вайнзоф - страховой и пенсионный агент с 18-летним опытом" class="hero-photo yuval-photo" loading="eager" fetchpriority="high" width="900" height="1200">
+        </div>
+    </div>
+</section>
 
-<section class="py-10 bottom-cta bottom-cta--home-reference text-center reveal"><div class="container-clean"><div class="bottom-cta__inner">
-<h2 class="bottom-cta__title">Есть вопрос, который хотите проверить?</h2>
-<p class="bottom-cta__text">Не обязательно заранее знать, какая страховка вам нужна, или собирать все документы. Можно начать с разговора.</p>
-<div class="flex flex-wrap justify-center gap-3 mt-6"><a href="tel:0524520222" class="btn-primary">052-4520222</a><a href="https://wa.me/972524520222" class="btn-outline" target="_blank" rel="noopener">WhatsApp Ювалю</a></div>
-</div></div></section>
+<section class="py-12 bg-white text-left">
+    <div class="container-clean max-w-6xl check-includes-grid">
+        <div>
+        <h2 class="text-2xl font-black text-blue-950 mb-4">
+            Что включает проверка страхового и пенсионного портфеля
+        </h2>
+
+        <p class="text-slate-700 leading-relaxed home-section-paragraph">
+            Вы присылаете действующие полисы, пенсионные отчёты и данные о платежах. Я сравниваю условия, суммы, исключения и комиссии.
+        </p>
+        </div>
+        <div class="check-includes-points">
+            <h3>Что вы получаете по результатам проверки:</h3>
+            <ul>
+                <li>✔ Список действующих страховок и накоплений</li>
+                <li>✔ Объяснение возможных пересечений и пробелов</li>
+                <li>✔ Пункты, которые стоит уточнить или сравнить</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="pt-4 pb-12 md:pt-8 md:pb-20 bg-slate-50 reveal">
+    <div class="container-clean mb-10">
+        <div class="text-center max-w-3xl mx-auto px-2">
+            <h2 class="text-3xl md:text-5xl font-black text-blue-950 mb-3 leading-tight">Как проходит проверка</h2>
+            <div class="accent-line mb-8 md:mb-8"></div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 services-process-grid">
+
+            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm text-center hover:border-[var(--gold-brand)] transition-all services-process-card">
+                <span class="process-step-number">1</span>
+                <svg class="w-12 h-12 mb-4 mx-auto text-[var(--navy-main)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                <h3 class="text-xl font-black text-blue-950 mb-3">Сбор данных</h3>
+                <p class="text-slate-600 font-bold text-sm">Вы присылаете полисы, пенсионные отчёты и данные о ежемесячных платежах.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm text-center hover:border-[var(--gold-brand)] transition-all services-process-card">
+                <span class="process-step-number">2</span>
+                <svg class="w-12 h-12 mb-4 mx-auto text-[var(--navy-main)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                <h3 class="text-xl font-black text-blue-950 mb-3">Проверка</h3>
+                <p class="text-slate-600 font-bold text-sm">Я сравниваю суммы, комиссии, исключения и условия выплаты.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm text-center hover:border-[var(--gold-brand)] transition-all services-process-card">
+                <span class="process-step-number">3</span>
+                <svg class="w-12 h-12 mb-4 mx-auto text-[var(--navy-main)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                </svg>
+                <h3 class="text-xl font-black text-blue-950 mb-3">Выводы</h3>
+                <p class="text-slate-600 font-bold text-sm">Вы получаете список пунктов, которые стоит уточнить или сравнить.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm text-center hover:border-[var(--gold-brand)] transition-all services-process-card">
+                <span class="process-step-number">4</span>
+                <svg class="w-12 h-12 mb-4 mx-auto text-[var(--navy-main)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                </svg>
+                <h3 class="text-xl font-black text-blue-950 mb-3">Решение и дальнейшие действия</h3>
+                <p class="text-slate-600 font-bold text-sm">Решение об изменениях остаётся за вами.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="popular-queries-ru" class="py-10 bg-white reveal text-left">
+    <div class="container-clean max-w-5xl">
+        <div class="text-center mb-8">
+            <h2 class="text-3xl md:text-4xl font-black text-blue-950 mb-3 leading-tight">Популярные темы</h2>
+            <p class="text-slate-600 font-bold">Короткие объяснения о страховании и пенсии в Израиле.</p>
+            <div class="accent-line mt-6"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <article class="card-clean p-6 border border-slate-200 rounded-2xl">
+                <h3 class="text-xl font-black text-blue-950 mb-3">Страхование автомобиля</h3>
+                <p class="text-slate-700 leading-relaxed">Обязательная страховка, каско, участие в ущербе и параметры, влияющие на цену.</p>
+                <a href="/ru/strahovanie-avtomobilya-v-izraile.html" class="font-extrabold text-[var(--navy-main)] inline-block mt-4">Подробнее →</a>
+            </article>
+
+            <article class="card-clean p-6 border border-slate-200 rounded-2xl">
+                <h3 class="text-xl font-black text-blue-950 mb-3">Страхование квартиры</h3>
+                <p class="text-slate-700 leading-relaxed">Строение, содержимое квартиры, ответственность перед третьими лицами и страховые суммы.</p>
+                <a href="/ru/strahovanie-kvartiry-v-izraile.html" class="font-extrabold text-[var(--navy-main)] inline-block mt-4">Подробнее →</a>
+            </article>
+
+            <article class="card-clean p-6 border border-slate-200 rounded-2xl">
+                <h3 class="text-xl font-black text-blue-950 mb-3">Медицинское страхование</h3>
+                <p class="text-slate-700 leading-relaxed">Как связаны больничная касса, ШАБАН и частный полис, и почему похожие покрытия не всегда одинаковы.</p>
+                <a href="/ru/medstrahovanie-v-izraile-dlya-russkoyazychnyh.html" class="font-extrabold text-[var(--navy-main)] inline-block mt-4">Подробнее →</a>
+            </article>
+
+            <article class="card-clean p-6 border border-slate-200 rounded-2xl">
+                <h3 class="text-xl font-black text-blue-950 mb-3">Пенсионные накопления</h3>
+                <p class="text-slate-700 leading-relaxed">Комиссии, инвестиционный маршрут, страховые компоненты и непрерывность взносов.</p>
+                <a href="/ru/proverka-pensionnyh-nakopleniy-v-izraile.html" class="font-extrabold text-[var(--navy-main)] inline-block mt-4">Подробнее →</a>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section id="about-teaser" class="py-12 bg-slate-50 reveal about-teaser-section">
+    <div class="container-clean">
+        <div class="about-teaser-layout">
+            <div class="about-teaser-media reveal">
+                <div class="about-teaser-frame">
+                    <img src="/assets/YuvalPodcast.jpg" alt="Юваль Вайнзоф - страховой и пенсионный агент, подкаст" class="about-teaser-photo" loading="lazy" width="960" height="1200">
+                </div>
+                <div class="about-teaser-experience-badge">
+                    <div class="text-2xl font-black text-[var(--gold-brand)] italic"></div>
+                    <div class="text-xs font-bold opacity-80 uppercase tracking-widest">18+ лет опыта</div>
+                </div>
+            </div>
+
+            <div class="about-teaser-content">
+                <h2 class="text-3xl font-black text-blue-950 leading-tight about-teaser-title">
+                    Юваль Вайнзоф
+                </h2>
+                <p class="mt-3 text-xl md:text-2xl text-amber-600 font-bold leading-relaxed max-w-2xl mr-auto">
+                    Страховой и пенсионный агент в Израиле
+                </p>
+                <div class="accent-line !mr-0 mb-4 w-20"></div>
+
+                <div class="about-teaser-text">
+                    <p>
+                        Более 18 лет я работаю со страховыми компаниями, пенсионными фондами и семейными страховыми портфелями.
+                    </p>
+                    <p class="text-slate-900 font-semibold">
+                        Моя задача - объяснить действующие условия простыми словами и отметить пункты, которые действительно требуют внимания.
+                    </p>
+                    <p><a href="/ru/about.html" class="font-extrabold text-[var(--navy-main)]">Подробнее о лицензии и профессиональном опыте →</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-8 bg-white reveal home-companies-section">
+    <div class="container-clean companies-showcase">
+        <div class="companies-section-card">
+            <h2 class="companies-section-title">Проверка продуктов разных страховых компаний</h2>
+            <p class="companies-section-subtitle">Логотипы показывают компании, продукты которых могут входить в проверяемый портфель. Они не являются рекомендацией или отзывом.</p>
+            <div class="companies-logos-grid" aria-label="Страховые компании, с которыми работает Юваль Вайнзоф">
+                <div class="company-logo-tile"><img src="/assets/clal-logo.png" alt="Clal Insurance" loading="lazy" class="company-logo-image"></div>
+                <div class="company-logo-tile"><img src="/assets/migdal-logo.png" alt="Migdal Insurance" loading="lazy" class="company-logo-image"></div>
+                <div class="company-logo-tile"><img src="/assets/menora-logo.png" alt="Menora Mivtachim" loading="lazy" class="company-logo-image"></div>
+                <div class="company-logo-tile"><img src="/assets/altshuler-logo.png" alt="Altshuler Shaham" loading="lazy" class="company-logo-image"></div>
+                <div class="company-logo-tile"><img src="/assets/phoenix-logo.png" alt="Phoenix Insurance" loading="lazy" class="company-logo-image"></div>
+                <div class="company-logo-tile"><img src="/assets/harel-logo.png" alt="Harel Insurance" loading="lazy" class="company-logo-image"></div>
+            </div>
+        </div>
+        <div class="companies-benefits-list">
+            <div class="companies-benefit-item"><span class="companies-benefit-icon" aria-hidden="true">✓</span><span>Лицензированный страховой и пенсионный агент</span></div>
+            <div class="companies-benefit-item"><span class="companies-benefit-icon" aria-hidden="true">✓</span><span>Проверка действующих условий до предложения изменений</span></div>
+            <div class="companies-benefit-item"><span class="companies-benefit-icon" aria-hidden="true">✓</span><span>Объяснение результатов на русском языке</span></div>
+        </div>
+    </div>
+</section>
+
+<section class="py-12 md:py-12 bg-white reveal text-left home-faq-section">
+    <div class="container-clean">
+        <div class="max-w-4xl mb-8">
+            <div class="accent-line"></div>
+            <h2 class="text-3xl md:text-4xl font-black text-blue-950 mb-6">Часто задаваемые вопросы</h2>
+        </div>
+
+        <div class="space-y-4 max-w-4xl home-faq-list">
+            <details class="faq-item">
+                <summary>Что проверяется при анализе страхового и пенсионного портфеля?</summary>
+                <div>Проверка включает полный разбор страховок (медицина, жизнь, потеря трудоспособности, уход), пенсионных и накопительных фондов, комиссий и обязательств. Выявляются дубли, пробелы в покрытии и лишние расходы.</div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Сколько стоит проверка страхового и пенсионного портфеля?</summary>
+                <div>Первичная проверка проводится бесплатно. Цель - дать четкую картину текущей ситуации до любого решения.</div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Можно ли проверить портфель, если у меня уже есть агент?</summary>
+                <div>Да. Можно получить дополнительное объяснение по действующим продуктам и условиям, не принимая решение об изменениях заранее.</div>
+            </details>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="py-12 md:py-12 bg-white reveal">
+    <div class="container-clean">
+        <div class="text-center mb-8">
+            <h2 class="section-title">Материалы о страховании и пенсии</h2>
+            <div class="accent-line mb-4"></div>
+            <p class="text-slate-600 font-bold text-lg">Три материала, с которых стоит начать.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <article class="bg-slate-50 border border-slate-200 rounded-2xl p-6 text-left">
+                <h3 class="text-xl font-black text-blue-950 mb-3">Как проверить, не слишком ли высокие комиссии</h3>
+                <p class="text-slate-700 mb-5">Практическое руководство по сравнению комиссий в пенсионных и накопительных продуктах и способам улучшения условий.</p>
+                <a href="/ru/how-to-check-pension-fees.html" class="font-extrabold text-[var(--navy-main)]">Читать статью →</a>
+            </article>
+
+            <article class="bg-slate-50 border border-slate-200 rounded-2xl p-6 text-left">
+                <h3 class="text-xl font-black text-blue-950 mb-3">Дубли страховок: как выявить лишние ежемесячные платежи</h3>
+                <p class="text-slate-700 mb-5">Явные признаки двойной оплаты одного покрытия и как провести проверку без потери защиты семьи.</p>
+                <a href="/ru/duplicate-insurance-payments.html" class="font-extrabold text-[var(--navy-main)]">Читать статью →</a>
+            </article>
+
+            <article class="bg-slate-50 border border-slate-200 rounded-2xl p-6 text-left">
+                <h3 class="text-xl font-black text-blue-950 mb-3">Проверка пенсионных накоплений в Израиле: что проверять ежегодно</h3>
+                <p class="text-slate-700 mb-5">Пошаговая проверка отчёта: комиссии, инвестиционный маршрут, страховые компоненты и непрерывность взносов.</p>
+                <a href="/ru/proverka-pensionnyh-nakopleniy-v-izraile.html" class="font-extrabold text-[var(--navy-main)]">Читать статью →</a>
+            </article>
+
+        </div>
+
+        <p class="text-center mt-8"><a href="/ru/articles.html" class="font-extrabold text-[var(--navy-main)]">Все статьи →</a></p>
+
+    </div>
+</section>
+
+<section class="py-8 bottom-cta bottom-cta--home-reference text-center reveal">
+    <div class="container-clean">
+        <div class="bottom-cta__inner !py-8">
+            <h2 class="bottom-cta__title">Хотите понять, за что вы платите каждый месяц?</h2>
+            <p class="bottom-cta__text">На первой встрече разберём, какие документы нужны и с чего начать проверку. Первая встреча проводится бесплатно и не обязывает менять действующие продукты.</p>
+            <button id="openContactBottom" class="btn-primary">Записаться на первую встречу</button>
+        </div>
+    </div>
+</section>
+
 </main>
 
     <script src="/js/site-header.js"></script>
@@ -458,8 +643,8 @@ html[lang="ru"] {
     <div class="bg-white rounded-[1.5rem] p-5 pt-12 md:p-8 md:pt-12 max-w-lg w-[92%] max-h-[90vh] overflow-y-auto relative shadow-2xl border-t-4 border-blue-600">
         <button id="closeContact" class="absolute top-3 right-3 text-slate-500 hover:text-blue-900 text-2xl w-9 h-9 flex items-center justify-center rounded-full bg-white/95 border border-slate-200 hover:bg-slate-100 transition-all z-50" aria-label="Закрыть форму контакта">×</button>
         <div class="mb-4 text-left">
-            <h2 id="contactModalTitle" class="text-2xl md:text-3xl font-black text-blue-950">Хотите поговорить с Ювалем?</h2>
-            <p class="text-slate-600 text-sm font-bold">Оставьте имя и телефон, и Юваль свяжется с вами.</p>
+            <h2 id="contactModalTitle" class="text-2xl md:text-3xl font-black text-blue-950">Оставьте данные</h2>
+            <p class="text-slate-600 text-sm font-bold">Первичная проверка - без оплаты</p>
         </div>
         <form id="modal-contact-form" class="space-y-3">
             <div>
@@ -470,15 +655,16 @@ html[lang="ru"] {
                 <input type="tel" id="user_phone" inputmode="tel" name="user_phone" required placeholder="Номер телефона" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-600 font-bold text-sm">
                 <p id="phone-error" class="hidden text-[10px] text-red-600 font-bold mt-1"></p>
             </div>
+            <label for="user_email" class="sr-only">Email (необязательно)</label>
             <input type="email" id="user_email" name="user_email" placeholder="Email (необязательно)" class="mobile-optional-field w-full p-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-600 font-bold text-sm">
             <p id="email-error" class="hidden text-[10px] text-red-600 font-bold mt-1"></p>
-            <textarea name="message" rows="2" placeholder="Что вы хотите проверить?" class="mobile-optional-field w-full p-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-600 font-bold text-sm resize-none"></textarea>
+            <textarea name="message" aria-label="Что вы хотите проверить?" rows="2" placeholder="Что вы хотите проверить?" class="mobile-optional-field w-full p-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-600 font-bold text-sm resize-none"></textarea>
             <p class="mobile-form-note">Для мобильной версии достаточно имени и телефона - остальное уточним в разговоре.</p>
             <div class="flex items-center gap-2 py-1">
                 <input type="checkbox" id="modal_marketing" name="marketing" class="w-4 h-4 rounded border-slate-300 text-blue-600 cursor-pointer">
                 <label for="modal_marketing" class="text-[11px] text-slate-500 font-medium cursor-pointer">Согласен(на) получать профессиональные обновления</label>
             </div>
-            <button type="submit" id="modal-submit-btn" class="w-full bg-blue-900 text-white py-3.5 rounded-xl font-bold text-md shadow-lg hover:bg-blue-800 transition-all">Отправить данные</button>
+            <button type="submit" id="modal-submit-btn" class="w-full bg-blue-900 text-white py-3.5 rounded-xl font-bold text-md shadow-lg hover:bg-blue-800 transition-all">Записаться на персональную проверку</button>
         </form>
         <div class="mt-4 flex items-center justify-center gap-2">
             <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
@@ -589,7 +775,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 alert('Ошибка отправки. Попробуйте снова или напишите в WhatsApp.');
                 btn.disabled = false;
                 btn.classList.remove('opacity-70', 'cursor-not-allowed');
-                btn.innerText = 'Отправить данные';
+                btn.innerText = 'Записаться на персональную проверку';
             });
         });
     }

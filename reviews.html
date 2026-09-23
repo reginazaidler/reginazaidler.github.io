@@ -266,14 +266,14 @@
                 <p id="phone-error" class="hidden text-[10px] text-red-600 font-bold mt-1"></p>
             </div>
 
-            <input type="email" id="user_email" name="user_email" placeholder="אימייל (לא חובה)"
+            <label for="user_email" class="sr-only">אימייל (לא חובה)</label>\n            <input type="email" id="user_email" name="user_email" placeholder="אימייל (לא חובה)"
                 class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-600 font-bold text-sm">
 
-            <textarea name="message" rows="2" placeholder="מה תרצו לבדוק?"
+            <textarea name="message" aria-label="מה תרצו לבדוק?" rows="2" placeholder="מה תרצו לבדוק?"
                 class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-600 font-bold text-sm resize-none"></textarea>
 
             <div class="flex items-center gap-2 py-1">
-                <input type="checkbox" id="modal_marketing" name="marketing" checked class="w-4 h-4 rounded border-slate-300 text-blue-600 cursor-pointer">
+                <input type="checkbox" id="modal_marketing" name="marketing" class="w-4 h-4 rounded border-slate-300 text-blue-600 cursor-pointer">
                 <label for="modal_marketing" class="text-[11px] text-slate-500 font-medium cursor-pointer">מאשר קבלת עדכונים מקצועיים</label>
             </div>
 
