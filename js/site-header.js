@@ -130,7 +130,7 @@
     var isRuPage = window.location.pathname.indexOf('/ru/') === 0;
     var phoneNumber = '0524520222';
     var phoneLabel = isRuPage ? 'Позвонить: 052-4520222' : 'התקשר עכשיו';
-    var ctaLabel = isRuPage ? 'Записаться на персональную проверку' : 'לתיאום בדיקה אישית';
+    var ctaLabel = isRuPage ? 'Связаться' : 'צור קשר';
 
     var callLink = mobileMenu.querySelector('a[href^="tel:"]');
     if (!callLink) {
@@ -422,7 +422,7 @@ window.location.assign('https://wa.me/972524520222');
     var isRuPage = window.location.pathname.indexOf('/ru/') === 0;
     var phoneNumber = '0524520222';
     var phoneLabel = isRuPage ? 'Позвонить: 052-4520222' : 'התקשר עכשיו';
-    var ctaLabel = isRuPage ? 'Записаться на персональную проверку' : 'לתיאום בדיקה אישית';
+    var ctaLabel = isRuPage ? 'Связаться' : 'צור קשר';
 
     var callLink = mobileMenu.querySelector('a[href^="tel:"]');
     if (!callLink) {
