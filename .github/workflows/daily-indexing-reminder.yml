@@ -1,0 +1,47 @@
+name: Daily Indexing Reminder
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 6 * * *'
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+jobs:
+  send-indexing-reminder:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build pending URL list
+        id: pending
+        run: |
+          python3 scripts/indexing_queue.py --print-pending > pending.json
+          COUNT=$(python3 -c "import json; print(len(json.load(open('pending.json'))))")
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+          python3 - <<'PY'
+          import json
+          items=json.load(open("pending.json"))
+          with open("message.txt","w",encoding="utf-8") as f:
+              f.write("עמודים שמחכים לבקשת אינדוקס ידנית ב-Google Search Console:\n\n")
+              for x in items:
+                  f.write(f"- {x['url']}\n  סיבה: {x.get('reason','page updated')}\n")
+              f.write("\nSearch Console: https://search.google.com/search-console\n")
+          PY
+
+      - name: Email indexing reminder
+        if: steps.pending.outputs.count != '0'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_HOST }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          secure: false
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          to: ${{ secrets.SMTP_TO }}
+          from: ${{ secrets.SMTP_FROM }}
+          subject: "עמודים שמחכים לאינדוקס בגוגל"
+          body: file://message.txt
