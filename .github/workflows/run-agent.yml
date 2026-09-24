@@ -79,6 +79,10 @@ jobs:
         run: |
           python scripts/seo_experiments.py evaluate --min-impressions 20
 
+      - name: Build SEO execution plan
+        run: |
+          python scripts/build_seo_execution_plan.py
+
       - name: Preview safe existing-page fixes
         run: |
           python scripts/apply_seo_gap_fixes.py
