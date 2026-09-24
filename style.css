@@ -9718,3 +9718,23 @@ textarea:focus-visible,
 select:focus-visible {
     box-shadow: 0 0 0 3px rgba(11, 27, 59, 0.16);
 }
+
+
+/* Travel insurance page: explicit contrast for light content sections */
+.travel-page #main > section.bg-white,
+.travel-page #main > section.bg-slate-50 {
+    color: #334155;
+}
+
+.travel-page #main > section.bg-white h2,
+.travel-page #main > section.bg-white h3,
+.travel-page #main > section.bg-slate-50 h2,
+.travel-page #main > section.bg-slate-50 h3 {
+    color: var(--navy-deep);
+}
+
+.travel-page #main > section.bg-white p,
+.travel-page #main > section.bg-slate-50 p,
+.travel-page #main .bg-white.rounded-3xl p {
+    color: #334155;
+}
