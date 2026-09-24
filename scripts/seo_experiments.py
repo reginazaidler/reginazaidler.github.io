@@ -81,7 +81,10 @@ def start(args):
     c.commit(); print("SEO experiment recorded.")
 
 def classify(before,after,min_impressions):
-    if after["impressions"] < min_impressions: return "not_enough_data"
+    if after["impressions"] is None or after["impressions"] < min_impressions:
+        return "not_enough_data"
+    if before["position"] is None or before["ctr"] is None or after["position"] is None or after["ctr"] is None:
+        return "not_enough_data"
     pos_delta=before["position"]-after["position"]; ctr_delta=after["ctr"]-before["ctr"]
     if pos_delta >= 1.0 or ctr_delta >= 0.01: return "improved"
     if pos_delta <= -1.0 or ctr_delta <= -0.01: return "declined"
