@@ -75,6 +75,10 @@ jobs:
           cd seo-gap-agent
           python -m app.main
 
+      - name: Evaluate mature SEO experiments
+        run: |
+          python scripts/seo_experiments.py evaluate --wait-days 14 --min-impressions 20
+
       - name: Preview safe existing-page fixes
         run: |
           python scripts/apply_seo_gap_fixes.py
