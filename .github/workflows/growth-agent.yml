@@ -1,0 +1,27 @@
+name: Growth Agent Daily Discovery
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "15 5 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Discover public opportunities
+        run: python scripts/growth_agent.py
+      - name: Commit refreshed feed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add growth/opportunities.json
+          git diff --cached --quiet || git commit -m "Refresh Growth Agent opportunities"
+          git push
