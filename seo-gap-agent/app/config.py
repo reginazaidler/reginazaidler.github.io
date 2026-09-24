@@ -14,7 +14,7 @@ class Settings:
     gsc_refresh_token: str
     gsc_site_url: str
     openai_model: str = "gpt-4.1-mini"
-    min_impressions: int = 1
+    min_impressions: int = 20
     min_position: float = 1.0
     max_position: float = 12.0
     max_rows: int = 50_000
@@ -86,7 +86,7 @@ def load_settings() -> Settings:
         gsc_refresh_token=required["GSC_REFRESH_TOKEN"],
         gsc_site_url=required["GSC_SITE_URL"],
         openai_model=(os.getenv("OPENAI_MODEL") or "gpt-4.1-mini").strip(),
-        min_impressions=_int_env("MIN_IMPRESSIONS", 1),
+        min_impressions=_int_env("MIN_IMPRESSIONS", 20),
         min_position=_float_env("MIN_POSITION", 1.0),
         max_position=_float_env("MAX_POSITION", 12.0),
         top_n=_int_env("TOP_N", 5),
