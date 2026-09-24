@@ -62,6 +62,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r seo-gap-agent/requirements.txt
 
+      - name: Restore SEO AI analysis cache
+        uses: actions/cache@v4
+        with:
+          path: seo-gap-agent/data/analysis-cache
+          key: seo-ai-analysis-${{ github.repository_id }}
+          restore-keys: |
+            seo-ai-analysis-
+
       - name: Run agent
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}

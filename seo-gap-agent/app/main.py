@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import json
+import hashlib
 from datetime import datetime, timezone
+from pathlib import Path
 
 from app.analyzer import analyze_page_gap
 from app.config import load_settings
@@ -30,6 +32,25 @@ def _empty_opportunities_df():
         ]
     )
 
+
+def _analysis_cache_key(model: str, payload: dict) -> str:
+    stable = json.dumps({"model": model, "payload": payload}, ensure_ascii=False, sort_keys=True)
+    return hashlib.sha256(stable.encode("utf-8")).hexdigest()
+
+def _cached_analysis(cache_dir: Path, key: str):
+    path = cache_dir / f"{key}.json"
+    if not path.exists():
+        return None
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+
+def _save_analysis_cache(cache_dir: Path, key: str, analysis: dict) -> None:
+    if analysis.get("_meta", {}).get("fallback_reason"):
+        return
+    cache_dir.mkdir(parents=True, exist_ok=True)
+    (cache_dir / f"{key}.json").write_text(json.dumps(analysis, ensure_ascii=False, indent=2), encoding="utf-8")
 
 def run_pipeline() -> None:
     settings = load_settings()
@@ -199,26 +220,34 @@ def run_pipeline() -> None:
                 },
             }
         else:
-            analysis = analyze_page_gap(
-                api_key=settings.openai_api_key,
-                model=settings.openai_model,
-                payload={
-                    "query": row.query,
-                    "page": row.page,
-                    "position": float(row.position),
-                    "ctr": float(row.ctr),
-                    "is_new_query": bool(getattr(row, "is_new_query", False)),
-                    "title": snapshot.title,
-                    "meta_description": snapshot.meta_description,
-                    "h1": snapshot.h1,
-                    "h2s": snapshot.h2s,
-                    "main_content": snapshot.main_content,
-                },
-                timeout=max(40, settings.request_timeout_seconds),
-                max_attempts=settings.openai_max_retries,
-                base_retry_delay_seconds=settings.openai_base_retry_delay_seconds,
-                max_retry_delay_seconds=settings.openai_max_retry_delay_seconds,
-            )
+            analysis_payload = {
+                "query": row.query,
+                "page": row.page,
+                "position": float(row.position),
+                "ctr": float(row.ctr),
+                "is_new_query": bool(getattr(row, "is_new_query", False)),
+                "title": snapshot.title,
+                "meta_description": snapshot.meta_description,
+                "h1": snapshot.h1,
+                "h2s": snapshot.h2s,
+                "main_content": snapshot.main_content,
+            }
+            cache_dir = settings.data_dir / "analysis-cache"
+            cache_key = _analysis_cache_key(settings.openai_model, analysis_payload)
+            analysis = _cached_analysis(cache_dir, cache_key)
+            if analysis is not None:
+                print(f"Using cached OpenAI analysis for {row.query} -> {row.page}")
+            else:
+                analysis = analyze_page_gap(
+                    api_key=settings.openai_api_key,
+                    model=settings.openai_model,
+                    payload=analysis_payload,
+                    timeout=max(40, settings.request_timeout_seconds),
+                    max_attempts=settings.openai_max_retries,
+                    base_retry_delay_seconds=settings.openai_base_retry_delay_seconds,
+                    max_retry_delay_seconds=settings.openai_max_retry_delay_seconds,
+                )
+                _save_analysis_cache(cache_dir, cache_key, analysis)
 
             if analysis.get("_meta", {}).get("status_code") == 429:
                 openai_rate_limited = True
