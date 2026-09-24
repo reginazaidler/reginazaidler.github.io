@@ -839,7 +839,7 @@ def main() -> int:
     # Guard against publishing a second page for a topic that already has a
     # plausible home. UPDATE/SKIP intentionally stop this workflow before any
     # new HTML is written.
-    from seo_orchestrator import decide as orchestrator_decide
+    from scripts.seo_orchestrator import decide as orchestrator_decide
     decision = orchestrator_decide(Path(args.output_dir), meta["h1"], meta["keyword"], meta["slug"])
     decision_path = Path(args.output_dir) / args.orchestrator_decision
     decision_path.parent.mkdir(parents=True, exist_ok=True)
