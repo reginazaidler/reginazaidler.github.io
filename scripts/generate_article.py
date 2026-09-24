@@ -51,6 +51,8 @@ def parse_args() -> argparse.Namespace:
                    help="Print generated content without writing files")
     p.add_argument("--selection-only", action="store_true",
                    help="Run relevance selection only; do not write an article")
+    p.add_argument("--orchestrator-decision", default="reports/orchestrator-decision.json",
+                   help="Where to write the pre-publish CREATE/UPDATE/SKIP decision")
     return p.parse_args()
 
 
@@ -832,6 +834,21 @@ def main() -> int:
 
     if args.selection_only:
         print("[generate_article] Selection-only mode; relevance gate passed.")
+        return 0
+
+    # Guard against publishing a second page for a topic that already has a
+    # plausible home. UPDATE/SKIP intentionally stop this workflow before any
+    # new HTML is written.
+    from seo_orchestrator import decide as orchestrator_decide
+    decision = orchestrator_decide(Path(args.output_dir), meta["h1"], meta["keyword"], meta["slug"])
+    decision_path = Path(args.output_dir) / args.orchestrator_decision
+    decision_path.parent.mkdir(parents=True, exist_ok=True)
+    decision_path.write_text(json.dumps(decision, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"[orchestrator] {decision['action']}: {decision['reason']}")
+    if decision["action"] != "CREATE":
+        match = decision.get("best_match") or {}
+        print(f"[orchestrator] Existing page candidate: {match.get('page', 'unknown')}")
+        print("[orchestrator] Holding automatic article creation to avoid keyword cannibalization.")
         return 0
 
     print("[generate_article] Writing full article...")
