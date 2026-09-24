@@ -71,3 +71,9 @@
   .home-service-card h3 { font-size: 1.05rem; }
   .home-service-card p { font-size: .9rem; line-height: 1.35; }
 }
+
+/* Three article previews use the service-card design; stack on small screens. */
+@media (max-width: 767px) {
+  .home-article-links { grid-template-columns: 1fr; }
+  .home-article-links .home-service-card { min-height: 0; }
+}
