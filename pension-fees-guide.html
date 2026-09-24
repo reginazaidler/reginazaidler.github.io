@@ -84,7 +84,7 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=20260924-5">
 <style>
 body.pension-fees-page {
   background: #f8fafc;
@@ -288,6 +288,26 @@ body.pension-fees-page main {
   .pension-table { min-width: 100%; }
   .pension-btn, .pension-btn-secondary { width: 100%; }
 }
+
+/* Pension fees hero: use fixed colors so the heading remains readable even if theme tokens fail. */
+.pension-fees-page .pension-hero {
+  background: #07152e !important;
+  background-image: linear-gradient(135deg, #07152e, #153a7a) !important;
+  color: #fff;
+}
+.pension-fees-page .pension-hero nav,
+.pension-fees-page .pension-hero nav a,
+.pension-fees-page .pension-hero nav span,
+.pension-fees-page .pension-hero > a,
+.pension-fees-page .pension-hero h1,
+.pension-fees-page .pension-hero > p { color: #fff !important; }
+.pension-fees-page .pension-hero > p.bg-blue-50 {
+  background: rgba(255,255,255,.14) !important;
+  color: #fff !important;
+}
+.pension-fees-page .pension-hero .pension-cta-inline,
+.pension-fees-page .pension-hero .pension-cta-inline h2,
+.pension-fees-page .pension-hero .pension-cta-inline p { color: #0b1b3b !important; }
 </style>
 
 <script type="application/ld+json">
