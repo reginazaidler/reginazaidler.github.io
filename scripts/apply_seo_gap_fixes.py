@@ -6,7 +6,7 @@ Content sections, FAQ, trust claims and CTA changes remain recommendations until
 we add source-aware factual QA.
 """
 from __future__ import annotations
-import argparse, json, re
+import argparse, json, re, sqlite3
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -34,12 +34,23 @@ def replace_meta(html: str, value: str) -> tuple[str, bool]:
     new, n = re.subn(pattern, lambda m: m.group(1)+value+m.group(3), html, count=1, flags=re.I|re.S)
     return new, bool(n)
 
+def page_has_active_experiment(db_path: Path, page_url: str) -> bool:
+    if not db_path.exists():
+        return False
+    try:
+        c=sqlite3.connect(db_path)
+        row=c.execute("SELECT 1 FROM seo_experiments WHERE page=? AND status IN ('waiting','monitoring') LIMIT 1",(page_url,)).fetchone()
+        return bool(row)
+    except sqlite3.Error:
+        return False
+
 def main() -> int:
     p=argparse.ArgumentParser()
     p.add_argument("--tasks", default="seo-gap-agent/reports/dev_tasks.json")
     p.add_argument("--root", default=".")
     p.add_argument("--report", default="seo-gap-agent/reports/applied_fixes.json")
     p.add_argument("--apply", action="store_true")
+    p.add_argument("--db", default="seo-gap-agent/data/seo_gap_agent.db")
     args=p.parse_args()
     root=Path(args.root)
     tasks_path=Path(args.tasks)
@@ -51,7 +62,11 @@ def main() -> int:
             continue
         if task.get("priority") not in {"high","medium"}:
             continue
-        path=local_path(root, task.get("page",""))
+        page_url=task.get("page","")
+        if page_has_active_experiment(Path(args.db), page_url):
+            results.append({"page":page_url,"query":task.get("query"),"changed":False,"locked_by_experiment":True,"mode":"apply" if args.apply else "dry-run"})
+            continue
+        path=local_path(root, page_url)
         if not path or not path.exists() or path in seen:
             continue
         seen.add(path)
