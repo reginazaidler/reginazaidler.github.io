@@ -109,3 +109,6 @@
   .home-media-topics { display: flex; flex-wrap: wrap; gap: .5rem; }
   .home-media-topics span { padding: .5rem .7rem; font-size: .86rem; }
 }
+
+.home-media-panel--simple { display: block; padding-block: clamp(1.6rem, 3vw, 2.4rem); }
+.home-media-panel--simple .home-media-copy { max-width: 48rem; }
