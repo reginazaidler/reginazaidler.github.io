@@ -84,3 +84,17 @@
     margin-inline: auto;
   }
 }
+
+
+/* Critical homepage hero colors live in this cache-busted asset too.
+   This prevents a stale style.css response from turning the hero white while its text remains light. */
+.home-page .home-hero {
+  background: linear-gradient(135deg, #07152E 0%, #0B1B3B 100%) !important;
+  color: #fff !important;
+}
+
+.home-page .home-hero__title,
+.home-page .home-hero__lead,
+.home-page .home-hero__badge {
+  color: #fff !important;
+}
