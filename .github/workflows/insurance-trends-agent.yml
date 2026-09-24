@@ -181,5 +181,6 @@ jobs:
             reports/insurance-trends-report.md
             reports/insurance-trends-report.json
             reports/last-generated-article.json
+            reports/orchestrator-decision.json
             data/trends-agent/snapshot_*.json
           if-no-files-found: warn
