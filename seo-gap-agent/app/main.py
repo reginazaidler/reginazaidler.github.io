@@ -152,7 +152,13 @@ def run_pipeline() -> None:
     openai_rate_limited = False
 
     for row in top_df.itertuples(index=False):
-        snapshot = extract_page_snapshot(row.page, timeout=settings.request_timeout_seconds)
+        try:
+            snapshot = extract_page_snapshot(row.page, timeout=settings.request_timeout_seconds)
+        except Exception as exc:
+            # GSC can retain historical URLs after a page was removed or renamed.
+            # One stale URL must not abort the whole daily optimization run.
+            print(f"Skipping page snapshot for {row.page}: {type(exc).__name__}: {exc}")
+            continue
 
         bulk_insert(
             conn,
