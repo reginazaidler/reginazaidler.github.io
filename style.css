@@ -9738,3 +9738,33 @@ select:focus-visible {
 .travel-page #main .bg-white.rounded-3xl p {
     color: #334155;
 }
+
+/* Keep article navigation and headings together across article layouts. */
+body.article-layout main nav[aria-label="breadcrumb"] {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .15rem;
+  line-height: 1.65;
+  margin-bottom: .85rem;
+}
+body.article-layout main nav[aria-label="breadcrumb"] + a {
+  display: inline-block;
+  margin-bottom: .75rem;
+}
+body.article-layout .checklist-hero .section-label {
+  display: table;
+  margin-top: .5rem;
+}
+body.article-layout .checklist-hero h1 {
+  margin-top: 1rem;
+  line-height: 1.2;
+}
+body.article-layout .pension-hero > p.mt-6 {
+  display: table;
+  margin-top: .25rem;
+}
+body.article-layout .pension-hero h1 {
+  margin-top: 1rem;
+  line-height: 1.2;
+}
