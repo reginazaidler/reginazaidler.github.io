@@ -9768,3 +9768,35 @@ body.article-layout .pension-hero h1 {
   margin-top: 1rem;
   line-height: 1.2;
 }
+
+/* Compact homepage article preview. */
+.home-page .home-articles-section {
+  padding: 3.5rem 0 3.75rem;
+  margin-top: 2.5rem;
+  scroll-margin-top: 9rem;
+}
+.home-page .home-articles-section .container-clean { max-width: 70rem; }
+.home-articles-heading { text-align: center; margin-bottom: 1.75rem; }
+.home-page .home-articles-heading .section-title { margin: 0; }
+.home-articles-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.home-article-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 0;
+  padding: 1.5rem;
+  background: #f8fbff;
+  border: 1px solid #dbe5f2;
+  border-radius: 1rem;
+  text-align: right;
+}
+.home-article-card h3 { margin: 0 0 .65rem; color: var(--navy-main); font-size: 1.35rem; line-height: 1.35; }
+.home-article-card p { margin: 0 0 1rem; color: #475569; line-height: 1.6; }
+.home-article-card a { margin-top: auto; font-weight: 800; color: var(--navy-main); }
+.home-articles-more { margin-top: 1.5rem; text-align: center; }
+.home-articles-more a { color: var(--navy-main); font-weight: 700; text-decoration: underline; text-underline-offset: .25rem; }
+@media (max-width: 767px) {
+  .home-page .home-articles-section { padding: 2.5rem 0; scroll-margin-top: 6rem; }
+  .home-articles-grid { grid-template-columns: 1fr; gap: .75rem; }
+  .home-article-card { padding: 1.2rem; }
+}
