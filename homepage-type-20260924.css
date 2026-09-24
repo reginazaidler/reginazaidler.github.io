@@ -112,3 +112,21 @@
 
 .home-media-panel--simple { display: block; padding-block: clamp(1.6rem, 3vw, 2.4rem); }
 .home-media-panel--simple .home-media-copy { max-width: 48rem; }
+
+
+/* Tighter narrative section rhythm on the homepage. */
+.home-page .home-story-section {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+.home-page .home-story-section + .home-story-section {
+  padding-top: 2.25rem !important;
+}
+
+@media (max-width: 767px) {
+  .home-page .home-story-section {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+}
