@@ -10,6 +10,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 CHECKPOINTS=(7,14,21,28)
+REGISTRY_PATH=Path("seo-gap-agent/data/seo_experiments_registry.json")
 
 def conn(path: Path):
     c=sqlite3.connect(path); c.row_factory=sqlite3.Row
@@ -40,8 +41,34 @@ def latest_metric(c,page,query):
     return c.execute("""SELECT clicks,impressions,ctr,position,start_date,end_date
       FROM query_page_metrics WHERE page=? AND query=? ORDER BY fetched_at DESC LIMIT 1""",(page,query)).fetchone()
 
+def _load_registry():
+    if not REGISTRY_PATH.exists(): return []
+    return json.loads(REGISTRY_PATH.read_text(encoding="utf-8"))
+
+def _save_registry(rows):
+    REGISTRY_PATH.parent.mkdir(parents=True,exist_ok=True)
+    REGISTRY_PATH.write_text(json.dumps(rows,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+
+def sync_registry(c):
+    rows=_load_registry()
+    added=0
+    for x in rows:
+        exists=c.execute("SELECT 1 FROM seo_experiments WHERE page=? AND query=? AND commit_sha=? LIMIT 1",
+                         (x["page"],x["query"],x.get("commit_sha"))).fetchone()
+        if exists: continue
+        c.execute("""INSERT INTO seo_experiments(page,query,changed_at,change_type,change_summary,
+          before_clicks,before_impressions,before_ctr,before_position,pr_number,commit_sha,deployed_at,
+          indexing_requested_at,indexing_status) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+          (x["page"],x["query"],x["changed_at"],x["change_type"],x["change_summary"],
+           x.get("before_clicks"),x.get("before_impressions"),x.get("before_ctr"),x.get("before_position"),
+           x.get("pr_number"),x.get("commit_sha"),x.get("deployed_at",x["changed_at"]),
+           x.get("indexing_requested_at"),x.get("indexing_status","not_requested")))
+        added+=1
+    c.commit()
+    return added
+
 def start(args):
-    c=conn(Path(args.db)); m=latest_metric(c,args.page,args.query)
+    c=conn(Path(args.db)); sync_registry(c); m=latest_metric(c,args.page,args.query)
     if not m: raise SystemExit("No GSC baseline found for this page/query.")
     changed=args.changed_at or datetime.now(timezone.utc).isoformat()
     c.execute("""INSERT INTO seo_experiments(page,query,changed_at,change_type,change_summary,
@@ -69,7 +96,7 @@ def mark_indexing(args):
     c.commit(); print("Indexing request recorded.")
 
 def evaluate(args):
-    c=conn(Path(args.db)); now=datetime.now(timezone.utc); out=[]
+    c=conn(Path(args.db)); sync_registry(c); now=datetime.now(timezone.utc); out=[]
     rows=c.execute("SELECT * FROM seo_experiments WHERE status IN ('waiting','monitoring')").fetchall()
     for e in rows:
         changed=datetime.fromisoformat(e["changed_at"])
