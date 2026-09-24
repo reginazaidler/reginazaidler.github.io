@@ -77,7 +77,7 @@ jobs:
 
       - name: Evaluate mature SEO experiments
         run: |
-          python scripts/seo_experiments.py evaluate --wait-days 14 --min-impressions 20
+          python scripts/seo_experiments.py evaluate --min-impressions 20
 
       - name: Preview safe existing-page fixes
         run: |
