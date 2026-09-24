@@ -154,3 +154,10 @@
 .home-page #main .home-page-link--dark { background: #fff; border-color: #fff; color: #0b1b3b; }
 .home-page #main .home-page-link--dark:hover,
 .home-page #main .home-page-link--dark:focus-visible { background: #eaf2ff; border-color: #eaf2ff; color: #0b1b3b; }
+
+/* Read the two homepage story sections as one continuous passage. */
+.home-page #main > section.home-story-section { padding-top: 1.75rem; padding-bottom: 1.75rem; }
+.home-page #main > section.home-story-section + section.home-story-section { margin-top: 0; }
+@media (max-width: 767px) {
+  .home-page #main > section.home-story-section { padding-top: 1.4rem; padding-bottom: 1.4rem; }
+}
