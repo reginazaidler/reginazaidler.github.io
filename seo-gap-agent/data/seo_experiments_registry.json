@@ -1,0 +1,18 @@
+[
+  {
+    "page": "https://vainzof.co.il/ru/strahovanie-avtomobilya-v-izraile.html",
+    "query": "автострахование",
+    "changed_at": "2026-09-24T18:06:00+00:00",
+    "deployed_at": "2026-09-24T18:06:00+00:00",
+    "change_type": "on_page_seo_content",
+    "change_summary": "Updated title, H1 and meta description; clarified ביטוח חובה, צד ג׳ and מקיף; added comparison table, supporting search-intent sections, FAQ and FAQ schema; removed unsupported numeric claims; URL unchanged.",
+    "before_clicks": null,
+    "before_impressions": 163,
+    "before_ctr": null,
+    "before_position": 10.95,
+    "pr_number": 965,
+    "commit_sha": "367b07e9a81352be18aa03eff2e9d1c062d9ae2a",
+    "indexing_requested_at": null,
+    "indexing_status": "not_requested"
+  }
+]
