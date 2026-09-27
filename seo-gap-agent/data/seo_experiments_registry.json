@@ -12,7 +12,7 @@
     "before_position": 10.95,
     "pr_number": 965,
     "commit_sha": "367b07e9a81352be18aa03eff2e9d1c062d9ae2a",
-    "indexing_requested_at": null,
-    "indexing_status": "not_requested"
+    "indexing_requested_at": "2026-09-27",
+    "indexing_status": "requested"
   }
 ]
