@@ -30,7 +30,10 @@ jobs:
       - name: Run sync
         run: python scripts/sync_indexes.py
 
-      - name: Push changes
+      - name: Review and push changes
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          REVIEW_MODEL: ${{ secrets.REVIEW_MODEL }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -41,21 +44,15 @@ jobs:
             exit 0
           fi
 
+          python scripts/review_staged_changes.py
           git commit -m "chore: auto-sync sitemap and llms.txt"
+          # Fail if main moved. A rebase would change the reviewed context.
+          git push origin HEAD:main
 
-          # main can move while this workflow is running. Rebase the generated
-          # commit onto the latest remote main before pushing.
-          for attempt in 1 2 3 4 5; do
-            git fetch origin main
-            git rebase origin/main
-
-            if git push origin HEAD:main; then
-              exit 0
-            fi
-
-            echo "Push raced with another commit. Retrying ($attempt/5)..."
-            sleep $((attempt * 2))
-          done
-
-          echo "Unable to push sync changes after 5 attempts."
-          exit 1
+      - name: Upload code review report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: website-code-review
+          path: ${{ runner.temp }}/website-code-review.json
+          if-no-files-found: ignore
