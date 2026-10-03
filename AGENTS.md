@@ -19,10 +19,11 @@ The reviewer should prioritize:
 - Accidental deletion of article cards, categories, sections or other existing content. Never delete valid content merely to make a check pass.
 - Hebrew/Russian language switches and alternate-language metadata. Do not declare an unrelated page as a translation.
 - Consistency with the requested business process: visitors do not need to collect reports or policies before contacting Yuval. With their consent, Yuval retrieves the relevant information through Har HaBituach and the pension clearing system.
+- Visual consistency with the existing website: use index.html, about.html and services.html as design references, and theme-tokens.css and style.css as the shared design system. Check fonts, colors, heading hierarchy, content widths, spacing, cards, buttons, header/footer, language direction and responsive behavior. Preserve page-specific layouts where appropriate; do not force every page to look like the homepage. Block accidental isolated styling, unreadable contrast, overlapping content, horizontal overflow and missing shared styles. Explicit user-approved redesigns take precedence over matching the current design.
 - HTML, JavaScript and JSON-LD correctness; layout and mobile regressions where relevant; forms and contact buttons.
 - Unsupported claims, invented reviews, numbers or credentials; unwanted analytics and unrelated changes.
 
-Run `python scripts/check-internal-links.py` for HTML/navigation changes. Inspect layout for visual changes when a browser or render is available. Do not submit real contact forms as a test. Scale other checks to the change and state what could not be verified.
+Run `python scripts/check-internal-links.py` for HTML/navigation changes. For visual changes, inspect rendered desktop (1440px) and mobile (390px) layouts against an existing page of the same type when a browser or render is available. Code inspection alone is not a visual verification: explicitly report when screenshots/rendering were unavailable. Do not submit real contact forms as a test. Scale other checks to the change and state what could not be verified.
 
 ## Scope of enforcement
 
