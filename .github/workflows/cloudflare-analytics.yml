@@ -1,0 +1,25 @@
+name: Cloudflare Analytics Report
+on:
+  workflow_dispatch:
+  push:
+    branches: [analytics-api-20261003]
+    paths:
+      - scripts/cloudflare-report.py
+      - .github/workflows/cloudflare-analytics.yml
+permissions:
+  contents: read
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read website analytics
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: python3 scripts/cloudflare-report.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cloudflare-analytics-report
+          path: analytics-report/
+          retention-days: 7
