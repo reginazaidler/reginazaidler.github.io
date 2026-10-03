@@ -7,6 +7,31 @@ from typing import Any
 import pandas as pd
 
 
+def _format_report_list(value: Any) -> str:
+    """Render text or structured AI suggestions without changing JSON tasks."""
+    if value is None:
+        return ""
+    items = value if isinstance(value, list) else [value]
+    rendered: list[str] = []
+    for item in items:
+        if item is None:
+            continue
+        if isinstance(item, str):
+            rendered.append(item)
+        elif isinstance(item, dict):
+            question = item.get("question")
+            answer = item.get("answer")
+            if isinstance(question, str):
+                rendered.append(
+                    f"{question} - {answer}" if isinstance(answer, str) and answer else question
+                )
+            else:
+                rendered.append(json.dumps(item, ensure_ascii=False))
+        else:
+            rendered.append(json.dumps(item, ensure_ascii=False))
+    return ", ".join(rendered)
+
+
 def build_reports(
     reports_dir: Path,
     opportunities_df: pd.DataFrame,
@@ -34,7 +59,7 @@ def build_reports(
         analysis = item["analysis"]
         fallback_reason = analysis.get("_meta", {}).get("fallback_reason")
         rate_limited = fallback_reason in {"rate_limit", "openai_retryable_error"}
-        issues = ", ".join(analysis.get("why_not_rank_1", [])) if analysis.get("why_not_rank_1") else "N/A"
+        issues = _format_report_list(analysis.get("why_not_rank_1", [])) if analysis.get("why_not_rank_1") else "N/A"
         markdown_lines.extend(
             [
                 f"### {idx}. Query: `{item['query']}`",
@@ -55,9 +80,9 @@ def build_reports(
                     else f"  - Title: {analysis['title_fix']}"
                 ),
                 ("" if rate_limited else f"  - Opening paragraph: {analysis['opening_paragraph_fix']}"),
-                ("" if rate_limited else f"  - Sections to add: {', '.join(analysis['sections_to_add'])}"),
-                ("" if rate_limited else f"  - FAQ to add: {', '.join(analysis['faq_to_add'])}"),
-                ("" if rate_limited else f"  - Trust elements: {', '.join(analysis['trust_elements_to_add'])}"),
+                ("" if rate_limited else f"  - Sections to add: {_format_report_list(analysis['sections_to_add'])}"),
+                ("" if rate_limited else f"  - FAQ to add: {_format_report_list(analysis['faq_to_add'])}"),
+                ("" if rate_limited else f"  - Trust elements: {_format_report_list(analysis['trust_elements_to_add'])}"),
                 ("" if rate_limited else f"  - CTA fix: {analysis['cta_fix']}"),
                 (
                     ""
