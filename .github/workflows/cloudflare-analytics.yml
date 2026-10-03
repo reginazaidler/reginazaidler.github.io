@@ -1,6 +1,10 @@
 name: Cloudflare Analytics Report
 on:
   workflow_dispatch:
+  schedule:
+    # 22:45 in Israel, including daylight saving time.
+    - cron: "45 19 * * *"
+    - cron: "45 20 * * *"
   push:
     branches: [analytics-api-20261003]
     paths:
@@ -14,11 +18,30 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
+      - name: Select Israel evening run
+        id: evening
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          CRON_SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          python3 - <<'PY'
+          import datetime, os
+          from zoneinfo import ZoneInfo
+          now = datetime.datetime.now(datetime.timezone.utc)
+          scheduled_hour = int(os.environ.get("CRON_SCHEDULE", "").split()[1]) if os.environ["EVENT_NAME"] == "schedule" else 19
+          nominal = now.replace(hour=scheduled_hour, minute=45)
+          hour = nominal.astimezone(ZoneInfo("Asia/Jerusalem")).hour
+          enabled = os.environ["EVENT_NAME"] != "schedule" or hour == 22
+          with open(os.environ["GITHUB_OUTPUT"], "a") as output:
+              output.write(f"enabled={str(enabled).lower()}\n")
+          PY
       - name: Read website analytics
+        if: steps.evening.outputs.enabled == 'true'
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: python3 scripts/cloudflare-report.py
       - uses: actions/upload-artifact@v4
+        if: steps.evening.outputs.enabled == 'true'
         with:
           name: cloudflare-analytics-report
           path: analytics-report/
