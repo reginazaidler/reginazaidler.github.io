@@ -26,8 +26,23 @@ jobs:
       - name: Normalize em dashes in content
         run: python scripts/normalize_dashes.py
 
-      - name: Commit updates
-        uses: stefanzweifel/git-auto-commit-action@v5
+      - name: Review and commit updates
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          REVIEW_MODEL: ${{ secrets.REVIEW_MODEL }}
+        run: |
+          git add -A
+          if git diff --cached --quiet; then exit 0; fi
+          python scripts/review_staged_changes.py
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m 'chore: normalize em dashes in site content'
+          git push
+
+      - name: Upload code review report
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
-          commit_message: 'chore: normalize em dashes in site content'
-          file_pattern: '.'
+          name: website-code-review
+          path: ${{ runner.temp }}/website-code-review.json
+          if-no-files-found: ignore
