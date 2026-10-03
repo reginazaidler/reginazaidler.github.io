@@ -74,7 +74,22 @@ def main():
         rows.append({'start_utc': iso(start), 'end_utc': iso(stop),
             'page_views': sum(g['count'] for g in groups),
             'visits': sum(g['sum']['visits'] for g in groups) if has_visits else None})
+    dimensions = {f['name'] for f in types[named(output['dimensions']['type'])]['fields']}
+    if 'requestPath' not in dimensions:
+        raise RuntimeError('Page path dimension unavailable in API schema')
+    last = rows[-1]
+    query = ('{ viewer { accounts(filter: {accountTag: ' + json.dumps(ACCOUNT) + '}) { '
+        + dataset + '(limit: 1000, orderBy: [count_DESC], filter: {requestHost: '
+        + json.dumps(HOST) + ', datetime_geq: ' + json.dumps(last['start_utc'])
+        + ', datetime_lt: ' + json.dumps(last['end_utc'])
+        + '}) { count dimensions { requestPath } } } } }')
+    accounts = request(query)['viewer']['accounts']
+    if len(accounts) != 1:
+        raise RuntimeError('Token cannot access the configured account')
+    pages = [{'path': g['dimensions']['requestPath'], 'page_views': g['count']}
+        for g in accounts[0][dataset]]
     report = {'hostname': HOST, 'generated_utc': end.isoformat(), 'days': rows,
+        'pages_last_24h': pages, 'pages_truncated': len(pages) == 1000,
         'page_views': sum(r['page_views'] for r in rows),
         'visits': sum(r['visits'] for r in rows) if has_visits else None}
     directory = Path('analytics-report')
@@ -86,6 +101,16 @@ def main():
         'Visits are not unique people. Data can be sampled; blocked beacons are not counted.', '',
         '| Start (UTC) | End (UTC) | Page views | Visits |', '| --- | --- | ---: | ---: |']
     lines.extend(f'| {r["start_utc"]} | {r["end_utc"]} | {r["page_views"]} | {r["visits"] if has_visits else "N/A"} |' for r in rows)
+    lines.extend(['', '## Pages in the last 24 hours', '',
+        f"Window: {last['start_utc']} to {last['end_utc']}", '',
+        '| Page path | Page views |', '| --- | ---: |'])
+    for page in pages:
+        safe_path = str(page['path']).replace('|', '&#124;').replace('\n', '').replace('\r', '')
+        lines.append(f"| {safe_path} | {page['page_views']} |")
+    if not pages:
+        lines.extend(['', 'No page views returned for this window.'])
+    if report['pages_truncated']:
+        lines.extend(['', 'Showing at most 1000 paths; the page list may be incomplete.'])
     markdown = '\n'.join(lines) + '\n'
     (directory / 'report.md').write_text(markdown, encoding='utf-8')
     if os.environ.get('GITHUB_STEP_SUMMARY'):

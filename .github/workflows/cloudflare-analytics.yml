@@ -6,7 +6,7 @@ on:
     - cron: "45 19 * * *"
     - cron: "45 20 * * *"
   push:
-    branches: [analytics-api-20261003]
+    branches: [analytics-api-20261003, analytics-pages-20261003]
     paths:
       - scripts/cloudflare-report.py
       - .github/workflows/cloudflare-analytics.yml
