@@ -42,7 +42,7 @@ def main():
         ' } args { name type { ' + TYPE_REF + ' } } } inputFields { name } } } }')
     types = {t['name']: t for t in schema['__schema']['types']}
     dataset = 'rumPageloadEventsAdaptiveGroups'
-    candidates = [f for t in types.values() for f in (t.get('fields') or []) if f['name'] == dataset]
+    candidates = [f for t in types.values() for f in (t.get('fields') or []) if f['name'] == dataset and any(a['name'] == 'filter' for a in f['args'])]
     if not candidates:
         raise RuntimeError('Web Analytics dataset is unavailable to this token')
     field = candidates[0]
