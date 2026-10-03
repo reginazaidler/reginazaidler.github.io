@@ -1,0 +1,1 @@
+{"manifest_version":3,"name":"Yuval Audience Finder","version":"0.1.0","description":"Collect visible public Instagram profile links from the page you are viewing and rank them locally.","permissions":["activeTab","storage"],"action":{"default_popup":"popup.html"},"content_scripts":[{"matches":["https://www.instagram.com/*"],"js":["content.js"]}]}
