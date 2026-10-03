@@ -117,7 +117,10 @@ jobs:
       - name: Sync sitemap and llms.txt
         run: python3 scripts/sync_indexes.py
 
-      - name: Commit and push new files
+      - name: Review, commit and push new files
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          REVIEW_MODEL: ${{ secrets.REVIEW_MODEL }}
         run: |
           git config user.name  "Trends Agent"
           git config user.email "trends-agent@vainzof.co.il"
@@ -140,6 +143,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "Nothing to commit."
           else
+            python scripts/review_staged_changes.py
             TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M UTC')
             if [ -n "$ARTICLE_SLUG" ]; then
               git commit -m "auto: trends + article ${ARTICLE_SLUG} [${TIMESTAMP}]"
@@ -184,3 +188,11 @@ jobs:
             reports/orchestrator-decision.json
             data/trends-agent/snapshot_*.json
           if-no-files-found: warn
+
+      - name: Upload code review report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: website-code-review
+          path: ${{ runner.temp }}/website-code-review.json
+          if-no-files-found: ignore
