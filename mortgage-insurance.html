@@ -145,9 +145,30 @@
 
     
     <link rel="stylesheet" href="style.css">
+    <style>
+        .mortgage-page #main section:not(.home-hero) {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+        .mortgage-page #main section > .container-clean > .max-w-5xl {
+            margin-bottom: 1.5rem;
+        }
+        .mortgage-page #main .grid {
+            gap: 1.25rem;
+        }
+        @media (max-width: 767px) {
+            .mortgage-page #main section:not(.home-hero) {
+                padding-top: 1.5rem;
+                padding-bottom: 1.5rem;
+            }
+            .mortgage-page #main .grid {
+                gap: 1rem;
+            }
+        }
+    </style>
 </head>
 
-<body>
+<body class="mortgage-page">
     <a href="#main" class="sr-focusable">דלג לתוכן המרכזי</a>
 
     <div id="top-anchor" class="site-topbar">
@@ -327,7 +348,7 @@
                 <div class="flex gap-4">
                     <span class="text-[var(--gold-brand)] text-2xl font-black mt-1">-</span>
                     <p class="text-slate-200 leading-relaxed">
-                        <strong class="text-white">כאשר יש עניין רפואי, תהליך החיתום והתוצאה יכולים להשתנות בין חברות ובין מקרים. לכן סירוב או תנאים בחברה אחת אינם בהכרח מלמדים מה תהיה התוצאה במקום אחר.
+                        כאשר יש עניין רפואי, תהליך החיתום והתוצאה יכולים להשתנות בין חברות ובין מקרים. לכן סירוב או תנאים בחברה אחת אינם בהכרח מלמדים מה תהיה התוצאה במקום אחר.
                     </p>
                 </div>
                 <div class="flex gap-4">
