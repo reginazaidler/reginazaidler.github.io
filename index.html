@@ -264,6 +264,16 @@
     <link rel="stylesheet" href="style.css?v=20260924-3">
     <link rel="stylesheet" href="homepage-hero-20260924.css?v=20260924-2">
     <link rel="stylesheet" href="homepage-type-20260924.css?v=20260924-9">
+<style>
+.home-companies-grouped .companies-section-title{font-size:clamp(1.5rem,2.5vw,2rem);margin:0 0 28px;text-align:center}
+.home-companies-grouped .company-groups{display:grid;gap:24px}
+.home-companies-grouped .company-group h3{font-size:1.125rem;color:#475569;text-align:center;margin:0 0 12px;font-weight:700}
+.home-companies-grouped .company-group-logos{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.home-companies-grouped .company-logo-tile{width:174px;height:100px;padding:18px;border:1px solid #e2e8f0;border-radius:14px;background:#fff;box-shadow:none;display:flex;align-items:center;justify-content:center}
+.home-companies-grouped .company-logo-image{width:100%;height:64px;max-width:146px;max-height:64px;object-fit:contain;filter:none;opacity:1}
+.home-companies-grouped .logo-compact .company-logo-image{max-width:100px;max-height:58px}
+@media(max-width:600px){.home-companies-grouped .company-group-logos{gap:10px}.home-companies-grouped .company-logo-tile{width:calc(50% - 5px);max-width:174px;height:88px;padding:14px}.home-companies-grouped .company-groups{gap:22px}}
+</style>
 </head>
 
 <body class="home-page">
@@ -381,19 +391,15 @@
 </div>
 </section>
 
-<section class="py-8 md:py-10 bg-white reveal home-companies-section"><div class="container-clean companies-showcase"><div class="companies-section-card">
-<h2 class="companies-section-title">עובד מול חברות ביטוח ובתי השקעות</h2>
-<div class="companies-logos-grid" aria-label="חברות ביטוח ובתי השקעות שאיתם עובד יובל ויינזוף">
-<div class="company-logo-tile"><img src="assets/clal-logo.png" alt="כלל ביטוח" loading="lazy" class="company-logo-image"></div>
-<div class="company-logo-tile"><img src="assets/migdal-logo.png" alt="מגדל ביטוח" loading="lazy" class="company-logo-image"></div>
-<div class="company-logo-tile"><img src="assets/menora-logo.png" alt="מנורה מבטחים" loading="lazy" class="company-logo-image"></div>
-<div class="company-logo-tile"><img src="assets/altshuler-logo.png" alt="אלטשולר שחם" loading="lazy" class="company-logo-image"></div>
-<div class="company-logo-tile"><img src="assets/phoenix-logo.png" alt="הפניקס ביטוח" loading="lazy" class="company-logo-image"></div>
-<div class="company-logo-tile"><img src="assets/harel-logo.png" alt="הראל ביטוח" loading="lazy" class="company-logo-image"></div>
-<div class="company-logo-tile"><img src="assets/mor-logo.svg" alt="מור בית השקעות" loading="lazy" class="company-logo-image"></div>
-<div class="company-logo-tile"><img src="assets/yelin-lapidot-logo.svg" alt="ילין לפידות בית השקעות" loading="lazy" class="company-logo-image"></div>
-<div class="company-logo-tile"><img src="assets/analyst-logo.svg" alt="אנליסט בית השקעות" loading="lazy" class="company-logo-image"></div>
-</div></div></div></section>
+<section class="py-8 md:py-10 bg-white reveal home-companies-section home-companies-grouped" aria-labelledby="companies-title"><div class="container-clean companies-showcase">
+<h2 id="companies-title" class="companies-section-title">עובד מול חברות ביטוח ובתי השקעות</h2>
+<div class="company-groups">
+<div class="company-group"><h3>חברות ביטוח</h3><div class="company-group-logos">
+<div class="company-logo-tile "><img src="assets/clal-logo.png" alt="כלל ביטוח" loading="lazy" class="company-logo-image"></div><div class="company-logo-tile logo-compact"><img src="assets/migdal-logo.png" alt="מגדל ביטוח" loading="lazy" class="company-logo-image"></div><div class="company-logo-tile "><img src="assets/menora-logo.png" alt="מנורה מבטחים" loading="lazy" class="company-logo-image"></div><div class="company-logo-tile "><img src="assets/phoenix-logo.png" alt="הפניקס ביטוח" loading="lazy" class="company-logo-image"></div><div class="company-logo-tile logo-compact"><img src="assets/harel-logo.png" alt="הראל ביטוח" loading="lazy" class="company-logo-image"></div>
+</div></div>
+<div class="company-group"><h3>בתי השקעות</h3><div class="company-group-logos">
+<div class="company-logo-tile "><img src="assets/altshuler-logo.png" alt="אלטשולר שחם" loading="lazy" class="company-logo-image"></div><div class="company-logo-tile "><img src="assets/mor-logo.svg?v=20261003-dark" alt="מור בית השקעות" loading="lazy" class="company-logo-image"></div><div class="company-logo-tile "><img src="assets/yelin-lapidot-logo.svg" alt="ילין לפידות בית השקעות" loading="lazy" class="company-logo-image"></div><div class="company-logo-tile "><img src="assets/analyst-logo.svg" alt="אנליסט בית השקעות" loading="lazy" class="company-logo-image"></div>
+</div></div></div></div></section>
 
 
 <section class="home-media-section reveal" aria-labelledby="home-media-title">
