@@ -1,5 +1,6 @@
 """Fail-closed independent AI review of the exact staged tree before a bot commit."""
 from html.parser import HTMLParser
+from http import HTTPStatus
 import hashlib
 import json
 import os
@@ -8,6 +9,17 @@ import subprocess
 import sys
 import tempfile
 import urllib.request
+from urllib.error import HTTPError
+
+
+def failure_message(error):
+    if isinstance(error, HTTPError):
+        try:
+            reason = HTTPStatus(error.code).phrase
+        except ValueError:
+            reason = 'Unknown HTTP status'
+        return f'Code review failed; no commit allowed (HTTPError; HTTP {error.code}: {reason}).'
+    return 'Code review failed; no commit allowed (' + type(error).__name__ + ').'
 
 
 def git(*args):
@@ -67,7 +79,7 @@ def run_review():
         subprocess.run(['git', 'checkout-index', '--all', '--prefix=' + snapshot + '/'], check=True)
         subprocess.run([sys.executable, str(Path(snapshot) / 'scripts/check-internal-links.py')], cwd=snapshot, check=True)
         context = build_context(Path(snapshot))
-    policy = Path('AGENTS.md').read_text()
+        policy = (Path(snapshot) / 'AGENTS.md').read_text()
     payload = {
         'model': os.environ.get('REVIEW_MODEL') or 'gpt-4.1',
         'response_format': {'type': 'json_object'},
@@ -80,7 +92,10 @@ def run_review():
         data=json.dumps(payload).encode(), headers={'Authorization': 'Bearer ' + key, 'Content-Type': 'application/json'})
     with urllib.request.urlopen(request, timeout=90) as response:
         result = json.loads(response.read())
-    review = json.loads(result['choices'][0]['message']['content'])
+    choice = result['choices'][0]
+    if choice.get('finish_reason') != 'stop':
+        raise RuntimeError('Incomplete review response; commit blocked.')
+    review = json.loads(choice['message']['content'])
     if not isinstance(review, dict) or type(review.get('approved')) is not bool or not isinstance(review.get('blocking_findings'), list) or not all(isinstance(x, str) for x in review['blocking_findings']) or not isinstance(review.get('summary'), str):
         raise RuntimeError('Invalid review response; commit blocked.')
     report = {'tree': tree, 'diff_sha256': hashlib.sha256(diff.encode()).hexdigest(), 'review': review}
@@ -99,5 +114,5 @@ if __name__ == '__main__':
         run_review()
     except Exception as error:
         # Avoid logging HTTP response bodies or credentials.
-        print('Code review failed; no commit allowed (' + type(error).__name__ + ').', file=sys.stderr)
+        print(failure_message(error), file=sys.stderr)
         sys.exit(1)

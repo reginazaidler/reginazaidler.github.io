@@ -22,6 +22,7 @@ import textwrap
 import time
 import urllib.request
 from datetime import datetime, timezone
+from http import HTTPStatus
 from pathlib import Path
 
 OPENAI_API_URL = "https://api.openai.com/v1/responses"
@@ -92,14 +93,17 @@ def call_openai(prompt: str, system: str, max_tokens: int = 4096, retries: int =
                         parts.append(block.get("text", ""))
             return "".join(parts)
         except urllib.error.HTTPError as e:
-            body = e.read().decode("utf-8", errors="replace")
-            print(f"[call_openai] HTTP {e.code} error (attempt {attempt + 1}/{retries}): {body}", flush=True)
+            try:
+                reason = HTTPStatus(e.code).phrase
+            except ValueError:
+                reason = 'Unknown HTTP status'
+            print(f"[call_openai] HTTP {e.code} error (attempt {attempt + 1}/{retries}): {reason}", flush=True)
             if e.code in (529, 503, 500) and attempt < retries - 1:
                 wait = 30 * (2 ** attempt)
                 print(f"[call_openai] Retrying in {wait}s...", flush=True)
                 time.sleep(wait)
             else:
-                raise
+                raise RuntimeError(f'OpenAI request failed: HTTP {e.code}: {reason}') from None
 
 
 def load_report(json_path: str) -> dict:
