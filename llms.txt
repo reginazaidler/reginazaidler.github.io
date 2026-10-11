@@ -40,7 +40,6 @@
 - מדריך לפנסיה: https://vainzof.co.il/pension-guide.html
 - ביטוח חיים: https://vainzof.co.il/life-insurance.html
 - ביטוח בריאות: https://vainzof.co.il/health-insurance.html
-- כך תבדקו אם ביטוח הנסיעות שלכם מכסה טיסות ארקיע: https://vainzof.co.il/travel-insurance-check-before-flight.html
 - ביטוח נסיעות לחו"ל עם מצב רפואי - האם אפשר וכמה זה עולה: https://vainzof.co.il/travel-insurance-medical.html
 
 ## מידע לכלים AI
@@ -101,7 +100,6 @@
 - האם אתם משלמים יותר מדי על ביטוחים?: https://vainzof.co.il/are-you-overpaying-insurance
 - דמי ניהול פנסיה ממוצעים בישראל - מה סביר?: https://vainzof.co.il/average-pension-fees-israel
 - מה ההבדל בין ביטוח מבנה לביטוח תכולה? | יובל ויינזוף: https://vainzof.co.il/building-vs-contents-insurance.html
-- כפל ביטוחים - זיהוי וסדר בתיק הביטוח: https://vainzof.co.il/check-insurance-policies.html
 - חיסכון לילדים: מה לבדוק בחיסכון לכל ילד | יובל ויינזוף: https://vainzof.co.il/child-savings.html
 - האם כדאי לאחד קרנות פנסיה? מדריך מלא: https://vainzof.co.il/combine-pension-funds
 - ביטוח מקיף או צד ג׳ לרכב ישן? | יובל ויינזוף: https://vainzof.co.il/comprehensive-or-third-party-old-car.html
@@ -162,7 +160,6 @@
 - מדד 35 תל אביב (מדד תל אביב 35): מה זה, האם זה vta35, ומה חשוב לדעת: https://vainzof.co.il/tel-aviv-35-index.html
 - כמה עולה ביטוח נסיעות לחו״ל - מחירים ועלות: https://vainzof.co.il/travel-insurance-price.html
 - ביטוח נסיעות לחו״ל - מה לבדוק ואיך לבחור: https://vainzof.co.il/travel-insurance.html
-- צונאמי ביפן: מה קרה ומה ישראלים צריכים לבדוק בביטוח נסיעות ודירה: https://vainzof.co.il/tsunami-in-japan-insurance-guide.html
 - אילו נזקי מים מכוסים בביטוח דירה? | יובל ויינזוף: https://vainzof.co.il/water-damage-home-insurance-coverage.html
 - מה צריך לבדוק בהצעת ביטוח רכב? | יובל ויינזוף: https://vainzof.co.il/what-to-check-car-insurance-quote.html
 - מתי צריך לעדכן ביטוחים? 7 מצבים: https://vainzof.co.il/when-to-update-insurance
