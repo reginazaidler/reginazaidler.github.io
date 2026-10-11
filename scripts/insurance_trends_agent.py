@@ -189,6 +189,38 @@ def fetch_trends_rss(geo: str) -> str:
         return response.read().decode("utf-8", errors="ignore")
 
 
+def fetch_insurance_news(geo: str) -> list[TrendItem]:
+    """Fetch insurance news from Google News RSS; retain source links for review."""
+    queries = [
+        "ביטוח רכב OR ביטוח בריאות OR ביטוח דירה",
+        "חברות ביטוח OR תביעות ביטוח OR רשות שוק ההון",
+        "פנסיה OR קרן השתלמות OR ביטוח משכנתא",
+    ]
+    found: list[TrendItem] = []
+    seen: set[str] = set()
+    for query in queries:
+        params = parse.urlencode({"q": query + " when:7d", "hl": "he", "gl": geo, "ceid": f"{geo}:he"})
+        req = request.Request("https://news.google.com/rss/search?" + params,
+                              headers={"User-Agent": "Mozilla/5.0"})
+        try:
+            with request.urlopen(req, timeout=25) as response:
+                root = ElementTree.fromstring(response.read())
+            for item in root.findall("./channel/item")[:15]:
+                title = (item.findtext("title") or "").strip()
+                link = (item.findtext("link") or "").strip()
+                if not title or not link or title in seen:
+                    continue
+                seen.add(title)
+                found.append(TrendItem(
+                    title=title, traffic="", pub_date=(item.findtext("pubDate") or "").strip(),
+                    link=link, description=(item.findtext("description") or "").strip(),
+                    source_geo=geo, classification="news",
+                ))
+        except Exception as exc:
+            print(f"[insurance-news] Feed unavailable: {type(exc).__name__}", flush=True)
+    return found
+
+
 def load_rss(args: argparse.Namespace) -> str:
     if args.rss_file:
         path = Path(args.rss_file)
@@ -417,6 +449,7 @@ def main() -> int:
             item.classification = classify_trend(item, keywords_sets)
             relevant_items.append(item)
 
+    news_items = [] if args.rss_file else fetch_insurance_news(args.geo)
     current_trends = [asdict(item) for item in relevant_items]
     previous_snapshot_path = choose_previous_snapshot(state_dir, now, args.lookback_hours)
 
@@ -457,6 +490,7 @@ def main() -> int:
         "total_trends": len(all_trends),
         "insurance_trends_count": len(current_trends),
         "insurance_trends": current_trends,
+        "news_candidates": [asdict(item) for item in news_items],
         "classification_counts": {
             "insurance_direct": sum(1 for item in current_trends if item["classification"] == "insurance_direct"),
             "finance_related": sum(1 for item in current_trends if item["classification"] == "finance_related"),
