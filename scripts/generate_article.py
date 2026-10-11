@@ -183,7 +183,45 @@ def pick_best_trend(report: dict, max_trends: int) -> dict:
     raw = raw.strip().lstrip("```json").lstrip("```").rstrip("```").strip()
     result = json.loads(raw)
     if not result.get("chosen_trend"):
-        sys.exit("[pick_best_trend] No suitable trend found - skipping article generation.")
+        # Evergreen fallback: useful customer questions, not invented current events.
+        # Exclude topics already represented by existing article filenames.
+        evergreen = [
+            ("ביטוח דירה בשכירות: מה לבדוק לפני חתימה", "renter-home-insurance-checklist"),
+            ("מה לבדוק בביטוח רכב לפני חידוש", "car-insurance-renewal-checklist"),
+            ("איך לבדוק מוטבים בביטוח חיים ובפנסיה", "insurance-pension-beneficiaries-check"),
+            ("איך להכין מסמכים לפני הגשת תביעת ביטוח", "insurance-claim-documents-checklist"),
+            ("ביטוח נסיעות למשפחה: שאלות שכדאי לשאול", "family-travel-insurance-questions"),
+            ("איך לקרוא דוח שנתי של קרן פנסיה", "pension-annual-statement-checklist"),
+        ]
+        available = [
+            {"topic": title, "slug": slug}
+            for title, slug in evergreen
+            if not Path(f"{slug}.html").exists()
+        ]
+        if not available:
+            sys.exit("[pick_best_trend] No suitable trend and no unused evergreen topic - skipping.")
+        fallback_prompt = (
+            "בחר נושא אחד בלבד מתוך הרשימה לכתבת שירות שימושית לאתר סוכן ביטוח. "
+            "אין להציג אותו כחדשות או טרנד. אין להמציא עובדות, חוקים, תנאי פוליסה או מספרים. "
+            "בחר רק אם ניתן לכתוב מדריך מעשי עם שאלות בדיקה ללא טענות לא מאומתות. "
+            "השתמש בדיוק ב-slug שסופק. החזר JSON בלבד עם השדות "
+            "chosen_trend, reason, h1, keyword, slug, meta_description, page_class. "
+            "chosen_trend יהיה שם הנושא שנבחר, או null אם אין נושא ראוי. "
+            "הנושאים: " + json.dumps(available, ensure_ascii=False)
+        )
+        fallback_raw = call_openai(
+            fallback_prompt,
+            system="אתה עורך תוכן זהיר לאתר ביטוח ישראלי. ענה JSON בלבד."
+        ).strip()
+        if fallback_raw.startswith("```"):
+            fallback_raw = re.sub(r"^\x60{3}(?:json)?\\s*|\\s*\x60{3}$", "", fallback_raw).strip()
+        result = json.loads(fallback_raw)
+        valid = {item["slug"]: item["topic"] for item in available}
+        if (not result.get("chosen_trend")
+                or result.get("slug") not in valid
+                or result.get("chosen_trend") != valid[result["slug"]]):
+            sys.exit("[pick_best_trend] No safe evergreen fallback selected - skipping.")
+        print(f"[pick_best_trend] Evergreen fallback: {result['chosen_trend']}", flush=True)
     return result
 
 
