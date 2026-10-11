@@ -70,8 +70,9 @@ jobs:
           new_count = len(report.get("changes", {}).get("new", []))
           fallback_count = len(report.get("fallback_article_ideas", []))
           ideas_count = len(report.get("article_ideas", []))
-          has_content = (new_count + ideas_count + fallback_count) > 0
-          print(f"new={new_count} ideas={ideas_count} fallback={fallback_count}")
+          news_count = len(report.get("news_candidates", []))
+          has_content = (new_count + ideas_count + fallback_count + news_count) > 0
+          print(f"new={new_count} ideas={ideas_count} fallback={fallback_count} news={news_count}")
           with open(os.environ["GITHUB_OUTPUT"], "a") as f:
               f.write(f"has_content={'true' if has_content else 'false'}\n")
               f.write(f"new_count={new_count}\n")
