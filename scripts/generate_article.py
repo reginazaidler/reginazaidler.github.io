@@ -125,6 +125,16 @@ def pick_best_trend(report: dict, max_trends: int) -> dict:
     for idea in report.get("fallback_article_ideas", [])[:max_trends]:
         candidates.append({"title": idea["topic"], "headline": idea.get("headline", ""), "type": "fallback"})
 
+    # News candidates have real publication links and dates; evaluate them
+    # against the same strict editorial relevance gate as trends.
+    for item in report.get("news_candidates", [])[:max_trends]:
+        candidates.append({
+            "title": item["title"],
+            "type": "news",
+            "source_url": item.get("link", ""),
+            "published": item.get("pub_date", ""),
+        })
+
     if not candidates:
         sys.exit("No trend candidates found in report.")
 
@@ -132,7 +142,7 @@ def pick_best_trend(report: dict, max_trends: int) -> dict:
     for c in candidates:
         print(f"  • [{c['type']}] {c['title']}", flush=True)
 
-    prompt = f"""להלן רשימת טרנדים חמים בגוגל ישראל כרגע:
+    prompt = f"""להלן טרנדים וכתבות חדשות ממקורות RSS בישראל. כתבת חדשות היא מועמדת לבדיקה, לא עובדה מאומתת:
 
 {json.dumps(candidates, ensure_ascii=False, indent=2)}
 
@@ -142,7 +152,7 @@ def pick_best_trend(report: dict, max_trends: int) -> dict:
 ## כללי בחירה - חשוב מאוד
 
 בחר **רק** טרנד שעומד בכל התנאים הבאים:
-1. **אירוע ספציפי ואמיתי** - שם מקום, אירוע, חברה, אדם, תאריך - לא נושא גנרי.
+1. **אירוע ספציפי ואמיתי** - שם מקום, אירוע, חברה, אדם, תאריך - לא נושא גנרי. כתבת RSS אינה אימות עצמאי: אם אין די מידע מבוסס בכותרת, דחה אותה.
 2. **קשר מקצועי אמיתי לביטוח, פנסיה, חיסכון, משכנתא, סיכון למשפחה או פיננסים** - לא מספיק שאפשר להדביק את המילה ביטוח לכותרת.
 3. **שאלת לקוח אמיתית** - חייבת להיות שאלה מעשית שהאירוע גורם ללקוח סביר לשאול ושאפשר לענות עליה בצורה מועילה.
 4. **כותרת שמחברת בין האירוע לנושא המקצועי בלי clickbait**.
