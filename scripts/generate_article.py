@@ -241,7 +241,7 @@ INTERNAL_LINKS = {
     "insurance-double-coverage": ("insurance-double-coverage.html", "כפל ביטוחים - זיהוי ובדיקה"),
     "financial-checklist-family": ("financial-checklist-family.html", "צ׳קליסט פיננסי שנתי למשפחה"),
     "insurance-types": ("insurance-types.html", "סוגי ביטוחים בישראל"),
-    "check-insurance-policies": ("check-insurance-policies.html", "איך בודקים תיק ביטוח"),
+    "check-insurance-policies": ("insurance-double-coverage.html", "איך בודקים תיק ביטוח וכפל ביטוחים"),
     "articles": ("articles.html", "כל המאמרים על ביטוח ופנסיה"),
     "pension-guide": ("pension-guide.html", "מדריך פנסיה"),
     "life-insurance": ("life-insurance.html", "ביטוח חיים"),
