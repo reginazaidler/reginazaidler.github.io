@@ -102,8 +102,8 @@ def sync_sitemap(sitemap: Path, pages: list[Path], root: Path, today: str, dry_r
     return added
 
 
-def sync_llms(llms: Path, added_urls: list[str], root: Path, dry_run: bool) -> None:
-    if not llms.exists() or not added_urls:
+def sync_llms(llms: Path, page_urls: list[str], root: Path, dry_run: bool) -> None:
+    if not llms.exists() or not page_urls:
         return
 
     content = llms.read_text(encoding="utf-8")
@@ -111,7 +111,7 @@ def sync_llms(llms: Path, added_urls: list[str], root: Path, dry_run: bool) -> N
     last_list_idx = max((i for i, l in enumerate(lines) if l.startswith("- ")), default=-1)
 
     new_lines: list[str] = []
-    for url in added_urls:
+    for url in page_urls:
         if url in content:
             continue
         slug = url.replace(f"{SITE_BASE}/", "")
@@ -155,7 +155,7 @@ def main() -> None:
     removed_links = remove_retired_page_links(root, args.dry_run)
     pages = collect_pages(root)
     added_urls = sync_sitemap(Path("sitemap.xml"), pages, root, today, args.dry_run)
-    sync_llms(Path("llms.txt"), added_urls, root, args.dry_run)
+    sync_llms(Path("llms.txt"), [page_url(p, root) for p in pages if not has_noindex(p)], root, args.dry_run)
 
     if added_urls and not args.dry_run:
         print(f"[sync] Added {len(added_urls)} new page(s) - committing...")
