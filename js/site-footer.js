@@ -84,8 +84,8 @@ const isRuPage = window.location.pathname.indexOf('/ru/') === 0;
       ['/ru/about.html', 'Обо мне'],
       ['/ru/proverka-strahovogo-portfelya.html', 'Страховки и пенсия'],
       ['/ru/articles.html', 'Статьи'],
-      ['/faq.html', 'Вопросы и ответы (на иврите)'],
-      ['/media.html', 'Видео и медиа (на иврите)'],
+      ['/ru/faq.html', 'Вопросы и ответы'],
+      ['/ru/media.html', 'Видео и медиа'],
       ['/ru/zayavleniye-o-dostupnosti.html', 'Доступность сайта'],
       ['/ru/politika-konfidentsialnosti.html', 'Политика конфиденциальности'],
       ['/ru/pravila-sayta.html', 'Условия использования']
