@@ -18,7 +18,7 @@ from datetime import date
 from pathlib import Path
 
 SITE_BASE = "https://vainzof.co.il"
-SKIP_PAGES = {"choose-insurance-agent.html", "thanks.html"}
+SKIP_PAGES = {"choose-insurance-agent.html", "thanks.html", "tesla-insurance-israel.html"}
 REMOVED_PAGE_LINK_RE = re.compile(
     r'<a\b[^>]*href=["\'][^"\']*calculator\.html(?:[?#][^"\']*)?["\'][^>]*>.*?</a>',
     re.IGNORECASE | re.DOTALL,
