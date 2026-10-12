@@ -104,6 +104,7 @@ body .site-footer .site-footer__meta {
 
 body .site-footer .site-footer__meta p {
     margin: 0;
+    text-align: inherit;
 }
 
 body .site-footer .site-footer__note,
@@ -10152,4 +10153,20 @@ body.article-layout .pension-hero h1 {
   .home-page .home-articles-section { padding: 2.5rem 0; scroll-margin-top: 6rem; }
   .home-articles-grid { grid-template-columns: 1fr; gap: .75rem; }
   .home-article-card { padding: 1.2rem; }
+}
+
+/* Keep translated footer text centered on mobile, as in the Hebrew footer. */
+@media (max-width: 1023px) {
+    html[lang="ru"] body .site-footer .site-footer__meta {
+        width: 100%;
+        text-align: center;
+    }
+
+    html[lang="ru"] body .site-footer .site-footer__meta p {
+        text-align: inherit;
+    }
+
+    html[lang="ru"] body .site-footer .site-footer__nav a {
+        min-height: 0;
+    }
 }
