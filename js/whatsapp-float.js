@@ -24,7 +24,7 @@
   }
 
   function enhanceLegacyMobileMenu() {
-    if (isRuPage()) return;
+    var knowledgeLabel = isRuPage() ? 'Полезные материалы' : 'מרכז ידע';
 
     var mobileMenu = document.getElementById('mobileMenu');
     var menuBtn = document.getElementById('menuBtn');
@@ -56,7 +56,7 @@
     knowledgeToggle.setAttribute('aria-expanded', 'false');
     knowledgeToggle.setAttribute('aria-controls', 'mobileKnowledgeMenu');
     knowledgeToggle.innerHTML =
-      '<span class="mobile-nav-accordion-toggle__label">מרכז ידע</span><span class="mobile-nav-accordion-toggle__icon" aria-hidden="true">▾</span>';
+      '<span class="mobile-nav-accordion-toggle__label">' + knowledgeLabel + '</span><span class="mobile-nav-accordion-toggle__icon" aria-hidden="true">▾</span>';
 
     var knowledgeMenu = document.createElement('div');
     knowledgeMenu.id = 'mobileKnowledgeMenu';
