@@ -1,5 +1,5 @@
 {
-  "run_timestamp_utc": "2026-10-11T16:49:42.426306+00:00",
+  "run_timestamp_utc": "2026-10-13T15:35:25.956688+00:00",
   "geo": "IL",
   "keywords_sets": {
     "insurance": [
@@ -213,87 +213,43 @@
     "debt"
   ],
   "total_trends": 10,
-  "insurance_trends_count": 0,
-  "insurance_trends": [],
+  "insurance_trends_count": 1,
+  "insurance_trends": [
+    {
+      "title": "אינפלציה",
+      "traffic": "100+",
+      "pub_date": "Tue, 13 Oct 2026 08:20:00 -0700",
+      "link": "https://trends.google.com/trending/rss?geo=IL",
+      "description": "",
+      "source_geo": "IL",
+      "classification": "finance_related"
+    }
+  ],
   "news_candidates": [
     {
-      "title": "פער של 6,000 שקל על אותו ביטוח: דגם הרכב משפיע יותר משחושבים - גלובס",
+      "title": "באיזו חברת ביטוח תחכו בממוצע 4.5 דקות לנציג? מדד השירות השנתי פורסם - calcalist",
       "traffic": "",
-      "pub_date": "Mon, 05 Oct 2026 05:56:09 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1VaGl5dDFsRkpQODVHWW9qV2pUTTFWVlNrUmpzMV95alRDWVlJSWhaMF9BLWZkdHBrWGFOUGZJLWwwYURkZmVXRVoyMUh5Wi1HNW43czFXUEtSNjRVV3VOSkw3NEtNX3Qx?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTE1VaGl5dDFsRkpQODVHWW9qV2pUTTFWVlNrUmpzMV95alRDWVlJSWhaMF9BLWZkdHBrWGFOUGZJLWwwYURkZmVXRVoyMUh5Wi1HNW43czFXUEtSNjRVV3VOSkw3NEtNX3Qx?oc=5\" target=\"_blank\">פער של 6,000 שקל על אותו ביטוח: דגם הרכב משפיע יותר משחושבים</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">גלובס</font>",
+      "pub_date": "Mon, 12 Oct 2026 09:03:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9YZkdfMWNqME1mX3k3LTVIT21QcWlVWW1HMjBQcUFkY3loS09xM3lLeG1TVTh4SDM2Rno2WDRySlczZ2dsRVFzVUp2WVJzWlItNENIamhnd1pQRUtmc1o4V0hFNA?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiY0FVX3lxTE9YZkdfMWNqME1mX3k3LTVIT21QcWlVWW1HMjBQcUFkY3loS09xM3lLeG1TVTh4SDM2Rno2WDRySlczZ2dsRVFzVUp2WVJzWlItNENIamhnd1pQRUtmc1o4V0hFNA?oc=5\" target=\"_blank\">באיזו חברת ביטוח תחכו בממוצע 4.5 דקות לנציג? מדד השירות השנתי פורסם</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">calcalist</font>",
       "source_geo": "IL",
       "classification": "news"
     },
     {
-      "title": "פרשת סלייס: נשללו רישיונותיהם של חמישה סוכני ביטוח מסוכנות פינברט - TheMarker",
+      "title": "מדד השירות בביטוח 2025: הפניקס ראשונה באובדן כושר עבודה - פאנדר",
       "traffic": "",
-      "pub_date": "Mon, 05 Oct 2026 12:32:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNbk9qMEtCRmFqWkVaZ3JRbVdMei1ZU3phT1dyVmVxNWRQTXpjbE9oSzh1NEZoQnloeko4MzI3Nm5aS0lGMFZzeldkblI5b3FydEttcDQ1WEw3Z1NNT2xMRzVjd0gwTE5JbDRhRU9vY2tKRnlCNVo0bWIyNUkwZW5nLXA4bG1yZ19ITUZSYjlaQTJpUVU4clpWajQwTDdjLVA3dWJz?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxNbk9qMEtCRmFqWkVaZ3JRbVdMei1ZU3phT1dyVmVxNWRQTXpjbE9oSzh1NEZoQnloeko4MzI3Nm5aS0lGMFZzeldkblI5b3FydEttcDQ1WEw3Z1NNT2xMRzVjd0gwTE5JbDRhRU9vY2tKRnlCNVo0bWIyNUkwZW5nLXA4bG1yZ19ITUZSYjlaQTJpUVU4clpWajQwTDdjLVA3dWJz?oc=5\" target=\"_blank\">פרשת סלייס: נשללו רישיונותיהם של חמישה סוכני ביטוח מסוכנות פינברט</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">TheMarker</font>",
+      "pub_date": "Mon, 12 Oct 2026 14:01:02 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5wMjJCQ3k5RUlSZ3RJaHZCZmg2M1NKLXI0NGNtQ2xrOU5tcWNJNnYySS1FS3luczZ0UTlHV3FYWlVzeTUyTG5oQ01WYkpnM1RX?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiUEFVX3lxTE5wMjJCQ3k5RUlSZ3RJaHZCZmg2M1NKLXI0NGNtQ2xrOU5tcWNJNnYySS1FS3luczZ0UTlHV3FYWlVzeTUyTG5oQ01WYkpnM1RX?oc=5\" target=\"_blank\">מדד השירות בביטוח 2025: הפניקס ראשונה באובדן כושר עבודה</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">פאנדר</font>",
       "source_geo": "IL",
       "classification": "news"
     },
     {
-      "title": "רכב ללא ביטוח חובה: כך זכה בפיצוי של כמעט מיליון שקל - כיכר השבת",
+      "title": "מי באמת נותנת שירות כשצריך? דירוג חברות הביטוח והפנסיה נחשף - ביזפורטל",
       "traffic": "",
-      "pub_date": "Fri, 09 Oct 2026 11:58:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1mdDlXR0t4RkJ1WVlWek9GczlMT1dBcWhmalB5VlJaaEpEUTVJX1ZrbkxHRGFzaFliQlRMNEljLUw3ajBWV2pxV1JtcDdxYVBVdVpCX1pxbTIzZnBkeW9RVjFSakpqRTI0dlY1cWZ4dDk?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMicEFVX3lxTE1mdDlXR0t4RkJ1WVlWek9GczlMT1dBcWhmalB5VlJaaEpEUTVJX1ZrbkxHRGFzaFliQlRMNEljLUw3ajBWV2pxV1JtcDdxYVBVdVpCX1pxbTIzZnBkeW9RVjFSakpqRTI0dlY1cWZ4dDk?oc=5\" target=\"_blank\">רכב ללא ביטוח חובה: כך זכה בפיצוי של כמעט מיליון שקל</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">כיכר השבת</font>",
-      "source_geo": "IL",
-      "classification": "news"
-    },
-    {
-      "title": "הנמלים חדרו לסוללת הרכב: הביטוח ישלם 30 אלף שקל - calcalist",
-      "traffic": "",
-      "pub_date": "Thu, 08 Oct 2026 13:57:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE92Nkt1clYwMlg4OFJta3A1Wklra3gtcGpwZDVTcFlENE14ZDVIWGJXVnZUSExVUjhsVWRkb1ZiSnVFZ1VfWkZIRE4yZEJ1RUxwSGw0WFh4ejFuaHg3ZWRLMDNfRVRyS3pw?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTE92Nkt1clYwMlg4OFJta3A1Wklra3gtcGpwZDVTcFlENE14ZDVIWGJXVnZUSExVUjhsVWRkb1ZiSnVFZ1VfWkZIRE4yZEJ1RUxwSGw0WFh4ejFuaHg3ZWRLMDNfRVRyS3pw?oc=5\" target=\"_blank\">הנמלים חדרו לסוללת הרכב: הביטוח ישלם 30 אלף שקל</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">calcalist</font>",
-      "source_geo": "IL",
-      "classification": "news"
-    },
-    {
-      "title": "בדקו מראש את ביטוח הבריאות שלכם כדי להימנע מרמאות. - Vietnam.vn",
-      "traffic": "",
-      "pub_date": "Mon, 05 Oct 2026 15:22:04 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOQl82WG5VOVE3Sm43U0N3NkdPMDRmYTB1bE1NcncwbmZuODJVUm4tdlhVWEFFc1EzMkFKelB5UUVoaVRDWmo2WS1KSDZMdzRoWkNOYzJZdHliaXBKeHk4ZDEzM2IzZms3UXZXNnhhcUxlaTVsdGhBQnhma0ZXZDNVNlln?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiggFBVV95cUxOQl82WG5VOVE3Sm43U0N3NkdPMDRmYTB1bE1NcncwbmZuODJVUm4tdlhVWEFFc1EzMkFKelB5UUVoaVRDWmo2WS1KSDZMdzRoWkNOYzJZdHliaXBKeHk4ZDEzM2IzZms3UXZXNnhhcUxlaTVsdGhBQnhma0ZXZDNVNlln?oc=5\" target=\"_blank\">בדקו מראש את ביטוח הבריאות שלכם כדי להימנע מרמאות.</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Vietnam.vn</font>",
-      "source_geo": "IL",
-      "classification": "news"
-    },
-    {
-      "title": "פרסום ראשון: המשטרה פתחה בחקירה בפרשת \"נתיב הכסף\" בהדסה - זמן ישראל",
-      "traffic": "",
-      "pub_date": "Sun, 11 Oct 2026 10:30:03 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiREFVX3lxTE5IQ1UtS2U5a1VnSUxoMDVLenlHenhDeVZ3Y0RUSmlCWDF4QUpoYlk1WjZtcXpwVFl6eUNSaE1xWGlFa214?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiREFVX3lxTE5IQ1UtS2U5a1VnSUxoMDVLenlHenhDeVZ3Y0RUSmlCWDF4QUpoYlk1WjZtcXpwVFl6eUNSaE1xWGlFa214?oc=5\" target=\"_blank\">פרסום ראשון: המשטרה פתחה בחקירה בפרשת \"נתיב הכסף\" בהדסה</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">זמן ישראל</font>",
-      "source_geo": "IL",
-      "classification": "news"
-    },
-    {
-      "title": "ביטוח לאומי דחה את תשלום הקצבאות: זו הסיבה להחלטה - ice (אייס)",
-      "traffic": "",
-      "pub_date": "Tue, 06 Oct 2026 03:50:25 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBJOWNIRWs2ZnRWU05qUUxwTkZ1OG4xbmcwZ3JSWS02TUtIdUdDdFlTajY2YXZOQ2Fray1xMHVjc2pPM1hsblA5XzBzcnlyMDVlM3pWRVZpb0kzUQ?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiWkFVX3lxTFBJOWNIRWs2ZnRWU05qUUxwTkZ1OG4xbmcwZ3JSWS02TUtIdUdDdFlTajY2YXZOQ2Fray1xMHVjc2pPM1hsblA5XzBzcnlyMDVlM3pWRVZpb0kzUQ?oc=5\" target=\"_blank\">ביטוח לאומי דחה את תשלום הקצבאות: זו הסיבה להחלטה</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ice (אייס)</font>",
-      "source_geo": "IL",
-      "classification": "news"
-    },
-    {
-      "title": "ד\"ר יצחק ברלוביץ, לשעבר מנכ\"ל בית החולים וולפסון, הלך לעולמו ביום הולדתו - YNET",
-      "traffic": "",
-      "pub_date": "Sun, 11 Oct 2026 10:49:16 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1uM2JpM0gtd1pKeFdYUHo0Z0Y1d29lNGpDRk5mdzdBbDRFYVN1Tk9FcEMyNUQzd2pHR09TekdrekN4WDJwQTRFYlBmdHlzNGloVm1uMVNKajZ2dw?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiWkFVX3lxTE1uM2JpM0gtd1pKeFdYUHo0Z0Y1d29lNGpDRk5mdzdBbDRFYVN1Tk9FcEMyNUQzd2pHR09TekdrekN4WDJwQTRFYlBmdHlzNGloVm1uMVNKajZ2dw?oc=5\" target=\"_blank\">ד\"ר יצחק ברלוביץ, לשעבר מנכ\"ל בית החולים וולפסון, הלך לעולמו ביום הולדתו</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">YNET</font>",
-      "source_geo": "IL",
-      "classification": "news"
-    },
-    {
-      "title": "סחבה ארגזי שתייה 30 מטר: ביטוח לאומי ישלם שמירת היריון - ביזפורטל",
-      "traffic": "",
-      "pub_date": "Mon, 05 Oct 2026 08:58:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE01WENabGNtcVNiclZiMklNLWIxVk1kdmpWOWdaRjVjVjloTGFHeFZXZi1SZmMwdjNUQnIxazNjMzR3X21fVkNWVjI3aUlvb3lhMU1DeUJVUDM3V0phUXFFekswZE1hZU0?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE01WENabGNtcVNiclZiMklNLWIxVk1kdmpWOWdaRjVjVjloTGFHeFZXZi1SZmMwdjNUQnIxazNjMzR3X21fVkNWVjI3aUlvb3lhMU1DeUJVUDM3V0phUXFFekswZE1hZU0?oc=5\" target=\"_blank\">סחבה ארגזי שתייה 30 מטר: ביטוח לאומי ישלם שמירת היריון</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ביזפורטל</font>",
+      "pub_date": "Mon, 12 Oct 2026 10:41:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5qM3hSVk5oS1dCdTNmbWNTR1lxU3U4ZEFwRm9heTg3R05iUTJQcXc5YlVWSlJqYkFZMEIwUXFCRmtJTGN0MFRFV0xHZk9aRlZzTW9Ic1hoNFpmaHRNbmI1V0dxOFVqNGVaa3dv?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMia0FVX3lxTE5qM3hSVk5oS1dCdTNmbWNTR1lxU3U4ZEFwRm9heTg3R05iUTJQcXc5YlVWSlJqYkFZMEIwUXFCRmtJTGN0MFRFV0xHZk9aRlZzTW9Ic1hoNFpmaHRNbmI1V0dxOFVqNGVaa3dv?oc=5\" target=\"_blank\">מי באמת נותנת שירות כשצריך? דירוג חברות הביטוח והפנסיה נחשף</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ביזפורטל</font>",
       "source_geo": "IL",
       "classification": "news"
     },
@@ -307,20 +263,11 @@
       "classification": "news"
     },
     {
-      "title": "ההצעות מציעות להגדיל את הסובסידיות לפרמיות ביטוח בריאות עבור חמש קבוצות החל משנת 2027. - Vietnam.vn",
+      "title": "רכב ללא ביטוח חובה: כך זכה בפיצוי של כמעט מיליון שקל - כיכר השבת",
       "traffic": "",
-      "pub_date": "Wed, 07 Oct 2026 07:20:33 GMT",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPbEw2MjliLW5tak12RDNVaXBjU3dSMm1QakZaNTl4dTllblVKWTVoQjFteGFpSk5lYkdhQmRnYmVZU3VkUmUtR2NGdVpLNUNsSVoxOGtBN0t0bzNDWFVlNktEd0NJMjJRQzBGaVZNeFNGUk9uZFZMRlpZMm1lOEpOWmYyRk00WGFXQi1BQzdld3A?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMikAFBVV95cUxPbEw2MjliLW5tak12RDNVaXBjU3dSMm1QakZaNTl4dTllblVKWTVoQjFteGFpSk5lYkdhQmRnYmVZU3VkUmUtR2NGdVpLNUNsSVoxOGtBN0t0bzNDWFVlNktEd0NJMjJRQzBGaVZNeFNGUk9uZFZMRlpZMm1lOEpOWmYyRk00WGFXQi1BQzdld3A?oc=5\" target=\"_blank\">ההצעות מציעות להגדיל את הסובסידיות לפרמיות ביטוח בריאות עבור חמש קבוצות החל משנת 2027.</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Vietnam.vn</font>",
-      "source_geo": "IL",
-      "classification": "news"
-    },
-    {
-      "title": "\"חוש ריח\" לא הספיק: חברת הביטוח תשלם 46 אלף שקלים - ביזפורטל",
-      "traffic": "",
-      "pub_date": "Mon, 05 Oct 2026 11:10:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5iMmpHejg2R0E1YXg5TjdlaFFpM3lBdHIxbEd4ZXhieDBQaG9ZeElvdm9JLURocHppbWdlOFdnMS15VFhSY0F2WGVrNW9IenF6Nm9ZaHFFd3RwOXhjaDl1ci1melZzVElCYm9r?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMia0FVX3lxTE5iMmpHejg2R0E1YXg5TjdlaFFpM3lBdHIxbEd4ZXhieDBQaG9ZeElvdm9JLURocHppbWdlOFdnMS15VFhSY0F2WGVrNW9IenF6Nm9ZaHFFd3RwOXhjaDl1ci1melZzVElCYm9r?oc=5\" target=\"_blank\">\"חוש ריח\" לא הספיק: חברת הביטוח תשלם 46 אלף שקלים</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ביזפורטל</font>",
+      "pub_date": "Fri, 09 Oct 2026 11:58:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1mdDlXR0t4RkJ1WVlWek9GczlMT1dBcWhmalB5VlJaaEpEUTVJX1ZrbkxHRGFzaFliQlRMNEljLUw3ajBWV2pxV1JtcDdxYVBVdVpCX1pxbTIzZnBkeW9RVjFSakpqRTI0dlY1cWZ4dDk?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMicEFVX3lxTE1mdDlXR0t4RkJ1WVlWek9GczlMT1dBcWhmalB5VlJaaEpEUTVJX1ZrbkxHRGFzaFliQlRMNEljLUw3ajBWV2pxV1JtcDdxYVBVdVpCX1pxbTIzZnBkeW9RVjFSakpqRTI0dlY1cWZ4dDk?oc=5\" target=\"_blank\">רכב ללא ביטוח חובה: כך זכה בפיצוי של כמעט מיליון שקל</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">כיכר השבת</font>",
       "source_geo": "IL",
       "classification": "news"
     },
@@ -334,6 +281,69 @@
       "classification": "news"
     },
     {
+      "title": "קרב חברות הביטוח הגדול: אחת מהן הייתה היעילה ביותר - מעריב",
+      "traffic": "",
+      "pub_date": "Mon, 12 Oct 2026 09:50:58 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5RYlZLbGl4dndmTFRlQnJmZkRXWVBXU184NEN1c1dOcG55QUZjUFJYU0J0ZzNvZVZjemxXTmxidkVjNnNab0YwSUxQeEJfTXAwZGduOHFfNGlDcEhWYnRUNWVGeTB6Zw?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiZkFVX3lxTE5RYlZLbGl4dndmTFRlQnJmZkRXWVBXU184NEN1c1dOcG55QUZjUFJYU0J0ZzNvZVZjemxXTmxidkVjNnNab0YwSUxQeEJfTXAwZGduOHFfNGlDcEhWYnRUNWVGeTB6Zw?oc=5\" target=\"_blank\">קרב חברות הביטוח הגדול: אחת מהן הייתה היעילה ביותר</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">מעריב</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "פרסום ראשון: המשטרה פתחה בחקירה בפרשת \"נתיב הכסף\" בהדסה - זמן ישראל",
+      "traffic": "",
+      "pub_date": "Tue, 13 Oct 2026 13:29:11 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiREFVX3lxTE5IQ1UtS2U5a1VnSUxoMDVLenlHenhDeVZ3Y0RUSmlCWDF4QUpoYlk1WjZtcXpwVFl6eUNSaE1xWGlFa214?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiREFVX3lxTE5IQ1UtS2U5a1VnSUxoMDVLenlHenhDeVZ3Y0RUSmlCWDF4QUpoYlk1WjZtcXpwVFl6eUNSaE1xWGlFa214?oc=5\" target=\"_blank\">פרסום ראשון: המשטרה פתחה בחקירה בפרשת \"נתיב הכסף\" בהדסה</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">זמן ישראל</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "הלך לעולמו פרופ' יצחק (ברלו) ברלוביץ', בעבר מנכ\"ל וולפסון והמשנה למנכ\"ל משרד הבריאות - גלובס",
+      "traffic": "",
+      "pub_date": "Sun, 11 Oct 2026 12:35:47 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1wbjZWWlM0cThWNm5uM1NHdEViODliSmllRk4wRzNuOFJHRHN4Z1UybDlKbWttd3UtRGp3ME9OSlhlckNVVkF2dnVHVmgzZW9DMVZrSmV0M1Y2RkJPYlVEWlh3YlB5M3Rm?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTE1wbjZWWlM0cThWNm5uM1NHdEViODliSmllRk4wRzNuOFJHRHN4Z1UybDlKbWttd3UtRGp3ME9OSlhlckNVVkF2dnVHVmgzZW9DMVZrSmV0M1Y2RkJPYlVEWlh3YlB5M3Rm?oc=5\" target=\"_blank\">הלך לעולמו פרופ' יצחק (ברלו) ברלוביץ', בעבר מנכ\"ל וולפסון והמשנה למנכ\"ל משרד הבריאות</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">גלובס</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "ד\"ר יצחק ברלוביץ, לשעבר מנכ\"ל בית החולים וולפסון, הלך לעולמו ביום הולדתו - YNET",
+      "traffic": "",
+      "pub_date": "Sun, 11 Oct 2026 10:49:16 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1uM2JpM0gtd1pKeFdYUHo0Z0Y1d29lNGpDRk5mdzdBbDRFYVN1Tk9FcEMyNUQzd2pHR09TekdrekN4WDJwQTRFYlBmdHlzNGloVm1uMVNKajZ2dw?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiWkFVX3lxTE1uM2JpM0gtd1pKeFdYUHo0Z0Y1d29lNGpDRk5mdzdBbDRFYVN1Tk9FcEMyNUQzd2pHR09TekdrekN4WDJwQTRFYlBmdHlzNGloVm1uMVNKajZ2dw?oc=5\" target=\"_blank\">ד\"ר יצחק ברלוביץ, לשעבר מנכ\"ל בית החולים וולפסון, הלך לעולמו ביום הולדתו</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">YNET</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "ביטוח לאומי מקבל פסיקה דרמטית: שינוי מהפכני בדרך לקצבאות - ice (אייס)",
+      "traffic": "",
+      "pub_date": "Mon, 12 Oct 2026 12:47:43 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5fUEZxRWhSMXlLZG9kQmdrQ09XWS11Z0szNXlENWlVcllNcUc5NmdfVFZIVmRhUEQyVi1mLWRPZ1VWREdtN05Cd1gyZjVCbV9KdFVXZU1majF5Zw?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiWkFVX3lxTE5fUEZxRWhSMXlLZG9kQmdrQ09XWS11Z0szNXlENWlVcllNcUc5NmdfVFZIVmRhUEQyVi1mLWRPZ1VWREdtN05Cd1gyZjVCbV9KdFVXZU1majF5Zw?oc=5\" target=\"_blank\">ביטוח לאומי מקבל פסיקה דרמטית: שינוי מהפכני בדרך לקצבאות</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ice (אייס)</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "\"אני לא מפחדת מירידות בבורסה. בזכות 'הפלא השמיני של העולם' אקנה דירה\" - TheMarker",
+      "traffic": "",
+      "pub_date": "Tue, 13 Oct 2026 03:00:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNQ3E0STlsZlNMU1RBU2I1d203ZDRGOUVkQXBzYTM0VUNlc25tQzJ1di1LbjV3NURUN1g1bEMzd1VWSzVrenp6aFE3cWxVME5Iai03V1pfbkZkenRNOHZDN2dzb0Q1eW9OcmgxcVlxX2ppaGdNMER4UVVJdTNvM0swekN3aWdqNDhGbjVRYmlIQWYtZWxCb1k2Tl9IdnJaZlpxangwYVU4dGNzb1dHX2Z5YldMZzlQNUVvMnJDX2NzWHNwM1E?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxNQ3E0STlsZlNMU1RBU2I1d203ZDRGOUVkQXBzYTM0VUNlc25tQzJ1di1LbjV3NURUN1g1bEMzd1VWSzVrenp6aFE3cWxVME5Iai03V1pfbkZkenRNOHZDN2dzb0Q1eW9OcmgxcVlxX2ppaGdNMER4UVVJdTNvM0swekN3aWdqNDhGbjVRYmlIQWYtZWxCb1k2Tl9IdnJaZlpxangwYVU4dGNzb1dHX2Z5YldMZzlQNUVvMnJDX2NzWHNwM1E?oc=5\" target=\"_blank\">\"אני לא מפחדת מירידות בבורסה. בזכות 'הפלא השמיני של העולם' אקנה דירה\"</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">TheMarker</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "הנמלים חדרו לסוללת הרכב: הביטוח ישלם 30 אלף שקל - calcalist",
+      "traffic": "",
+      "pub_date": "Thu, 08 Oct 2026 13:57:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE92Nkt1clYwMlg4OFJta3A1Wklra3gtcGpwZDVTcFlENE14ZDVIWGJXVnZUSExVUjhsVWRkb1ZiSnVFZ1VfWkZIRE4yZEJ1RUxwSGw0WFh4ejFuaHg3ZWRLMDNfRVRyS3pw?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTE92Nkt1clYwMlg4OFJta3A1Wklra3gtcGpwZDVTcFlENE14ZDVIWGJXVnZUSExVUjhsVWRkb1ZiSnVFZ1VfWkZIRE4yZEJ1RUxwSGw0WFh4ejFuaHg3ZWRLMDNfRVRyS3pw?oc=5\" target=\"_blank\">הנמלים חדרו לסוללת הרכב: הביטוח ישלם 30 אלף שקל</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">calcalist</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
       "title": "ביהמ\"ש על אגודת ביטוח חקלאי: ישבה בחיבוק ידיים והעלתה טענות בדיעבד - ביזפורטל",
       "traffic": "",
       "pub_date": "Fri, 09 Oct 2026 04:40:00 GMT",
@@ -343,20 +353,20 @@
       "classification": "news"
     },
     {
-      "title": "פירוק מודל הסיעוד יתגלגל לשר האוצר הבא - עם חשבון של מיליארדים - calcalist",
+      "title": "הוועדה הקבועה של מועצת העם העירונית ערכה סקר על יישום ביטוח הבריאות ומדיניות האוכלוסייה בבית החולים למיילדות וגינקולוגיה בעיר קאן טו. - Vietnam.vn",
       "traffic": "",
-      "pub_date": "Tue, 06 Oct 2026 03:00:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFAtU1FHdmhUcjBSY2NaamJZN1RIV21rOFlwWnpLb29QenZzLUpEVlE1M21KMXJRZFp1OWp1SENrTVdMRDFfY09BWFlwNWIwamp3VWJ1NnRSemx2d3paaTVBV3JyZGJXTXoz?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTFAtU1FHdmhUcjBSY2NaamJZN1RIV21rOFlwWnpLb29QenZzLUpEVlE1M21KMXJRZFp1OWp1SENrTVdMRDFfY09BWFlwNWIwamp3VWJ1NnRSemx2d3paaTVBV3JyZGJXTXoz?oc=5\" target=\"_blank\">פירוק מודל הסיעוד יתגלגל לשר האוצר הבא - עם חשבון של מיליארדים</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">calcalist</font>",
+      "pub_date": "Sat, 10 Oct 2026 07:17:56 GMT",
+      "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQcG9wdzJEN28wQUxfSWREcHBkSzNTNTNrN1lCR2M5TUVCcVliNk5ManpOdDlPcEl2TzRXbTJYSW45VmtVQ3BFMzZxZnNFR1pLMHA0V2ZCNURheHVwVHlQa05WSFJwb0FHM2JHZ2c0aFRXYXpPQmRoY0h4c05scHlNcW1PNU5QV1hZWWxhTGQ5OVY1SlJZcUltZDEtWHBseUJpbExPWXkzem9nR2pqWWxhR0U0YW55NWlaZEI0a0Fra1l1Z0J6eGdjNU83cTExSWZuZ3JJYkV6M1BLNHZKWmpkZ2xsQQ?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi4wFBVV95cUxQcG9wdzJEN28wQUxfSWREcHBkSzNTNTNrN1lCR2M5TUVCcVliNk5ManpOdDlPcEl2TzRXbTJYSW45VmtVQ3BFMzZxZnNFR1pLMHA0V2ZCNURheHVwVHlQa05WSFJwb0FHM2JHZ2c0aFRXYXpPQmRoY0h4c05scHlNcW1PNU5QV1hZWWxhTGQ5OVY1SlJZcUltZDEtWHBseUJpbExPWXkzem9nR2pqWWxhR0U0YW55NWlaZEI0a0Fra1l1Z0J6eGdjNU83cTExSWZuZ3JJYkV6M1BLNHZKWmpkZ2xsQQ?oc=5\" target=\"_blank\">הוועדה הקבועה של מועצת העם העירונית ערכה סקר על יישום ביטוח הבריאות ומדיניות האוכלוסייה בבית החולים למיילדות וגינקולוגיה בעיר קאן טו.</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Vietnam.vn</font>",
       "source_geo": "IL",
       "classification": "news"
     },
     {
-      "title": "לא רק משבר מדיני: המכרז ב־E1 מדאיג את שוק ההון - זמן ישראל",
+      "title": "מקום ראשון? בקרוב יופיעו עוד ועוד פרסומות של חברות ביטוח בטלוויזיה - TheMarker",
       "traffic": "",
-      "pub_date": "Sun, 11 Oct 2026 08:00:03 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiREFVX3lxTE1aUGFFNldxQlo1NnJhVFF3aDRZUS1ZMURwclE2S2ZIS1JVRkMzS1RGLXpVT0ZzSVBmekI3V2IxdmRDaDBi?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiREFVX3lxTE1aUGFFNldxQlo1NnJhVFF3aDRZUS1ZMURwclE2S2ZIS1JVRkMzS1RGLXpVT0ZzSVBmekI3V2IxdmRDaDBi?oc=5\" target=\"_blank\">לא רק משבר מדיני: המכרז ב־E1 מדאיג את שוק ההון</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">זמן ישראל</font>",
+      "pub_date": "Mon, 12 Oct 2026 13:07:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOeEl3SndsRDloNU1kU2k5VnNsTzVmMGl6eEl2S3NsY0ktNlppUEFpenVEWHJmc0ctd2MteHJLUXI5XzdYb29fenlVS2s1T1J2aTFHMHdRVi1vc0UwMFFKNmRMRlZncVdhS2RIaEIxR1BHN2s3Rm5JcXNuYWxhV0dXU2xBWnpxeE5TX0Q4RDM5SHJyWndROGlJV0R5R2VlbkVYckJZ?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOeEl3SndsRDloNU1kU2k5VnNsTzVmMGl6eEl2S3NsY0ktNlppUEFpenVEWHJmc0ctd2MteHJLUXI5XzdYb29fenlVS2s1T1J2aTFHMHdRVi1vc0UwMFFKNmRMRlZncVdhS2RIaEIxR1BHN2s3Rm5JcXNuYWxhV0dXU2xBWnpxeE5TX0Q4RDM5SHJyWndROGlJV0R5R2VlbkVYckJZ?oc=5\" target=\"_blank\">מקום ראשון? בקרוב יופיעו עוד ועוד פרסומות של חברות ביטוח בטלוויזיה</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">TheMarker</font>",
       "source_geo": "IL",
       "classification": "news"
     },
@@ -370,47 +380,74 @@
       "classification": "news"
     },
     {
-      "title": "חיסכון עד הפנסיה וביטוח רק מגיל 70: החורים בתוכנית הסיעוד החדשה - גלובס",
+      "title": "לא רק משבר מדיני: המכרז ב־E1 מדאיג את שוק ההון - זמן ישראל",
       "traffic": "",
-      "pub_date": "Tue, 06 Oct 2026 08:11:07 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9EM0ZuTkpKYXM0X1VfbzB0alkyNmhnWTBmSm9zNXFRMmNlRVlwdHpWTUlDd2tINUY4LW5qeEZ2Umg3bi1sdUlMOV9ZbEU4MHJ4RThoLXZjSEpXVHRHOHNVVTdxOVhtU19h?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTE9EM0ZuTkpKYXM0X1VfbzB0alkyNmhnWTBmSm9zNXFRMmNlRVlwdHpWTUlDd2tINUY4LW5qeEZ2Umg3bi1sdUlMOV9ZbEU4MHJ4RThoLXZjSEpXVHRHOHNVVTdxOVhtU19h?oc=5\" target=\"_blank\">חיסכון עד הפנסיה וביטוח רק מגיל 70: החורים בתוכנית הסיעוד החדשה</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">גלובס</font>",
+      "pub_date": "Mon, 12 Oct 2026 09:37:05 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiREFVX3lxTE1aUGFFNldxQlo1NnJhVFF3aDRZUS1ZMURwclE2S2ZIS1JVRkMzS1RGLXpVT0ZzSVBmekI3V2IxdmRDaDBi?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiREFVX3lxTE1aUGFFNldxQlo1NnJhVFF3aDRZUS1ZMURwclE2S2ZIS1JVRkMzS1RGLXpVT0ZzSVBmekI3V2IxdmRDaDBi?oc=5\" target=\"_blank\">לא רק משבר מדיני: המכרז ב־E1 מדאיג את שוק ההון</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">זמן ישראל</font>",
       "source_geo": "IL",
       "classification": "news"
     },
     {
-      "title": "מהפכה בביטוח הסיעודי: השינוי הדרמטי שישפיע על מיליוני ישראלים - ice (אייס)",
+      "title": "\"דחייה של תביעה אינה נובעת בהכרח מאי-זכאות רפואית\" - YNET",
       "traffic": "",
-      "pub_date": "Mon, 05 Oct 2026 00:36:09 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1aRG9aeV9iUFhKaWMwYnM1OXMwcm1ZVkg1a1V5eS1rd19pUjZtV3JBejNsenJQXzEzRWxlS2RpeEpNejYxdkZnTDNyTTJNWnk0M29oYnRJSk1BWVZsV0ZORFpoYTU?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiZEFVX3lxTE1aRG9aeV9iUFhKaWMwYnM1OXMwcm1ZVkg1a1V5eS1rd19pUjZtV3JBejNsenJQXzEzRWxlS2RpeEpNejYxdkZnTDNyTTJNWnk0M29oYnRJSk1BWVZsV0ZORFpoYTU?oc=5\" target=\"_blank\">מהפכה בביטוח הסיעודי: השינוי הדרמטי שישפיע על מיליוני ישראלים</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ice (אייס)</font>",
+      "pub_date": "Mon, 12 Oct 2026 08:20:34 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFB5dV9rZ0dTQ1M1d1Vrc09xcF9kWXRMVXFwS3EzQ21BWjJHRjhkcUp6TDdEbzU3ZnNCUTlEaTZDdG0xWV9RS21CVHhxclZTZnY0dktfRTZEeVlZLTBo?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiXEFVX3lxTFB5dV9rZ0dTQ1M1d1Vrc09xcF9kWXRMVXFwS3EzQ21BWjJHRjhkcUp6TDdEbzU3ZnNCUTlEaTZDdG0xWV9RS21CVHhxclZTZnY0dktfRTZEeVlZLTBo?oc=5\" target=\"_blank\">\"דחייה של תביעה אינה נובעת בהכרח מאי-זכאות רפואית\"</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">YNET</font>",
       "source_geo": "IL",
       "classification": "news"
     },
     {
-      "title": "שילוב מובנה בין ביטוח לחיסכון - המודל לייצוב ארוך טווח של מערך הביטוח הסיעודי בישראל - פאנדר",
+      "title": "בגיל 90 שלמה אליהו הופך למנכ\"ל זמני של מגדל אחזקות - גלובס",
       "traffic": "",
-      "pub_date": "Sun, 04 Oct 2026 17:44:51 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE43RURLT3o4TFE0Z2JHa01PMWdTVHVJY0t5eG05NXZmSGttbWxReVVjUlZ3TzJLWEpMWjlUdVRtRTI1YjNrb1ZyQlV6Q01mTml3?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiUEFVX3lxTE43RURLT3o4TFE0Z2JHa01PMWdTVHVJY0t5eG05NXZmSGttbWxReVVjUlZ3TzJLWEpMWjlUdVRtRTI1YjNrb1ZyQlV6Q01mTml3?oc=5\" target=\"_blank\">שילוב מובנה בין ביטוח לחיסכון - המודל לייצוב ארוך טווח של מערך הביטוח הסיעודי בישראל</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">פאנדר</font>",
+      "pub_date": "Thu, 08 Oct 2026 10:39:31 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1rOFJOQVk2UnBia3dDYl9PWi1KZEpBT2wwd0ZBMmVfa2VveGR3LW5BUDZNbHJTTGxlbVRYN2ZzaHVaUjFwRzljSFJsTHlWb1FrZFVIY0lCaks5b1dVZ2xZTGJtYjFYX25w?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTE1rOFJOQVk2UnBia3dDYl9PWi1KZEpBT2wwd0ZBMmVfa2VveGR3LW5BUDZNbHJTTGxlbVRYN2ZzaHVaUjFwRzljSFJsTHlWb1FrZFVIY0lCaks5b1dVZ2xZTGJtYjFYX25w?oc=5\" target=\"_blank\">בגיל 90 שלמה אליהו הופך למנכ\"ל זמני של מגדל אחזקות</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">גלובס</font>",
       "source_geo": "IL",
       "classification": "news"
     },
     {
-      "title": "משבר הסיעוד: האם קרן חיסכון אישית תחליף את הביטוח של קופות החולים? - ביזפורטל",
+      "title": "גולדמן סאקס ינהל שני מסלולי חיסכון חדשים במגדל - TheMarker",
       "traffic": "",
-      "pub_date": "Mon, 05 Oct 2026 16:31:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1RSUNMM1JRWkRITkpFa1JpV3Z5R1hQaEVWX0lrejcwQmxjUzNrMldpTnlsWXZnd1pSUzRqcVVOYjJyeHhvSExpX0t2TFZWZ3RpSGN6eVVBSHpYc2h5cjdmOHNTR1ppcFQ2dWhTWVpBXzNTLUNlUU9JLU1R?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiekFVX3lxTE1RSUNMM1JRWkRITkpFa1JpV3Z5R1hQaEVWX0lrejcwQmxjUzNrMldpTnlsWXZnd1pSUzRqcVVOYjJyeHhvSExpX0t2TFZWZ3RpSGN6eVVBSHpYc2h5cjdmOHNTR1ppcFQ2dWhTWVpBXzNTLUNlUU9JLU1R?oc=5\" target=\"_blank\">משבר הסיעוד: האם קרן חיסכון אישית תחליף את הביטוח של קופות החולים?</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ביזפורטל</font>",
+      "pub_date": "Mon, 12 Oct 2026 09:17:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQbUl0N0VNZGYtLUc2RHVFNnRobGpCVGtXTDAzOHAzWTdoQ2d6QjBzZjFvTkJMSXBKM2RqTkVjQUxsMGhuZXdDeERWc0RBVnNzNUd6dmg1amZjRm1KT2pNcEFQMGlWbWZGY19XTlhtdWpsbXR5b1ZTdEJIYll4UzMyQnd6aWZvUDM4d1dLMUk1LUtTal9fT1FDTjBXQlF3QTZaWmp3?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxQbUl0N0VNZGYtLUc2RHVFNnRobGpCVGtXTDAzOHAzWTdoQ2d6QjBzZjFvTkJMSXBKM2RqTkVjQUxsMGhuZXdDeERWc0RBVnNzNUd6dmg1amZjRm1KT2pNcEFQMGlWbWZGY19XTlhtdWpsbXR5b1ZTdEJIYll4UzMyQnd6aWZvUDM4d1dLMUk1LUtTal9fT1FDTjBXQlF3QTZaWmp3?oc=5\" target=\"_blank\">גולדמן סאקס ינהל שני מסלולי חיסכון חדשים במגדל</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">TheMarker</font>",
       "source_geo": "IL",
       "classification": "news"
     },
     {
-      "title": "פרשת סלייס: רשות שוק ההון שללה את רישיונם של חמישה סוכנים נוספים מפינברט - PassportNews",
+      "title": "דירוג זמני ההמתנה בחברות הביטוח: זו החברה שנמצאת בצמרת - ice (אייס)",
       "traffic": "",
-      "pub_date": "Tue, 06 Oct 2026 06:41:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE0zdUV1eUNBV2JWR21nNTRjTGhuYnFJMlljMXNHRVkyc3BqYTNiSVVRU3RyM2NjYWxoVFB1QW1zcEsyUUhaSkpqQ2FMY2Y1YzRHNk9N?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiU0FVX3lxTE0zdUV1eUNBV2JWR21nNTRjTGhuYnFJMlljMXNHRVkyc3BqYTNiSVVRU3RyM2NjYWxoVFB1QW1zcEsyUUhaSkpqQ2FMY2Y1YzRHNk9N?oc=5\" target=\"_blank\">פרשת סלייס: רשות שוק ההון שללה את רישיונם של חמישה סוכנים נוספים מפינברט</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">PassportNews</font>",
+      "pub_date": "Mon, 12 Oct 2026 11:57:53 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1qVWlQSk5Ydy1ISE1NeWZrRWROUVN1WU1YUmt4SHNTR2VpeFozQVZtTWpDTTBKRDE0RzBXc2VlSUZ3QkcwWEY2bXpaRUtsNlhDTHJXeENNQWNmb2ZqRzg4?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiX0FVX3lxTE1qVWlQSk5Ydy1ISE1NeWZrRWROUVN1WU1YUmt4SHNTR2VpeFozQVZtTWpDTTBKRDE0RzBXc2VlSUZ3QkcwWEY2bXpaRUtsNlhDTHJXeENNQWNmb2ZqRzg4?oc=5\" target=\"_blank\">דירוג זמני ההמתנה בחברות הביטוח: זו החברה שנמצאת בצמרת</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ice (אייס)</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "הערכות: מאות מיליוני שקלים של נופלים נותרו נעולים בחשבונותיהם - גלובס",
+      "traffic": "",
+      "pub_date": "Wed, 07 Oct 2026 03:42:42 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5JTURTeFNwQ2lqX085U1RNTHAzRFMwWjhKRjJKY2M5U2FlYnBsRW90UlhEdnVobEV0c1ZSekYtS0J3TXBHcUZWcnFmSzFZSFp4eXJnelhNTVNRMS1CemlHb1JHOVVNazRm?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTE5JTURTeFNwQ2lqX085U1RNTHAzRFMwWjhKRjJKY2M5U2FlYnBsRW90UlhEdnVobEV0c1ZSekYtS0J3TXBHcUZWcnFmSzFZSFp4eXJnelhNTVNRMS1CemlHb1JHOVVNazRm?oc=5\" target=\"_blank\">הערכות: מאות מיליוני שקלים של נופלים נותרו נעולים בחשבונותיהם</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">גלובס</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "מניות הפיננסים בת\"א איבדו 10% בשלושה שבועות: מה מדאיג את המשקיעים? - calcalist",
+      "traffic": "",
+      "pub_date": "Mon, 12 Oct 2026 16:47:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9HWnV3bU1nUXcwc01RcHFKLVdHNUdpam5QR2N0Ti02eHRlZDl0YnY2aUgzZWJPcjUyMU42TjlaaEtfMGlpUWtRWmJUaS1fSllpMHdkWmRGSWlfSnNvakZ3ZHl0Zw?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiY0FVX3lxTE9HWnV3bU1nUXcwc01RcHFKLVdHNUdpam5QR2N0Ti02eHRlZDl0YnY2aUgzZWJPcjUyMU42TjlaaEtfMGlpUWtRWmJUaS1fSllpMHdkWmRGSWlfSnNvakZ3ZHl0Zw?oc=5\" target=\"_blank\">מניות הפיננסים בת\"א איבדו 10% בשלושה שבועות: מה מדאיג את המשקיעים?</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">calcalist</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "\"מכירה קלה\": הסטארט־אפ שחושף כמה מרוויח סוכן ביטוח מניוד הפנסיה - TheMarker",
+      "traffic": "",
+      "pub_date": "Tue, 13 Oct 2026 03:06:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNSjU4bDVVTnVsRW45YlBWZzZ4UnlkWGhlTFMxWUViZHFuVzRZZk5QQVBjcWNMTzRlT0xjWDB1ZjdXbU9hN0tKU3BNaWp6VmlKcW1zZ1EwN1pMTnFockljWERCc3k3TjJQZ24ySk81VFZmU3RQZTRwRFRpMFlQbTh4VHhVcF9qazFyd0JUUmtWMzNvQlNUYmJNd0pqNDZqR09CMGhCaDBB?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxNSjU4bDVVTnVsRW45YlBWZzZ4UnlkWGhlTFMxWUViZHFuVzRZZk5QQVBjcWNMTzRlT0xjWDB1ZjdXbU9hN0tKU3BNaWp6VmlKcW1zZ1EwN1pMTnFockljWERCc3k3TjJQZ24ySk81VFZmU3RQZTRwRFRpMFlQbTh4VHhVcF9qazFyd0JUUmtWMzNvQlNUYmJNd0pqNDZqR09CMGhCaDBB?oc=5\" target=\"_blank\">\"מכירה קלה\": הסטארט־אפ שחושף כמה מרוויח סוכן ביטוח מניוד הפנסיה</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">TheMarker</font>",
       "source_geo": "IL",
       "classification": "news"
     },
@@ -424,42 +461,6 @@
       "classification": "news"
     },
     {
-      "title": "מביטוח לחיסכון: המהפכה של רשות שוק ההון בביטוח הסיעודי - גלובס",
-      "traffic": "",
-      "pub_date": "Sun, 04 Oct 2026 17:33:42 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBFcEl6UGxZeWZuOWVvSTN4dC15RWJDcmhra192LTlRRGlpMGxhcklYRVJua1Q3cVFRelhyV0pmQTN2OGxsakxZNE5zLWRKNm5HVVVEcm54alpXOFdBSldVZEF4NEgzQWxC?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTFBFcEl6UGxZeWZuOWVvSTN4dC15RWJDcmhra192LTlRRGlpMGxhcklYRVJua1Q3cVFRelhyV0pmQTN2OGxsakxZNE5zLWRKNm5HVVVEcm54alpXOFdBSldVZEF4NEgzQWxC?oc=5\" target=\"_blank\">מביטוח לחיסכון: המהפכה של רשות שוק ההון בביטוח הסיעודי</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">גלובס</font>",
-      "source_geo": "IL",
-      "classification": "news"
-    },
-    {
-      "title": "\"היה קשה להילחם כל הזמן על שמירת השווי שהיה לנו. היתה הקלה במכירה\" - calcalist",
-      "traffic": "",
-      "pub_date": "Thu, 08 Oct 2026 06:00:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9mWDZPT1JCaUY1V2tncURNMWxQWUFaMnhuN3RsdlBscUNsVmQtRGpfeTRaZjF4clROT3NkY18tSXlXa0dtcFhLQndpUWRoelNpQ1JwU1VNU2tEUEhpZEcxRFFueEI?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiZEFVX3lxTE9mWDZPT1JCaUY1V2tncURNMWxQWUFaMnhuN3RsdlBscUNsVmQtRGpfeTRaZjF4clROT3NkY18tSXlXa0dtcFhLQndpUWRoelNpQ1JwU1VNU2tEUEhpZEcxRFFueEI?oc=5\" target=\"_blank\">\"היה קשה להילחם כל הזמן על שמירת השווי שהיה לנו. היתה הקלה במכירה\"</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">calcalist</font>",
-      "source_geo": "IL",
-      "classification": "news"
-    },
-    {
-      "title": "הרגולטורית של שוק הפנסיה: זהירות ״בתוך כעשור נראה גל פרישות לפנסיה שלא הכרנו בישראל!״ - ראיון בלעדי למגזין FUNDER - פאנדר",
-      "traffic": "",
-      "pub_date": "Tue, 06 Oct 2026 07:00:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBYNXZhY1NuTFhwU2FET3RwdXdNX1g5VEpvOHFNbzhkMl8yZFhPUlZRbFJTQjVMLVoxcld1M1lya1p0LUNMOS1IRFNhVndNTUUw?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiUEFVX3lxTFBYNXZhY1NuTFhwU2FET3RwdXdNX1g5VEpvOHFNbzhkMl8yZFhPUlZRbFJTQjVMLVoxcld1M1lya1p0LUNMOS1IRFNhVndNTUUw?oc=5\" target=\"_blank\">הרגולטורית של שוק הפנסיה: זהירות ״בתוך כעשור נראה גל פרישות לפנסיה שלא הכרנו בישראל!״ - ראיון בלעדי למגזין FUNDER</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">פאנדר</font>",
-      "source_geo": "IL",
-      "classification": "news"
-    },
-    {
-      "title": "\"שילמנו מיליון דולר\": ההתערבות בין טייס לנהג מזראטי שהסתיימה בהתרסקות - TheMarker",
-      "traffic": "",
-      "pub_date": "Thu, 08 Oct 2026 03:00:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNbktRcVFOVXlfbHRHUmt4RlBKR3pCTnoyclIwMlFPOS1HSjZaM0RLZHJMcFVkM3JZYU85OE1mZWloZndlQXV0aVJiQThsV1JwRGdaQ2txYXgxT1BvdVpiTUFQRnZWZ0pTNk4wX0JWUHg4SlpfUVluYXhnZ0dKUXVoMmNfakg1bk5qTUVDNHAyeWFoRVVQeV92ZTYwNzVvbi1YaUtsTGZGb1dYUC1uMlRhYVl3?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxNbktRcVFOVXlfbHRHUmt4RlBKR3pCTnoyclIwMlFPOS1HSjZaM0RLZHJMcFVkM3JZYU85OE1mZWloZndlQXV0aVJiQThsV1JwRGdaQ2txYXgxT1BvdVpiTUFQRnZWZ0pTNk4wX0JWUHg4SlpfUVluYXhnZ0dKUXVoMmNfakg1bk5qTUVDNHAyeWFoRVVQeV92ZTYwNzVvbi1YaUtsTGZGb1dYUC1uMlRhYVl3?oc=5\" target=\"_blank\">\"שילמנו מיליון דולר\": ההתערבות בין טייס לנהג מזראטי שהסתיימה בהתרסקות</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">TheMarker</font>",
-      "source_geo": "IL",
-      "classification": "news"
-    },
-    {
       "title": "בוחרים קרן השתלמות לפי טבלת התשואות? בדקנו אם זה עובד - גלובס",
       "traffic": "",
       "pub_date": "Thu, 08 Oct 2026 12:12:36 GMT",
@@ -467,19 +468,54 @@
       "description": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTE1GUEJWeGllRG1BSjNPeG5jVllWU3MySXVyVU10d3pXS1lHeGNXWXFqamQ1ZTItOEFIQWZkOUIzRlNFaVZKV29EOHVqanhOaTB1bmxNS1FzYXNDekt2aURwSzk3RmZxNDFv?oc=5\" target=\"_blank\">בוחרים קרן השתלמות לפי טבלת התשואות? בדקנו אם זה עובד</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">גלובס</font>",
       "source_geo": "IL",
       "classification": "news"
+    },
+    {
+      "title": "אחד בפנסיה והשני עדיין עובד: 23.5 אלף שקל בחודש, ומה עושים איתם עד הפרישה השנייה - ביזפורטל",
+      "traffic": "",
+      "pub_date": "Sun, 11 Oct 2026 21:30:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1oaHVDNzlJOHRhT1RTTm9jOTNuMFNSZlliVmlGb1RhRVBsb1pVUE9YLUdIV19DZWJmMHp4b1cwWHBhdFpZSmtrQm1MOHZOdzlMOHFSOUs2VV83c21rUUNaTF9yOW54Ty0zSlpMdEhESDV5dW8?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMic0FVX3lxTE1oaHVDNzlJOHRhT1RTTm9jOTNuMFNSZlliVmlGb1RhRVBsb1pVUE9YLUdIV19DZWJmMHp4b1cwWHBhdFpZSmtrQm1MOHZOdzlMOHFSOUs2VV83c21rUUNaTF9yOW54Ty0zSlpMdEhESDV5dW8?oc=5\" target=\"_blank\">אחד בפנסיה והשני עדיין עובד: 23.5 אלף שקל בחודש, ומה עושים איתם עד הפרישה השנייה</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ביזפורטל</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "משכנתא ל-40 שנה: 820 שקל פחות בהחזר, עוד 573 אלף שקל ריבית - האם זה משתלם? - ביזפורטל",
+      "traffic": "",
+      "pub_date": "Mon, 12 Oct 2026 04:38:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9lYjhjRjBFU1VrV1I2WjBOYUdybHg3MXNmczFycmF5a0tuemFUeGF0b2NrUFZCdmlJWTAxcXYwcnJEZ3F5SUxBYkxvblloUm5rOXhtaG9LVlJ3c0F0TU1sbnhOMEljWk5aNFY4Nk93?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMibkFVX3lxTE9lYjhjRjBFU1VrV1I2WjBOYUdybHg3MXNmczFycmF5a0tuemFUeGF0b2NrUFZCdmlJWTAxcXYwcnJEZ3F5SUxBYkxvblloUm5rOXhtaG9LVlJ3c0F0TU1sbnhOMEljWk5aNFY4Nk93?oc=5\" target=\"_blank\">משכנתא ל-40 שנה: 820 שקל פחות בהחזר, עוד 573 אלף שקל ריבית - האם זה משתלם?</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ביזפורטל</font>",
+      "source_geo": "IL",
+      "classification": "news"
     }
   ],
   "classification_counts": {
     "insurance_direct": 0,
-    "finance_related": 0,
+    "finance_related": 1,
     "risk_related": 0
   },
   "changes": {
-    "new": [],
+    "new": [
+      {
+        "title": "אינפלציה",
+        "traffic": "100+",
+        "pub_date": "Tue, 13 Oct 2026 08:20:00 -0700",
+        "link": "https://trends.google.com/trending/rss?geo=IL",
+        "description": "",
+        "source_geo": "IL",
+        "classification": "finance_related"
+      }
+    ],
     "removed": [],
     "unchanged": []
   },
-  "article_ideas": [],
+  "article_ideas": [
+    {
+      "topic": "אינפלציה",
+      "headline": "אינפלציה: מה חשוב לדעת עכשיו לפני שקונים או מעדכנים ביטוח",
+      "angle": "הסבר פרקטי + השוואת חלופות + טעויות נפוצות + למי זה מתאים",
+      "cta": "רוצים לבדוק אם הפוליסה שלכם עדיין משתלמת? קבלו בדיקה אישית קצרה."
+    }
+  ],
   "fallback_article_ideas": [],
-  "previous_snapshot": "data/trends-agent/snapshot_20261011T141845Z.json"
+  "previous_snapshot": "data/trends-agent/snapshot_20261011T164942Z.json"
 }
