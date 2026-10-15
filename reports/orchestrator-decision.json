@@ -1,7 +1,19 @@
 {
   "action": "CREATE",
   "reason": "No strong existing-page overlap found.",
-  "proposed_slug": "insurance-service-index-2025",
-  "best_match": null,
-  "matches": []
+  "proposed_slug": "insurance-service-index-2025-disability-insurance",
+  "best_match": {
+    "page": "insurance-service-index-2025.html",
+    "title": "מדד השירות בביטוח 2025: מה דירוג חברות הביטוח אומר לפני שמעדכנים פוליסה",
+    "h1": "מדד השירות בביטוח 2025: מה דירוג חברות הביטוח אומר לפני שמעדכנים פוליסה",
+    "score": 0.364
+  },
+  "matches": [
+    {
+      "page": "insurance-service-index-2025.html",
+      "title": "מדד השירות בביטוח 2025: מה דירוג חברות הביטוח אומר לפני שמעדכנים פוליסה",
+      "h1": "מדד השירות בביטוח 2025: מה דירוג חברות הביטוח אומר לפני שמעדכנים פוליסה",
+      "score": 0.364
+    }
+  ]
 }
