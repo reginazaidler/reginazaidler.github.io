@@ -19,6 +19,7 @@ from pathlib import Path
 
 SITE_BASE = "https://vainzof.co.il"
 SKIP_PAGES = {"choose-insurance-agent.html", "thanks.html", "tesla-insurance-israel.html"}
+EXCLUDED_URLS = {f"{SITE_BASE}/insurance-service-index-2025.html"}
 REMOVED_PAGE_LINK_RE = re.compile(
     r'<a\b[^>]*href=["\'][^"\']*calculator\.html(?:[?#][^"\']*)?["\'][^>]*>.*?</a>',
     re.IGNORECASE | re.DOTALL,
@@ -83,12 +84,22 @@ def sync_sitemap(sitemap: Path, pages: list[Path], root: Path, today: str, dry_r
         return []
 
     content = sitemap.read_text(encoding="utf-8")
+    original_content = content
+    for url in EXCLUDED_URLS:
+        entry_pattern = re.compile(
+            r"<url\\b[^>]*>.*?<loc>\\s*" + re.escape(url) + r"\\s*</loc>.*?</url>",
+            re.IGNORECASE | re.DOTALL,
+        )
+        content = entry_pattern.sub("", content)
+    changed = content != original_content
     added: list[str] = []
 
     for page in pages:
         if has_noindex(page):
             continue
         url = page_url(page, root)
+        if url in EXCLUDED_URLS:
+            continue
         if url in content:
             continue
         entry = f"\n  <url>\n    <loc>{url}</loc>\n    <lastmod>{today}</lastmod>\n  </url>"
@@ -96,10 +107,11 @@ def sync_sitemap(sitemap: Path, pages: list[Path], root: Path, today: str, dry_r
         added.append(url)
         print(f"[sitemap] {'[DRY] ' if dry_run else ''}Added: {url}")
 
-    if added and not dry_run:
+    changed = changed or content != original_content
+    if changed and not dry_run:
         sitemap.write_text(content, encoding="utf-8")
 
-    return added
+    return added, changed
 
 
 def sync_llms(llms: Path, page_urls: list[str], root: Path, dry_run: bool) -> None:
@@ -108,10 +120,16 @@ def sync_llms(llms: Path, page_urls: list[str], root: Path, dry_run: bool) -> No
 
     content = llms.read_text(encoding="utf-8")
     lines = content.splitlines(keepends=True)
+    original_lines = list(lines)
+    lines = [line for line in lines if not any(url in line for url in EXCLUDED_URLS)]
+    changed = lines != original_lines
+    content = "".join(lines)
     last_list_idx = max((i for i, l in enumerate(lines) if l.startswith("- ")), default=-1)
 
     new_lines: list[str] = []
     for url in page_urls:
+        if url in EXCLUDED_URLS:
+            continue
         if url in content:
             continue
         slug = url.replace(f"{SITE_BASE}/", "")
@@ -120,11 +138,14 @@ def sync_llms(llms: Path, page_urls: list[str], root: Path, dry_run: bool) -> No
         new_lines.append(f"- {title}: {url}\n")
         print(f"[llms]    {'[DRY] ' if dry_run else ''}Added: {url}")
 
-    if new_lines and not dry_run:
-        insert_at = last_list_idx + 1 if last_list_idx != -1 else len(lines)
-        for i, line in enumerate(new_lines):
-            lines.insert(insert_at + i, line)
-        llms.write_text("".join(lines), encoding="utf-8")
+    if new_lines or changed:
+        if not dry_run:
+            insert_at = last_list_idx + 1 if last_list_idx != -1 else len(lines)
+            for i, line in enumerate(new_lines):
+                lines.insert(insert_at + i, line)
+            llms.write_text("".join(lines), encoding="utf-8")
+        changed = True
+    return changed
 
 
 def git_commit_and_push(root: Path) -> None:
@@ -154,13 +175,18 @@ def main() -> None:
 
     removed_links = remove_retired_page_links(root, args.dry_run)
     pages = collect_pages(root)
-    added_urls = sync_sitemap(Path("sitemap.xml"), pages, root, today, args.dry_run)
-    sync_llms(Path("llms.txt"), [page_url(p, root) for p in pages if not has_noindex(p)], root, args.dry_run)
+    added_urls, sitemap_changed = sync_sitemap(Path("sitemap.xml"), pages, root, today, args.dry_run)
+    llms_changed = sync_llms(
+        Path("llms.txt"),
+        [page_url(p, root) for p in pages if not has_noindex(p)],
+        root,
+        args.dry_run,
+    )
 
-    if added_urls and not args.dry_run:
+    if (added_urls or sitemap_changed or llms_changed or removed_links) and not args.dry_run:
         print(f"[sync] Added {len(added_urls)} new page(s) - committing...")
         git_commit_and_push(root)
-    elif not added_urls and not removed_links:
+    elif not added_urls and not sitemap_changed and not llms_changed and not removed_links:
         print("[sync] All pages already in sitemap, nothing to do")
 
 
