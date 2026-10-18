@@ -78,16 +78,16 @@ def page_title(path: Path) -> str:
     return m.group(1).strip() if m else path.stem
 
 
-def sync_sitemap(sitemap: Path, pages: list[Path], root: Path, today: str, dry_run: bool) -> list[str]:
+def sync_sitemap(sitemap: Path, pages: list[Path], root: Path, today: str, dry_run: bool) -> tuple[list[str], bool]:
     if not sitemap.exists():
         print("[sitemap] sitemap.xml not found, skipping")
-        return []
+        return [], False
 
     content = sitemap.read_text(encoding="utf-8")
     original_content = content
     for url in EXCLUDED_URLS:
         entry_pattern = re.compile(
-            r"<url\\b[^>]*>.*?<loc>\\s*" + re.escape(url) + r"\\s*</loc>.*?</url>",
+            r"<url\b[^>]*>.*?<loc>\s*" + re.escape(url) + r"\s*</loc>.*?</url>",
             re.IGNORECASE | re.DOTALL,
         )
         content = entry_pattern.sub("", content)
@@ -114,9 +114,9 @@ def sync_sitemap(sitemap: Path, pages: list[Path], root: Path, today: str, dry_r
     return added, changed
 
 
-def sync_llms(llms: Path, page_urls: list[str], root: Path, dry_run: bool) -> None:
-    if not llms.exists() or not page_urls:
-        return
+def sync_llms(llms: Path, page_urls: list[str], root: Path, dry_run: bool) -> bool:
+    if not llms.exists():
+        return False
 
     content = llms.read_text(encoding="utf-8")
     lines = content.splitlines(keepends=True)
