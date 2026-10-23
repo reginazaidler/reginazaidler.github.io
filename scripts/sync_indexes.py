@@ -16,10 +16,11 @@ import re
 import subprocess
 from datetime import date
 from pathlib import Path
+from html.parser import HTMLParser
 
 SITE_BASE = "https://vainzof.co.il"
 SKIP_PAGES = {"choose-insurance-agent.html", "thanks.html", "tesla-insurance-israel.html"}
-EXCLUDED_URLS = {f"{SITE_BASE}/insurance-service-index-2025.html"}
+EXCLUDED_URLS: set[str] = set()
 REMOVED_PAGE_LINK_RE = re.compile(
     r'<a\b[^>]*href=["\'][^"\']*calculator\.html(?:[?#][^"\']*)?["\'][^>]*>.*?</a>',
     re.IGNORECASE | re.DOTALL,
@@ -63,6 +64,40 @@ def has_noindex(path: Path) -> bool:
     )
 
 
+class RedirectParser(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.redirect = False
+
+    def handle_starttag(self, tag, attrs):
+        values = dict(attrs)
+        if (tag == "meta"
+                and (values.get("http-equiv") or "").strip().lower() == "refresh"
+                and re.search(r";\s*url\s*=", values.get("content") or "", re.I)):
+            self.redirect = True
+
+
+def has_redirect(path: Path) -> bool:
+    parser = RedirectParser()
+    parser.feed(path.read_text(encoding="utf-8", errors="ignore"))
+    return parser.redirect
+
+
+def excluded_urls(root: Path) -> set[str]:
+    return EXCLUDED_URLS | {
+        page_url(p, root) for p in root.rglob("*.html")
+        if ".git" not in p.parts and has_redirect(p)
+    }
+
+
+def remove_sitemap_urls(content: str, urls: set[str]) -> str:
+    # Match one entry at a time, never across neighbouring <url> elements.
+    def keep(match):
+        loc = re.search(r"<loc>\s*(.*?)\s*</loc>", match.group(), re.I | re.S)
+        return "" if loc and loc.group(1) in urls else match.group()
+    return re.sub(r"<url\b[^>]*>.*?</url>", keep, content, flags=re.I | re.S)
+
+
 def page_url(path: Path, root: Path) -> str:
     parts = path.relative_to(root).parts
     if len(parts) == 1:
@@ -85,20 +120,16 @@ def sync_sitemap(sitemap: Path, pages: list[Path], root: Path, today: str, dry_r
 
     content = sitemap.read_text(encoding="utf-8")
     original_content = content
-    for url in EXCLUDED_URLS:
-        entry_pattern = re.compile(
-            r"<url\b[^>]*>.*?<loc>\s*" + re.escape(url) + r"\s*</loc>.*?</url>",
-            re.IGNORECASE | re.DOTALL,
-        )
-        content = entry_pattern.sub("", content)
+    excluded = excluded_urls(root)
+    content = remove_sitemap_urls(content, excluded)
     changed = content != original_content
     added: list[str] = []
 
     for page in pages:
-        if has_noindex(page):
+        if has_noindex(page) or has_redirect(page):
             continue
         url = page_url(page, root)
-        if url in EXCLUDED_URLS:
+        if url in excluded:
             continue
         if url in content:
             continue
@@ -121,14 +152,15 @@ def sync_llms(llms: Path, page_urls: list[str], root: Path, dry_run: bool) -> bo
     content = llms.read_text(encoding="utf-8")
     lines = content.splitlines(keepends=True)
     original_lines = list(lines)
-    lines = [line for line in lines if not any(url in line for url in EXCLUDED_URLS)]
+    excluded = excluded_urls(root)
+    lines = [line for line in lines if not any(url in line for url in excluded)]
     changed = lines != original_lines
     content = "".join(lines)
     last_list_idx = max((i for i, l in enumerate(lines) if l.startswith("- ")), default=-1)
 
     new_lines: list[str] = []
     for url in page_urls:
-        if url in EXCLUDED_URLS:
+        if url in excluded:
             continue
         if url in content:
             continue

@@ -728,6 +728,13 @@ def guess_category(slug: str, h1: str) -> str:
 
 
 def update_sitemap(sitemap_path: Path, slug: str, today: str) -> None:
+    try:
+        from .sync_indexes import has_redirect
+    except ImportError:
+        from sync_indexes import has_redirect
+    page = sitemap_path.parent / f"{slug}.html"
+    if page.exists() and has_redirect(page):
+        return
     content = sitemap_path.read_text(encoding="utf-8")
     url = f"https://vainzof.co.il/{slug}.html"
     if url in content:
@@ -800,6 +807,13 @@ def update_articles_html(articles_path: Path, slug: str, h1: str,
 
 
 def update_llms_txt(llms_path: Path, slug: str, h1: str) -> None:
+    try:
+        from .sync_indexes import has_redirect
+    except ImportError:
+        from sync_indexes import has_redirect
+    page = llms_path.parent / f"{slug}.html"
+    if page.exists() and has_redirect(page):
+        return
     if not llms_path.exists():
         return
     content = llms_path.read_text(encoding="utf-8")
