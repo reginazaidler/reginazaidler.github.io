@@ -15,6 +15,11 @@ from pathlib import Path
 from typing import Any
 from urllib import request
 
+try:
+    from .sync_indexes import has_redirect, excluded_urls, remove_sitemap_urls
+except ImportError:
+    from sync_indexes import has_redirect, excluded_urls, remove_sitemap_urls
+
 DEFAULT_EMAIL_RECIPIENTS = [
     "reginazaidler@gmail.com",
     "vainzofyuval@yahoo.com",
@@ -90,8 +95,8 @@ def audit_page(path: Path, root: Path) -> PageAudit:
         has_og_image=parser.has_og_image,
         has_ld_json=parser.has_ld_json,
         h1_count=parser.h1_count,
-        noindex=page_has_noindex(path),
-        url=parser.canonical_url or page_to_url(path, root),
+        noindex=page_has_noindex(path) or has_redirect(path),
+        url=page_to_url(path, root) if has_redirect(path) else (parser.canonical_url or page_to_url(path, root)),
     )
 
 
@@ -127,11 +132,14 @@ def sync_sitemap(sitemap_path: Path, pages: list[Path], root: Path, today: str) 
     if not sitemap_path.exists():
         return []
     content = sitemap_path.read_text(encoding="utf-8")
+    original = content
+    excluded = excluded_urls(root)
+    content = remove_sitemap_urls(content, excluded)
     added: list[str] = []
     for page in pages:
         if page.name in SKIP_PAGES:
             continue
-        if page_has_noindex(page):
+        if page_has_noindex(page) or has_redirect(page):
             continue
         url = page_to_url(page, root)
         if url in content:
@@ -140,28 +148,32 @@ def sync_sitemap(sitemap_path: Path, pages: list[Path], root: Path, today: str) 
         content = content.replace("</urlset>", entry + "\n\n</urlset>")
         added.append(url)
         print(f"[sync-sitemap] Added: {url}")
-    if added:
+    if content != original:
         sitemap_path.write_text(content, encoding="utf-8")
     return added
 
 
 def sync_llms_txt(llms_path: Path, added_urls: list[str], root: Path) -> None:
     """Append newly added pages to llms.txt."""
-    if not llms_path.exists() or not added_urls:
+    if not llms_path.exists():
         return
     content = llms_path.read_text(encoding="utf-8")
     lines = content.splitlines(keepends=True)
+    original = list(lines)
+    excluded = excluded_urls(root)
+    lines = [line for line in lines if not any(url in line for url in excluded)]
+    content = "".join(lines)
     last_list_idx = max((i for i, l in enumerate(lines) if l.startswith("- ")), default=-1)
     new_lines: list[str] = []
     for url in added_urls:
-        if url in content:
+        if url in excluded or url in content:
             continue
         slug = url.replace("https://vainzof.co.il/", "")
         page_path = root / (slug if slug.endswith(".html") else f"{slug}/index.html")
         title = extract_page_title(page_path) if page_path.exists() else slug
         new_lines.append(f"- {title}: {url}\n")
         print(f"[sync-llms] Added: {url}")
-    if new_lines:
+    if new_lines or lines != original:
         insert_at = last_list_idx + 1 if last_list_idx != -1 else len(lines)
         for i, line in enumerate(new_lines):
             lines.insert(insert_at + i, line)
