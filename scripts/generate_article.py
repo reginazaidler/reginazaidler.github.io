@@ -97,13 +97,40 @@ def call_openai(prompt: str, system: str, max_tokens: int = 4096, retries: int =
                 reason = HTTPStatus(e.code).phrase
             except ValueError:
                 reason = 'Unknown HTTP status'
-            print(f"[call_openai] HTTP {e.code} error (attempt {attempt + 1}/{retries}): {reason}", flush=True)
-            if e.code in (529, 503, 500) and attempt < retries - 1:
-                wait = 30 * (2 ** attempt)
-                print(f"[call_openai] Retrying in {wait}s...", flush=True)
+
+            body = e.read().decode("utf-8", errors="replace")
+            try:
+                error_data = json.loads(body).get("error", {})
+            except (json.JSONDecodeError, AttributeError):
+                error_data = {}
+            error_type = error_data.get("type") or "unknown"
+            error_code = error_data.get("code") or "unknown"
+            error_message = error_data.get("message") or reason
+            print(
+                f"[call_openai] HTTP {e.code} error "
+                f"(attempt {attempt + 1}/{retries}): "
+                f"type={error_type}, code={error_code}: {error_message}",
+                flush=True,
+            )
+
+            quota_exhausted = error_code in (
+                "insufficient_quota",
+                "billing_hard_limit_reached",
+            ) or error_type == "insufficient_quota"
+            retryable = e.code in (429, 529, 503, 500)
+            if retryable and not quota_exhausted and attempt < retries - 1:
+                retry_after = e.headers.get("Retry-After")
+                try:
+                    wait = min(float(retry_after), 300) if retry_after else min(15 * (2 ** attempt), 120)
+                except ValueError:
+                    wait = min(15 * (2 ** attempt), 120)
+                print(f"[call_openai] Retrying in {wait:g}s...", flush=True)
                 time.sleep(wait)
             else:
-                raise RuntimeError(f'OpenAI request failed: HTTP {e.code}: {reason}') from None
+                raise RuntimeError(
+                    f'OpenAI request failed: HTTP {e.code}: {reason}; '
+                    f'type={error_type}; code={error_code}'
+                ) from None
 
 
 def load_report(json_path: str) -> dict:
