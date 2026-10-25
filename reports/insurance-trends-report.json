@@ -1,5 +1,5 @@
 {
-  "run_timestamp_utc": "2026-10-25T06:31:11.586285+00:00",
+  "run_timestamp_utc": "2026-10-25T12:57:38.900970+00:00",
   "geo": "IL",
   "keywords_sets": {
     "insurance": [
@@ -213,18 +213,8 @@
     "debt"
   ],
   "total_trends": 10,
-  "insurance_trends_count": 1,
-  "insurance_trends": [
-    {
-      "title": "suns vs warriors",
-      "traffic": "200+",
-      "pub_date": "Sat, 24 Oct 2026 22:00:00 -0700",
-      "link": "https://trends.google.com/trending/rss?geo=IL",
-      "description": "",
-      "source_geo": "IL",
-      "classification": "risk_related"
-    }
-  ],
+  "insurance_trends_count": 0,
+  "insurance_trends": [],
   "news_candidates": [
     {
       "title": "חצי שנה אחרי אישור רשות התחרות: רשות שוק ההון מתנגדת לעסקת וובי - כלכליסט",
@@ -250,15 +240,6 @@
       "pub_date": "Mon, 19 Oct 2026 20:38:00 GMT",
       "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE8wUTVsOVl5dEExZ0xHTFZWNmQzeW54aGFSTm9Xdkc1akRGUnNUcGFVblNCMGVYZ1l6QTViTVJIQnVzb2k1aFlzSUZQY3Z0QjYwUENrOUtsVXBtMHZCNEtablhoWi1OeFBkeFl3?oc=5",
       "description": "<a href=\"https://news.google.com/rss/articles/CBMia0FVX3lxTE8wUTVsOVl5dEExZ0xHTFZWNmQzeW54aGFSTm9Xdkc1akRGUnNUcGFVblNCMGVYZ1l6QTViTVJIQnVzb2k1aFlzSUZQY3Z0QjYwUENrOUtsVXBtMHZCNEtablhoWi1OeFBkeFl3?oc=5\" target=\"_blank\">התגלתה מחלה קשה והטיפול ממומן על ידי קופת החולים - האם מגיע גם כסף מהביטוח הפרטי?</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ביזפורטל</font>",
-      "source_geo": "IL",
-      "classification": "news"
-    },
-    {
-      "title": "קניתם דירה על הנייר? מתי בדיוק מפעילים את ביטוח המשכנתא ועל מה משלמים במהלך הבנייה - ספונסר",
-      "traffic": "",
-      "pub_date": "Tue, 20 Oct 2026 06:46:46 GMT",
-      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9SSDFtMXZKQlRrVng1Yi1NYU9Yb1V6dnNvSWhyTlgwRHlGZmpTMjluOWE4aUFYVFRoZzVuVm9mMkxsU3B4ejhkVGNNTlM3UzM4X20xWGdROXUwUWltMGdzanltSDdoZjdBRkVsN3ZuaGw?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMicEFVX3lxTE9SSDFtMXZKQlRrVng1Yi1NYU9Yb1V6dnNvSWhyTlgwRHlGZmpTMjluOWE4aUFYVFRoZzVuVm9mMkxsU3B4ejhkVGNNTlM3UzM4X20xWGdROXUwUWltMGdzanltSDdoZjdBRkVsN3ZuaGw?oc=5\" target=\"_blank\">קניתם דירה על הנייר? מתי בדיוק מפעילים את ביטוח המשכנתא ועל מה משלמים במהלך הבנייה</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ספונסר</font>",
       "source_geo": "IL",
       "classification": "news"
     },
@@ -290,20 +271,38 @@
       "classification": "news"
     },
     {
-      "title": "דוח התלונות על חברות הביטוח נחשף: מי מושכת יותר תלונות מגודלה? - ice (אייס)",
+      "title": "ביטוח לאומי ישלם את הקצבאות: זו ההחלטה שהתקבלה - ice (אייס)",
       "traffic": "",
-      "pub_date": "Thu, 22 Oct 2026 06:14:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9XcHZ5RlBjSWVjSFpYcEJQdEtSRzNxeXJnWS1ySFktbTZxWERsNlJvS2JvUV9MUEVxWWRSMk5ydkZGcnpWMmJ2TjVrWWFLRTVNeGE2RUd4YnFIdkpVSE5oVy1Od2c?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiZEFVX3lxTE9XcHZ5RlBjSWVjSFpYcEJQdEtSRzNxeXJnWS1ySFktbTZxWERsNlJvS2JvUV9MUEVxWWRSMk5ydkZGcnpWMmJ2TjVrWWFLRTVNeGE2RUd4YnFIdkpVSE5oVy1Od2c?oc=5\" target=\"_blank\">דוח התלונות על חברות הביטוח נחשף: מי מושכת יותר תלונות מגודלה?</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ice (אייס)</font>",
+      "pub_date": "Sun, 25 Oct 2026 12:06:12 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1UdmxDMnNheXg2V2p3QnFjT2FIWTcwdllmdGt4S2RlUkV3WUg3U0FuNzk4bjNMWEFDc19kWXEzWERlckZQaF9uZHVjTXByN1ZZVDVJNExJbEsxZw?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiWkFVX3lxTE1UdmxDMnNheXg2V2p3QnFjT2FIWTcwdllmdGt4S2RlUkV3WUg3U0FuNzk4bjNMWEFDc19kWXEzWERlckZQaF9uZHVjTXByN1ZZVDVJNExJbEsxZw?oc=5\" target=\"_blank\">ביטוח לאומי ישלם את הקצבאות: זו ההחלטה שהתקבלה</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ice (אייס)</font>",
       "source_geo": "IL",
       "classification": "news"
     },
     {
-      "title": "מועמד עיוור נדחה מעבודה – ויקבל 55,000 שקלים - אמס",
+      "title": "מועמד עיוור נדחה מעבודה - ויקבל 55,000 שקלים - אמס",
       "traffic": "",
       "pub_date": "Wed, 21 Oct 2026 12:29:44 GMT",
       "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1HZmg0eWk5YlpEOWRHU2I1dlpnd1VQUC16QUpQNXU1ak1KWHk4bjVGak5EQ3Z3NG5sNnpxUlZRdFlyQ3lTdll0MVN0ci1rdw?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiTkFVX3lxTE1HZmg0eWk5YlpEOWRHU2I1dlpnd1VQUC16QUpQNXU1ak1KWHk4bjVGak5EQ3Z3NG5sNnpxUlZRdFlyQ3lTdll0MVN0ci1rdw?oc=5\" target=\"_blank\">מועמד עיוור נדחה מעבודה – ויקבל 55,000 שקלים</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">אמס</font>",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiTkFVX3lxTE1HZmg0eWk5YlpEOWRHU2I1dlpnd1VQUC16QUpQNXU1ak1KWHk4bjVGak5EQ3Z3NG5sNnpxUlZRdFlyQ3lTdll0MVN0ci1rdw?oc=5\" target=\"_blank\">מועמד עיוור נדחה מעבודה - ויקבל 55,000 שקלים</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">אמס</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "איזו חברת ביטוח רכב נותנת את השירות הכי טוב? מדד השירות המעודכן - פואנטה",
+      "traffic": "",
+      "pub_date": "Wed, 21 Oct 2026 07:00:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE16WmJTTTNyZ3NSRjRHblZ0ZTlMelRqTzNwLXFCT3Z4ZjdYRG5iTnh6U1FCRmZNbUdaa1Y1NVFVVEtTU3FUNllDREhVbHdmaE9jVE0zNVdkMTR0dFZyc1k5NHBiV1dPdw?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiZkFVX3lxTE16WmJTTTNyZ3NSRjRHblZ0ZTlMelRqTzNwLXFCT3Z4ZjdYRG5iTnh6U1FCRmZNbUdaa1Y1NVFVVEtTU3FUNllDREhVbHdmaE9jVE0zNVdkMTR0dFZyc1k5NHBiV1dPdw?oc=5\" target=\"_blank\">איזו חברת ביטוח רכב נותנת את השירות הכי טוב? מדד השירות המעודכן</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">פואנטה</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "הצעה להגדיל את כיסוי ביטוח הבריאות ל-70% עבור תרופות לפסוריאזיס, כאשר חלק מהסוגים עולות כמעט 50 מיליון דונג וייטנאמי. - Vietnam.vn",
+      "traffic": "",
+      "pub_date": "Sun, 25 Oct 2026 06:05:37 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOdVI3emR2QzkxTVEwQzhibFFfOXc0cDJMVEZLdW1yMU1uSjNZTVh4SXcwTmhPRXdLNFl5cWZXUWpIRU8xTmt6M3RWMXVSRjVZX1Z3YkR3VHZpaGU1SjVGRnFGQlA0SW5iaEYzMlBtVktaeGdua3RJYnpFakpWTnlldndWMm52MGJFMUtnTFNQYkNuMGdGdktaOHMyOWpVeHZrY3Uw?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOdVI3emR2QzkxTVEwQzhibFFfOXc0cDJMVEZLdW1yMU1uSjNZTVh4SXcwTmhPRXdLNFl5cWZXUWpIRU8xTmt6M3RWMXVSRjVZX1Z3YkR3VHZpaGU1SjVGRnFGQlA0SW5iaEYzMlBtVktaeGdua3RJYnpFakpWTnlldndWMm52MGJFMUtnTFNQYkNuMGdGdktaOHMyOWpVeHZrY3Uw?oc=5\" target=\"_blank\">הצעה להגדיל את כיסוי ביטוח הבריאות ל-70% עבור תרופות לפסוריאזיס, כאשר חלק מהסוגים עולות כמעט 50 מיליון דונג וייטנאמי.</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Vietnam.vn</font>",
       "source_geo": "IL",
       "classification": "news"
     },
@@ -326,11 +325,11 @@
       "classification": "news"
     },
     {
-      "title": "קידום פוליסות ביטוח בריאות לסטודנטים באוניברסיטת ויקטוריה של הפסיפיק. - Vietnam.vn",
+      "title": "ניצח את ביטוח לאומי: עניינו יידון בשנית בוועדה הרפואית - psakdin",
       "traffic": "",
-      "pub_date": "Thu, 22 Oct 2026 03:40:48 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQVmh6Q2E1a2RpMHNmUXZfMEpSLUh2ODAtX0pTcnFxTzZNNWxERXNxNEtHbHdyQ050dlVyeWJzcWxFc0VwbDBmVkFRTFhoS1B1VXVaUUVyZzllVkdka1NpbHppeV9sU3NyZ0lmMWhtS3JkdTk2dDlNWENDem1xQ3JJWmNoeVZXcENwWl9ZcnlFVjZSQTZMc2lXLTNzT3pSZ2d0VXNOVmRLa2FnZ0tvSnZXa1oxSVVsZy0w?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQVmh6Q2E1a2RpMHNmUXZfMEpSLUh2ODAtX0pTcnFxTzZNNWxERXNxNEtHbHdyQ050dlVyeWJzcWxFc0VwbDBmVkFRTFhoS1B1VXVaUUVyZzllVkdka1NpbHppeV9sU3NyZ0lmMWhtS3JkdTk2dDlNWENDem1xQ3JJWmNoeVZXcENwWl9ZcnlFVjZSQTZMc2lXLTNzT3pSZ2d0VXNOVmRLa2FnZ0tvSnZXa1oxSVVsZy0w?oc=5\" target=\"_blank\">קידום פוליסות ביטוח בריאות לסטודנטים באוניברסיטת ויקטוריה של הפסיפיק.</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Vietnam.vn</font>",
+      "pub_date": "Wed, 21 Oct 2026 10:28:58 GMT",
+      "link": "https://news.google.com/rss/articles/CBMi0wNBVV95cUxNZVRoVXZITVBWMzRmbER6MWVRR25uT1J1Qkw0b3JLR2ZpaVNEeHpJUHhyamM4T0xoU3JRbWlGcEdlN3dSOXNTek9RSHdOeHd4N2V1ZE9LT1FjRkxuVDR4ZGJQZkhDeTdsd2hRU1dDQ0pkUmtDUVctTVR2R3h0NzJ6VVJUdXkxUzZoQTVMMlp0dGRLT3NNRVY0bFBPSHRwTnJDRDBzUlQyeGZYTzVWOXV6UGdTcVh1X3NLZXdEYkItU1p4NVFWMy1OVmxITmU1WDBKYWt1bGJKdkdlVHZMOEs5NGUxTGJ0R2k3d2NzazNlSGREODVtZmFsV2lCVGdGZkd3akRMMG01WGh3eWJFbE9HMkxvbzlUTEpnNEF0anBNR0ZEX0YycDF3ZUNrLUVEdzdQcDMzRllKTWVWQ0hhQXpWZ1V3dUE1UlhrN24yUmxQYUNpWHZwSFpPNWRHRWdidzAzbW1Mc1JxNFVlVWg4TGd4aUhwb3JNdXRTMzBjNTk3d0xGbFctLU1tTUc1YjZTM2p6cUFQT2ZPbUR6dFVfRlhhRlZiRWg0TU9XRmg3bW9jVjRUVzVqcXZfQlM0eGhMWldlWXIyRm5VRHBBTXd6amtDaXB6aw?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMi0wNBVV95cUxNZVRoVXZITVBWMzRmbER6MWVRR25uT1J1Qkw0b3JLR2ZpaVNEeHpJUHhyamM4T0xoU3JRbWlGcEdlN3dSOXNTek9RSHdOeHd4N2V1ZE9LT1FjRkxuVDR4ZGJQZkhDeTdsd2hRU1dDQ0pkUmtDUVctTVR2R3h0NzJ6VVJUdXkxUzZoQTVMMlp0dGRLT3NNRVY0bFBPSHRwTnJDRDBzUlQyeGZYTzVWOXV6UGdTcVh1X3NLZXdEYkItU1p4NVFWMy1OVmxITmU1WDBKYWt1bGJKdkdlVHZMOEs5NGUxTGJ0R2k3d2NzazNlSGREODVtZmFsV2lCVGdGZkd3akRMMG01WGh3eWJFbE9HMkxvbzlUTEpnNEF0anBNR0ZEX0YycDF3ZUNrLUVEdzdQcDMzRllKTWVWQ0hhQXpWZ1V3dUE1UlhrN24yUmxQYUNpWHZwSFpPNWRHRWdidzAzbW1Mc1JxNFVlVWg4TGd4aUhwb3JNdXRTMzBjNTk3d0xGbFctLU1tTUc1YjZTM2p6cUFQT2ZPbUR6dFVfRlhhRlZiRWg0TU9XRmg3bW9jVjRUVzVqcXZfQlM0eGhMWldlWXIyRm5VRHBBTXd6amtDaXB6aw?oc=5\" target=\"_blank\">ניצח את ביטוח לאומי: עניינו יידון בשנית בוועדה הרפואית</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">psakdin</font>",
       "source_geo": "IL",
       "classification": "news"
     },
@@ -344,38 +343,29 @@
       "classification": "news"
     },
     {
-      "title": "הכשרה ביטוח ופיננסים זכתה בארבעה פרסים בתחרות המי\"ל למצוינות בשירות ובחוויית לקוח - היום",
+      "title": "לא עוד הנחות קצרות טווח למשיכת לקוחות לביטוח חיים - רשות שוק ההון דורשת עשור לפחות - כלכליסט",
       "traffic": "",
-      "pub_date": "Wed, 21 Oct 2026 11:27:25 GMT",
-      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1EWG96WFRyM1ZLU2hqSkRjcjdjSktuR1VwUU5VYzhxOU0zbFNmX1JHbTRIVm9Fa29oRXRHckllZEVmOGVsSjhlNDdqbVpEM1o0Wl8zUWxsbkFHZE1Eclkxb01iRHpOaldSQmpvb21BcEpfZVlyM2fSAX5BVV95cUxPTXB6MGloRGF2NDNaQUFVYXZYS0p6MzdWQlhlZ3Jnc29hT19mT2ZKbGtOMXJBZXRZd2x3VlYzbk8zQjBYQjFmaGFMLWstRWNHMU1RYzFSRDBQNGpSbHc0a0FYSW9PU1phbGE4WDFuY2wxdy1jSVhXQUpjRm01QkE?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMidkFVX3lxTE1EWG96WFRyM1ZLU2hqSkRjcjdjSktuR1VwUU5VYzhxOU0zbFNmX1JHbTRIVm9Fa29oRXRHckllZEVmOGVsSjhlNDdqbVpEM1o0Wl8zUWxsbkFHZE1Eclkxb01iRHpOaldSQmpvb21BcEpfZVlyM2fSAX5BVV95cUxPTXB6MGloRGF2NDNaQUFVYXZYS0p6MzdWQlhlZ3Jnc29hT19mT2ZKbGtOMXJBZXRZd2x3VlYzbk8zQjBYQjFmaGFMLWstRWNHMU1RYzFSRDBQNGpSbHc0a0FYSW9PU1phbGE4WDFuY2wxdy1jSVhXQUpjRm01QkE?oc=5\" target=\"_blank\">הכשרה ביטוח ופיננסים זכתה בארבעה פרסים בתחרות המי\"ל למצוינות בשירות ובחוויית לקוח</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">היום</font>",
+      "pub_date": "Sun, 25 Oct 2026 11:32:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9lSjl6TzB4RWlZOGdmUjdVcElLVFRsWlkzSHlSNl9BUEV0S0xEQ29GY0dSOEpTcW9MU1QxYk1RelBEaElYWF9YRnZnaGhmTWRLY2xua2gtd0FlYlAyazlxR29oaW1NUllI?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTE9lSjl6TzB4RWlZOGdmUjdVcElLVFRsWlkzSHlSNl9BUEV0S0xEQ29GY0dSOEpTcW9MU1QxYk1RelBEaElYWF9YRnZnaGhmTWRLY2xua2gtd0FlYlAyazlxR29oaW1NUllI?oc=5\" target=\"_blank\">לא עוד הנחות קצרות טווח למשיכת לקוחות לביטוח חיים - רשות שוק ההון דורשת עשור לפחות</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">כלכליסט</font>",
       "source_geo": "IL",
       "classification": "news"
     },
     {
-      "title": "החלטה 57-NQ/TW: טכנולוגיה מקדמת כיסוי ביטוח לאומי. - Vietnam.vn",
+      "title": "רשות שוק ההון עוצרת את השתוללות ההנחות בביטוחי החיים - TheMarker",
       "traffic": "",
-      "pub_date": "Mon, 19 Oct 2026 23:23:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQRDg2RGE3emFXa0dnb0UxOWVQOGVhai1DRGNKODVmYjhXeWFscG5tMU82S1JmVUJjdVI3Z2dFZG1kVjV5NVJsNVVoejIwSTZTUG1HdENvbmh2aGZOaGxDTGo0WXpRV0ZCckRkZmZRaVdudzhraWlZLXRnaFN2aEZHblVwUmxRMFNGeDVmYUNfY0U5WmdVamc?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMilgFBVV95cUxQRDg2RGE3emFXa0dnb0UxOWVQOGVhai1DRGNKODVmYjhXeWFscG5tMU82S1JmVUJjdVI3Z2dFZG1kVjV5NVJsNVVoejIwSTZTUG1HdENvbmh2aGZOaGxDTGo0WXpRV0ZCckRkZmZRaVdudzhraWlZLXRnaFN2aEZHblVwUmxRMFNGeDVmYUNfY0U5WmdVamc?oc=5\" target=\"_blank\">החלטה 57-NQ/TW: טכנולוגיה מקדמת כיסוי ביטוח לאומי.</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Vietnam.vn</font>",
+      "pub_date": "Sun, 25 Oct 2026 09:29:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQV2NCd2RyVHZrcGVTaXpmNmlVLXJCWk9oZDVRSWllUjN0N0hnOHFiSW8xcWpBU3Y4ck80QXJ4YnBHb1M3ZGUtUjl4dUpXRnpUczZtalZKQTVEU0Z4X29QOHk2WHRhSU1hb1JMZXZKV2d0SzFKTGhwTnFiWTRlbVBQRlhyMVRwYVN3bGdyS191bHVxWVFad0RDNFgydVpqUlktdTJj?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxQV2NCd2RyVHZrcGVTaXpmNmlVLXJCWk9oZDVRSWllUjN0N0hnOHFiSW8xcWpBU3Y4ck80QXJ4YnBHb1M3ZGUtUjl4dUpXRnpUczZtalZKQTVEU0Z4X29QOHk2WHRhSU1hb1JMZXZKV2d0SzFKTGhwTnFiWTRlbVBQRlhyMVRwYVN3bGdyS191bHVxWVFad0RDNFgydVpqUlktdTJj?oc=5\" target=\"_blank\">רשות שוק ההון עוצרת את השתוללות ההנחות בביטוחי החיים</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">TheMarker</font>",
       "source_geo": "IL",
       "classification": "news"
     },
     {
-      "title": "הנחות של 85% לסוכנים ורווחי עתק לחברות: כשל השוק המושתק בביטוחי החיים - שוק ההון - TheMarker - TheMarker",
+      "title": "החל מפברואר: ההנחות בביטוחי החיים למשך עשור לפחות - גלובס",
       "traffic": "",
-      "pub_date": "Wed, 21 Oct 2026 03:01:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPT211bTVzTTlvWTZUbjZsM3c2ekliZDg2RFAtaFZybHVISTloZHBKNDNLMEJJSnlrYkN1djRkaW1RWF9fdE9mRWxoRlJaWWRVUUNxdXl6WkVvUkhtN3pudDlsSkhjOUdEUzMzbE5Qc0ZPbFpFSW05RlpNcWxwdGl1WTdhSS1fNHBmSTQ3STR0MjcwV3hhX2ZCb1VWb0ZrUVp2M1RvVmFB?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxPT211bTVzTTlvWTZUbjZsM3c2ekliZDg2RFAtaFZybHVISTloZHBKNDNLMEJJSnlrYkN1djRkaW1RWF9fdE9mRWxoRlJaWWRVUUNxdXl6WkVvUkhtN3pudDlsSkhjOUdEUzMzbE5Qc0ZPbFpFSW05RlpNcWxwdGl1WTdhSS1fNHBmSTQ3STR0MjcwV3hhX2ZCb1VWb0ZrUVp2M1RvVmFB?oc=5\" target=\"_blank\">הנחות של 85% לסוכנים ורווחי עתק לחברות: כשל השוק המושתק בביטוחי החיים - שוק ההון - TheMarker</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">TheMarker</font>",
-      "source_geo": "IL",
-      "classification": "news"
-    },
-    {
-      "title": "כפי שנחשף בגלובס: רשות שוק ההון עוצרת תגמול ליועצי משכנתאות - גלובס",
-      "traffic": "",
-      "pub_date": "Wed, 21 Oct 2026 12:49:09 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1mdXhJV3N2UTJ6Q0FOa3lNeWhXZ3hUZkMxdjNoeTdtaU4ycTZvY1hNaGFjWUg0Z0NwSXJYWV9BUDB0T3IxaGxhUXhYWDF4NkJMNGZKN3NJZUpHbkhTd2NSNWtpT29EX2RN?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTE1mdXhJV3N2UTJ6Q0FOa3lNeWhXZ3hUZkMxdjNoeTdtaU4ycTZvY1hNaGFjWUg0Z0NwSXJYWV9BUDB0T3IxaGxhUXhYWDF4NkJMNGZKN3NJZUpHbkhTd2NSNWtpT29EX2RN?oc=5\" target=\"_blank\">כפי שנחשף בגלובס: רשות שוק ההון עוצרת תגמול ליועצי משכנתאות</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">גלובס</font>",
+      "pub_date": "Sun, 25 Oct 2026 09:47:19 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9MT1RWYmt1czJIUFNEMTNQdV9wN3hham1YVGdBVVU0alpfSUdCdXpHbS1VSmliM0lPX2JXN2JIWUFIZ2hRMlhKUnpFalAwSTZuU0RENVRtYjVGdW5TVFh5dm0yX0dlQUpS?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTE9MT1RWYmt1czJIUFNEMTNQdV9wN3hham1YVGdBVVU0alpfSUdCdXpHbS1VSmliM0lPX2JXN2JIWUFIZ2hRMlhKUnpFalAwSTZuU0RENVRtYjVGdW5TVFh5dm0yX0dlQUpS?oc=5\" target=\"_blank\">החל מפברואר: ההנחות בביטוחי החיים למשך עשור לפחות</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">גלובס</font>",
       "source_geo": "IL",
       "classification": "news"
     },
@@ -389,11 +379,47 @@
       "classification": "news"
     },
     {
-      "title": "דוח הביטוח: 17 אלף פניות בשנה, 21.5 מיליון שקל שחזרו לציבור - וואלה כסף",
+      "title": "הנחות של 85% לסוכנים ורווחי עתק לחברות: כשל השוק המושתק בביטוחי החיים - שוק ההון - TheMarker - TheMarker",
       "traffic": "",
-      "pub_date": "Wed, 21 Oct 2026 06:18:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5ac3VOMTRVa2xIdGpIcjJmODQ5ZFk4dXhRMnMxLVlJc21odzhRSzctR3JsSXczbnNSZzNHVVVoU2lkMzc5S0dNUmJkTWxyUWdxWXc?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiUkFVX3lxTE5ac3VOMTRVa2xIdGpIcjJmODQ5ZFk4dXhRMnMxLVlJc21odzhRSzctR3JsSXczbnNSZzNHVVVoU2lkMzc5S0dNUmJkTWxyUWdxWXc?oc=5\" target=\"_blank\">דוח הביטוח: 17 אלף פניות בשנה, 21.5 מיליון שקל שחזרו לציבור</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">וואלה כסף</font>",
+      "pub_date": "Wed, 21 Oct 2026 03:01:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPT211bTVzTTlvWTZUbjZsM3c2ekliZDg2RFAtaFZybHVISTloZHBKNDNLMEJJSnlrYkN1djRkaW1RWF9fdE9mRWxoRlJaWWRVUUNxdXl6WkVvUkhtN3pudDlsSkhjOUdEUzMzbE5Qc0ZPbFpFSW05RlpNcWxwdGl1WTdhSS1fNHBmSTQ3STR0MjcwV3hhX2ZCb1VWb0ZrUVp2M1RvVmFB?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxPT211bTVzTTlvWTZUbjZsM3c2ekliZDg2RFAtaFZybHVISTloZHBKNDNLMEJJSnlrYkN1djRkaW1RWF9fdE9mRWxoRlJaWWRVUUNxdXl6WkVvUkhtN3pudDlsSkhjOUdEUzMzbE5Qc0ZPbFpFSW05RlpNcWxwdGl1WTdhSS1fNHBmSTQ3STR0MjcwV3hhX2ZCb1VWb0ZrUVp2M1RvVmFB?oc=5\" target=\"_blank\">הנחות של 85% לסוכנים ורווחי עתק לחברות: כשל השוק המושתק בביטוחי החיים - שוק ההון - TheMarker</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">TheMarker</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "דוח התלונות על חברות הביטוח נחשף: מי מושכת יותר תלונות מגודלה? - ice (אייס)",
+      "traffic": "",
+      "pub_date": "Thu, 22 Oct 2026 06:14:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9XcHZ5RlBjSWVjSFpYcEJQdEtSRzNxeXJnWS1ySFktbTZxWERsNlJvS2JvUV9MUEVxWWRSMk5ydkZGcnpWMmJ2TjVrWWFLRTVNeGE2RUd4YnFIdkpVSE5oVy1Od2c?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiZEFVX3lxTE9XcHZ5RlBjSWVjSFpYcEJQdEtSRzNxeXJnWS1ySFktbTZxWERsNlJvS2JvUV9MUEVxWWRSMk5ydkZGcnpWMmJ2TjVrWWFLRTVNeGE2RUd4YnFIdkpVSE5oVy1Od2c?oc=5\" target=\"_blank\">דוח התלונות על חברות הביטוח נחשף: מי מושכת יותר תלונות מגודלה?</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ice (אייס)</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "ההנחה נעלמה והחשבון התנפח? בקרוב זה עומד להשתנות - מעריב",
+      "traffic": "",
+      "pub_date": "Sun, 25 Oct 2026 09:52:11 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9zaDRvQVJOdlp1ODNDVVRRbjE4QnZrenlmLVg1M3p2WmtDVTVwclIzOXA2LXBaUzFhQ0Z6VG02ZE9yX3BaNFEtaVJaV0NCbEpMWjktNlFBQmMwMjFHZmZ6eXdJM1lwdw?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiZkFVX3lxTE9zaDRvQVJOdlp1ODNDVVRRbjE4QnZrenlmLVg1M3p2WmtDVTVwclIzOXA2LXBaUzFhQ0Z6VG02ZE9yX3BaNFEtaVJaV0NCbEpMWjktNlFBQmMwMjFHZmZ6eXdJM1lwdw?oc=5\" target=\"_blank\">ההנחה נעלמה והחשבון התנפח? בקרוב זה עומד להשתנות</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">מעריב</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "כפי שנחשף בגלובס: רשות שוק ההון עוצרת תגמול ליועצי משכנתאות - גלובס",
+      "traffic": "",
+      "pub_date": "Wed, 21 Oct 2026 12:49:09 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1mdXhJV3N2UTJ6Q0FOa3lNeWhXZ3hUZkMxdjNoeTdtaU4ycTZvY1hNaGFjWUg0Z0NwSXJYWV9BUDB0T3IxaGxhUXhYWDF4NkJMNGZKN3NJZUpHbkhTd2NSNWtpT29EX2RN?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTE1mdXhJV3N2UTJ6Q0FOa3lNeWhXZ3hUZkMxdjNoeTdtaU4ycTZvY1hNaGFjWUg0Z0NwSXJYWV9BUDB0T3IxaGxhUXhYWDF4NkJMNGZKN3NJZUpHbkhTd2NSNWtpT29EX2RN?oc=5\" target=\"_blank\">כפי שנחשף בגלובס: רשות שוק ההון עוצרת תגמול ליועצי משכנתאות</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">גלובס</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "שנה לאחר חתימת העסקה - רשות שוק ההון מתנגדת לרכישת וובי בידי אורן מזרח מקבוצת הפניקס - פאנדר",
+      "traffic": "",
+      "pub_date": "Thu, 22 Oct 2026 12:51:58 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBGNkhIZjNENWVFeGhwUGI2MjRGNW5UV0w5Ty1iZXNWX3ZtZk5vc0ZvOC05Z090ajVaWmVyUTd3cDdwdmZQOVBPQmZsX2FXdHZE?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiUEFVX3lxTFBGNkhIZjNENWVFeGhwUGI2MjRGNW5UV0w5Ty1iZXNWX3ZtZk5vc0ZvOC05Z090ajVaWmVyUTd3cDdwdmZQOVBPQmZsX2FXdHZE?oc=5\" target=\"_blank\">שנה לאחר חתימת העסקה - רשות שוק ההון מתנגדת לרכישת וובי בידי אורן מזרח מקבוצת הפניקס</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">פאנדר</font>",
       "source_geo": "IL",
       "classification": "news"
     },
@@ -425,51 +451,6 @@
       "classification": "news"
     },
     {
-      "title": "שנה לאחר חתימת העסקה - רשות שוק ההון מתנגדת לרכישת וובי בידי אורן מזרח מקבוצת הפניקס - פאנדר",
-      "traffic": "",
-      "pub_date": "Thu, 22 Oct 2026 12:51:58 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBGNkhIZjNENWVFeGhwUGI2MjRGNW5UV0w5Ty1iZXNWX3ZtZk5vc0ZvOC05Z090ajVaWmVyUTd3cDdwdmZQOVBPQmZsX2FXdHZE?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiUEFVX3lxTFBGNkhIZjNENWVFeGhwUGI2MjRGNW5UV0w5Ty1iZXNWX3ZtZk5vc0ZvOC05Z090ajVaWmVyUTd3cDdwdmZQOVBPQmZsX2FXdHZE?oc=5\" target=\"_blank\">שנה לאחר חתימת העסקה - רשות שוק ההון מתנגדת לרכישת וובי בידי אורן מזרח מקבוצת הפניקס</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">פאנדר</font>",
-      "source_geo": "IL",
-      "classification": "news"
-    },
-    {
-      "title": "\"צמיחה אורגנית יכולה להביא אותך עד נקודה מסוימת. אנחנו רוצים הרבה יותר מזה\" - כלכליסט",
-      "traffic": "",
-      "pub_date": "Tue, 20 Oct 2026 07:06:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE94OFJicXFOcHRBZlRmcVhuM1dpb0ZjYll2VXoxZkRfYktkOFlNRnZ5VzFGdkxubjlfQTVOek1WWGxwNmtUbF84OEtGeVNKSWtJa0Z2Unl3aUNPQQ?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiWkFVX3lxTE94OFJicXFOcHRBZlRmcVhuM1dpb0ZjYll2VXoxZkRfYktkOFlNRnZ5VzFGdkxubjlfQTVOek1WWGxwNmtUbF84OEtGeVNKSWtJa0Z2Unl3aUNPQQ?oc=5\" target=\"_blank\">\"צמיחה אורגנית יכולה להביא אותך עד נקודה מסוימת. אנחנו רוצים הרבה יותר מזה\"</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">כלכליסט</font>",
-      "source_geo": "IL",
-      "classification": "news"
-    },
-    {
-      "title": "העברות בגמל: הגוף שבראש, וכמה כסף אלטשולר שחם איבד למתחרים? - גלובס",
-      "traffic": "",
-      "pub_date": "Wed, 21 Oct 2026 18:09:12 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5ZRWswdVo2WnluZ0lXVE9kajNTa0JTM2VCWHpHTF9fX1NKdk9MbmFaeDdNdGxnSDB0clRnYmg0cEQ3Z3ZEWWhMWXVBN21BWDNEZVBGMUZVSk8yRjFSM0NPbFUwbFJJTnQ0?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTE5ZRWswdVo2WnluZ0lXVE9kajNTa0JTM2VCWHpHTF9fX1NKdk9MbmFaeDdNdGxnSDB0clRnYmg0cEQ3Z3ZEWWhMWXVBN21BWDNEZVBGMUZVSk8yRjFSM0NPbFUwbFJJTnQ0?oc=5\" target=\"_blank\">העברות בגמל: הגוף שבראש, וכמה כסף אלטשולר שחם איבד למתחרים?</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">גלובס</font>",
-      "source_geo": "IL",
-      "classification": "news"
-    },
-    {
-      "title": "\"גופים פיננסיים גדולים כמו חברות הביטוח — זה לא הפתרון לתחרות בבנקים\" - TheMarker",
-      "traffic": "",
-      "pub_date": "Thu, 22 Oct 2026 18:43:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOelBUcmYtN1hHZ2c3Ym9XNG02YzJ2UnNXcVdSVS1mY3dVVVRNTXpTV3Z2QURZT2NYT25LS3hUYlpTRjhSWFVEcGpOTG50RDhTWGlpQXFqYnBNdExfXzh4bjVkM3Z5N0hzdTBDZjhCNGZZbnY4SFktdkY4YXdyN3FLdDBjNnhMaHU4WlVoTWtJa3NVal9Ub3p2M3NrWG55Q3B1dkJB?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOelBUcmYtN1hHZ2c3Ym9XNG02YzJ2UnNXcVdSVS1mY3dVVVRNTXpTV3Z2QURZT2NYT25LS3hUYlpTRjhSWFVEcGpOTG50RDhTWGlpQXFqYnBNdExfXzh4bjVkM3Z5N0hzdTBDZjhCNGZZbnY4SFktdkY4YXdyN3FLdDBjNnhMaHU4WlVoTWtJa3NVal9Ub3p2M3NrWG55Q3B1dkJB?oc=5\" target=\"_blank\">\"גופים פיננסיים גדולים כמו חברות הביטוח — זה לא הפתרון לתחרות בבנקים\"</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">TheMarker</font>",
-      "source_geo": "IL",
-      "classification": "news"
-    },
-    {
-      "title": "הטעות שעולה לישראלים מאות אלפי שקלים: להסתכל רק על טבלת התשואות - calcalist",
-      "traffic": "",
-      "pub_date": "Sun, 18 Oct 2026 06:53:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5WcE9tNTlSdllKU3pPdk51Q0ViSFZwRDJIOXZVcWtXeWdXMXo1WERiSmo5WThBVFFtdkVPQTdtWU5OSTZJV0RfcEQ4MG01cGRZVUZUbTdhclliZw?oc=5",
-      "description": "<a href=\"https://news.google.com/rss/articles/CBMiWkFVX3lxTE5WcE9tNTlSdllKU3pPdk51Q0ViSFZwRDJIOXZVcWtXeWdXMXo1WERiSmo5WThBVFFtdkVPQTdtWU5OSTZJV0RfcEQ4MG01cGRZVUZUbTdhclliZw?oc=5\" target=\"_blank\">הטעות שעולה לישראלים מאות אלפי שקלים: להסתכל רק על טבלת התשואות</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">calcalist</font>",
-      "source_geo": "IL",
-      "classification": "news"
-    },
-    {
       "title": "\"כל אחד הביא 65 אלף שקל, וקנינו ביחד דירה ב-615 אלף שקל\" - TheMarker",
       "traffic": "",
       "pub_date": "Wed, 21 Oct 2026 03:00:00 GMT",
@@ -477,15 +458,25 @@
       "description": "<a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxNa0JFT0NCb1RNNURib1FvWl80NUtINE83Vm1XODZMMmFaTnlOUGYxT2R1QlNoWnc0WHJIeUU0YktualE2WmQyaHNZcnZWYW9zZWRIQmtQNGtfQ1J3VFU2MHBzeW5ka1RtMFBZSWwtaFo4Z013NlN6S1JtaktfMEJWNlg3WXRVd0NvQXJjX3ZvcllOdjQtcVFrQjZpTm5uSEVaNldjZXFBS3cwMF91U0FzX1B5bw?oc=5\" target=\"_blank\">\"כל אחד הביא 65 אלף שקל, וקנינו ביחד דירה ב-615 אלף שקל\"</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">TheMarker</font>",
       "source_geo": "IL",
       "classification": "news"
+    },
+    {
+      "title": "סוף להנחות שנעלמות בביטוחי החיים: ההטבה תישמר לפחות 10 שנים - ביזפורטל",
+      "traffic": "",
+      "pub_date": "Sun, 25 Oct 2026 10:48:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5FVFJ0WFJDTmNJbVFXT3FEd0ZGRjhvZlJyOFFDbXhTQXRVLVQweGIzMGpIWHZZWDVDQUVuVXlMMmZzc2RVLXM5bnZlVlRORWNaS2Z0eVptTTNNX0huRHVvc0VTaGVjSU0zZkRZ?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMia0FVX3lxTE5FVFJ0WFJDTmNJbVFXT3FEd0ZGRjhvZlJyOFFDbXhTQXRVLVQweGIzMGpIWHZZWDVDQUVuVXlMMmZzc2RVLXM5bnZlVlRORWNaS2Z0eVptTTNNX0huRHVvc0VTaGVjSU0zZkRZ?oc=5\" target=\"_blank\">סוף להנחות שנעלמות בביטוחי החיים: ההטבה תישמר לפחות 10 שנים</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ביזפורטל</font>",
+      "source_geo": "IL",
+      "classification": "news"
     }
   ],
   "classification_counts": {
     "insurance_direct": 0,
     "finance_related": 0,
-    "risk_related": 1
+    "risk_related": 0
   },
   "changes": {
-    "new": [
+    "new": [],
+    "removed": [
       {
         "title": "suns vs warriors",
         "traffic": "200+",
@@ -496,27 +487,9 @@
         "classification": "risk_related"
       }
     ],
-    "removed": [
-      {
-        "title": "אינפלציה",
-        "traffic": "200+",
-        "pub_date": "Thu, 15 Oct 2026 05:00:00 -0700",
-        "link": "https://trends.google.com/trending/rss?geo=IL",
-        "description": "",
-        "source_geo": "IL",
-        "classification": "finance_related"
-      }
-    ],
     "unchanged": []
   },
-  "article_ideas": [
-    {
-      "topic": "suns vs warriors",
-      "headline": "suns vs warriors: מה חשוב לדעת עכשיו לפני שקונים או מעדכנים ביטוח",
-      "angle": "הסבר פרקטי + השוואת חלופות + טעויות נפוצות + למי זה מתאים",
-      "cta": "רוצים לבדוק אם הפוליסה שלכם עדיין משתלמת? קבלו בדיקה אישית קצרה."
-    }
-  ],
+  "article_ideas": [],
   "fallback_article_ideas": [],
-  "previous_snapshot": "data/trends-agent/snapshot_20261015T130419Z.json"
+  "previous_snapshot": "data/trends-agent/snapshot_20261025T063111Z.json"
 }
