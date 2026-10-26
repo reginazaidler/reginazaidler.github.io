@@ -10,6 +10,7 @@ Allow: /ru/ipoteka-strahovanie-dlya-semey-v-izraile.html
 Disallow: /thanks.html
 
 Sitemap: https://vainzof.co.il/sitemap.xml
+Sitemap: https://vainzof.co.il/sitemap-google.xml
 
 # AI Search & Discovery
 # Full text: https://vainzof.co.il/llms.txt
