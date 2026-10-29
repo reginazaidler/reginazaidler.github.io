@@ -1,19 +1,7 @@
 {
   "action": "CREATE",
   "reason": "No strong existing-page overlap found.",
-  "proposed_slug": "clal-long-term-care-insurance-settlement",
-  "best_match": {
-    "page": "tsunami-in-japan-insurance-guide.html",
-    "title": "צונאמי ביפן: מה קרה ומה ישראלים צריכים לבדוק בביטוח נסיעות ודירה",
-    "h1": "צונאמי ביפן: מה קרה ומה ישראלים צריכים לבדוק בביטוח נסיעות ודירה",
-    "score": 0.375
-  },
-  "matches": [
-    {
-      "page": "tsunami-in-japan-insurance-guide.html",
-      "title": "צונאמי ביפן: מה קרה ומה ישראלים צריכים לבדוק בביטוח נסיעות ודירה",
-      "h1": "צונאמי ביפן: מה קרה ומה ישראלים צריכים לבדוק בביטוח נסיעות ודירה",
-      "score": 0.375
-    }
-  ]
+  "proposed_slug": "clal-long-term-care-insurance-settlement-discounts",
+  "best_match": null,
+  "matches": []
 }
