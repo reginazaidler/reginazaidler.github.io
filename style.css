@@ -743,7 +743,7 @@ table {
 .text-\[14px\] { font-size: 14px; }
 
 .bg-white { background-color: #fff; }
-.bg-white\\/90 { background-color: rgba(255, 255, 255, 0.9); }
+.bg-white\/90 { background-color: rgba(255, 255, 255, 0.9); }
 .text-blue-800 { color: #1e40af; }
 .text-base { font-size: 1rem; }
 .sr-only {
