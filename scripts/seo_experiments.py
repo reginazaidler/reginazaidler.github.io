@@ -38,6 +38,15 @@ def conn(path: Path):
     c.commit(); return c
 
 def latest_metric(c,page,query):
+    if query == "__PAGE__":
+        latest=c.execute("SELECT MAX(fetched_at) AS fetched_at FROM query_page_metrics WHERE page=?",(page,)).fetchone()
+        if not latest or not latest["fetched_at"]:
+            return None
+        return c.execute("""SELECT SUM(clicks) AS clicks, SUM(impressions) AS impressions,
+          CASE WHEN SUM(impressions)>0 THEN SUM(clicks)/SUM(impressions) END AS ctr,
+          CASE WHEN SUM(impressions)>0 THEN SUM(position*impressions)/SUM(impressions) END AS position,
+          MAX(start_date) AS start_date, MAX(end_date) AS end_date
+          FROM query_page_metrics WHERE page=? AND fetched_at=?""",(page,latest["fetched_at"])).fetchone()
     return c.execute("""SELECT clicks,impressions,ctr,position,start_date,end_date
       FROM query_page_metrics WHERE page=? AND query=? ORDER BY fetched_at DESC LIMIT 1""",(page,query)).fetchone()
 
@@ -58,11 +67,11 @@ def sync_registry(c):
         if exists: continue
         c.execute("""INSERT INTO seo_experiments(page,query,changed_at,change_type,change_summary,
           before_clicks,before_impressions,before_ctr,before_position,pr_number,commit_sha,deployed_at,
-          indexing_requested_at,indexing_status) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+          indexing_requested_at,indexing_status,notes) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
           (x["page"],x["query"],x["changed_at"],x["change_type"],x["change_summary"],
            x.get("before_clicks"),x.get("before_impressions"),x.get("before_ctr"),x.get("before_position"),
            x.get("pr_number"),x.get("commit_sha"),x.get("deployed_at",x["changed_at"]),
-           x.get("indexing_requested_at"),x.get("indexing_status","not_requested")))
+           x.get("indexing_requested_at"),x.get("indexing_status","not_requested"),x.get("notes")))
         added+=1
     c.commit()
     return added
@@ -117,11 +126,13 @@ def evaluate(args):
             c.execute("""INSERT INTO seo_experiment_checks(experiment_id,checkpoint_days,checked_at,
               clicks,impressions,ctr,position,result) VALUES(?,?,?,?,?,?,?,?)""",
               (e["id"],days,now.isoformat(),m["clicks"],m["impressions"],m["ctr"],m["position"],result))
-            out.append({"id":e["id"],"checkpoint_days":days,"page":e["page"],"query":e["query"],
+            out.append({"id":e["id"],"checkpoint_days":days,"page":e["page"],
+              "measurement_scope":"page" if e["query"]=="__PAGE__" else "query",
+              "query":None if e["query"]=="__PAGE__" else e["query"],
               "result":result,"before":{"clicks":e["before_clicks"],"impressions":e["before_impressions"],
               "ctr":e["before_ctr"],"position":e["before_position"]},
               "after":{"clicks":m["clicks"],"impressions":m["impressions"],"ctr":m["ctr"],"position":m["position"]},
-              "indexing_status":e["indexing_status"],
+              "notes":e["notes"],"indexing_status":e["indexing_status"],
               "caution":"Directional evidence only; other search changes may have contributed."})
         if age >= 28:
             c.execute("""UPDATE seo_experiments SET status='evaluated',evaluated_at=?,
