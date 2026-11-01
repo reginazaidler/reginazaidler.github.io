@@ -14,5 +14,41 @@
     "commit_sha": "367b07e9a81352be18aa03eff2e9d1c062d9ae2a",
     "indexing_requested_at": "2026-09-27",
     "indexing_status": "requested"
+  },
+  {
+    "page": "https://vainzof.co.il/mortgage-insurance-bank.html",
+    "query": "__PAGE__",
+    "measurement_scope": "page",
+    "changed_at": "2026-10-31T09:11:48+00:00",
+    "deployed_at": "2026-10-31T09:11:48+00:00",
+    "change_type": "title_meta_description",
+    "change_summary": "Updated title and meta description to clarify bank versus external mortgage insurance and cost comparison; synced Open Graph and Twitter metadata.",
+    "before_clicks": 0,
+    "before_impressions": 19,
+    "before_ctr": 0,
+    "before_position": 13.11,
+    "pr_number": null,
+    "commit_sha": "2650cc76b22201f417e10d9a775ad8daaeb2d888",
+    "indexing_requested_at": null,
+    "indexing_status": "not_requested",
+    "notes": "Baseline: GSC Pages report, last 28 days, exported 2026-10-30. Follow-up page metrics aggregate available query-page rows from the latest GSC fetch; anonymized queries may make the aggregate differ from the direct Pages report."
+  },
+  {
+    "page": "https://vainzof.co.il/how-to-choose-life-insurance/",
+    "query": "__PAGE__",
+    "measurement_scope": "page",
+    "changed_at": "2026-10-31T09:11:47+00:00",
+    "deployed_at": "2026-10-31T09:11:47+00:00",
+    "change_type": "meta_description",
+    "change_summary": "Rewrote meta description to match the page's five-step guide; synced Open Graph and Twitter descriptions.",
+    "before_clicks": 0,
+    "before_impressions": 10,
+    "before_ctr": 0,
+    "before_position": 13.5,
+    "pr_number": null,
+    "commit_sha": "1138a36f43e0d4891817816e96b9069a361ff412",
+    "indexing_requested_at": null,
+    "indexing_status": "not_requested",
+    "notes": "Baseline: GSC Pages report, last 28 days, exported 2026-10-30. Follow-up page metrics aggregate available query-page rows from the latest GSC fetch; anonymized queries may make the aggregate differ from the direct Pages report."
   }
 ]
