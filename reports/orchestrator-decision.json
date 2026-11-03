@@ -1,7 +1,19 @@
 {
-  "action": "CREATE",
-  "reason": "No strong existing-page overlap found.",
-  "proposed_slug": "clal-insurance-unclaimed-unredeemed-checks",
-  "best_match": null,
-  "matches": []
+  "action": "SKIP",
+  "reason": "Possible topic overlap. Hold automatic publishing for review rather than risk keyword cannibalization.",
+  "proposed_slug": "clal-insurance-refund-unclaimed-checks",
+  "best_match": {
+    "page": "clal-insurance-unclaimed-unredeemed-checks.html",
+    "title": "כלל ביטוח תשיב 29 מיליון שקל על צ'קים שלא נפדו: איך לבדוק אם מגיע לכם כסף?",
+    "h1": "כלל ביטוח תשיב 29 מיליון שקל על צ'קים שלא נפדו: איך לבדוק אם מגיע לכם כסף?",
+    "score": 0.538
+  },
+  "matches": [
+    {
+      "page": "clal-insurance-unclaimed-unredeemed-checks.html",
+      "title": "כלל ביטוח תשיב 29 מיליון שקל על צ'קים שלא נפדו: איך לבדוק אם מגיע לכם כסף?",
+      "h1": "כלל ביטוח תשיב 29 מיליון שקל על צ'קים שלא נפדו: איך לבדוק אם מגיע לכם כסף?",
+      "score": 0.538
+    }
+  ]
 }
