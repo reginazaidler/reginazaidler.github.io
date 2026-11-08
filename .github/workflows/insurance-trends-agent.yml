@@ -90,6 +90,7 @@ jobs:
           fi
 
       - name: Generate SEO article with OpenAI
+        id: generate_article
         if: >
           steps.check_trends.outputs.has_content == 'true' &&
           inputs.skip_article != 'true'
@@ -117,6 +118,9 @@ jobs:
             fi
           fi
 
+      - name: Test article notifications
+        run: python3 -m unittest discover -s scripts/tests -p test_article_notifications.py
+
       - name: Test index synchronization
         run: python3 -m unittest discover -s scripts/tests -p test_index_sync.py
 
@@ -124,26 +128,24 @@ jobs:
         run: python3 scripts/sync_indexes.py
 
       - name: Review, commit and push new files
+        id: publish
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           REVIEW_MODEL: ${{ secrets.REVIEW_MODEL }}
+          GENERATED_SLUG: ${{ steps.generate_article.outputs.article_slug }}
         run: |
           git config user.name  "Trends Agent"
           git config user.email "trends-agent@vainzof.co.il"
 
           git add reports/ data/trends-agent/ sitemap.xml llms.txt articles.html || true
 
-          if [ -f reports/last-generated-article.json ]; then
-            SLUG=$(python3 -c "
-          import json
-          d = json.load(open('reports/last-generated-article.json'))
-          print(d.get('slug',''))
-          ")
-            if [ -n "$SLUG" ] && [ -f "${SLUG}.html" ]; then
-              git add "${SLUG}.html"
-              echo "ARTICLE_SLUG=$SLUG" >> "$GITHUB_ENV"
+          ARTICLE_SLUG=""
+          if [[ "$GENERATED_SLUG" =~ ^[a-z0-9]+(-[a-z0-9]+)*$ ]] && [ -f "${GENERATED_SLUG}.html" ]; then
+            git add -- "${GENERATED_SLUG}.html"
+            # An existing/updated page is not a newly published article.
+            if [ "$(git diff --cached --diff-filter=A --name-only -- "${GENERATED_SLUG}.html")" = "${GENERATED_SLUG}.html" ]; then
+              ARTICLE_SLUG="$GENERATED_SLUG"
             fi
-            git add reports/last-generated-article.json
           fi
 
           if git diff --cached --quiet; then
@@ -157,10 +159,14 @@ jobs:
               git commit -m "auto: trends report update [${TIMESTAMP}]"
             fi
             git push
+            # Expose notification data only after publication succeeds.
+            if [ -n "$ARTICLE_SLUG" ]; then
+              echo "article_slug=$ARTICLE_SLUG" >> "$GITHUB_OUTPUT"
+            fi
           fi
 
       - name: Send email summary
-        if: env.ARTICLE_SLUG != ''
+        if: success() && steps.publish.outputs.article_slug != ''
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: ${{ secrets.SMTP_HOST }}
@@ -170,13 +176,13 @@ jobs:
           password: ${{ secrets.SMTP_PASSWORD }}
           to: ${{ secrets.SMTP_TO }}
           from: ${{ secrets.SMTP_FROM }}
-          subject: "✅ כתבה חדשה: ${{ env.ARTICLE_SLUG }}"
+          subject: "✅ כתבה חדשה: ${{ steps.publish.outputs.article_slug }}"
           body: |
             נוצרה כתבה חדשה אוטומטית לאתר vainzof.co.il
 
-            כתובת: https://vainzof.co.il/${{ env.ARTICLE_SLUG }}.html
+            כתובת: https://vainzof.co.il/${{ steps.publish.outputs.article_slug }}.html
 
-            GitHub: https://github.com/${{ github.repository }}/blob/main/${{ env.ARTICLE_SLUG }}.html
+            GitHub: https://github.com/${{ github.repository }}/blob/main/${{ steps.publish.outputs.article_slug }}.html
 
             דוח טרנדים: https://github.com/${{ github.repository }}/blob/main/reports/insurance-trends-report.md
 
@@ -203,3 +209,4 @@ jobs:
           name: website-code-review
           path: ${{ runner.temp }}/website-code-review.json
           if-no-files-found: ignore
+

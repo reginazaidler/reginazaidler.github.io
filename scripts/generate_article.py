@@ -989,8 +989,15 @@ def main() -> int:
         today=now_str,
     )
 
+    # Step outputs belong to this invocation, unlike persisted report metadata.
+    github_output = os.environ.get("GITHUB_OUTPUT")
+    if github_output:
+        with open(github_output, "a", encoding="utf-8") as output:
+            output.write(f"article_slug={meta['slug']}\n")
+
     return 0
 
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
