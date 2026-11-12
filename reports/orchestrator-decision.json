@@ -1,19 +1,7 @@
 {
-  "action": "SKIP",
-  "reason": "Possible topic overlap. Hold automatic publishing for review rather than risk keyword cannibalization.",
-  "proposed_slug": "double-insurance-direct-insurance-case",
-  "best_match": {
-    "page": "double-insurance-claim-check.html",
-    "title": "המקרה של ביטוח ישיר: איך כפל ביטוח משפיע על תביעה ומה כדאי לבדוק",
-    "h1": "המקרה של ביטוח ישיר: איך כפל ביטוח משפיע על תביעה ומה כדאי לבדוק",
-    "score": 0.5
-  },
-  "matches": [
-    {
-      "page": "double-insurance-claim-check.html",
-      "title": "המקרה של ביטוח ישיר: איך כפל ביטוח משפיע על תביעה ומה כדאי לבדוק",
-      "h1": "המקרה של ביטוח ישיר: איך כפל ביטוח משפיע על תביעה ומה כדאי לבדוק",
-      "score": 0.5
-    }
-  ]
+  "action": "CREATE",
+  "reason": "No strong existing-page overlap found.",
+  "proposed_slug": "eilat-earthquake-home-insurance-coverage",
+  "best_match": null,
+  "matches": []
 }
