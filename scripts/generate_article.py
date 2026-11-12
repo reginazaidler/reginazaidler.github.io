@@ -14,6 +14,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+from html import escape
 import json
 import os
 import re
@@ -372,13 +373,25 @@ def toc_items(sections: list[dict]) -> str:
 
 
 def linkify(text: str) -> str:
-    """Replace bare hrefs like pension-fees-guide.html with proper <a> tags."""
-    import re
-    for slug, (href, label) in INTERNAL_LINKS.items():
-        # Replace bare filename references
-        text = text.replace(href, f'<a href="{href}">{label}</a>')
-    return text
+    """Render internal Markdown links and standalone known filenames."""
+    labels = {href: label for href, label in reversed(INTERNAL_LINKS.values())}
+    filenames = "|".join(re.escape(href) for href in labels)
+    pattern = (
+        r'(?P<html><a\b[^>]*>.*?</a\s*>|<!--.*?-->|<[^>]+>)'
+        r'|\[(?P<label>[^\]\n]+)\]\((?P<target>[^\s()]+)\)'
+        rf'|(?<![\w./:#?=&%-])(?P<bare>{filenames})(?![\w/#?=&%-])'
+    )
 
+    def replace(match: re.Match) -> str:
+        target = match["target"]
+        if target and re.fullmatch(r'/?[\w-]+(?:/[\w-]+)*\.html(?:#[\w-]+)?', target):
+            return f'<a href="{escape(target)}">{escape(match["label"])}</a>'
+        if match["bare"]:
+            href = match["bare"]
+            return f'<a href="{href}">{escape(labels[href])}</a>'
+        return match[0]
+
+    return re.sub(pattern, replace, text, flags=re.DOTALL)
 
 def sections_html(sections: list[dict]) -> str:
     parts = []
@@ -413,21 +426,22 @@ def faq_html(faq: list[dict]) -> str:
 
 
 def faq_schema(faq_items: list[dict]) -> str:
-    entities = []
-    for item in faq_items:
-        q = item.get('name') or item.get('q', '')
-        a = item.get('text') or item.get('a', '')
-        entities.append(
-            f"""    {{
-      "@type": "Question",
-      "name": {json.dumps(q, ensure_ascii=False)},
-      "acceptedAnswer": {{
-        "@type": "Answer",
-        "text": {json.dumps(a, ensure_ascii=False)}
-      }}
-    }}"""
-        )
-    return ",\n".join(entities)
+    if not faq_items:
+        return ""
+    data = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": item["q"],
+                "acceptedAnswer": {"@type": "Answer", "text": item["a"]},
+            }
+            for item in faq_items
+        ],
+    }
+    payload = json.dumps(data, ensure_ascii=False, indent=2).replace("<", "\\u003c")
+    return f'<script type="application/ld+json">\n{payload}\n</script>\n'
 
 
 def build_html(meta: dict, article: dict, now_str: str) -> str:
@@ -442,6 +456,11 @@ def build_html(meta: dict, article: dict, now_str: str) -> str:
     sections = article["sections"]
     intro = article["intro"]
     summary = article.get("summary", "")
+    faq = [
+        item for item in (article.get("faq") or [])
+        if isinstance(item, dict)
+        and all(isinstance(item.get(key), str) and item[key].strip() for key in ("q", "a"))
+    ]
 
     return f"""<!doctype html>
 <html lang="he" dir="rtl">
@@ -490,16 +509,7 @@ def build_html(meta: dict, article: dict, now_str: str) -> str:
   "inLanguage": "he-IL"
 }}
 </script>
-<script type="application/ld+json">
-{{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-{faq_schema(article.get('faq_schema', []))}
-  ]
-}}
-</script>
-<link rel="stylesheet" href="style.css">
+{faq_schema(faq)}<link rel="stylesheet" href="style.css">
 <style>
 body.{page_class} {{
   background: linear-gradient(180deg, #f8fafc 0%, #edf4ff 100%);
@@ -615,19 +625,19 @@ body.{page_class} main {{ padding-top: 2.5rem; padding-bottom: 2.5rem; }}
         <a href="articles.html" class="font-bold" style="color:rgba(255,255,255,0.8)">← חזרה לכל המאמרים</a>
         <p class="mt-6 inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-sm font-extrabold text-blue-900">מדריך עדכני - {now_str[:7]}</p>
         <h1 class="text-4xl font-black mt-5 mb-5" style="color:#fff">{h1}</h1>
-        {intro}
+        {linkify(intro)}
       </section>
 
 {sections_html(sections)}
 
       <section class="pension-section">
         <h2>סיכום</h2>
-        <p>{summary}</p>
+        <p>{linkify(summary)}</p>
       </section>
 
       <section id="faq" class="pension-section">
         <h2>שאלות נפוצות</h2>
-{faq_html(article.get('faq', []))}
+{faq_html(faq)}
       </section>
 
       <section class="pension-links-box">
