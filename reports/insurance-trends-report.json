@@ -1,5 +1,5 @@
 {
-  "run_timestamp_utc": "2026-11-15T15:21:57.248038+00:00",
+  "run_timestamp_utc": "2026-11-17T17:23:02.975541+00:00",
   "geo": "IL",
   "keywords_sets": {
     "insurance": [
@@ -216,16 +216,242 @@
   "insurance_trends_count": 1,
   "insurance_trends": [
     {
-      "title": "רעידת אדמה",
-      "traffic": "1000+",
-      "pub_date": "Sun, 15 Nov 2026 02:50:00 -0800",
+      "title": "מערך ההגנה האווירית",
+      "traffic": "200+",
+      "pub_date": "Tue, 17 Nov 2026 07:00:00 -0800",
       "link": "https://trends.google.com/trending/rss?geo=IL",
       "description": "",
       "source_geo": "IL",
       "classification": "risk_related"
     }
   ],
-  "news_candidates": [],
+  "news_candidates": [
+    {
+      "title": "ביטוח מבנה מחוץ לבנק: חיסכון של יותר מ-7,000 שקל לאורך המשכנתא - ביזפורטל",
+      "traffic": "",
+      "pub_date": "Fri, 13 Nov 2026 20:56:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5WeE1LU0xPTDM3WGFRUFFJaFBJWTZyN3o5QmhPd2lfa25CUUVSZjU3ejNlOFQtV0ltRW9uMGs0bDRCeEV5ZjdzWGt0bVowSmFyMkg1ZDFJd0ZzS0Q1RUJTcVpNMkdFVWZEdWc0cFdB?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMibkFVX3lxTE5WeE1LU0xPTDM3WGFRUFFJaFBJWTZyN3o5QmhPd2lfa25CUUVSZjU3ejNlOFQtV0ltRW9uMGs0bDRCeEV5ZjdzWGt0bVowSmFyMkg1ZDFJd0ZzS0Q1RUJTcVpNMkdFVWZEdWc0cFdB?oc=5\" target=\"_blank\">ביטוח מבנה מחוץ לבנק: חיסכון של יותר מ-7,000 שקל לאורך המשכנתא</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ביזפורטל</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "רעידת האדמה באילת: מה שביטוח הדירה שלכם לא בהכרח מכסה - Calcalist",
+      "traffic": "",
+      "pub_date": "Thu, 12 Nov 2026 13:23:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE96dDk3bWFFRUN4S1BHeThsV2NaVXFOMzN2bUlMTWZzU3lmMjFmbUVFWkQ5NWc1Ykk3ekdfZkYxYjVJdkJwVTJVYTFLbVFsaFdKWmVSX2ZobWZlOGQ0YkJCTW92M25EQkgw?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTE96dDk3bWFFRUN4S1BHeThsV2NaVXFOMzN2bUlMTWZzU3lmMjFmbUVFWkQ5NWc1Ykk3ekdfZkYxYjVJdkJwVTJVYTFLbVFsaFdKWmVSX2ZobWZlOGQ0YkJCTW92M25EQkgw?oc=5\" target=\"_blank\">רעידת האדמה באילת: מה שביטוח הדירה שלכם לא בהכרח מכסה</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Calcalist</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "הרפורמה שתשנה הכל: למה אסור להשאיר את ביטוח הנכס בבנק - כיכר השבת",
+      "traffic": "",
+      "pub_date": "Tue, 17 Nov 2026 11:47:05 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQMDVJNVdfRm9UalRoV2QzbGl1a25qNjZVSGd2d1pJYm9kLWJrZ003ajVEWTdBbm9xbHdSRkVoZExoV0xjT3FPU3lNZEY5U3BuY25Ua3pZYVJHRVdlbDlEdDlhVXJ6OFZ3Tm5XVGF5SHdoRnhiWjczMXhiTEIxbTktRnRhOGxpTk1QUWc?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiigFBVV95cUxQMDVJNVdfRm9UalRoV2QzbGl1a25qNjZVSGd2d1pJYm9kLWJrZ003ajVEWTdBbm9xbHdSRkVoZExoV0xjT3FPU3lNZEY5U3BuY25Ua3pZYVJHRVdlbDlEdDlhVXJ6OFZ3Tm5XVGF5SHdoRnhiWjczMXhiTEIxbTktRnRhOGxpTk1QUWc?oc=5\" target=\"_blank\">הרפורמה שתשנה הכל: למה אסור להשאיר את ביטוח הנכס בבנק</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">כיכר השבת</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "בעקבות השותפות בנימה: ביטוח ישיר השקעות תשלם 16 מיליון ש' לאוצר המדינה - TheMarker",
+      "traffic": "",
+      "pub_date": "Mon, 16 Nov 2026 12:58:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPSjlSeE95cnhIaVdQbmdaWGNHckF5YWlRVHdpQXQ1T215bEdrVmZhQ3NvNnhKbHVXQjhHNGJHQTYxRko5bko5WGtWbHFSUHFQOS1YOFpqbExoWHBkVnRYbTUwLXRyNFBYSENvQ2paaHR0SU0tMExhMzczTHJSLVZHV25vLXY0TzNwWUxFUnJFSE9pTGRCc0NnVU02czJvSVZ6c3BF?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxPSjlSeE95cnhIaVdQbmdaWGNHckF5YWlRVHdpQXQ1T215bEdrVmZhQ3NvNnhKbHVXQjhHNGJHQTYxRko5bko5WGtWbHFSUHFQOS1YOFpqbExoWHBkVnRYbTUwLXRyNFBYSENvQ2paaHR0SU0tMExhMzczTHJSLVZHV25vLXY0TzNwWUxFUnJFSE9pTGRCc0NnVU02czJvSVZ6c3BF?oc=5\" target=\"_blank\">בעקבות השותפות בנימה: ביטוח ישיר השקעות תשלם 16 מיליון ש' לאוצר המדינה</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">TheMarker</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "צריך חוות דעת רפואית כדי לתבוע ביטוח סיעודי? - mako",
+      "traffic": "",
+      "pub_date": "Sun, 15 Nov 2026 07:20:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQSDNCRFB1dTY0Mi0wR1N3cjBwdnFSMk1vb2RKNEtBNjN3MEg5c01Gb0hUSmlGOHZVYnJQM3NQNVZNMjRDZm5Gd3M0a20ydlF5TEZfRUh3aWRqTUJ4YXlWbEtSYUY3b1Y3anNsd24tWDVOOFBQNVk4ajNWNnlKRGRaektveUE?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMihAFBVV95cUxQSDNCRFB1dTY0Mi0wR1N3cjBwdnFSMk1vb2RKNEtBNjN3MEg5c01Gb0hUSmlGOHZVYnJQM3NQNVZNMjRDZm5Gd3M0a20ydlF5TEZfRUh3aWRqTUJ4YXlWbEtSYUY3b1Y3anNsd24tWDVOOFBQNVk4ajNWNnlKRGRaektveUE?oc=5\" target=\"_blank\">צריך חוות דעת רפואית כדי לתבוע ביטוח סיעודי?</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">mako</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "רמי לוי מכניס שותפה לסוכנות הביטוח שלו: הכשרה תרכוש כמחצית מפעילות החברה - i24NEWS",
+      "traffic": "",
+      "pub_date": "Tue, 17 Nov 2026 08:30:43 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9QSGlXMGc5ckN1aURMOC1mZTM1cVhYN3kzVG9LRlRNb05ZdnZkaWVXRG1lZUpOSE8zYzdqelZPRHNOT01vY2MzVDdoYWd1Q2FsUFBCcG16NHhjRk9XUUJoR1Rrbw?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiY0FVX3lxTE9QSGlXMGc5ckN1aURMOC1mZTM1cVhYN3kzVG9LRlRNb05ZdnZkaWVXRG1lZUpOSE8zYzdqelZPRHNOT01vY2MzVDdoYWd1Q2FsUFBCcG16NHhjRk9XUUJoR1Rrbw?oc=5\" target=\"_blank\">רמי לוי מכניס שותפה לסוכנות הביטוח שלו: הכשרה תרכוש כמחצית מפעילות החברה</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">i24NEWS</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "המהלך החדש של רמי לוי: זה מה שיקרה בביטוחים - C14",
+      "traffic": "",
+      "pub_date": "Tue, 17 Nov 2026 08:18:25 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9pb1JYLW1Fb1NKME1sbFJnQWtnVXUwZDRnbFRYMm9Zd2c2SlcxZmt4NXVyYmtHMTczQnJ2NXpVcldLdEJ2aFBaRHEtRTNOZw?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiTkFVX3lxTE9pb1JYLW1Fb1NKME1sbFJnQWtnVXUwZDRnbFRYMm9Zd2c2SlcxZmt4NXVyYmtHMTczQnJ2NXpVcldLdEJ2aFBaRHEtRTNOZw?oc=5\" target=\"_blank\">המהלך החדש של רמי לוי: זה מה שיקרה בביטוחים</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">C14</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "כולם רוצים ביס משוק של טריליון שקל: השחקנית החדשה שנכנסת לשוק הגמל - גלובס",
+      "traffic": "",
+      "pub_date": "Wed, 11 Nov 2026 15:32:57 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFByd0YzQzhyMHR3WmpMb3ZiMDlHVXdlS29oR3BJMkRaczhDdjYtRjNGVVVkbnpka29peEdfRFV5c0FjVUhUTDBzd04ya1BuaXFGUFZMNDAteTdoeE05bkpxZjZzZV9mYlF6?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTFByd0YzQzhyMHR3WmpMb3ZiMDlHVXdlS29oR3BJMkRaczhDdjYtRjNGVVVkbnpka29peEdfRFV5c0FjVUhUTDBzd04ya1BuaXFGUFZMNDAteTdoeE05bkpxZjZzZV9mYlF6?oc=5\" target=\"_blank\">כולם רוצים ביס משוק של טריליון שקל: השחקנית החדשה שנכנסת לשוק הגמל</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">גלובס</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "תרופות חדשות ויקרות: אתגר לחולים ולקופות ביטוח בריאות. - Vietnam.vn",
+      "traffic": "",
+      "pub_date": "Fri, 13 Nov 2026 03:23:52 GMT",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPVTBFRkJENmZEbmxTd05XXzI5NVJNRWlPY09aRVduY2x4VW5EbEtZMldPbzFDa2tnQ253M3VMSmlpQnBWaVNtQW5aMWN6MVNMWDVhRlJYOUYwSUdkcXBBb2c0a09jZnhpM3NGV0VHX0Vzd05wMkFSUHJzNi1HQklTdWF2bHo0MWU1bG1QNE9oM0ZzcFE?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxPVTBFRkJENmZEbmxTd05XXzI5NVJNRWlPY09aRVduY2x4VW5EbEtZMldPbzFDa2tnQ253M3VMSmlpQnBWaVNtQW5aMWN6MVNMWDVhRlJYOUYwSUdkcXBBb2c0a09jZnhpM3NGV0VHX0Vzd05wMkFSUHJzNi1HQklTdWF2bHo0MWU1bG1QNE9oM0ZzcFE?oc=5\" target=\"_blank\">תרופות חדשות ויקרות: אתגר לחולים ולקופות ביטוח בריאות.</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Vietnam.vn</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "הכשרה רוכשת מחצית מסוכנות הביטוח של רמי לוי - Calcalist",
+      "traffic": "",
+      "pub_date": "Tue, 17 Nov 2026 08:33:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE8xbEFrUXlQWngxMmt3MFh2Q2RCd3BaeHY2Z0FMUWEwSUVGQjFJSWVLdUF2YTVXaXFSSFBOa1N5NVZYNmF6bGVxTkh3d21uekFRTnFpQ2VPRWRhb3BjcWtQSHhuQQ?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiY0FVX3lxTE8xbEFrUXlQWngxMmt3MFh2Q2RCd3BaeHY2Z0FMUWEwSUVGQjFJSWVLdUF2YTVXaXFSSFBOa1N5NVZYNmF6bGVxTkh3d21uekFRTnFpQ2VPRWRhb3BjcWtQSHhuQQ?oc=5\" target=\"_blank\">הכשרה רוכשת מחצית מסוכנות הביטוח של רמי לוי</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Calcalist</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "ביטוח אסון חובה בפורטוגל מתעכב - The Portugal News",
+      "traffic": "",
+      "pub_date": "Fri, 13 Nov 2026 18:46:54 GMT",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPZHFfdl80NnRCdldNbXd2bmZZZUZucnBUOTVLWVVWb2dFaGc0YXQ3WTI4SGtnVkU5dzIxY3pLUlFQYkFxUDNaVkRXTWtGYl9NYS1rREV3RmlIWWFBMGgtUF80emdZWjFQV2FaMktKRk55M0RzTzRZR09QbXJhdWtDOElWQndVMGNQZm1YaHNhWGNpbEhYNHdXZW5OTFoxa1lmZVFTSFFaNDBwZ3MzU2c?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxPZHFfdl80NnRCdldNbXd2bmZZZUZucnBUOTVLWVVWb2dFaGc0YXQ3WTI4SGtnVkU5dzIxY3pLUlFQYkFxUDNaVkRXTWtGYl9NYS1rREV3RmlIWWFBMGgtUF80emdZWjFQV2FaMktKRk55M0RzTzRZR09QbXJhdWtDOElWQndVMGNQZm1YaHNhWGNpbEhYNHdXZW5OTFoxa1lmZVFTSFFaNDBwZ3MzU2c?oc=5\" target=\"_blank\">ביטוח אסון חובה בפורטוגל מתעכב</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The Portugal News</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "רמי לוי קיבל רישיון למתן אשראי — ומכוון לתיק של מיליארדי שקלים בשנים הקרובות - TheMarker",
+      "traffic": "",
+      "pub_date": "Mon, 16 Nov 2026 16:12:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNV2JacHQ0cms0eGlQY1ZIWWt5WFhMN0NPMWRPSDZoNmFLOHpNbFl5RmRBWlJjemx5Uk9Mc1NROWxaOWxONk93Wmx1elVsX0E2Q1p4NGswZHNnUXdpQmdaeEVUX3hFUW1xOTNMLVhVWG42clBUWDU1eWZEMHZFdGV6MXVMRnJwcU5BeHk1bUl5aDFfS0VoM2NFX0V5TmhpZVVfZEJN?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxNV2JacHQ0cms0eGlQY1ZIWWt5WFhMN0NPMWRPSDZoNmFLOHpNbFl5RmRBWlJjemx5Uk9Mc1NROWxaOWxONk93Wmx1elVsX0E2Q1p4NGswZHNnUXdpQmdaeEVUX3hFUW1xOTNMLVhVWG42clBUWDU1eWZEMHZFdGV6MXVMRnJwcU5BeHk1bUl5aDFfS0VoM2NFX0V5TmhpZVVfZEJN?oc=5\" target=\"_blank\">רמי לוי קיבל רישיון למתן אשראי — ומכוון לתיק של מיליארדי שקלים בשנים הקרובות</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">TheMarker</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "רמי לוי בדרך לבנק משלו? האישור להיכנס לשוק האשראי התקבל - ביזפורטל",
+      "traffic": "",
+      "pub_date": "Mon, 16 Nov 2026 08:08:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE8zYW5BdGZnZERyck5lLVNudUtnczhCQlFpMVkyZjM1a3JsaWRSQmtBSURkbC1pS3Z6UF9INGVteG9hY21VTmMzZldnUjhQbXlxWnZNVUl3TWJIWmxUNlFhOXJGWFlqMGhr?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTE8zYW5BdGZnZERyck5lLVNudUtnczhCQlFpMVkyZjM1a3JsaWRSQmtBSURkbC1pS3Z6UF9INGVteG9hY21VTmMzZldnUjhQbXlxWnZNVUl3TWJIWmxUNlFhOXJGWFlqMGhr?oc=5\" target=\"_blank\">רמי לוי בדרך לבנק משלו? האישור להיכנס לשוק האשראי התקבל</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ביזפורטל</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "לאחר כתב האישום: רשות שוק ההון שוקלת את שלילת רישיונו של נשיא לשכת סוכני הביטוח לשעבר - i24NEWS",
+      "traffic": "",
+      "pub_date": "Sun, 15 Nov 2026 14:33:24 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9lRHQtaVVFU1k2MFpMaDl4Ul9rSERsU2VsT25RYUJPSE9hZloxOGZQNUtJLVlfRnZuenhBS0FSaFVvcUJQMndnbEFJVkt2TVV0a05paTNfZ21pckllQjc0ZzJVMA?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiY0FVX3lxTE9lRHQtaVVFU1k2MFpMaDl4Ul9rSERsU2VsT25RYUJPSE9hZloxOGZQNUtJLVlfRnZuenhBS0FSaFVvcUJQMndnbEFJVkt2TVV0a05paTNfZ21pckllQjc0ZzJVMA?oc=5\" target=\"_blank\">לאחר כתב האישום: רשות שוק ההון שוקלת את שלילת רישיונו של נשיא לשכת סוכני הביטוח לשעבר</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">i24NEWS</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "כיצד לקבל סיוע מקרן ביטוח רכב מנועי בעת נתקלות בנהג שנגרם כתוצאה מתאונת פגע וברח. - Vietnam.vn",
+      "traffic": "",
+      "pub_date": "Mon, 16 Nov 2026 10:24:11 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNMGxQZzlkZnJCejlsYWUyUFpRVEt6ZTRFNzNjVFlBRmFMMTlUTTgwdVJHOEZHY1NEN0VJQ2dVdE1rMUFPeFNRS1lsTVpza3k2NllNaE50eE04M256TlJvc0t2YXJDcEl2aVNNSjNJdHdOcXJGbklxRlVkNFVUemdSVVNybHZFZjY0YVZiU1MtNHM2NnU4c0pHZFR3c3lhcG1mRlE?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxNMGxQZzlkZnJCejlsYWUyUFpRVEt6ZTRFNzNjVFlBRmFMMTlUTTgwdVJHOEZHY1NEN0VJQ2dVdE1rMUFPeFNRS1lsTVpza3k2NllNaE50eE04M256TlJvc0t2YXJDcEl2aVNNSjNJdHdOcXJGbklxRlVkNFVUemdSVVNybHZFZjY0YVZiU1MtNHM2NnU4c0pHZFR3c3lhcG1mRlE?oc=5\" target=\"_blank\">כיצד לקבל סיוע מקרן ביטוח רכב מנועי בעת נתקלות בנהג שנגרם כתוצאה מתאונת פגע וברח.</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Vietnam.vn</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "ביטוח הרכב הוזל ב-11% בשנה: מה באמת הוריד את המחיר, ומה עשוי לעצור את הירידה - ביזפורטל",
+      "traffic": "",
+      "pub_date": "Fri, 13 Nov 2026 06:18:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFB2VzFwMG9lUldneFN1WXNmT3pzbzdVZkxxSFE0eUpoN2lrUTRONDVyd2pILWZXOFJmLUZCVGI1NzJ0Y2VjdlUwQmFMVzJYTWhTZ2c1WkxocWNWcVNxa0VqZlQ3czB5T0hJRDRr?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMia0FVX3lxTFB2VzFwMG9lUldneFN1WXNmT3pzbzdVZkxxSFE0eUpoN2lrUTRONDVyd2pILWZXOFJmLUZCVGI1NzJ0Y2VjdlUwQmFMVzJYTWhTZ2c1WkxocWNWcVNxa0VqZlQ3czB5T0hJRDRr?oc=5\" target=\"_blank\">ביטוח הרכב הוזל ב-11% בשנה: מה באמת הוריד את המחיר, ומה עשוי לעצור את הירידה</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ביזפורטל</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "רשות שוק ההון שוקלת לשלול את רישיון סוכן הביטוח של שלמה אייזיק, נשיא לשכת סוכני הביטוח לשעבר - פאנדר",
+      "traffic": "",
+      "pub_date": "Sun, 15 Nov 2026 14:12:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9qOFhNcW1aaF9KLUR0Wng4cFBZbE03QnlaWEx1WkdmYUhibFQyZ0V1Q3pDdFF2S2FrN244Z21zRUpJeHgwME5sNHBEd1BmclZm?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiUEFVX3lxTE9qOFhNcW1aaF9KLUR0Wng4cFBZbE03QnlaWEx1WkdmYUhibFQyZ0V1Q3pDdFF2S2FrN244Z21zRUpJeHgwME5sNHBEd1BmclZm?oc=5\" target=\"_blank\">רשות שוק ההון שוקלת לשלול את רישיון סוכן הביטוח של שלמה אייזיק, נשיא לשכת סוכני הביטוח לשעבר</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">פאנדר</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "הכשרה מאשרת את חשיפת גלובס: תגיש בקשה להקמת פעילות גמל - גלובס",
+      "traffic": "",
+      "pub_date": "Thu, 12 Nov 2026 10:47:30 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBzVnlnRWZ4dTV6cEdHTE9Gc2tkMTh5bm9KZWxMVllGQmJrZG1DWEVET1B0aXpoU1M1UHlQX0hNNDhZNVpaRGxjbmVqSjBxNjhFZUtjNHZoYVhaVVNPWGpKZDViNzVkVDRU?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTFBzVnlnRWZ4dTV6cEdHTE9Gc2tkMTh5bm9KZWxMVllGQmJrZG1DWEVET1B0aXpoU1M1UHlQX0hNNDhZNVpaRGxjbmVqSjBxNjhFZUtjNHZoYVhaVVNPWGpKZDViNzVkVDRU?oc=5\" target=\"_blank\">הכשרה מאשרת את חשיפת גלובס: תגיש בקשה להקמת פעילות גמל</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">גלובס</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "רשות שוק ההון שוקלת לשלול את הרישיון של נשיא לשכת סוכני הביטוח לשעבר - TheMarker",
+      "traffic": "",
+      "pub_date": "Sun, 15 Nov 2026 15:24:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPZW4yRm9obzBudTAyMUZ0ZkhTNk4tOGE3SUpBVnIydWNYemtCZFRFNWpNQ0M3c2ZFT1VIZGFCbW1jVW44NGc1T214WDFZdGxMNU44SUxZSkRDLVNwN3JMQ3R1clozRm5HRElGZWJZNXRmZHRHZTRyS05RMFl5ZkVzR192aTRvZ0w4elVpWVkwQVliaTdMcjFpOFZkWWM0bzdmMGd3?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxPZW4yRm9obzBudTAyMUZ0ZkhTNk4tOGE3SUpBVnIydWNYemtCZFRFNWpNQ0M3c2ZFT1VIZGFCbW1jVW44NGc1T214WDFZdGxMNU44SUxZSkRDLVNwN3JMQ3R1clozRm5HRElGZWJZNXRmZHRHZTRyS05RMFl5ZkVzR192aTRvZ0w4elVpWVkwQVliaTdMcjFpOFZkWWM0bzdmMGd3?oc=5\" target=\"_blank\">רשות שוק ההון שוקלת לשלול את הרישיון של נשיא לשכת סוכני הביטוח לשעבר</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">TheMarker</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "עוד מכה לנשיא לשכת סוכני הביטוח לשעבר: רשות שוק ההון שוקלת לשלול את הרישיון של שלמה אייזיק - גלובס",
+      "traffic": "",
+      "pub_date": "Sun, 15 Nov 2026 14:58:42 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1MNmRXazBNTnlpcjBmRWJKZWJKWlRVcE1Hem50NEtrZnRoTUM2NXRPOW1wVktRbS1FYUltNG5KRFRpSmdEZlE1T1A4ZmxVd1BlTVVnejhKRHFKejFKVEZJS0NYMVdkZ01L?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTE1MNmRXazBNTnlpcjBmRWJKZWJKWlRVcE1Hem50NEtrZnRoTUM2NXRPOW1wVktRbS1FYUltNG5KRFRpSmdEZlE1T1A4ZmxVd1BlTVVnejhKRHFKejFKVEZJS0NYMVdkZ01L?oc=5\" target=\"_blank\">עוד מכה לנשיא לשכת סוכני הביטוח לשעבר: רשות שוק ההון שוקלת לשלול את הרישיון של שלמה אייזיק</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">גלובס</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "רשות שוק ההון רוצה לבטל את הרישיון של נשיא לשכת סוכני הביטוח לשעבר - Calcalist",
+      "traffic": "",
+      "pub_date": "Sun, 15 Nov 2026 15:41:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE0tTTVZOHRyZ1JqbzBjbm5hSjVXcWtYZG1EMVByUTJQeUpCZU5pZ0VZcmhnMmlvRGlJZGpQcncxcWRGcFdRMGVWOUlLb2tEdTJQUEFVcjJDeXNKdmV6V1BzVEJXXzlSdXpQ?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTE0tTTVZOHRyZ1JqbzBjbm5hSjVXcWtYZG1EMVByUTJQeUpCZU5pZ0VZcmhnMmlvRGlJZGpQcncxcWRGcFdRMGVWOUlLb2tEdTJQUEFVcjJDeXNKdmV6V1BzVEJXXzlSdXpQ?oc=5\" target=\"_blank\">רשות שוק ההון רוצה לבטל את הרישיון של נשיא לשכת סוכני הביטוח לשעבר</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Calcalist</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "שוק הגמל כבר מנהל יותר מטריליון שקל, והכשרה ביטוח נערכת להיכנס אליו - ביזפורטל",
+      "traffic": "",
+      "pub_date": "Wed, 11 Nov 2026 17:14:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9ybmg3cWJ2UDQtbXp2Q05YOFdGSjh6M25ObEtVMGJ1NmkxeEtIbFdhZVVpamhmd3ptQWNoVmVVTm5TX1NWYkxKNThUOTVKaTNMdkV2eXZzYWUtRS1lSzkwelFxVEQ4Zm9ESk1WcEFLNzc?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMicEFVX3lxTE9ybmg3cWJ2UDQtbXp2Q05YOFdGSjh6M25ObEtVMGJ1NmkxeEtIbFdhZVVpamhmd3ptQWNoVmVVTm5TX1NWYkxKNThUOTVKaTNMdkV2eXZzYWUtRS1lSzkwelFxVEQ4Zm9ESk1WcEFLNzc?oc=5\" target=\"_blank\">שוק הגמל כבר מנהל יותר מטריליון שקל, והכשרה ביטוח נערכת להיכנס אליו</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ביזפורטל</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "יום אחרי האישור להיכנס לשוק האשראי: רמי לוי מוכר כמעט מחצית מסוכנות הביטוח להכשרה - ביזפורטל",
+      "traffic": "",
+      "pub_date": "Tue, 17 Nov 2026 08:25:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBmcmlqckZLM0ZoQzl1LXVWdlo1dC13TEx2QjVjczE5RmkyNk5mdmRkd21qZTBaRFB5MUwtc1EtN2p3bjM0VzRxY1NXZFR4djdCbGxrVDhRT1JLMmcwTGlpTWtiejQtMTN4SnBrcEJnTTg?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMicEFVX3lxTFBmcmlqckZLM0ZoQzl1LXVWdlo1dC13TEx2QjVjczE5RmkyNk5mdmRkd21qZTBaRFB5MUwtc1EtN2p3bjM0VzRxY1NXZFR4djdCbGxrVDhRT1JLMmcwTGlpTWtiejQtMTN4SnBrcEJnTTg?oc=5\" target=\"_blank\">יום אחרי האישור להיכנס לשוק האשראי: רמי לוי מוכר כמעט מחצית מסוכנות הביטוח להכשרה</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ביזפורטל</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "הקול של החוסכים: אחריותם של המשקיעים המוסדיים לא נגמרת בהצבעה - TheMarker",
+      "traffic": "",
+      "pub_date": "Sat, 14 Nov 2026 17:28:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPQjVHNzYxNHljdG5xVUVnWU5JRlBkb0RFbm9wOXhIdXRuekFPb3ZjVHlKUkpuelZpT2RVVl9tdmJjWHNsTWs1dDlOaEIxZEdsX0hBc2ZKbXFwM1V1RHJoYmlhbGlLVnJJMHVsQVV5dUJrVVFjWDE2N2VaaWtXUjJjWFdpOEtjTnAxRDlJTWNrOFVWTGtidGFVLTlLT0NoZVhNN2gw?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxPQjVHNzYxNHljdG5xVUVnWU5JRlBkb0RFbm9wOXhIdXRuekFPb3ZjVHlKUkpuelZpT2RVVl9tdmJjWHNsTWs1dDlOaEIxZEdsX0hBc2ZKbXFwM1V1RHJoYmlhbGlLVnJJMHVsQVV5dUJrVVFjWDE2N2VaaWtXUjJjWFdpOEtjTnAxRDlJTWNrOFVWTGtidGFVLTlLT0NoZVhNN2gw?oc=5\" target=\"_blank\">הקול של החוסכים: אחריותם של המשקיעים המוסדיים לא נגמרת בהצבעה</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">TheMarker</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    },
+    {
+      "title": "כך תדעו איך הפנסיה שלכם תושפע מנפילת אנבידיה - גלובס",
+      "traffic": "",
+      "pub_date": "Thu, 12 Nov 2026 15:06:05 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE11dnhXZzVBYy1EV20tbnRCaFE5M1QtUkxFWXNLY0FXeFRISF9EYXVob1RNZEl0UzJqQXViT2FEM1JfRVBKMVlReDhRWHExQWJOZU9YcHMzX0l4SWFMblV0emZhb0Fqd3Za?oc=5",
+      "description": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTE11dnhXZzVBYy1EV20tbnRCaFE5M1QtUkxFWXNLY0FXeFRISF9EYXVob1RNZEl0UzJqQXViT2FEM1JfRVBKMVlReDhRWHExQWJOZU9YcHMzX0l4SWFMblV0emZhb0Fqd3Za?oc=5\" target=\"_blank\">כך תדעו איך הפנסיה שלכם תושפע מנפילת אנבידיה</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">גלובס</font>",
+      "source_geo": "IL",
+      "classification": "news"
+    }
+  ],
   "classification_counts": {
     "insurance_direct": 0,
     "finance_related": 0,
@@ -233,6 +459,17 @@
   },
   "changes": {
     "new": [
+      {
+        "title": "מערך ההגנה האווירית",
+        "traffic": "200+",
+        "pub_date": "Tue, 17 Nov 2026 07:00:00 -0800",
+        "link": "https://trends.google.com/trending/rss?geo=IL",
+        "description": "",
+        "source_geo": "IL",
+        "classification": "risk_related"
+      }
+    ],
+    "removed": [
       {
         "title": "רעידת אדמה",
         "traffic": "1000+",
@@ -243,17 +480,16 @@
         "classification": "risk_related"
       }
     ],
-    "removed": [],
     "unchanged": []
   },
   "article_ideas": [
     {
-      "topic": "רעידת אדמה",
-      "headline": "רעידת אדמה: מה חשוב לדעת עכשיו לפני שקונים או מעדכנים ביטוח",
+      "topic": "מערך ההגנה האווירית",
+      "headline": "מערך ההגנה האווירית: מה חשוב לדעת עכשיו לפני שקונים או מעדכנים ביטוח",
       "angle": "הסבר פרקטי + השוואת חלופות + טעויות נפוצות + למי זה מתאים",
       "cta": "רוצים לבדוק אם הפוליסה שלכם עדיין משתלמת? קבלו בדיקה אישית קצרה."
     }
   ],
   "fallback_article_ideas": [],
-  "previous_snapshot": "data/trends-agent/snapshot_20261112T163441Z.json"
+  "previous_snapshot": "data/trends-agent/snapshot_20261115T152157Z.json"
 }

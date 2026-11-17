@@ -1,7 +1,19 @@
 {
   "action": "CREATE",
   "reason": "No strong existing-page overlap found.",
-  "proposed_slug": "insurance-claim-documents-checklist",
-  "best_match": null,
-  "matches": []
+  "proposed_slug": "eilat-earthquake-home-insurance-coverage",
+  "best_match": {
+    "page": "home-insurance-check-apartment.html",
+    "title": "קנית דירה? כך תדעו אם ביטוח הדירה שלכם באמת מכסה אתכם",
+    "h1": "קנית דירה? כך תדעו אם ביטוח הדירה שלכם באמת מכסה אתכם",
+    "score": 0.364
+  },
+  "matches": [
+    {
+      "page": "home-insurance-check-apartment.html",
+      "title": "קנית דירה? כך תדעו אם ביטוח הדירה שלכם באמת מכסה אתכם",
+      "h1": "קנית דירה? כך תדעו אם ביטוח הדירה שלכם באמת מכסה אתכם",
+      "score": 0.364
+    }
+  ]
 }
